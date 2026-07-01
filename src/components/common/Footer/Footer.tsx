@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-import Container from "../../UI/Container";
+import Container from "../Container/Container";
 import FooterColumn from "./FooterColumn";
 import FooterBottom from "./FooterBottom";
 import { footerSections } from "./footerData";
@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* ================= Footer Grid ================= */}
 
-        <div className="grid gap-16 border-t border-white/10 py-20 lg:grid-cols-[1.3fr_repeat(5,1fr)]">
+        <div className="grid gap-16 border-t border-white/10 py-20 lg:grid-cols-[2fr_repeat(4,1fr)]">
 
           {/* Left */}
 
@@ -95,7 +95,7 @@ export default function Footer() {
               className="inline-flex items-center gap-4"
             >
               <Image
-                src="/logo/ap2l-logo.png"
+                src="/logo/logo.png"
                 alt="AP2L"
                 width={55}
                 height={55}
@@ -117,20 +117,14 @@ export default function Footer() {
 
             </Link>
 
-            <p className="mt-8 max-w-sm leading-8 text-zinc-400">
+            <p className="mt-8 max-w-md leading-8 text-zinc-400">
               AP2L helps enterprises accelerate digital transformation
               through Artificial Intelligence, Cloud Engineering,
               Automation, Cyber Security, and next-generation software
               solutions.
             </p>
 
-            <div className="mt-8">
 
-              <span className="inline-flex rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-300">
-                Building Intelligent Enterprises 🚀
-              </span>
-
-            </div>
 
           </div>
 

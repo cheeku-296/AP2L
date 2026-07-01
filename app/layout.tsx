@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/navbar/Navbar";
-import Footer from "@/components/layout/footer/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Navbar from "@/src/components/common/Navbar/Navbar";
+import Footer from "@/src/components/common/Footer/Footer";
+import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata: Metadata = {
   title: "AP2L",
@@ -28,9 +18,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-
         <main>{children}</main>
-
+        <CTA />
         <Footer />
       </body>
     </html>

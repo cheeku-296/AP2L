@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-import Container from "../../UI/Container"
+import Container from "../Container/Container";
 import Logo from "./Logo";
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
@@ -11,15 +11,27 @@ import CTAButton from "./CTAButton";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
-      setScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 20);
+      
+      // If we're scrolling down (current > last) and passed a certain point, hide it
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
     };
 
     onScroll();
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -31,18 +43,18 @@ export default function Navbar() {
         y: -24,
       }}
       animate={{
-        opacity: 1,
-        y: 0,
+        opacity: hidden ? 0 : 1,
+        y: hidden ? -100 : 0,
       }}
       transition={{
-        duration: 0.6,
+        duration: 0.3,
         ease: "easeOut",
       }}
       className="fixed inset-x-0 top-0 z-50"
     >
       <Container className="pt-5">
         <div
-          className={`relative flex h-20 items-center justify-between rounded-2xl border transition-all duration-500 ${
+          className={`relative flex h-16 items-center justify-between rounded-full border px-6 transition-all duration-500 ${
             scrolled
               ? `
                 border-white/10
@@ -58,7 +70,7 @@ export default function Navbar() {
         >
           {/* Background Glow */}
           <div
-            className={`pointer-events-none absolute inset-0 rounded-2xl transition-opacity duration-500 ${
+            className={`pointer-events-none absolute inset-0 rounded-full transition-opacity duration-500 ${
               scrolled ? "opacity-100" : "opacity-0"
             }`}
           >

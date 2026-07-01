@@ -1,23 +1,17 @@
-import Navbar from "@/components/layout/navbar/Navbar";
+import Hero from "@/src/components/Landing/Hero/Hero";
+import Trust from "@/src/components/Landing/Trust/Trust";
+import ProductSuite from "@/src/components/Landing/ProductSuite/ProductSuite";
+import Features from "@/src/components/Landing/Features/Features";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-
-      <main className="min-h-[300vh] bg-[#050816] pt-32">
-        <section className="mx-auto flex h-screen max-w-7xl items-center justify-center px-6">
-          <div className="text-center">
-            <h1 className="text-6xl font-bold text-white">
-              Enterprise Security Platform
-            </h1>
-
-            <p className="mt-6 max-w-2xl text-lg text-slate-400">
-              Modern navigation inspired by enterprise SaaS products.
-            </p>
-          </div>
-        </section>
+    <div className="bg-[#05050A] min-h-screen">
+      <main>
+        <Hero />
+        <Trust />
+        <ProductSuite />
+        <Features />
       </main>
-    </>
+    </div>
   );
 }

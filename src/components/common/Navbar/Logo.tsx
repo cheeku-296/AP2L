@@ -14,7 +14,7 @@ export default function Logo({
   return (
     <Link
       href="/"
-      className="group relative flex items-center gap-3 pl-5"
+      className="group relative flex items-center gap-3"
       aria-label="AP2L Home"
     >
       {/* Logo */}
@@ -55,10 +55,6 @@ export default function Logo({
         >
           AP2L
         </motion.span>
-
-        <span className="mt-1 text-[11px] font-medium uppercase tracking-[0.28em] text-zinc-400">
-          AI Platform
-        </span>
       </div>
     </Link>
   );
