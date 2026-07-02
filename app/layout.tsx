@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import { Urbanist, Inter } from "next/font/google";
+import { Urbanist, Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/common/Navbar/Navbar";
 import Footer from "@/src/components/common/Footer/Footer";
 
 const urbanist = Urbanist({ subsets: ["latin"], variable: "--font-urbanist" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+
+import { ThemeProvider } from "@/src/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "AP2L",
@@ -18,11 +21,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${urbanist.variable} ${inter.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${urbanist.variable} ${inter.variable} ${manrope.variable}`}>
       <body suppressHydrationWarning className="font-sans">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

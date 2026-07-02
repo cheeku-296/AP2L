@@ -99,8 +99,4 @@ export const navigation: NavigationSection[] = [
     href: "/company",
   },
 
-  {
-    title: "Contact",
-    href: "/contact",
-  },
 ];

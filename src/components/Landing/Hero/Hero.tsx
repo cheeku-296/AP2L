@@ -1,82 +1,76 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Button from "@/src/components/common/Button/Button";
-import Container from "@/src/components/common/Container/Container";
-import { ArrowRight, Play } from "lucide-react";
+import { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Sparkles } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { heroData } from "./data";
 
 export default function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+  
+  // Parallax effect: image moves slightly slower than the scroll
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
-    <section className="relative overflow-hidden pt-40 pb-20 lg:pt-48 lg:pb-32">
-      <div className="absolute inset-0 bg-white">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-violet-600/20 rounded-full blur-[120px] opacity-50" />
-      </div>
+    <div ref={containerRef} className="relative w-full h-[calc(100vh-24px)] min-h-[600px] rounded-[16px] overflow-hidden flex flex-col items-center justify-start pt-[120px] text-center">
+      
+      {/* Background Image with Parallax */}
+      <motion.div 
+        style={{ y }} 
+        className="absolute -top-[10%] -left-[5%] -right-[5%] h-[130%] w-[110%]"
+      >
+        <Image
+          src="/landing-hero/light-hero1.png"
+          alt="Hero Section"
+          fill
+          priority
+          className="object-cover object-center dark:hidden"
+        />
+        <Image
+          src="/landing-hero/dark-hero.png"
+          alt="Hero Section Dark"
+          fill
+          priority
+          className="hidden object-cover object-center dark:block"
+        />
+      </motion.div>
 
-      <Container className="relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-500/30 bg-violet-500/10 mb-8"
-        >
-          <span className="flex h-2 w-2 rounded-full bg-violet-500"></span>
-          <span className="text-sm font-medium text-violet-700">{heroData.badge}</span>
-        </motion.div>
+      {/* <div className="absolute inset-0 bg-white/20" /> */}
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-4xl mx-auto text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6"
-        >
-          {heroData.headingPart1}
-          <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-            {heroData.headingPart2}
-          </span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 mb-10"
-        >
-          {heroData.description}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Button variant="primary" className="w-full sm:w-auto px-6 py-3 flex items-center gap-2 group">
-            {heroData.primaryButton}
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-          
-          <Button variant="secondary" className="w-full sm:w-auto px-6 py-3 flex items-center gap-2">
-            <Play className="w-4 h-4" />
-            {heroData.secondaryButton}
-          </Button>
-        </motion.div>
+      {/* Content */}
+      <div className="relative z-10 flex flex-col items-center px-4 max-w-3xl mx-auto">
         
-        {/* Dashboard Mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-20 relative mx-auto max-w-5xl"
+        {/* Top Icon */}
+        <div className="mb-6 flex h-12 w-12 items-center justify-center">
+          {/* <Sparkles size={24} /> */}
+        </div>
+
+        {/* Main Heading */}
+        <h1 className="text-5xl md:text-7xl font-medium tracking-tight text-slate-900 dark:text-white mb-6 leading-[1.1]">
+          {heroData.heading}
+        </h1>
+
+        {/* Paragraph */}
+        <p className="text-lg md:text-xl text-slate-700 dark:text-slate-300 mb-10 max-w-2xl leading-relaxed font-light">
+          {heroData.description}
+        </p>
+
+        {/* CTA Button */}
+        <Link
+          href={heroData.primaryButtonLink}
+          className="rounded-full bg-slate-800 dark:bg-white px-8 py-4 text-sm font-semibold text-white dark:text-slate-900 shadow-lg transition-all duration-300 hover:scale-105 hover:opacity-90"
         >
-          <div className="rounded-2xl border border-slate-900/10 bg-slate-900/5 p-2 backdrop-blur-sm shadow-2xl">
-            <div className="rounded-xl overflow-hidden bg-white border border-slate-200 aspect-video flex items-center justify-center relative">
-              <div className="absolute inset-0 bg-gradient-to-tr from-violet-500/10 via-transparent to-fuchsia-500/10" />
-              <div className="text-slate-400 font-medium">{heroData.imageText}</div>
-            </div>
-          </div>
-        </motion.div>
-      </Container>
-    </section>
+          {heroData.primaryButton}
+        </Link>
+        
+      </div>
+    </div>
   );
 }

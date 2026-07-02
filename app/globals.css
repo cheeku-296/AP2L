@@ -10,21 +10,28 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-urbanist: var(--font-urbanist);
+  --font-manrope: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
+  p {
+    font-family: var(--font-manrope);
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-urbanist);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-urbanist);
+  }
 }
