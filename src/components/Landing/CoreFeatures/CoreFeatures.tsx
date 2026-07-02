@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 import { 
   LineChart, 
   Shield, 
@@ -49,7 +50,7 @@ const features = [
   }
 ];
 
-const containerVariants = {
+const containerVariants : Variants= {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -59,9 +60,10 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants:Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } },
+  show: { opacity: 1, y: 0, transition: {  duration: 0.45,
+  ease: "easeOut",} },
 };
 
 export default function CoreFeatures() {
