@@ -128,6 +128,7 @@ function NavItem({
     <Link
       href={href}
       className="group relative flex h-12 items-center"
+      {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       <span
         className={`
@@ -480,6 +481,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
                             ? "bg-violet-600/20 text-violet-300"
                             : "text-slate-900 dark:text-slate-200 hover:bg-slate-900/5 dark:hover:bg-white/5"
                         }`}
+                        {...(item.href!.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       >
                         {item.title}
                       </Link>
@@ -598,12 +600,14 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const lastScrollY = useRef(0);
   
+  const pathname = usePathname();
   // Adapt to hero theme if not scrolled
   const { componentThemes } = useThemeConfig();
   const heroTheme = componentThemes["hero"] || "global";
   
   // If not scrolled and hero is explicitly light or dark, we force the navbar into that mode!
-  const forcedThemeClass = !scrolled && heroTheme !== "global" ? heroTheme : "";
+  // Force dark theme on FAQ page
+  const forcedThemeClass = pathname === "/resources/faq" ? "dark" : (!scrolled && heroTheme !== "global" ? heroTheme : "");
 
   useEffect(() => {
     const onScroll = () => {
@@ -647,7 +651,7 @@ export default function Navbar() {
         className={`relative flex h-17 w-full items-center justify-between px-4 sm:px-6 lg:px-8 transition-all duration-500 ${
           scrolled
             ? `bg-white/90 dark:bg-white backdrop-blur-xl`
-            : `bg-transparent`
+            : pathname === "/resources/faq" ? `bg-[#090A1F]` : `bg-transparent`
         }`}
       >
           {/* Background Glow */}

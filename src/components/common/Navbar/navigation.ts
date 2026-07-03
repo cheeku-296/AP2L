@@ -72,14 +72,9 @@ export const navigation: NavigationSection[] = [
     title: "Resources",
     children: [
       {
-        title: "Documentation",
-        description: "Technical guides, API references, and product manuals.",
-        href: "/resources/documentation",
-      },
-      {
-        title: "Case Studies",
-        description: "Real-world customer success stories and business outcomes.",
-        href: "/resources/case-studies",
+        title: "FAQ",
+        description: "Frequently asked questions about our products and services.",
+        href: "/resources/faq",
       },
       {
         title: "Blog",
@@ -96,7 +91,7 @@ export const navigation: NavigationSection[] = [
 
   {
     title: "Company",
-    href: "/company",
+    href: "https://apmosys.com/",
   },
 
 ];

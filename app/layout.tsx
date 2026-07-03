@@ -70,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${urbanist.variable} ${inter.variable} ${manrope.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${urbanist.variable} ${inter.variable} ${manrope.variable}`}>
       <body suppressHydrationWarning className="font-sans">
         <ThemeProvider
           attribute="class"

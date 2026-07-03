@@ -4,7 +4,6 @@ import { Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ThemeToggle } from "../Navbar/ThemeToggle";
 import { footerSections } from "./footerData";
 
 
@@ -91,22 +90,22 @@ import { FaLinkedinIn, FaXTwitter, FaInstagram, FaFacebookF } from "react-icons/
 const socialLinks = [
   {
     icon: FaLinkedinIn,
-    href: "https://linkedin.com/company/ap2l",
+    href: "https://www.linkedin.com/company/apmosys-the-consulting-services-company/",
     label: "LinkedIn",
   },
   {
     icon: FaXTwitter,
-    href: "https://twitter.com",
+    href: "https://x.com/apmosysofficial",
     label: "Twitter",
   },
   {
     icon: FaInstagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/apmosys_technologies",
     label: "Instagram",
   },
   {
     icon: FaFacebookF,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/ApMoSys",
     label: "Facebook",
   },
 ];
@@ -145,7 +144,6 @@ function FooterBottom() {
         {/* Social Icons */}
 
         <div className="flex items-center justify-center gap-3">
-          <ThemeToggle />
           {socialLinks.map((item) => {
             const Icon = item.icon;
 
