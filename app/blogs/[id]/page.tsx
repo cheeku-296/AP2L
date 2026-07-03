@@ -1,12 +1,18 @@
 import BlogPost from "@/src/components/resources/blogs/BlogPost";
 
-export function generateMetadata({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { id } = await params;
   return {
-    title: `Blog ${params.id} | AP2L`,
+    title: `Blog ${id} | AP2L`,
     description: "Read the latest insights and technical deep dives from AP2L experts.",
   };
 }
 
-export default function Page({ params }: { params: { id: string } }) {
-  return <BlogPost id={params.id} />;
+export default async function Page({ params }: Props) {
+  const { id } = await params;
+  return <BlogPost id={id} />;
 }
