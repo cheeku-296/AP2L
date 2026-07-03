@@ -41,23 +41,21 @@ const containerVariants: Variants = {
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.8, y: 30 },
-  show: { 
-    opacity: 1, 
-    scale: 1, 
-    y: 0, 
-    transition: { type: "spring", stiffness: 200, damping: 20 } 
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { type: "spring", stiffness: 200, damping: 20 }
   },
 } satisfies Variants;
 
 export default function ROIMetrics() {
   return (
-    <section className="relative w-full py-16 md:py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      
+    <section className="relative w-full py-12 md:py-14 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        
         {/* Header section */}
-        <div className="mb-16 max-w-3xl mr-auto">
-          <motion.h2 
+        <div className="mb-8 max-w-3xl mr-auto">
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,8 +63,8 @@ export default function ROIMetrics() {
           >
             Measurable ROI from Day One
           </motion.h2>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -78,7 +76,7 @@ export default function ROIMetrics() {
         </div>
 
         {/* Metrics Grid */}
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="show"
@@ -89,18 +87,18 @@ export default function ROIMetrics() {
             <motion.div
               key={metric.id}
               variants={itemVariants}
-              className="relative flex flex-col items-center text-center p-8 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-fuchsia-200 dark:hover:border-fuchsia-900/50 group"
+              className="relative flex flex-col items-center text-center p-4 transition-all duration-300 hover:-translate-y-1 group"
             >
               {/* Massive Number */}
-              <h3 className="mb-4 font-urbanist text-6xl md:text-7xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-violet-600 to-fuchsia-600 group-hover:from-violet-500 group-hover:to-fuchsia-500 transition-all duration-500">
+              <h3 className="mb-2 font-urbanist text-5xl md:text-6xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-violet-600 to-fuchsia-600 group-hover:from-violet-500 group-hover:to-fuchsia-500 transition-all duration-500">
                 {metric.value}
               </h3>
-              
+
               {/* Label */}
-              <p className="mb-3 font-urbanist text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+              <p className="mb-2 font-urbanist text-lg md:text-xl font-bold tracking-tight text-slate-900 dark:text-white">
                 {metric.label}
               </p>
-              
+
               {/* Description */}
               <p className="font-inter text-sm md:text-[15px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">
                 {metric.description}
@@ -108,7 +106,7 @@ export default function ROIMetrics() {
             </motion.div>
           ))}
         </motion.div>
-        
+
       </div>
     </section>
   );
