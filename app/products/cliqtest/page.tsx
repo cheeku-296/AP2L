@@ -1,5 +1,14 @@
-import { notFound } from 'next/navigation';
+import CliqtestHero from "@/src/components/Products/Cliqtest/Hero/Hero";
 
-export default function Page() {
-  notFound();
+export const metadata = {
+  title: "Cliqtest | AP2L",
+  description: "The AI-Powered Automated Testing Platform. Accelerate release cycles with flawless quality.",
+};
+
+export default function CliqtestPage() {
+  return (
+    <main className="font-space-grotesk min-h-screen bg-white text-white">
+      <CliqtestHero />
+    </main>
+  );
 }

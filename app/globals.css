@@ -11,6 +11,9 @@
   --font-sans: var(--font-inter);
   --font-urbanist: var(--font-urbanist);
   --font-manrope: var(--font-manrope);
+  --font-clash: 'Clash Grotesk', sans-serif;
+  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --font-alata: var(--font-alata);
 }
 
 .dark {
@@ -21,6 +24,12 @@
 .light {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+@layer utilities {
+  .font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif !important;
+  }
 }
 
 /* 

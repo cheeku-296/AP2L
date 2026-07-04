@@ -76,6 +76,9 @@ function Logo({
 
 
 function CTAButton({ scrolled }: { scrolled?: boolean }) {
+  const pathname = usePathname();
+  const isShieldvue = pathname === "/products/shieldvue";
+
   return (
     <Link href="/contact">
       <motion.div
@@ -94,7 +97,13 @@ function CTAButton({ scrolled }: { scrolled?: boolean }) {
         className="group relative overflow-hidden rounded-full"
       >
         {/* Button */}
-        <div className={`relative flex h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold transition-colors duration-300 ${scrolled ? "bg-slate-200 text-slate-800 group-hover:bg-slate-300" : "bg-slate-200 dark:bg-white text-slate-800 dark:text-slate-900 group-hover:bg-slate-300 dark:group-hover:bg-slate-200"}`}>
+        <div className={`relative flex h-9 items-center justify-center rounded-full px-5 text-[13px] font-semibold transition-colors duration-300 ${
+          isShieldvue 
+            ? "bg-white text-slate-900 shadow-sm border border-slate-200 hover:bg-slate-50" 
+            : scrolled 
+              ? "bg-slate-200 text-slate-800 group-hover:bg-slate-300" 
+              : "bg-slate-200 dark:bg-white text-slate-800 dark:text-slate-900 group-hover:bg-slate-300 dark:group-hover:bg-slate-200"
+        }`}>
           <span className="relative z-10">
             Contact
           </span>
@@ -223,6 +232,7 @@ function Dropdown({
   scrolled,
 }: DropdownProps) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div
@@ -261,89 +271,132 @@ function Dropdown({
             transition={{
               duration: 0.22,
             }}
-            className="absolute left-1/2 top-[68px] z-50 w-[540px] -translate-x-1/2"
+            className={`absolute z-50 ${
+              pathname === "/products/shieldvue" 
+                ? "left-0 top-[68px] w-[260px]" 
+                : pathname === "/products/cliqtest"
+                ? "left-1/2 top-[68px] w-[700px] -translate-x-1/2"
+                : "left-1/2 top-[68px] w-[640px] -translate-x-1/2"
+            }`}
           >
             <div
-              className="
-                overflow-hidden
-                rounded-3xl
-                border
-                border-slate-900/10
-                  dark:border-slate-800
-                  bg-white/95
-                  dark:bg-slate-900/95
-                  backdrop-blur-2xl
-                shadow-[0_20px_80px_rgba(0,0,0,0.1)]
-              "
+              className={
+                pathname === "/products/shieldvue"
+                  ? "overflow-hidden rounded-md border border-slate-900/10 bg-white shadow-lg"
+                  : pathname === "/products/cliqtest"
+                  ? "overflow-hidden rounded-md border border-white/10 bg-[#0a0a0a] shadow-2xl"
+                  : "overflow-hidden rounded-[24px] border border-slate-900/10 dark:border-slate-800 bg-white/95 dark:bg-[#0c0f1a]/95 backdrop-blur-2xl shadow-2xl"
+              }
             >
               {/* Top Glow */}
 
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+              {pathname !== "/products/shieldvue" && pathname !== "/products/cliqtest" && (
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+              )}
 
-              <div className="grid grid-cols-2 gap-2 p-3">
-                {items.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{
-                      opacity: 0,
-                      x: -8,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      x: 0,
-                    }}
-                    transition={{
-                      delay: index * 0.05,
-                    }}
-                  >
-                    <Link
-                      href={item.href}
-                      className="
-                        group/item
-                        flex
-                        items-start
-                        justify-between
-                        rounded-2xl
-                        p-3
-                        transition-all
-                        duration-300
-                        hover:-translate-y-0.5
-                        hover:bg-violet-50/80
-                        dark:hover:bg-violet-900/20
-                        hover:shadow-sm
-                        hover:shadow-violet-500/10
-                      "
+              <div className={
+                pathname === "/products/shieldvue" 
+                  ? "flex flex-col py-2" 
+                  : pathname === "/products/cliqtest"
+                  ? "grid grid-cols-3 gap-x-6 gap-y-8 p-8"
+                  : "grid grid-cols-2 gap-x-8 gap-y-8 p-8"
+              }>
+                {items.map((item, index) => {
+                  const isActive = pathname === item.href;
+
+                  if (pathname === "/products/shieldvue") {
+                    return (
+                      <motion.div
+                        key={item.title}
+                        initial={{ opacity: 0, x: -8 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.03 }}
+                      >
+                        <Link
+                          href={item.href}
+                          className={`block px-6 py-3 text-[14px] transition-colors hover:bg-slate-50 ${
+                            isActive
+                              ? "text-violet-600 font-bold bg-violet-50/50"
+                              : "font-medium text-slate-700 hover:text-violet-600"
+                          }`}
+                        >
+                          {item.title}
+                        </Link>
+                      </motion.div>
+                    );
+                  }
+
+                  if (pathname === "/products/cliqtest") {
+                    return (
+                      <motion.div
+                        key={item.title}
+                        initial={{ opacity: 0, y: 8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.03 }}
+                      >
+                        <Link
+                          href={item.href}
+                          className="group/cliq block"
+                        >
+                          <h4 className={`text-[14px] mb-1.5 transition-colors group-hover/cliq:text-[#c084fc] ${
+                            isActive
+                              ? "text-[#c084fc] font-bold"
+                              : "font-semibold text-[#a855f7]"
+                          }`}>
+                            {item.title}
+                          </h4>
+                          {item.description && (
+                            <p className={`text-[13px] leading-relaxed transition-colors group-hover/cliq:text-gray-300 ${
+                              isActive ? "text-gray-300" : "text-gray-400"
+                            }`}>
+                              {item.description}
+                            </p>
+                          )}
+                        </Link>
+                      </motion.div>
+                    );
+                  }
+
+                  return (
+                    <motion.div
+                      key={item.title}
+                      initial={{
+                        opacity: 0,
+                        y: 8,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        delay: index * 0.04,
+                      }}
                     >
-                      <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-white transition-colors group-hover/item:text-violet-600 dark:group-hover/item:text-violet-400">
+                      <Link
+                        href={item.href}
+                        className="group/item flex items-start flex-col transition-all duration-300"
+                      >
+                        <h4 className={`text-[15px] mb-1.5 transition-colors ${
+                          isActive
+                            ? "font-bold text-violet-600 dark:text-violet-400"
+                            : "font-semibold text-slate-900 dark:text-white group-hover/item:text-violet-600 dark:group-hover/item:text-violet-400"
+                        }`}>
                           {item.title}
                         </h4>
 
                         {item.description && (
-                          <p className="mt-1 text-[13px] leading-relaxed text-slate-600 dark:text-slate-400">
+                          <p className={`text-[14px] leading-[1.6] transition-colors ${
+                            isActive
+                              ? "text-slate-700 dark:text-slate-300"
+                              : "text-slate-500 dark:text-slate-400 group-hover/item:text-slate-700 dark:group-hover/item:text-slate-300"
+                          }`}>
                             {item.description}
                           </p>
                         )}
-                      </div>
-
-                      <ArrowUpRight
-                        size={18}
-                        className="
-                          mt-1
-                          text-slate-500
-                          opacity-0
-                          transition-all
-                          duration-300
-                          group-hover/item:translate-x-1
-                          group-hover/item:-translate-y-1
-                          group-hover/item:opacity-100
-                          group-hover/item:text-violet-600
-                          dark:group-hover/item:text-violet-400
-                        "
-                      />
-                    </Link>
-                  </motion.div>
-                ))}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
               </div>
             </div>
           </motion.div>
@@ -608,6 +661,8 @@ export default function Navbar() {
   // If not scrolled and hero is explicitly light or dark, we force the navbar into that mode!
   // Force dark theme on FAQ page
   const forcedThemeClass = pathname === "/resources/faq" ? "dark" : (!scrolled && heroTheme !== "global" ? heroTheme : "");
+  const isShieldvue = pathname === "/products/shieldvue";
+  const effectivelyScrolled = scrolled || isShieldvue;
 
   useEffect(() => {
     const onScroll = () => {
@@ -657,7 +712,7 @@ export default function Navbar() {
           {/* Background Glow */}
           <div
             className={`pointer-events-none absolute inset-0 transition-opacity duration-500 ${
-              scrolled ? "opacity-100" : "opacity-0"
+              effectivelyScrolled ? "opacity-100" : "opacity-0"
             }`}
           >
             <div className="absolute -top-20 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-violet-600/15 blur-3xl" />
@@ -666,22 +721,22 @@ export default function Navbar() {
 
           {/* Left */}
           <div className="relative z-10 flex items-center">
-            <Logo scrolled={scrolled} />
+            <Logo scrolled={effectivelyScrolled} />
           </div>
 
           {/* Center */}
           <div className="relative z-10 hidden lg:flex">
-            <DesktopMenu scrolled={scrolled} />
+            <DesktopMenu scrolled={effectivelyScrolled} />
           </div>
 
           {/* Right */}
           <div className="relative z-10 flex items-center gap-3">
 
             <div className="hidden lg:flex lg:items-center lg:gap-3">
-              <CTAButton scrolled={scrolled} />
+              <CTAButton scrolled={effectivelyScrolled} />
             </div>
 
-            <MobileMenu scrolled={scrolled} />
+            <MobileMenu scrolled={effectivelyScrolled} />
           </div>
         </div>
     </motion.header>
