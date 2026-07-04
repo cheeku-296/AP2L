@@ -52,7 +52,7 @@ export default function Testimonials() {
   return (
     <section className="relative w-full py-16 md:py-20 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
+      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header section */}
         <div className="mb-16 max-w-3xl mr-auto">

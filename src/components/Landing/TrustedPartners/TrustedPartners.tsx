@@ -20,7 +20,7 @@ export default function TrustedPartners() {
 
   return (
     <section className="relative w-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500 py-12 md:py-16">
-      <div className="relative mx-auto max-w-7xl px-4 z-10">
+      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Revamped Header */}
         <div className="flex justify-center md:justify-start mb-10">

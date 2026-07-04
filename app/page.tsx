@@ -17,8 +17,8 @@ import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 const COMPONENTS = [
   { id: "hero", label: "Hero Section" },
   { id: "partners", label: "Trusted Partners" },
-  { id: "platform", label: "Platform Overview" },
   { id: "solutions", label: "Key Solutions" },
+  { id: "platform", label: "Platform Overview" },
   { id: "features", label: "Core Features" },
   { id: "roi", label: "ROI Metrics" },
   { id: "testimonials", label: "Testimonials" },
@@ -69,8 +69,8 @@ export default function Home() {
         )}
         
         {renderWithTheme("partners", <TrustedPartners />)}
-        {renderWithTheme("platform", <PlatformOverview />)}
         {renderWithTheme("solutions", <KeySolutions />)}
+        {renderWithTheme("platform", <PlatformOverview />)}
         {renderWithTheme("features", <CoreFeatures />)}
         {renderWithTheme("roi", <ROIMetrics />)}
         {renderWithTheme("testimonials", <Testimonials />)}

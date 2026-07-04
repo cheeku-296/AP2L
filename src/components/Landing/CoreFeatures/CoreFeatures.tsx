@@ -71,7 +71,7 @@ export default function CoreFeatures() {
       {/* Background Accent */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 w-[400px] h-[400px] rounded-full bg-violet-500/5 dark:bg-violet-500/10 blur-[100px] pointer-events-none" />
       
-      <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
+      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header section */}
         <div className="mb-16 max-w-3xl mr-auto">
