@@ -87,9 +87,9 @@ export default function DevMetrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <p className="font-inter text-sm font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400">
+            {/* <p className="font-inter text-sm font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400">
               Metrics
-            </p>
+            </p> */}
             <h2 className="mt-4 font-urbanist text-4xl font-medium tracking-tight text-slate-900 dark:text-white md:text-5xl">
               Measurable DevOps Impact
             </h2>
@@ -142,7 +142,7 @@ export default function DevMetrics() {
         </motion.div>
 
         {/* Trust Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -152,7 +152,7 @@ export default function DevMetrics() {
             <span className="font-semibold text-violet-600 dark:text-violet-400">Trusted by leading enterprises</span> — Average DevOps team sees{' '}
             <span className="font-semibold text-slate-900 dark:text-white">4.5x ROI</span> in first year
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
