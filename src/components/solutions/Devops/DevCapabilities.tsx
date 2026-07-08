@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import {
   GitBranch,
   Cloud,
@@ -18,6 +19,7 @@ const capabilities = [
     title: "Intelligent CI/CD Automation",
     description: "Automate your entire delivery pipeline with AI‑powered orchestration and intelligent quality gates.",
     icon: GitBranch,
+    image: "/images/solutions/devops/cicd_automation.png",
     features: ["Automated testing", "Smart quality gates", "Rollback automation", "Deployment insights"],
   },
   {
@@ -25,6 +27,7 @@ const capabilities = [
     title: "Real‑Time Observability",
     description: "Gain deep insights into your applications with end‑to‑end tracing and predictive analytics.",
     icon: Activity,
+    image: "/images/solutions/devops/realtimeobservability.png",
     features: ["Distributed tracing", "Log aggregation", "Performance metrics", "Anomaly detection"],
   },
   {
@@ -32,6 +35,7 @@ const capabilities = [
     title: "DevSecOps Integration",
     description: "Embed security into every stage of your pipeline with automated scanning and compliance checks.",
     icon: Shield,
+    image: "/images/solutions/devops/devsecops.png",
     features: ["SAST & DAST integration", "SBOM generation", "Policy enforcement", "Compliance reporting"],
   },
   {
@@ -39,6 +43,7 @@ const capabilities = [
     title: "Infrastructure as Code",
     description: "Manage and provision cloud resources with declarative configurations and version control.",
     icon: Server,
+    image: "/images/solutions/devops/infra.png",
     features: ["Terraform integration", "Cloud provisioning", "State management", "Drift detection"],
   },
   {
@@ -46,6 +51,7 @@ const capabilities = [
     title: "Multi‑Cloud Management",
     description: "Seamlessly manage deployments across AWS, Azure, GCP, and hybrid environments.",
     icon: Cloud,
+    image: "/images/solutions/devops/multicloud.png",
     features: ["AWS, Azure, GCP", "Hybrid cloud", "Kubernetes management", "Auto‑scaling"],
   },
   {
@@ -53,6 +59,7 @@ const capabilities = [
     title: "Workflow Automation",
     description: "Automate repetitive tasks and orchestrate complex workflows across your entire toolchain.",
     icon: Zap,
+    image: "/images/solutions/devops/automation.png",
     features: ["Task orchestration", "Event‑driven automation", "Custom workflows", "Integration hub"],
   },
 ];
@@ -117,7 +124,7 @@ export default function DevCapabilities() {
 
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch">
-          {/* Left - Capability List */}
+          {/* Left - Capability List with Images */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {capabilities.map((cap, idx) => {
               const Icon = cap.icon;
@@ -127,22 +134,27 @@ export default function DevCapabilities() {
                   key={cap.id}
                   onClick={() => handleSelect(idx)}
                   whileHover={{ x: 6 }}
-                  className={`group relative flex-1 w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
+                  className={`group relative flex-1 w-full flex items-start gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
                     isSelected
                       ? "bg-white dark:bg-slate-900 shadow-lg dark:shadow-none border border-violet-200 dark:border-violet-900/50"
                       : "bg-transparent border border-transparent hover:bg-white/50 dark:hover:bg-slate-900/50"
                   }`}
                 >
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${
-                      isSelected
-                        ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
-                        : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-slate-300 dark:group-hover:bg-slate-600"
-                    }`}
-                  >
-                    <Icon size={18} strokeWidth={1.5} />
+                  {/* Thumbnail Image */}
+                  <div className="relative flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
+                    <Image
+                      src={cap.image}
+                      alt={cap.title}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Overlay icon on hover */}
+                    <div className="absolute inset-0 bg-violet-600/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Icon size={18} className="text-white" />
+                    </div>
                   </div>
-                  <div className="flex-1">
+
+                  <div className="flex-1 min-w-0">
                     <h4
                       className={`font-urbanist font-bold text-sm transition-colors ${
                         isSelected
@@ -153,7 +165,7 @@ export default function DevCapabilities() {
                       {cap.title}
                     </h4>
                     <p
-                      className={`text-xs transition-colors ${
+                      className={`text-xs transition-colors truncate ${
                         isSelected
                           ? "text-slate-500 dark:text-slate-400"
                           : "text-slate-500 dark:text-slate-500"
@@ -162,6 +174,7 @@ export default function DevCapabilities() {
                       {cap.features.length} features
                     </p>
                   </div>
+
                   {isSelected && (
                     <div className="absolute -right-0.5 top-1/2 -translate-y-1/2 w-1.5 h-8 rounded-l-full bg-gradient-to-b from-violet-600 to-fuchsia-600" />
                   )}
@@ -181,7 +194,7 @@ export default function DevCapabilities() {
             })}
           </div>
 
-          {/* Right - Detail View */}
+          {/* Right - Detail View with Full Image */}
           <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div
@@ -190,49 +203,62 @@ export default function DevCapabilities() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="relative h-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg dark:shadow-none p-8 flex flex-col"
+                className="relative h-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg dark:shadow-none flex flex-col"
               >
-                {/* Decorative Gradient */}
-                <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 blur-2xl" />
+                {/* Full Width Image at Top */}
+                <div className="relative w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+                  <Image
+                    src={selected.image}
+                    alt={selected.title}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/40 to-transparent dark:from-slate-900/80 dark:via-slate-900/40" />
+                  
+                  {/* Icon overlay on image */}
+                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 dark:bg-slate-900/90 shadow-lg backdrop-blur-sm">
+                    {(() => {
+                      const Icon = selected.icon;
+                      return <Icon size={24} className="text-violet-600 dark:text-violet-400" />;
+                    })()}
+                  </div>
+                </div>
 
-                <div className="relative z-10 flex flex-col h-full overflow-y-auto">
-                  {/* Header */}
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/20">
-                      {(() => {
-                        const Icon = selected.icon;
-                        return <Icon size={28} strokeWidth={1.5} />;
-                      })()}
-                    </div>
-                    <div>
+                {/* Content Below Image */}
+                <div className="relative z-10 flex-1 p-6 md:p-8">
+                  <div className="flex flex-col h-full">
+                    {/* Title & Description */}
+                    <div className="mb-6">
                       <h3 className="font-urbanist text-2xl font-bold text-slate-900 dark:text-white">
                         {selected.title}
                       </h3>
-                      <p className="mt-1 font-inter text-sm text-slate-600 dark:text-slate-400">
+                      <p className="mt-2 font-inter text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                         {selected.description}
                       </p>
                     </div>
-                  </div>
 
-                  {/* Features Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
-                    {selected.features.map((feature, idx) => (
-                      <motion.div
-                        key={feature}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.1 }}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
-                      >
-                        <CheckCircle2
-                          size={16}
-                          className="text-violet-600 dark:text-violet-400 shrink-0"
-                        />
-                        <span className="font-inter text-sm text-slate-700 dark:text-slate-300">
-                          {feature}
-                        </span>
-                      </motion.div>
-                    ))}
+                    {/* Features Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {selected.features.map((feature, idx) => (
+                        <motion.div
+                          key={feature}
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: idx * 0.1 }}
+                          className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
+                        >
+                          <CheckCircle2
+                            size={16}
+                            className="text-violet-600 dark:text-violet-400 shrink-0"
+                          />
+                          <span className="font-inter text-sm text-slate-700 dark:text-slate-300">
+                            {feature}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
