@@ -20,7 +20,7 @@ const capabilities = [
     description:
       "Intelligent test case generation that learns from your application behavior and automatically creates comprehensive test suites.",
     icon: Code2,
-    image: "/images/solutions/QA/Test_automation.png", // Add your image path
+    image: "/images/solutions/QA/Test_automation.png",
     features: [
       "Self-healing test scripts",
       "Visual regression testing",
@@ -160,7 +160,7 @@ export default function QACapabilities() {
 
         {/* Capabilities Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch">
-          {/* Left - Capability List with Images */}
+          {/* Left - Capability List with Icons Only */}
           <div className="lg:col-span-4 flex flex-col gap-3">
             {capabilities.map((cap, idx) => {
               const Icon = cap.icon;
@@ -170,24 +170,21 @@ export default function QACapabilities() {
                   key={cap.id}
                   onClick={() => handleSelect(idx)}
                   whileHover={{ x: 6 }}
-                  className={`group relative flex-1 w-full flex items-start gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
+                  className={`group relative flex-1 w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
                     isSelected
                       ? "bg-white dark:bg-slate-900 shadow-lg dark:shadow-none border border-violet-200 dark:border-violet-900/50"
                       : "bg-transparent border border-transparent hover:bg-white/50 dark:hover:bg-slate-900/50"
                   }`}
                 >
-                  {/* Thumbnail Image */}
-                  <div className="relative flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700">
-                    <Image
-                      src={cap.image}
-                      alt={cap.title}
-                      fill
-                      className="object-cover"
-                    />
-                    {/* Overlay icon on hover */}
-                    <div className="absolute inset-0 bg-violet-600/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Icon size={18} className="text-white" />
-                    </div>
+                  {/* Icon Only - No Image */}
+                  <div
+                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${
+                      isSelected
+                        ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
+                        : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-slate-300 dark:group-hover:bg-slate-600"
+                    }`}
+                  >
+                    <Icon size={18} strokeWidth={1.5} />
                   </div>
 
                   <div className="flex-1 min-w-0">
@@ -200,15 +197,7 @@ export default function QACapabilities() {
                     >
                       {cap.title}
                     </h4>
-                    <p
-                      className={`text-xs transition-colors truncate ${
-                        isSelected
-                          ? "text-slate-500 dark:text-slate-400"
-                          : "text-slate-500 dark:text-slate-500"
-                      }`}
-                    >
-                      {cap.features.length} features
-                    </p>
+                    {/* Removed features count */}
                   </div>
 
                   {isSelected && (
