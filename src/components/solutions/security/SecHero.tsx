@@ -132,7 +132,7 @@ export default function SecHero() {
 
         {/* Keywords */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -151,7 +151,7 @@ export default function SecHero() {
           <span className="h-1 w-1 rounded-full bg-slate-400" />
 
           <span>DevSecOps</span>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Scroll Indicator */}

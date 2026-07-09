@@ -123,14 +123,17 @@ export default function DevMetrics() {
                 variants={itemVariants}
                 className="group relative p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 dark:hover:border-violet-600 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 via-violet-500/0 to-fuchsia-500/0 group-hover:from-violet-500/5 group-hover:via-violet-500/5 group-hover:to-fuchsia-500/5 transition-all duration-500 pointer-events-none" />
+                {/* Subtle violet hover gradient overlay (only violet) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 via-violet-500/0 to-violet-500/0 group-hover:from-violet-500/5 group-hover:via-violet-500/5 group-hover:to-violet-500/5 transition-all duration-500 pointer-events-none" />
 
                 <div className="relative z-10">
+                  {/* Icon – solid violet */}
                   <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-violet-500/20">
                     <Icon size={20} strokeWidth={1.5} />
                   </div>
 
-                  <div className="font-urbanist text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                  {/* Value – solid violet (removed gradient) */}
+                  <div className="font-urbanist text-3xl md:text-4xl font-extrabold tracking-tight text-violet-600 dark:text-violet-400">
                     {metric.value}
                   </div>
 
@@ -138,11 +141,13 @@ export default function DevMetrics() {
                     {metric.label}
                   </h3>
 
+                  {/* Description */}
                   <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                     {metric.description}
                   </p>
 
-                  <div className="mt-4 h-0.5 w-0 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 group-hover:w-full" />
+                  {/* Decorative line – solid violet */}
+                  {/* <div className="mt-4 h-0.5 w-0 rounded-full bg-violet-600 transition-all duration-300 group-hover:w-full" /> */}
                 </div>
               </motion.div>
             );

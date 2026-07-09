@@ -131,7 +131,7 @@ export default function QAHero() {
 
         {/* Bottom Keywords */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -150,7 +150,7 @@ export default function QAHero() {
           <span className="h-1 w-1 rounded-full bg-slate-400" />
 
           <span>Quality Engineering</span>
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Scroll Indicator */}

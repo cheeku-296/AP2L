@@ -8,7 +8,6 @@ import {
   Shield,
   Server,
   Zap,
-  ArrowRight,
 } from "lucide-react";
 
 const challenges = [
@@ -94,7 +93,6 @@ export default function DevChallenges() {
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
-        {/* Extra glow behind right card */}
         <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-violet-500/10 dark:bg-violet-500/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
       </div>
 
@@ -128,8 +126,8 @@ export default function DevChallenges() {
           </div>
         </div>
 
-        {/* Split Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        {/* Split Cards with left margin */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch ml-4 md:ml-8">
           {/* Left Card – Engineering Challenges */}
           <motion.div
             variants={cardLeftVariants}
@@ -179,7 +177,7 @@ export default function DevChallenges() {
             </motion.div>
           </motion.div>
 
-          {/* Right Card – Business Impact (Plain Violet) */}
+          {/* Right Card – Business Impact */}
           <motion.div
             variants={cardRightVariants}
             initial="hidden"
@@ -210,7 +208,6 @@ export default function DevChallenges() {
                   variants={itemVariants}
                   className="flex items-start gap-3 border-b border-white/10 last:border-0 pb-3 last:pb-0"
                 >
-                  {/* Pulsing dot */}
                   <div className="relative h-3 w-3 mt-1.5 flex items-center justify-center">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-300 opacity-75"></span>
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>

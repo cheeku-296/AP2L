@@ -47,14 +47,14 @@ export default function SecTechnologies() {
         >
           <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
             <Image
-              src="/images/solutions/sec&comp_light.png"
+              src="/images/solutions/devops/technologies_light.png"
               alt="Security technologies compatible with AP2L"
               fill
               className="object-cover dark:hidden"
               priority
             />
             <Image
-              src="/images/solutions/sec&comp_dark.png"
+              src="/images/solutions/devops/technologies_dark.png"
               alt="Security technologies compatible with AP2L"
               fill
               className="object-cover hidden dark:block"

@@ -134,7 +134,7 @@ export default function SecMetrics() {
                   <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                     {metric.description}
                   </p>
-                  <div className="mt-4 h-0.5 w-0 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 group-hover:w-full" />
+                  {/* <div className="mt-4 h-0.5 w-0 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 group-hover:w-full" /> */}
                 </div>
               </motion.div>
             );

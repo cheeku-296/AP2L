@@ -132,7 +132,7 @@ export default function ITHero() {
 
         {/* Keywords */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -151,7 +151,7 @@ export default function ITHero() {
           <span className="h-1 w-1 rounded-full bg-slate-400" />
 
           <span>AI Support</span>
-        </motion.div>
+        </motion.div> */}
 
       </div>
 
