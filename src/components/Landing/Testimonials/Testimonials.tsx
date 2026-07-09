@@ -11,7 +11,6 @@ const testimonials = [
     name: "Sarah Chen",
     role: "VP of Engineering, FinTech Global",
     initial: "S",
-    color: "bg-violet-500",
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ const testimonials = [
     name: "Marcus Rodriguez",
     role: "Chief Information Security Officer",
     initial: "M",
-    color: "bg-fuchsia-500",
   },
   {
     id: 3,
@@ -27,7 +25,6 @@ const testimonials = [
     name: "Elena Rostova",
     role: "Director of DevOps, CloudScale",
     initial: "E",
-    color: "bg-blue-500",
   }
 ];
 
@@ -119,7 +116,7 @@ export default function Testimonials() {
               
               {/* Author Info */}
               <div className="flex items-center gap-4 mt-auto">
-                <div className={`flex h-12 w-12 items-center justify-center rounded-full text-white font-urbanist font-bold text-xl ${testimonial.color}`}>
+                <div className="flex h-12 w-12 items-center justify-center rounded-full text-white font-urbanist font-bold text-xl bg-slate-600 dark:bg-slate-700">
                   {testimonial.initial}
                 </div>
                 <div>

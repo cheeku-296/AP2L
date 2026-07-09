@@ -9,21 +9,21 @@ import { heroData } from "./data";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
-  
+
   // Parallax effect: image moves slightly slower than the scroll
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <div ref={containerRef} className="bg-slate-50 relative w-full h-[80vh] md:min-h-screen min-h-[500px] md:min-h-[600px] rounded-none md: overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center">
-      
+
       {/* Background Image with Parallax */}
-      <motion.div 
-        style={{ y }} 
+      <motion.div
+        style={{ y }}
         className="absolute -top-[10%] -left-[5%] -right-[5%] h-[130%] w-[110%]"
       >
         <Image
@@ -46,7 +46,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center px-4 max-w-3xl mx-auto">
-        
+
         {/* Top Icon */}
         <div className="mb-6 flex h-12 w-12 items-center justify-center">
           {/* <Sparkles size={24} /> */}
@@ -69,7 +69,7 @@ export default function Hero() {
         >
           {heroData.primaryButton}
         </Link>
-        
+
       </div>
     </div>
   );
