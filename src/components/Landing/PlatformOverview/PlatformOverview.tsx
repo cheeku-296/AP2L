@@ -14,6 +14,7 @@ import {
   Sparkles
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const products = [
   {
@@ -76,10 +77,11 @@ const products = [
 
 export default function PlatformOverview() {
   const [activeId, setActiveId] = useState(products[0].id);
-  const activeProduct = products.find(p => p.id === activeId) || products[0];
+  const activeIndex = products.findIndex(p => p.id === activeId);
+  const activeProduct = products[activeIndex] || products[0];
 
   return (
-    <section className="relative w-full py-24 md:py-32 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
 
       {/* Decorative Background Glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -91,23 +93,46 @@ export default function PlatformOverview() {
         />
       </div>
 
-      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
 
         {/* Header section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="flex-1 max-w-xl">
-            <h2 className="font-urbanist text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-800 dark:text-white">
-              The AP2L Platform <br />
-              Suite
-            </h2>
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
+            >
+              The AP2L Products
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              {/* <Link href="/products" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#252134] dark:bg-white text-white dark:text-[#252134] font-medium text-sm hover:opacity-90 transition-opacity">
+                Explore now
+              </Link> */}
+            </motion.div>
           </div>
-          <p className="font-inter text-base text-slate-600 dark:text-slate-400 leading-relaxed max-w-md md:text-right">
-            An interconnected AI ecosystem built to automate, secure, and accelerate your engineering lifecycle.
-          </p>
+          
+          <div className="md:pt-2">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+            >
+              An interconnected AI ecosystem built to automate, secure, and accelerate your engineering lifecycle.
+            </motion.p>
+          </div>
         </div>
 
         {/* Pill Navigation */}
-        <div className="flex flex-wrap items-center justify-start gap-2 md:gap-3 mb-12">
+        <div className="flex flex-wrap items-center justify-start gap-2 md:gap-3 mb-8">
           {products.map((product) => {
             const isActive = activeId === product.id;
             return (
@@ -122,8 +147,8 @@ export default function PlatformOverview() {
                 {isActive && (
                   <motion.div
                     layoutId="activePill"
-                    className={`absolute inset-0 rounded-full bg-slate-800 dark:bg-slate-200 shadow-md -z-10`}
-                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                    className="absolute inset-0 rounded-full bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
+                    transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
                   />
                 )}
                 <span className="relative z-10">{product.title}</span>
@@ -133,34 +158,34 @@ export default function PlatformOverview() {
         </div>
 
         {/* Dynamic Display Area */}
-        <div className="w-full relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 shadow-2xl shadow-slate-200/20 dark:shadow-none p-2 min-h-[400px]">
+        <div className="w-full relative mt-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProduct.id}
-              initial={{ opacity: 0, y: 20, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -20, scale: 0.98 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className={`w-full h-full min-h-[384px] rounded-lg flex flex-col md:flex-row items-center overflow-hidden border border-slate-100 dark:border-slate-800/50 bg-slate-50 dark:bg-slate-900/30 transition-colors duration-700`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`w-full h-full min-h-[440px] rounded-[24px] flex flex-col ${activeIndex % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-stretch overflow-hidden border border-slate-800 bg-[#13111C] shadow-2xl shadow-violet-900/10 transition-colors duration-700`}
             >
 
               {/* Left Content Area */}
-              <div className="flex-1 p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+              <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative z-20">
                 <div className="flex items-center gap-4 mb-6">
-                  <h3 className="text-3xl md:text-4xl font-bold font-urbanist text-slate-900 dark:text-white">
+                  <h3 className="text-3xl md:text-4xl lg:text-[40px] font-bold font-urbanist text-white tracking-tight">
                     {activeProduct.title}
                   </h3>
                 </div>
 
-                <p className="font-inter text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-2xl">
+                <p className="font-manrope text-[16px] md:text-[17px] text-slate-400 leading-relaxed mb-10 max-w-2xl">
                   {activeProduct.description}
                 </p>
 
-                <div className="flex flex-wrap gap-3 mb-10">
+                <div className="flex flex-wrap gap-3 mb-12">
                   {activeProduct.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="px-4 py-1.5 rounded-full bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 text-sm font-semibold border border-slate-200 dark:border-slate-700 shadow-sm"
+                      className="px-4 py-2 rounded-full bg-white/5 text-slate-300 text-[13px] font-medium border border-white/10"
                     >
                       {tag}
                     </span>
@@ -170,31 +195,26 @@ export default function PlatformOverview() {
                 <div>
                   <Link
                     href={activeProduct.href}
-                    className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-[14px] font-semibold transition-all hover:-translate-y-0.5 shadow-sm shadow-slate-900/10 bg-slate-800 dark:bg-white dark:text-slate-900 hover:bg-slate-900 dark:hover:bg-slate-100`}
+                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white text-[15px] font-semibold transition-all hover:-translate-y-0.5 bg-violet-600 hover:bg-violet-500 hover:shadow-lg hover:shadow-violet-600/25"
                   >
                     Explore {activeProduct.title}
-                    <ArrowRight size={16} />
+                    <ArrowRight size={18} />
                   </Link>
                 </div>
               </div>
 
-              {/* Right Decorative Graphic Area */}
-              <div className="hidden md:flex w-5/12 h-full items-center justify-center p-8 relative overflow-hidden">
-                <div className={`absolute inset-0 bg-gradient-to-br from-violet-600 to-fuchsia-600 opacity-10 dark:opacity-20`} />
-
-                {/* Abstract visual representation */}
-                <div className="relative w-full aspect-square max-w-[320px] rounded-full border border-slate-200/50 dark:border-slate-700/50 flex items-center justify-center">
-                  <div className="absolute inset-4 rounded-full border border-slate-300/50 dark:border-slate-600/50 animate-spin-slow flex items-center justify-center">
-                    <div className="absolute top-0 w-3 h-3 rounded-full bg-slate-400" />
-                  </div>
-                  <div className="absolute inset-12 rounded-full border border-slate-400/50 dark:border-slate-500/50 animate-reverse-spin flex items-center justify-center">
-                    <div className="absolute bottom-0 w-4 h-4 rounded-full bg-slate-500" />
-                  </div>
-
-                  <div className={`w-32 h-32 rounded-3xl bg-gradient-to-br from-violet-600 to-fuchsia-600 shadow-2xl flex items-center justify-center transform rotate-12 transition-transform duration-700 hover:rotate-0`}>
-                    <activeProduct.icon size={64} className="text-white" strokeWidth={1} />
-                  </div>
-                </div>
+              {/* Right Image Area */}
+              <div className="hidden md:block w-1/2 lg:w-[55%] h-auto min-h-[440px] relative">
+                {/* Fade gradient to blend image into the dark background */}
+                <div className={`absolute inset-0 z-10 bg-gradient-to-${activeIndex % 2 === 1 ? 'r' : 'l'} from-transparent via-transparent to-[#13111C] pointer-events-none`} />
+                <div className={`absolute inset-0 z-10 bg-gradient-to-t from-[#13111C] via-transparent to-[#13111C] pointer-events-none opacity-40`} />
+                
+                <Image
+                  src="/ap2l_dashboard.png"
+                  alt={`${activeProduct.title} Interface Mockup`}
+                  fill
+                  className="object-cover object-left transition-transform duration-1000 hover:scale-[1.03]"
+                />
               </div>
 
             </motion.div>

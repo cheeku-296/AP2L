@@ -25,7 +25,7 @@ const metrics = [
     id: "uptime",
     value: "99.99%",
     label: "System Uptime",
-    description: "Enterprise-grade resilience engineered for your mission-critical applications.",
+    description: "Enterprise-grade resilience engineered for your mission-critical application",
   }
 ];
 
@@ -51,10 +51,10 @@ const itemVariants: Variants = {
 
 export default function ROIMetrics() {
   return (
-    <section className="relative w-full py-12 md:py-14 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+    <section className="relative w-full py-12 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         {/* Header section */}
-        <div className="mb-8 max-w-3xl mr-auto">
+        <div className="mb-10 max-w-3xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ export default function ROIMetrics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="mt-6 font-inter text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
+            className="mt-6 font-manrope text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
           >
             Our ecosystem is designed not just to add tools, but to mathematically improve your engineering efficiency and bottom line.
           </motion.p>
@@ -90,7 +90,7 @@ export default function ROIMetrics() {
               className="relative flex flex-col items-center text-center p-4 transition-all duration-300 hover:-translate-y-1 group"
             >
               {/* Massive Number */}
-              <h3 className="mb-2 font-urbanist text-5xl md:text-6xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-violet-600 to-fuchsia-600 group-hover:from-violet-500 group-hover:to-fuchsia-500 transition-all duration-500">
+              <h3 className="mb-2 font-urbanist text-5xl md:text-6xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-violet-600 group-hover:from-white group-hover:to-violet-500 transition-all duration-500">
                 {metric.value}
               </h3>
 
@@ -100,7 +100,7 @@ export default function ROIMetrics() {
               </p>
 
               {/* Description */}
-              <p className="font-inter text-sm md:text-[15px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">
+              <p className="font-manrope text-sm md:text-[15px] text-slate-500 dark:text-slate-400 leading-relaxed max-w-[200px]">
                 {metric.description}
               </p>
             </motion.div>

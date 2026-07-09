@@ -31,11 +31,11 @@ export default function Home() {
   // Helper to wrap a component and force its theme using Tailwind's .dark class structure
   const renderWithTheme = (id: string, Component: React.ReactNode) => {
     const theme = componentThemes[id] || "global";
-    
+
     if (theme === "global") {
       return Component;
     }
-    
+
     if (theme === "dark") {
       // Force dark mode context
       return (
@@ -44,12 +44,12 @@ export default function Home() {
         </div>
       );
     }
-    
+
     if (theme === "light") {
       // Force light mode context using our updated globals.css selector
       return (
         <div className="light">
-           {Component}
+          {Component}
         </div>
       );
     }
@@ -57,26 +57,26 @@ export default function Home() {
 
   return (
     <div className="bg-slate-50 dark:bg-slate-50 min-h-screen flex flex-col transition-colors duration-500">
-      
+
       {/* Floating Theme Configurator */}
       <ThemeBuilder components={COMPONENTS} />
 
       <main className="flex-1 w-full flex flex-col relative z-0">
-        {renderWithTheme("hero", 
+        {renderWithTheme("hero",
           <div className="lg:p-2">
             <Hero />
           </div>
         )}
-        
+
         {renderWithTheme("partners", <TrustedPartners />)}
-        {renderWithTheme("solutions", <KeySolutions />)}
-        {renderWithTheme("platform", <PlatformOverview />)}
         {renderWithTheme("features", <CoreFeatures />)}
+        {renderWithTheme("platform", <PlatformOverview />)}
+        {renderWithTheme("solutions", <KeySolutions />)}
         {renderWithTheme("roi", <ROIMetrics />)}
         {renderWithTheme("testimonials", <Testimonials />)}
-        
-        {renderWithTheme("cta", 
-          <CTA 
+
+        {renderWithTheme("cta",
+          <CTA
             headline="Transform your infrastructure starting today."
             description="Join hundreds of engineering teams using our AI-driven platforms to automate testing, secure their supply chain, and guarantee uptime."
           />

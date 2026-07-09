@@ -9,6 +9,7 @@ import {
   Combine, 
   Zap 
 } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -66,33 +67,47 @@ const itemVariants: Variants = {
 
 export default function CoreFeatures() {
   return (
-    <section className="relative w-full py-16 md:py-20 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       
       {/* Background Accent */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 w-[400px] h-[400px] rounded-full bg-violet-500/5 dark:bg-violet-500/10 blur-[100px] pointer-events-none" />
       
-      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header section */}
-        <div className="mb-16 max-w-3xl mr-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-urbanist text-4xl font-medium tracking-tight text-slate-900 dark:text-white md:text-5xl"
-          >
-            Core Features & Benefits
-          </motion.h2>
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
+            >
+              Core Features & Benefits
+            </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link href="/products" className="inline-flex items-center justify-center px-6 py-3 rounded-[32px] bg-[#252134] dark:bg-white text-white dark:text-[#252134] font-medium text-sm hover:opacity-90 transition-opacity">
+                Explore now
+              </Link>
+            </motion.div>
+          </div>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="mt-6 font-inter text-lg text-slate-600 dark:text-slate-400 leading-relaxed"
-          >
-            Everything you need to build, secure, and scale high-performance infrastructure with absolute confidence.
-          </motion.p>
+          <div className="md:pt-2">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+            >
+              Everything you need to build, secure, and scale high-performance infrastructure with absolute confidence.
+            </motion.p>
+          </div>
         </div>
 
         {/* Features Grid */}
@@ -109,22 +124,26 @@ export default function CoreFeatures() {
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
-                className="group relative flex flex-col p-8 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm dark:shadow-none transition-all duration-300 hover:shadow-md hover:-translate-y-1 hover:border-violet-200 dark:hover:border-violet-900/50"
+                className="group relative flex flex-col p-8 rounded-[24px] border border-slate-200/80 bg-white overflow-hidden transition-all duration-500"
               >
+                {/* Purple Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/10 blur-[50px] rounded-full transition-colors duration-700" />
+                
                 {/* Icon Container */}
-                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-md bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors duration-300 group-hover:bg-violet-50 dark:group-hover:bg-violet-900/20 group-hover:text-violet-600 dark:group-hover:text-violet-400">
-                  <Icon size={24} strokeWidth={1.5} />
+                <div className="relative mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50/80 border border-violet-100 text-violet-600 transition-all duration-500">
+                  <Icon size={26} strokeWidth={1.5} />
                 </div>
                 
                 {/* Content */}
-                <h3 className="mb-3 font-urbanist text-xl font-bold tracking-tight text-slate-900 dark:text-white transition-colors group-hover:text-violet-600 dark:group-hover:text-violet-400">
-                  {feature.title}
-                </h3>
-                
-                <p className="font-inter text-sm md:text-[15px] text-slate-600 dark:text-slate-400 leading-relaxed">
-                  {feature.description}
-                </p>
-                
+                <div className="relative z-10">
+                  <h3 className="mb-4 font-urbanist text-[22px] font-bold tracking-tight text-slate-900 transition-colors">
+                    {feature.title}
+                  </h3>
+                  
+                  <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

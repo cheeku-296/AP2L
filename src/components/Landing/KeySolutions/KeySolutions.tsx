@@ -7,10 +7,10 @@ import {
   ShieldCheck, 
   Headset, 
   LineChart,
+  Cloud,
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const solutions = [
   {
@@ -20,8 +20,6 @@ const solutions = [
     icon: Bot,
     description: "Accelerate your testing lifecycle, improve requirement coverage, and deploy with absolute confidence using AI-driven automation.",
     href: "/solutions/qa-teams",
-    imageLight: "/images/solutions/qa-teams-light.png",
-    imageDark: "/images/solutions/qa-teams-dark.png",
   },
   {
     id: "devops",
@@ -30,8 +28,6 @@ const solutions = [
     icon: GitMerge,
     description: "Seamlessly integrate security and observability directly into your CI/CD pipelines for unbreakable, high-velocity deployments.",
     href: "/solutions/devops",
-    imageLight: "/images/solutions/devops-light.png",
-    imageDark: "/images/solutions/devops-dark.png",
   },
   {
     id: "security-compliance",
@@ -40,8 +36,6 @@ const solutions = [
     icon: ShieldCheck,
     description: "Ensure complete regulatory readiness and proactive vulnerability mitigation across your ecosystem with zero-trust architecture.",
     href: "/solutions/security-compliance",
-    imageLight: "/images/solutions/security-light.png",
-    imageDark: "/images/solutions/security-dark.png",
   },
   {
     id: "it-support",
@@ -50,8 +44,6 @@ const solutions = [
     icon: Headset,
     description: "Automate incident management, slash resolution times, and elevate service delivery with intelligent routing.",
     href: "/solutions/it-support",
-    imageLight: "/images/solutions/it-support-light.png",
-    imageDark: "/images/solutions/it-support-dark.png",
   },
   {
     id: "fintech",
@@ -60,57 +52,62 @@ const solutions = [
     icon: LineChart,
     description: "Detect anomalies in real-time, enforce stringent AML compliance, and protect sensitive financial data seamlessly.",
     href: "/solutions/fintech",
-    imageLight: "/images/solutions/fintech-light.png",
-    imageDark: "/images/solutions/fintech-dark.png",
+  },
+  {
+    id: "cloud-engineering",
+    shortName: "Cloud Infrastructure",
+    title: "For Cloud Teams",
+    icon: Cloud,
+    description: "Optimize cloud infrastructure, ensure high availability, and seamlessly automate scaling and resource provisioning.",
+    href: "/solutions/cloud",
   },
 ];
 
 export default function KeySolutions() {
   return (
-    <section className="relative w-full py-16 md:py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      <div className="relative mx-auto w-full px-4 sm:px-6 lg:px-8 z-10">
+    <section className="relative w-full py-12 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header section */}
-        <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-3 mb-4"
-            >
-              {/* <div className="h-px w-8 bg-violet-600" /> */}
-              {/* <span className="text-violet-600 dark:text-violet-400 font-semibold tracking-wider uppercase text-sm">
-                Solutions
-              </span> */}
-            </motion.div>
-            
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="font-urbanist text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white"
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
             >
-              Built for <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-800">High-Performance</span> Teams
+              Built for High-Performance Teams
             </motion.h2>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <Link href="/products" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#252134] dark:bg-white text-white dark:text-[#252134] font-medium text-sm hover:opacity-90 transition-opacity">
+                Explore now
+              </Link>
+            </motion.div>
           </div>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-inter text-base text-slate-600 dark:text-slate-400 max-w-md leading-relaxed md:text-right"
-          >
-            Whether securing infrastructure or automating testing, our AI-driven platforms are engineered for your challenges.
-          </motion.p>
+          <div className="md:pt-2">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+            >
+              Whether securing infrastructure or automating testing, our AI-driven platforms are engineered for your challenges.
+            </motion.p>
+          </div>
         </div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 lg:gap-5">
           {solutions.map((solution, index) => {
-            const isLarge = index === 0;
+            const isLarge = index === 0 || index === 5;
             const IconComponent = solution.icon;
             
             return (
@@ -124,49 +121,40 @@ export default function KeySolutions() {
               >
                 <Link 
                   href={solution.href}
-                  className="group relative flex flex-col justify-between overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50 transition-all hover:shadow-xl dark:hover:shadow-violet-900/20 hover:-translate-y-1 h-full min-h-[280px] p-6 lg:p-8"
+                  className={`group relative flex flex-col justify-between overflow-hidden rounded-[16px] h-full min-h-[340px] p-8 lg:p-10 transition-transform hover:-translate-y-1 border ${
+                    isLarge 
+                      ? "bg-gradient-to-br from-[#f2effb] to-[#e8e4f5] dark:from-violet-900/30 dark:to-slate-900 border-white/50 dark:border-violet-800/30 text-slate-900 dark:text-white" 
+                      : "bg-[#13111C] border-white/5 text-white shadow-xl"
+                  }`}
                 >
-                  {/* Background Pattern / Visuals */}
-                  <div className="absolute inset-0 z-0 overflow-hidden rounded-xl">
-                    <Image 
-                      src={solution.imageLight} 
-                      alt="" 
-                      fill 
-                      className="object-cover opacity-15 group-hover:opacity-15 dark:hidden transition-opacity duration-500 scale-105 group-hover:scale-100" 
-                    />
-                    <Image 
-                      src={solution.imageDark} 
-                      alt="" 
-                      fill 
-                      className="object-cover opacity-25 group-hover:opacity-40 hidden dark:block transition-opacity duration-500 scale-105 group-hover:scale-100" 
-                    />
-                    <div className={`absolute inset-0 bg-gradient-to-br ${
-                      isLarge 
-                        ? 'from-violet-500/5 via-transparent to-fuchsia-500/5' 
-                        : 'from-slate-100/50 via-transparent to-transparent dark:from-slate-800/30 dark:via-transparent dark:to-transparent'
-                    }`} />
-                  </div>
+                  {/* Purple Light Rays */}
+                  {!isLarge && (
+                    <div className="absolute -top-16 -right-16 w-56 h-56 bg-violet-600/30 rounded-full blur-[80px] pointer-events-none group-hover:bg-violet-500/40 transition-colors duration-700" />
+                  )}
+                  {isLarge && (
+                    <div className="absolute -top-20 -right-20 w-80 h-80 bg-violet-600/40 dark:bg-violet-500/30 rounded-full blur-[100px] pointer-events-none group-hover:bg-violet-700/50 transition-colors duration-700" />
+                  )}
 
-                  {/* Top: Icon & Arrow */}
-                  <div className="relative z-10 flex justify-between items-start mb-8">
-                    <span className="inline-flex items-center justify-center p-3 lg:p-4 bg-violet-50 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-lg group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent size={24} strokeWidth={1.5} />
-                    </span>
-                    <ArrowRight className="text-slate-300 dark:text-slate-600 group-hover:text-violet-500 dark:group-hover:text-violet-400 group-hover:-rotate-45 transition-all duration-300" />
+                  {/* Top: Title */}
+                  <div className="relative z-10 max-w-[85%]">
+                    <h3 className={`text-2xl lg:text-[28px] font-medium font-urbanist tracking-tight mb-3 ${!isLarge && "leading-snug pr-4"}`}>
+                      {solution.title}
+                    </h3>
                   </div>
                   
                   {/* Bottom: Text Content */}
                   <div className="relative z-10 mt-auto">
-                    <div className="text-xs font-bold tracking-widest text-violet-600 dark:text-violet-400 uppercase mb-2 lg:mb-3">
-                      {solution.shortName}
-                    </div>
-                    <h3 className="text-2xl lg:text-3xl font-bold font-urbanist text-slate-900 dark:text-white mb-2 lg:mb-3 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                      {solution.title}
-                    </h3>
-                    <p className={`text-slate-600 dark:text-slate-400 font-inter text-sm leading-relaxed ${isLarge ? 'max-w-xl' : ''}`}>
+                    <p className={`font-manrope text-[15px] leading-relaxed ${isLarge ? 'text-slate-700 dark:text-slate-300 max-w-[280px]' : 'text-slate-300'}`}>
                       {solution.description}
                     </p>
                   </div>
+                  
+                  {/* Background Icon for Large Cards */}
+                  {isLarge && (
+                    <div className="absolute right-0 bottom-0 top-0 w-1/2 overflow-hidden flex items-center justify-end pr-4 pointer-events-none transition-transform duration-700 group-hover:scale-105">
+                      <IconComponent size={240} strokeWidth={0.5} className="text-violet-600/10 dark:text-violet-400/10 translate-x-12 translate-y-12" />
+                    </div>
+                  )}
                 </Link>
               </motion.div>
             );
