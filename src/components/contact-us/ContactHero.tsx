@@ -19,7 +19,7 @@ export default function ContactHero() {
   return (
     <section
       ref={containerRef}
-      className="bg-slate-50 relative w-full h-[80vh] md:h-[calc(100vh-24px)] min-h-[500px] md:min-h-[600px] rounded-none md:rounded-[16px] overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
+      className="bg-slate-50 relative w-full h-[80vh] md:min-h-screen min-h-[500px] md:min-h-[600px] rounded-none md: overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
     >
       {/* Background Image */}
 
@@ -52,7 +52,7 @@ export default function ContactHero() {
 
       {/* Glow */}
 
-      <div className="absolute left-1/2 top-32 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[140px]" />
+      <div className="absolute left-1/2 to2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[140px]" />
 
       {/* Content */}
 
@@ -207,7 +207,7 @@ Helping businesses accelerate digital transformation through AI, cloud, and cybe
           transition={{
             delay: .5,
           }}
-          className="mt-16 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400"
+          className="mt-16 flex items-center ga text-sm text-slate-500 dark:text-slate-400"
         >
           {/* <span>Trusted Enterprise Technology Partner</span> */}
 

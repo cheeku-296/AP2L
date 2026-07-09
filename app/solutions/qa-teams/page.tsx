@@ -57,7 +57,7 @@ export default function QAPage() {
       <main className="flex-1 w-full flex flex-col relative z-0">
         
         {/* 1. Hero Section */}
-        <div className="lg:p-2 bg-white">
+        <div className="">
           <div className="dark">
             <QAHero />
           </div>

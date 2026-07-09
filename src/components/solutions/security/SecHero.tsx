@@ -19,7 +19,7 @@ export default function SecHero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex h-[calc(100vh-24px)] min-h-[720px] w-full flex-col items-center justify-start overflow-hidden rounded-[16px] pt-[120px] text-center"
+      className="relative flex min-h-screen min-h-[720px] w-full flex-col items-center justify-start overflow-hidden  pt-[120px] text-center"
     >
       {/* Background */}
 
@@ -136,7 +136,7 @@ export default function SecHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500 dark:text-slate-400"
+          className="mt-16 flex flex-wrap items-center justify-center ga text-sm text-slate-500 dark:text-slate-400"
         >
           <span>Cybersecurity</span>
 

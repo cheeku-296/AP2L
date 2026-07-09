@@ -49,7 +49,7 @@ export default function BlogsPage() {
       
       <main className="flex-1 w-full flex flex-col relative z-0">
         {renderWithTheme("blog_hero", 
-          <div className="lg:p-2">
+          <div className="">
             <BlogHero />
           </div>
         )}

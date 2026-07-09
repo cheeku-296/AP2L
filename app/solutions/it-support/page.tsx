@@ -36,7 +36,7 @@ export default function ITSupportPage() {
       <ThemeBuilder components={COMPONENTS} />
 
       <main className="flex-1 w-full flex flex-col relative z-0">
-        <div className="lg:p-2 bg-white">
+        <div className="">
           <div className="dark">
             <ITHero />
           </div>

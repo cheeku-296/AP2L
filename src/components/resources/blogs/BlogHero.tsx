@@ -19,7 +19,7 @@ export default function BlogHero() {
   return (
     <section
       ref={containerRef}
-      className="bg-slate-50 relative w-full h-[80vh] md:h-[calc(100vh-24px)] min-h-[500px] md:min-h-[600px] rounded-none md:rounded-[16px] overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
+      className="bg-slate-50 relative w-full h-[80vh] md:min-h-screen min-h-[500px] md:min-h-[600px] rounded-none md: overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
     >
       {/* Background */}
 
@@ -199,7 +199,7 @@ export default function BlogHero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400"
+          className="mt-16 flex items-center ga text-sm text-slate-500 dark:text-slate-400"
         >
           <span>AI</span>
 

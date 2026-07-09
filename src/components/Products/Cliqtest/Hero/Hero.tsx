@@ -9,7 +9,7 @@ export default function CliqtestHero() {
 
   return (
     <div className="lg:p-2">
-      <section className="relative w-full min-h-screen md:min-h-[calc(100vh-16px)] rounded-none md:rounded-[16px] flex items-center overflow-hidden bg-black pt-24 pb-12">
+      <section className="relative w-full min-h-screen md:min-min-h-screen rounded-none md: flex items-center overflow-hidden bg-black pt-24 pb-12">
         
         <ParallaxBackground>
           <Image

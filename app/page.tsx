@@ -63,7 +63,7 @@ export default function Home() {
 
       <main className="flex-1 w-full flex flex-col relative z-0">
         {renderWithTheme("hero",
-          <div className="lg:p-2">
+          <div className="">
             <Hero />
           </div>
         )}

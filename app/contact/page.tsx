@@ -51,7 +51,7 @@ export default function ContactPage() {
       
       <main className="flex-1 w-full flex flex-col relative z-0">
         {renderWithTheme("contact_hero", 
-          <div className="lg:p-2">
+          <div className="">
             <ContactHero />
           </div>
         )}
