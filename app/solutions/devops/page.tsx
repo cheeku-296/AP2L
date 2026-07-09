@@ -11,7 +11,7 @@ import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";
 
 const COMPONENTS = [
-  { id: "devops_hero", label: "DevOps Hero" },
+
   { id: "devops_challenges", label: "The Problems" },
   { id: "devops_capabilities", label: "Our Capabilities" },
   { id: "devops_workflow", label: "How We Solve" },
@@ -37,12 +37,11 @@ export default function DevOpsPage() {
 
       <main className="flex-1 w-full flex flex-col relative z-0">
         {/* 1. Hero Section */}
-        {renderWithTheme(
-          "devops_hero",
-          <div className="lg:p-2">
+        <div className="lg:p-2 bg-white">
+          <div className="dark">
             <DevHero />
           </div>
-        )}
+        </div>
 
         {/* 2. The Problems */}
         {renderWithTheme("devops_challenges", <DevChallenges />)}

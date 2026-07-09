@@ -14,10 +14,10 @@ export default function Integrations() {
     <section className="py-24 bg-slate-50 text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-left max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-space-grotesk text-slate-900">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
             Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">Ecosystem Integration</span>
           </h2>
-          <p className="text-slate-600 font-inter">
+          <p className="text-slate-600 font-manrope">
             Seamlessly connect cliQTest with your existing toolchain.
           </p>
         </div>
@@ -32,7 +32,7 @@ export default function Integrations() {
               transition={{ delay: index * 0.1 }}
               className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
             >
-              <h3 className="text-[#a855f7] font-semibold font-space-grotesk mb-4 text-lg">
+              <h3 className="text-[#a855f7] font-semibold mb-4 text-lg">
                 {group.category}
               </h3>
               <div className="flex flex-wrap gap-2">

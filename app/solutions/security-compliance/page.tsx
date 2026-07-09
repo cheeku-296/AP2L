@@ -11,7 +11,7 @@ import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";
 
 const COMPONENTS = [
-  { id: "security_hero", label: "Security Hero" },
+
   { id: "security_challenges", label: "The Challenges" },
   { id: "security_capabilities", label: "Our Capabilities" },
   { id: "security_workflow", label: "How We Solve" },
@@ -36,12 +36,11 @@ export default function SecurityPage() {
       <ThemeBuilder components={COMPONENTS} />
 
       <main className="flex-1 w-full flex flex-col relative z-0">
-        {renderWithTheme(
-          "security_hero",
-          <div className="lg:p-2">
+        <div className="lg:p-2 bg-white">
+          <div className="dark">
             <SecHero />
           </div>
-        )}
+        </div>
 
         {renderWithTheme("security_challenges", <SecChallenges />)}
         {renderWithTheme("security_capabilities", <SecCapabilities />)}

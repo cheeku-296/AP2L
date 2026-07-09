@@ -36,6 +36,36 @@ const defaultThemes: ComponentThemes = {
   google_map: "light",
   faq: "light",
   contact_cta: "light",
+  // QA Page
+  qa_challenges: "light",
+  qa_capabilities: "light",
+  qa_workflow: "dark",
+  qa_benefits: "light",
+  qa_metrics: "light",
+  qa_industries: "light",
+  qa_technologies: "light",
+  qa_faq: "light",
+
+  // DevOps Page
+  devops_challenges: "light",
+  devops_capabilities: "light",
+  devops_workflow: "dark",
+  devops_metrics: "light",
+  devops_technologies: "light",
+
+  // IT Support Page
+  it_challenges: "light",
+  it_capabilities: "light",
+  it_workflow: "light",
+  it_metrics: "light",
+  it_technologies: "light",
+
+  // Security Compliance Page
+  security_challenges: "light",
+  security_capabilities: "light",
+  security_workflow: "dark",
+  security_metrics: "light",
+  security_technologies: "light",
 };
 
 export function ThemeConfigProvider({ children }: { children: React.ReactNode }) {

@@ -11,7 +11,7 @@ import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";
 
 const COMPONENTS = [
-  { id: "it_hero", label: "IT Hero" },
+
   { id: "it_challenges", label: "The Challenges" },
   { id: "it_capabilities", label: "Our Capabilities" },
   { id: "it_workflow", label: "How We Solve" },
@@ -36,12 +36,11 @@ export default function ITSupportPage() {
       <ThemeBuilder components={COMPONENTS} />
 
       <main className="flex-1 w-full flex flex-col relative z-0">
-        {renderWithTheme(
-          "it_hero",
-          <div className="lg:p-2">
+        <div className="lg:p-2 bg-white">
+          <div className="dark">
             <ITHero />
           </div>
-        )}
+        </div>
 
         {renderWithTheme("it_challenges", <ITChallenges />)}
         {renderWithTheme("it_capabilities", <ITCapabilities />)}

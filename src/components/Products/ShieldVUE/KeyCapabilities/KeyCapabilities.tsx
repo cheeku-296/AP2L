@@ -24,10 +24,10 @@ export default function KeyCapabilities() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-5xl font-semibold mb-6 font-['Clash_Grotesk'] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-semibold mb-6 leading-tight">
               Powerful Capabilities for <span className="text-violet-400">Total Security</span>
             </h2>
-            <p className="text-lg text-slate-400 font-inter leading-relaxed mb-8">
+            <p className="text-lg text-slate-400 font-manrope leading-relaxed mb-8">
               A comprehensive suite of tools designed to discover, track, and remediate vulnerabilities across your entire software supply chain.
             </p>
           </div>

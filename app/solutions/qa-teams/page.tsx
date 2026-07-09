@@ -14,7 +14,7 @@ import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";
 
 const COMPONENTS = [
-  { id: "qa_hero", label: "QA Hero" },
+
   { id: "qa_challenges", label: "The Problems" },
   { id: "qa_capabilities", label: "Our Capabilities" },
   { id: "qa_workflow", label: "How We Solve" },
@@ -57,12 +57,11 @@ export default function QAPage() {
       <main className="flex-1 w-full flex flex-col relative z-0">
         
         {/* 1. Hero Section */}
-        {renderWithTheme(
-          "qa_hero",
-          <div className="lg:p-2">
+        <div className="lg:p-2 bg-white">
+          <div className="dark">
             <QAHero />
           </div>
-        )}
+        </div>
 
         {/* 2. These are the problems */}
         {renderWithTheme("qa_challenges", <QAChallenges />)}

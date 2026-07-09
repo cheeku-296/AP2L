@@ -38,10 +38,10 @@ export default function KeyCapabilities() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-left max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-space-grotesk">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Intelligence built into <span className="text-[#a855f7]">every layer</span>
           </h2>
-          <p className="text-lg text-slate-600 font-space-grotesk leading-relaxed">
+          <p className="text-lg text-slate-600 font-manrope leading-relaxed">
             Capabilities designed to empower your QA teams and accelerate your release cycles.
           </p>
         </div>
@@ -58,9 +58,9 @@ export default function KeyCapabilities() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle2 className="text-[#a855f7]" size={24} />
-                <h3 className="font-semibold text-lg font-space-grotesk text-slate-900">{cap.title}</h3>
+                <h3 className="font-semibold text-lg text-slate-900">{cap.title}</h3>
               </div>
-              <p className="text-slate-600 font-inter text-sm leading-relaxed">
+              <p className="text-slate-600 font-manrope text-sm leading-relaxed">
                 {cap.description}
               </p>
             </motion.div>

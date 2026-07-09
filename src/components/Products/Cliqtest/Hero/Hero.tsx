@@ -28,20 +28,20 @@ export default function CliqtestHero() {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-start justify-center">
           
           <div className="max-w-2xl">
-            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.15] tracking-[-0.02em] font-space-grotesk text-white">
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.15] tracking-[-0.02em] text-white">
               {titleLine1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">{titleHighlight}</span> <br />
               {titleLine2}
             </h1>
             
-            <p className="text-base md:text-lg text-white/70 mb-10 max-w-xl font-space-grotesk leading-relaxed">
+            <p className="text-base md:text-lg text-white/70 mb-10 max-w-xl font-manrope leading-relaxed">
               {description}
             </p>
             
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href={buttonLink}
-                className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#6843b7] px-6 py-3 text-sm font-semibold font-space-grotesk text-white shadow-lg shadow-[#6843b7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
+                className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#6843b7] px-6 py-3 text-sm font-semibold font-manrope text-white shadow-lg shadow-[#6843b7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
               >
                 {buttonText}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />

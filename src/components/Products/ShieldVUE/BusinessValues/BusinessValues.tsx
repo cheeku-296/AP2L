@@ -36,10 +36,10 @@ export default function BusinessValues() {
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-left max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-6 font-['Clash_Grotesk']">
+          <h2 className="text-3xl md:text-5xl font-semibold text-slate-900 mb-6">
             Why Choose ShieldVUE?
           </h2>
-          <p className="text-lg text-slate-600 font-inter leading-relaxed">
+          <p className="text-lg text-slate-600 font-manrope leading-relaxed">
             Protect your software supply chain with intelligent insights and automated governance.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function BusinessValues() {
                 <div className="h-12 w-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
                   <Icon size={24} />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3 font-['Clash_Grotesk']">{value.title}</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
                 <p className="text-slate-600 leading-relaxed text-[15px]">{value.description}</p>
               </motion.div>
             );

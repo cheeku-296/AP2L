@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function ShieldVUEPage() {
   return (
-    <main className="font-['Clash_Grotesk'] min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
       <ShieldVUEHero />
       <BusinessValues />
       <KeyCapabilities />

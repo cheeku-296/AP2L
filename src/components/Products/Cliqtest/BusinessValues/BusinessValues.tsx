@@ -30,10 +30,10 @@ export default function BusinessValues() {
     <section className="py-24 bg-white text-slate-900 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-left max-w-3xl mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-space-grotesk text-slate-900">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
             Unmatched <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">Testing Velocity</span>
           </h2>
-          <p className="text-lg text-slate-600 font-space-grotesk leading-relaxed">
+          <p className="text-lg text-slate-600 font-manrope leading-relaxed">
             Experience exponential improvements in quality, speed, and reliability.
           </p>
         </div>
@@ -48,11 +48,11 @@ export default function BusinessValues() {
               transition={{ delay: index * 0.1 }}
               className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-[#6843b7]/50 transition-colors group shadow-sm"
             >
-              <div className="text-5xl font-bold font-space-grotesk text-slate-900 mb-4 group-hover:text-[#9e7be9] transition-colors">
+              <div className="text-5xl font-bold font-urbanist text-slate-900 mb-4 group-hover:text-[#9e7be9] transition-colors">
                 {metric.stat}
               </div>
-              <h3 className="text-xl font-semibold mb-3 font-space-grotesk text-slate-800">{metric.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-inter">
+              <h3 className="text-xl font-semibold mb-3 text-slate-800">{metric.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed font-manrope">
                 {metric.description}
               </p>
             </motion.div>

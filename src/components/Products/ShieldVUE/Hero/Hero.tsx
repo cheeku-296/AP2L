@@ -23,12 +23,12 @@ export default function ShieldVUEHero() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-start justify-center">
           <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-[-0.02em] text-slate-900 font-['Clash_Grotesk']">
+            <h1 className="mb-6 text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] tracking-[-0.02em] text-slate-900">
               <span className="md:whitespace-nowrap">{titleLine1}</span> <br />
-              <span className="text-[#6843b7] font-medium md:whitespace-nowrap">{titleHighlight}</span>
+              <span className="text-[#6843b7] font-semibold md:whitespace-nowrap">{titleHighlight}</span>
             </h1>
             
-            <p className="font-inter text-base md:text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed">
+            <p className="font-manrope text-base md:text-lg text-slate-600 mb-10 max-w-2xl leading-relaxed">
               {description}
             </p>
             
