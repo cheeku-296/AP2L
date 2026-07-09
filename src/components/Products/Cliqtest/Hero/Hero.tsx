@@ -8,8 +8,7 @@ export default function CliqtestHero() {
   const { backgroundImage, titleLine1, titleHighlight, titleLine2, description, buttonText, buttonLink } = cliqtestHeroData;
 
   return (
-    <div className="lg:p-2">
-      <section className="relative w-full min-h-screen md:min-min-h-screen rounded-none md: flex items-center overflow-hidden bg-black pt-24 pb-12">
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-black pt-24 pb-12">
         
         <ParallaxBackground>
           <Image
@@ -51,6 +50,5 @@ export default function CliqtestHero() {
           
         </div>
       </section>
-    </div>
   );
 }

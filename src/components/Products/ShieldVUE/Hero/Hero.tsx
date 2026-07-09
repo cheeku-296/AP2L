@@ -8,8 +8,7 @@ export default function ShieldVUEHero() {
   const { backgroundImage, titleLine1, titleHighlight, description, buttonText, buttonLink } = shieldvueHeroData;
 
   return (
-    <div className="lg:p-2">
-      <section className="relative w-full min-h-screen md:min-min-h-screen rounded-none md: flex items-center overflow-hidden pt-24 pb-12 bg-slate-50">
+    <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-24 pb-12 bg-slate-50">
         
         <ParallaxBackground>
           <Image
@@ -44,6 +43,5 @@ export default function ShieldVUEHero() {
           </div>
         </div>
       </section>
-    </div>
   );
 }
