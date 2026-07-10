@@ -29,45 +29,41 @@ export default function CookieBanner() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.5, type: "spring" }}
-          className="fixed bottom-0 left-0 z-[100] w-full p-4 sm:p-6"
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "100%" }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
+          className="fixed bottom-0 left-0 z-[100] w-full border-t border-slate-900/10 bg-white/95 shadow-[0_-4px_24px_rgba(0,0,0,0.05)] backdrop-blur-md dark:border-slate-800 dark:bg-[#090a1f]/95"
         >
-          <div className="mx-auto flex max-w-4xl flex-col items-start gap-4 rounded-2xl border border-slate-900/10 bg-white/95 p-6 shadow-2xl backdrop-blur-md dark:border-white/10 dark:bg-slate-950/95 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex-1 pr-4">
-              <h3 className="mb-2 text-lg font-bold text-slate-900 dark:text-white font-urbanist">
-                We value your privacy
-              </h3>
-              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 font-manrope">
-                We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our{" "}
-                <Link href="/cookie-policy" className="text-violet-600 underline hover:text-violet-500 dark:text-violet-400">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 px-4 py-3.5 sm:flex-row sm:px-6 lg:px-8">
+            <div className="flex-1 text-center sm:text-left">
+              <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-300 font-manrope">
+                We use cookies to enhance your browsing experience and analyze our traffic. By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our{" "}
+                <Link href="/cookie-policy" className="text-violet-600 underline hover:text-violet-500 dark:text-violet-400 font-semibold">
                   Cookie Policy
-                </Link>{" "}
-                for more information.
+                </Link>.
               </p>
             </div>
 
-            <div className="flex w-full shrink-0 flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
+            <div className="flex shrink-0 items-center gap-3">
               <button
                 onClick={handleDecline}
-                className="rounded-full px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                className="rounded-full px-4 py-2 text-[13px] font-semibold text-slate-700 transition hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
               >
                 Decline
               </button>
               <button
                 onClick={handleAccept}
-                className="rounded-full bg-violet-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700 shadow-lg shadow-violet-600/20"
+                className="rounded-full bg-violet-600 px-5 py-2 text-[13px] font-semibold text-white transition hover:bg-violet-500 shadow-md shadow-violet-600/20"
               >
                 Accept All
               </button>
               <button
                 onClick={() => setIsVisible(false)}
-                className="absolute right-4 top-4 rounded-full p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300 sm:hidden"
+                className="rounded-full p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300 sm:hidden ml-2"
                 aria-label="Close"
               >
-                <X size={18} />
+                <X size={16} />
               </button>
             </div>
           </div>
