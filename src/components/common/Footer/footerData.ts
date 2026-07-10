@@ -40,10 +40,8 @@ export const footerSections: FooterSection[] = [
   {
     title: "Company",
     links: [
-      { title: "About Us", href: "/company" },
-      { title: "Pricing", href: "/pricing" },
+      { title: "About Us", href: "https://apmosys.com" },
       { title: "Contact", href: "/contact" },
-      { title: "Book Demo", href: "/contact" },
     ],
   },
 ];

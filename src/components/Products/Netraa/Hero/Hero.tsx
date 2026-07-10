@@ -27,14 +27,14 @@ export default function NetraaHero() {
           alt="Netraa Platform"
           fill
           priority
-          className="object-cover object-center transition-opacity duration-500 opacity-100 scale-100 blur-[1px]"
+          className="object-cover object-center transition-opacity duration-500 opacity-100 scale-100 blur-[0px]"
         />
         {/* <div className="absolute inset-0 bg-gradient-to-b pointer-events-none transition-colors duration-500 from-[#1A1736]/95 via-[#1A1736]/80 to-[#1A1736]/60" /> */}
       </ParallaxBackground>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-center justify-center text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-20 flex flex-col items-start justify-center">
         
-        <div className="max-w-4xl flex flex-col items-center">
+        <div className="max-w-3xl flex flex-col items-start">
           <span className="uppercase tracking-[0.2em] text-xs font-bold text-[#8C8CA1] mb-8 font-inter">
             {eyebrow}
           </span>

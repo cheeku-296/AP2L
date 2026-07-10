@@ -271,91 +271,15 @@ function Dropdown({
             transition={{
               duration: 0.22,
             }}
-            className={`absolute z-50 ${
-              pathname === "/products/shieldvue" 
-                ? "left-0 top-[68px] w-[260px]" 
-                : pathname === "/products/cliqtest"
-                ? "left-1/2 top-[68px] w-[700px] -translate-x-1/2"
-                : "left-1/2 top-[68px] w-[640px] -translate-x-1/2"
-            }`}
+            className="absolute z-50 left-1/2 top-[68px] w-[640px] -translate-x-1/2"
           >
-            <div
-              className={
-                pathname === "/products/shieldvue"
-                  ? "overflow-hidden rounded-md border border-slate-900/10 bg-white shadow-lg"
-                  : pathname === "/products/cliqtest"
-                  ? "overflow-hidden rounded-md border border-white/10 bg-[#0a0a0a] shadow-2xl"
-                  : "overflow-hidden rounded-[24px] border border-slate-900/10 dark:border-slate-800 bg-white/95 dark:bg-[#0c0f1a]/95 backdrop-blur-2xl shadow-2xl"
-              }
-            >
+            <div className="overflow-hidden rounded-[24px] border border-slate-900/10 dark:border-slate-800 bg-white/95 dark:bg-[#0c0f1a]/95 backdrop-blur-2xl shadow-2xl">
               {/* Top Glow */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
 
-              {pathname !== "/products/shieldvue" && pathname !== "/products/cliqtest" && (
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-              )}
-
-              <div className={
-                pathname === "/products/shieldvue" 
-                  ? "flex flex-col py-2" 
-                  : pathname === "/products/cliqtest"
-                  ? "grid grid-cols-3 gap-x-6 gap-y-8 p-8"
-                  : "grid grid-cols-2 gap-x-8 gap-y-8 p-8"
-              }>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-8 p-8">
                 {items.map((item, index) => {
                   const isActive = pathname === item.href;
-
-                  if (pathname === "/products/shieldvue") {
-                    return (
-                      <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, x: -8 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.03 }}
-                      >
-                        <Link
-                          href={item.href}
-                          className={`block px-6 py-3 text-[14px] transition-colors hover:bg-slate-50 ${
-                            isActive
-                              ? "text-violet-600 font-bold bg-violet-50/50"
-                              : "font-medium text-slate-700 hover:text-violet-600"
-                          }`}
-                        >
-                          {item.title}
-                        </Link>
-                      </motion.div>
-                    );
-                  }
-
-                  if (pathname === "/products/cliqtest") {
-                    return (
-                      <motion.div
-                        key={item.title}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.03 }}
-                      >
-                        <Link
-                          href={item.href}
-                          className="group/cliq block"
-                        >
-                          <h4 className={`text-[14px] mb-1.5 transition-colors group-hover/cliq:text-[#c084fc] ${
-                            isActive
-                              ? "text-[#c084fc] font-bold"
-                              : "font-semibold text-[#a855f7]"
-                          }`}>
-                            {item.title}
-                          </h4>
-                          {item.description && (
-                            <p className={`text-[13px] leading-relaxed transition-colors group-hover/cliq:text-gray-300 ${
-                              isActive ? "text-gray-300" : "text-gray-400"
-                            }`}>
-                              {item.description}
-                            </p>
-                          )}
-                        </Link>
-                      </motion.div>
-                    );
-                  }
 
                   return (
                     <motion.div

@@ -32,7 +32,7 @@ const capabilities = [
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-white text-slate-900 relative overflow-hidden">
+    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843b7]/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#9e7be9]/10 rounded-full blur-[150px] pointer-events-none" />
 
@@ -45,8 +45,8 @@ export default function KeyCapabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-black mb-6">
-                Intelligence built into <span className="text-[#000000]">every layer</span>
+              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
+                Intelligence built into <span className="text-white">every layer</span>
               </h2>
             </motion.div>
           </div>
@@ -58,7 +58,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-600 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
                 Capabilities designed to empower your QA teams and accelerate your release cycles.
               </p>
             </motion.div>
@@ -73,13 +73,13 @@ export default function KeyCapabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-slate-200 rounded-xl p-6 hover:bg-slate-50 hover:border-[#6843b7]/30 hover:shadow-md transition-all duration-300"
+              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843b7]/50 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle2 className="text-[#a855f7]" size={24} />
-                <h3 className="font-semibold text-lg text-slate-900">{cap.title}</h3>
+                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
-              <p className="text-slate-600 font-manrope text-sm leading-relaxed">
+              <p className="text-slate-400 font-manrope text-sm leading-relaxed">
                 {cap.description}
               </p>
             </motion.div>

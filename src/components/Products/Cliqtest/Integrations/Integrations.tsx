@@ -3,10 +3,26 @@
 import { motion } from "framer-motion";
 
 const integrations = [
-  { category: "Observability", tools: ["Dynatrace", "Splunk", "Netraa"] },
-  { category: "Collaboration", tools: ["Teams", "Slack"] },
-  { category: "Project Management", tools: ["Jira", "Azure DevOps", "ServiceNow"] },
-  { category: "CI/CD", tools: ["Jenkins", "GitHub", "GitLab"] },
+  { 
+    category: "Observability", 
+    description: "Gain deep insights into system performance and detect anomalies instantly. Monitor application health in real-time.", 
+    tools: ["Dynatrace", "Splunk", "Netraa"] 
+  },
+  { 
+    category: "Collaboration", 
+    description: "Streamline communication across your QA and dev teams. Share test results and incident reports seamlessly.", 
+    tools: ["Teams", "Slack"] 
+  },
+  { 
+    category: "Project Management", 
+    description: "Track bugs, link defects to test cases, and manage agile workflows. Keep your entire team aligned on delivery goals.", 
+    tools: ["Jira", "Azure DevOps", "ServiceNow"] 
+  },
+  { 
+    category: "CI/CD", 
+    description: "Automate test execution within your deployment pipelines. Ensure confident, high-quality releases with every commit.", 
+    tools: ["Jenkins", "GitHub", "GitLab"] 
+  },
 ];
 
 export default function Integrations() {
@@ -21,8 +37,8 @@ export default function Integrations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-black mb-6">
-                Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#000000]">Ecosystem Integration</span>
+              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-800 mb-6">
+                Enterprise <span className="text-slate-800">Ecosystem Integration</span>
               </h2>
             </motion.div>
           </div>
@@ -51,9 +67,12 @@ export default function Integrations() {
               transition={{ delay: index * 0.1 }}
               className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
             >
-              <h3 className="text-[#a855f7] font-semibold mb-4 text-lg">
+              <h3 className="text-slate-800 font-semibold mb-2 text-lg">
                 {group.category}
               </h3>
+              <p className="text-slate-500 font-manrope text-sm leading-relaxed mb-4">
+                {group.description}
+              </p>
               <div className="flex flex-wrap gap-2">
                 {group.tools.map((tool) => (
                   <span
