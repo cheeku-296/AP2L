@@ -105,7 +105,7 @@ const faqData = [
   },
   {
     question: "How can I request a customized demo?",
-    answer: "You can request a demo by clicking the 'Contact' or 'Book Demo' buttons on our website. Our technical sales team will reach out to tailor the presentation to your use case."
+    answer: "You can request a demo by clicking the 'Contact' button on our website. Our technical sales team will reach out to tailor the presentation to your use case."
   }
 ];
 

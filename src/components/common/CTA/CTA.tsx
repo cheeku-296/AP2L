@@ -17,7 +17,7 @@ interface CTAProps {
 export default function CTA({
   headline = "Ready to Transform Your Infrastructure?",
   description = "Book a Personalized Demo to see how our platforms can automate your workflows, map vulnerabilities, and ensure enterprise-grade compliance.",
-  primaryButtonText = "Book Demo",
+  primaryButtonText = "Contact Us",
   primaryButtonLink = "/contact",
   secondaryButtonText = "View Docs",
   secondaryButtonLink = "/resources/documentation",

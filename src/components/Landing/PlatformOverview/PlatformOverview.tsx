@@ -88,7 +88,7 @@ export default function PlatformOverview() {
   const activeProduct = products[activeIndex] || products[0];
 
   return (
-    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section id="products" className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
 
       {/* Decorative Background Glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">

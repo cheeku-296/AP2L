@@ -153,38 +153,9 @@ Helping businesses accelerate digital transformation through AI, cloud, and cybe
           }}
           className="mt-12 flex flex-col gap-4 sm:flex-row"
         >
-          <a
-            href="#contact-form"
-            onClick={scrollToContactForm}
-            className="
-              group
-              inline-flex
-              items-center
-              justify-center
-              rounded-full
-              bg-slate-900
-              px-8
-              py-4
-              text-sm
-              font-semibold
-              text-white
-              shadow-lg
-              transition-all
-              duration-300
-              hover:scale-105
-              hover:opacity-95
-              dark:bg-white
-              dark:text-slate-900
-              cursor-pointer
-            "
-          >
-            Book a Demo
-
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </a>
 
           <Link
-            href="/products"
+            href="/#products"
             className="
               rounded-full
               border

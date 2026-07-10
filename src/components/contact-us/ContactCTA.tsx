@@ -133,47 +133,10 @@ export default function ContactCTA() {
 
             <div className="mt-12 flex flex-col gap-5 sm:flex-row">
 
-              <Link
-                href="/contact"
-                className="
-                  group
-                  inline-flex
-                  items-center
-                  justify-center
-                  rounded-full
-                  bg-gradient-to-r
-                  from-violet-600
-                  to-fuchsia-600
-                  px-8
-                  py-4
-                  text-sm
-                  font-semibold
-                  text-white
-                  shadow-lg
-                  shadow-violet-500/20
-                  transition-all
-                  duration-300
-                  hover:-translate-y-1
-                  hover:shadow-violet-500/40
-                "
-              >
-                Book A Demo
 
-                <ArrowRight
-                  className="
-                    ml-2
-                    h-5
-                    w-5
-                    transition-transform
-                    duration-300
-                    group-hover:translate-x-1
-                  "
-                />
-
-              </Link>
 
               <Link
-                href="/products"
+                href="/#products"
                 className="
                   inline-flex
                   items-center
