@@ -69,9 +69,9 @@ export default function Testimonials() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              <Link href="/case-studies" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#252134] dark:bg-white text-white dark:text-[#252134] font-medium text-sm hover:opacity-90 transition-opacity">
+              {/* <Link href="/case-studies" className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#252134] dark:bg-white text-white dark:text-[#252134] font-medium text-sm hover:opacity-90 transition-opacity">
                 Read Customer Stories
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
           

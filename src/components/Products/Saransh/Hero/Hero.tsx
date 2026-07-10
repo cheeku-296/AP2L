@@ -38,13 +38,13 @@ export default function SaranshHero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Link
-              href={buttonLink}
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
               className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#1A2FFC] px-6 py-3 text-sm font-semibold font-manrope text-white shadow-lg shadow-teal-500/25 transition-all hover:-translate-y-0.5 hover:bg-teal-400"
             >
               {buttonText}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            </button>
           </div>
         </div>
         

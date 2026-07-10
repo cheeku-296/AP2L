@@ -53,10 +53,8 @@ export default function ITSupportPage() {
           <CTA
             headline="Modernize Your IT Support with AI"
             description="Transform service delivery, automate repetitive workflows, accelerate incident resolution, and provide exceptional support experiences with AP2L's intelligent IT operations platform."
-            primaryButtonText="Book a Demo"
+            primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
-            secondaryButtonText="Explore Products"
-            secondaryButtonLink="/products"
           />
         )}
       </main>

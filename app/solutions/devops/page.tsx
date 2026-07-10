@@ -64,10 +64,8 @@ export default function DevOpsPage() {
           <CTA
             headline="Accelerate Your DevOps Journey"
             description="Build, secure, and deploy faster with intelligent CI/CD automation, cloud-native infrastructure, DevSecOps practices, and enterprise-grade deployment pipelines."
-            primaryButtonText="Book a Demo"
+            primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
-            secondaryButtonText="Explore Products"
-            secondaryButtonLink="/products"
           />
         )}
       </main>

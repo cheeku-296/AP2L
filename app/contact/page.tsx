@@ -63,10 +63,8 @@ export default function ContactPage() {
           <CTA 
             headline="Ready To Accelerate Your Digital Transformation?" 
             description="Whether you're exploring AI, Cloud Engineering, Enterprise Automation, Cybersecurity or Intelligent Software Platforms, our experts are ready to help you choose the right solution for your organization."
-            primaryButtonText="Book A Demo"
+            primaryButtonText="Contact Us"
             primaryButtonLink="/book-demo"
-            secondaryButtonText="Explore Products"
-            secondaryButtonLink="/products"
           />
         )}
       </main>

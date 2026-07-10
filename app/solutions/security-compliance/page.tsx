@@ -53,10 +53,8 @@ export default function SecurityPage() {
           <CTA
             headline="Strengthen Your Security & Compliance"
             description="Protect your applications, infrastructure, and software supply chain with AI-powered security, continuous compliance, vulnerability management, and enterprise-grade cyber resilience."
-            primaryButtonText="Book a Demo"
+            primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
-            secondaryButtonText="Explore Products"
-            secondaryButtonLink="/products"
           />
         )}
       </main>

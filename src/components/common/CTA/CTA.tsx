@@ -19,8 +19,8 @@ export default function CTA({
   description = "Book a Personalized Demo to see how our platforms can automate your workflows, map vulnerabilities, and ensure enterprise-grade compliance.",
   primaryButtonText = "Contact Us",
   primaryButtonLink = "/contact",
-  secondaryButtonText = "View Docs",
-  secondaryButtonLink = "/resources/documentation",
+  secondaryButtonText = "View Blogs",
+  secondaryButtonLink = "/resources/blog",
   forceLight = false,
 }: CTAProps) {
   return (
@@ -54,6 +54,7 @@ export default function CTA({
           </p>
 
           <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
+
             {/* Primary Button */}
             <Link
               href={primaryButtonLink}
@@ -61,6 +62,7 @@ export default function CTA({
             >
               {primaryButtonText}
             </Link>
+
 
             {/* Secondary Button */}
             <Link

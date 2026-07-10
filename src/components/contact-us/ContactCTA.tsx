@@ -123,7 +123,7 @@ export default function ContactCTA() {
               text-slate-600
               dark:text-slate-400
             ">
-              Whether you're exploring AI, Cloud Engineering,
+              Whether you&apos;re exploring AI, Cloud Engineering,
               Enterprise Automation, Cybersecurity or Intelligent
               Software Platforms, our experts are ready to help
               you choose the right solution for your organization.

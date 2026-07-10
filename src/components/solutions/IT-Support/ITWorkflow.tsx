@@ -157,7 +157,7 @@ export default function ITWorkflow() {
             href="/contact"
             className="group flex items-center gap-2 whitespace-nowrap rounded-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition-all hover:scale-105 hover:shadow-violet-500/50"
           >
-            Book a Demo
+            Contact Us
             <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
           </a>
         </motion.div> */}

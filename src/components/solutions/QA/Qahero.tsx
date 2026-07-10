@@ -111,7 +111,7 @@ export default function QAHero() {
             href="/contact"
             className="group inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3.5 md:py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 dark:bg-white dark:text-slate-900"
           >
-            Explore QA Solutions
+            Contact Us
 
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>

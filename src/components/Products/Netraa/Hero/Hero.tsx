@@ -49,18 +49,12 @@ export default function NetraaHero() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4">
-            <Link
-              href={primaryButtonLink}
+            <button
+              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
               className="group flex w-full sm:w-auto items-center justify-center rounded-sm bg-[#FF6A3D] px-8 py-3.5 text-[15px] font-semibold font-manrope text-white transition-all hover:bg-[#E85D33]"
             >
-              {primaryButtonText}
-            </Link>
-            <Link
-              href={secondaryButtonLink}
-              className="group flex w-full sm:w-auto items-center justify-center rounded-sm bg-transparent border border-white/20 px-8 py-3.5 text-[15px] font-semibold font-manrope text-white transition-all hover:bg-white/5"
-            >
-              {secondaryButtonText}
-            </Link>
+              Explore Platform
+            </button>
           </div>
         </div>
         

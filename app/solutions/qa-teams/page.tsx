@@ -85,10 +85,8 @@ export default function QAPage() {
           <CTA
             headline="Ready to Transform Your Quality Engineering?"
             description="Accelerate software quality with AI-powered testing, intelligent automation, and enterprise-grade QA solutions."
-            primaryButtonText="Book a Demo"
+            primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
-            secondaryButtonText="Explore Products"
-            secondaryButtonLink="/products"
           />
         )}
       </main>
