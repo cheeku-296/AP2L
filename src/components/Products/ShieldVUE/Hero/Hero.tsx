@@ -34,6 +34,8 @@ export default function ShieldVUEHero() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               <Link
                 href={buttonLink}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#6843b7] px-6 py-3 font-manrope text-sm font-semibold text-white shadow-lg shadow-[#6843b7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
               >
                 {buttonText}
