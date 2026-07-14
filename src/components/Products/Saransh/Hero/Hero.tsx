@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { saranshHeroData } from "./data";
 
 export default function SaranshHero() {
-  const { backgroundImage, titleLine1, titleHighlight, titleLine2, description, buttonText, buttonLink } = saranshHeroData;
+  const { backgroundImage, titleLine1, titleHighlight, titleLine2, description, buttonText } = saranshHeroData;
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-slate-900 pt-24 pb-12">

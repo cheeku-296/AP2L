@@ -10,8 +10,7 @@ import {
   Search,
   FileCheck2,
   Layers,
-  ArrowRight,
-  Sparkles
+  ArrowRight
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";

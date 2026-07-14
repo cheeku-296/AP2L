@@ -8,7 +8,7 @@ import QABenefits from "@/src/components/solutions/QA/QABenefits";
 import QAMetrics from "@/src/components/solutions/QA/QAMetrics";
 import QAIndustries from "@/src/components/solutions/QA/QAIndustries";
 import QATechnologies from "@/src/components/solutions/QA/QATechnologies";
-import QAFAQ from "@/src/components/solutions/QA/QAFAQ";
+// import QAFAQ from "@/src/components/solutions/QA/QAFAQ";
 import CTA from "@/src/components/common/CTA/CTA";
 import ThemeBuilder from "@/src/components/common/ThemeBuilder/ThemeBuilder";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";

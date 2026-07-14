@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ArrowRight, ChevronRight, ChevronDown, ArrowUpRight } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { NavigationItem } from "./types";
@@ -380,6 +380,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
       {/* Hamburger */}
       <button
         onClick={() => setOpen(true)}
+        aria-label="Open Navigation Menu"
         className={`rounded-xl border p-2 backdrop-blur lg:hidden transition-colors ${scrolled ? 'border-slate-200 bg-white shadow-sm' : 'border-slate-900/10 dark:border-slate-800 bg-slate-900/5 dark:bg-white/10'}`}
       >
         <Menu size={22} className={scrolled ? "text-slate-900" : "text-slate-900 dark:text-white"} />
@@ -425,6 +426,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
 
                 <button
                   onClick={() => setOpen(false)}
+                  aria-label="Close Navigation Menu"
                   className="rounded-lg p-2 transition hover:bg-slate-900/5 dark:hover:bg-white/10"
                 >
                   <X

@@ -8,8 +8,7 @@ import {
   Bug,
   Shield,
   Rocket,
-  ArrowRight,
-} from "lucide-react";
+  } from "lucide-react";
 
 const steps = [
   {

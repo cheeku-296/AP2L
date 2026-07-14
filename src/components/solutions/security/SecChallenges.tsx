@@ -8,8 +8,7 @@ import {
   BarChart3,
   Lock,
   Globe,
-  ArrowRight,
-} from "lucide-react";
+  } from "lucide-react";
 
 const challenges = [
   {

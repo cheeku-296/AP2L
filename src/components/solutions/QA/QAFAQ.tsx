@@ -79,7 +79,7 @@ export default function QAFAQ() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Everything you need to know about AP2L's QA and testing solutions.
+              Everything you need to know about AP2L&apos;s QA and testing solutions.
             </motion.p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function QAFAQ() {
           className="mt-12 text-center"
         >
           <p className="text-slate-600 dark:text-slate-400 mb-4">
-            Still have questions? We're here to help.
+            Still have questions? We&apos;re here to help.
           </p>
           <a
             href="/contact"

@@ -107,7 +107,7 @@ export default function DevChallenges() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              What's Slowing Your DevOps?
+              What&apos;s Slowing Your DevOps?
             </motion.h2>
           </div>
           

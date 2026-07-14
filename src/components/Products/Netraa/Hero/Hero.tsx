@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { netraaHeroData } from "./data";
@@ -11,11 +11,7 @@ export default function NetraaHero() {
     eyebrow, 
     titleLine1, 
     titleLine2, 
-    description, 
-    primaryButtonText, 
-    primaryButtonLink, 
-    secondaryButtonText, 
-    secondaryButtonLink 
+    description
   } = netraaHeroData;
 
   return (

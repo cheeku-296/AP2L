@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CTA from "@/src/components/common/CTA/CTA";
@@ -216,7 +216,7 @@ export default function BlogPost({ id }: { id: string }) {
           <div className="sticky top-32 space-y-10">
             {/* Author */}
             <div className="flex items-center gap-4 border-b border-slate-200 pb-8">
-              <img src={blogData.author.avatar} alt={blogData.author.name} className="w-14 h-14 rounded-full ring-2 ring-violet-500/20 shadow-sm" />
+              <Image src={blogData.author.avatar} alt={blogData.author.name} width={56} height={56} className="rounded-full ring-2 ring-violet-500/20 shadow-sm" unoptimized />
               <div>
                 <h4 className="font-medium text-slate-900 text-lg">{blogData.author.name}</h4>
                 <p className="text-sm text-slate-500 font-medium">{blogData.author.role}</p>

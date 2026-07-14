@@ -7,8 +7,7 @@ import {
   ShieldCheck,
   Lock,
   GitBranch,
-  ArrowRight,
-} from "lucide-react";
+  } from "lucide-react";
 
 const steps = [
   {

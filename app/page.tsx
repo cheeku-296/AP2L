@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+
 
 import Hero from "@/src/components/Landing/Hero/Hero";
 import TrustedPartners from "@/src/components/Landing/TrustedPartners/TrustedPartners";

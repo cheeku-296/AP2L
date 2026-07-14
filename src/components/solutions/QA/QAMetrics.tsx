@@ -104,7 +104,7 @@ export default function QAMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprise QA teams using AP2L's AI‑powered testing platform.
+              Real metrics from enterprise QA teams using AP2L&apos;s AI‑powered testing platform.
             </motion.p>
           </div>
         </div>

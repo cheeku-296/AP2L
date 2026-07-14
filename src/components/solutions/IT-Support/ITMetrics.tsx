@@ -100,7 +100,7 @@ export default function ITMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprises using AP2L's IT support platform.
+              Real metrics from enterprises using AP2L&apos;s IT support platform.
             </motion.p>
           </div>
         </div>

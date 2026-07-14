@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Bell, Mail, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 export default function Newsletter() {
   const [email, setEmail] = useState("");
@@ -68,6 +68,7 @@ export default function Newsletter() {
 
                   <input
                     type="email"
+                    aria-label="Email Address"
                     placeholder="Enter your business email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}

@@ -102,7 +102,7 @@ export default function DevMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprise teams using AP2L's DevOps platform.
+              Real metrics from enterprise teams using AP2L&apos;s DevOps platform.
             </motion.p>
           </div>
         </div>

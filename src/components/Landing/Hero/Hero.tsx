@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 import { heroData } from "./data";
 

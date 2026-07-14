@@ -7,8 +7,7 @@ import {
   Wrench,
   Users,
   BarChart3,
-  ArrowRight,
-  Headset, // ✅ added missing import
+    // ✅ added missing import
 } from "lucide-react";
 
 const steps = [

@@ -8,8 +8,7 @@ import {
   TrendingUp,
   Users,
   Shield,
-  AlertTriangle,
-} from "lucide-react";
+  } from "lucide-react";
 
 const challenges = [
   {

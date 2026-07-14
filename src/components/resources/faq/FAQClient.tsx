@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Plus, Minus, X } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 // Expanded FAQ data
 const faqData = [

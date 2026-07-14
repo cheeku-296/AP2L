@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Sparkles } from "lucide-react";
+
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function ContactHero() {
@@ -16,17 +16,7 @@ export default function ContactHero() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
-  // Smooth scroll to contact form
-  const scrollToContactForm = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const element = document.getElementById('contact-form');
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
+
 
   return (
     <section
@@ -98,7 +88,7 @@ export default function ContactHero() {
             leading-[1.08]
           "
         >
-          Let's Build the
+          Let&apos;s Build the
           <br />
            Future Together
 

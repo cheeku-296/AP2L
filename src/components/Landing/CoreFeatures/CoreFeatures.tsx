@@ -9,7 +9,7 @@ import {
   Combine, 
   Zap 
 } from "lucide-react";
-import Link from "next/link";
+// import Link from "next/link";
 
 const features = [
   {

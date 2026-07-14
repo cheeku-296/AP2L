@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Inter, Manrope, Alata } from "next/font/google";
+import { Urbanist, Inter, Manrope, Alata, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/common/Navbar/Navbar";
 import Footer from "@/src/components/common/Footer/Footer";
@@ -13,6 +13,11 @@ const alata = Alata({
   weight: "400",
   variable: "--font-alata",
   subsets: ["latin"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
 });
 
 import { ThemeProvider } from "@/src/components/theme-provider";
@@ -101,11 +106,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`dark ${urbanist.variable} ${inter.variable} ${manrope.variable} ${alata.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`dark ${urbanist.variable} ${inter.variable} ${manrope.variable} ${alata.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
       </head>
       <body suppressHydrationWarning className="font-sans antialiased text-slate-900 dark:text-slate-50 selection:bg-[#6843b7] selection:text-white">
         <ThemeProvider

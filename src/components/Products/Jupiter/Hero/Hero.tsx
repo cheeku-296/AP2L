@@ -1,13 +1,13 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { jupiterHeroData } from "./data";
 
 export default function JupiterHero() {
-  const { backgroundImage, titleLine1, titleHighlight, titleLine2, description, buttonText, buttonLink } = jupiterHeroData;
+  const { backgroundImage, titleLine1, titleHighlight, titleLine2, description, buttonText } = jupiterHeroData;
 
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden bg-slate-900 pt-24 pb-12">

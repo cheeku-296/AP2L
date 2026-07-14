@@ -11,8 +11,7 @@ import {
   Headphones,
   Send,
   CheckCircle,
-  Building2,
-  ArrowRight,
+    ArrowRight,
 } from "lucide-react";
 
 export default function ContactSection() {
@@ -156,7 +155,7 @@ export default function ContactSection() {
               {/* Heading */}
 
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white leading-tight">
-                We're Here To Help
+                We&apos;re Here To Help
               </h2>
 
               {/* Description */}

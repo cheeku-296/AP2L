@@ -35,7 +35,7 @@ export default function QABenefits() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Real results from enterprise QA teams using AP2L's AI-powered testing platform.
+                Real results from enterprise QA teams using AP2L&apos;s AI-powered testing platform.
               </p>
             </motion.div>
           </div>

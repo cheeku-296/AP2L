@@ -7,8 +7,7 @@ import {
   ShieldCheck, 
   Headset, 
   LineChart,
-  Cloud,
-  ArrowRight
+  Cloud
 } from "lucide-react";
 import Link from "next/link";
 
