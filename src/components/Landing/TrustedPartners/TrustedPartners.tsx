@@ -1,17 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LayoutGrid, Globe, Cloud, Database, Target, Cpu, Network, Cloudy } from "lucide-react";
+import { Landmark, Building, ShieldCheck, Activity, Briefcase, Wallet } from "lucide-react";
 
 const partners = [
-  { name: "Microsoft", icon: LayoutGrid },
-  { name: "Google", icon: Globe },
-  { name: "AWS", icon: Cloud },
-  { name: "IBM", icon: Database },
-  { name: "Oracle", icon: Target },
-  { name: "Intel", icon: Cpu },
-  { name: "Cisco", icon: Network },
-  { name: "Salesforce", icon: Cloudy },
+  { name: "CRIS", icon: Building },
+  { name: "Axis Bank", icon: Landmark },
+  { name: "FDC", icon: Activity },
+  { name: "Protean", icon: ShieldCheck },
+  { name: "L&T Finance", icon: Wallet },
+  { name: "Bank of Maharashtra", icon: Landmark },
+  { name: "UCO Bank", icon: Landmark },
+  { name: "RBL Bank", icon: Landmark },
+  { name: "ABCD Bank", icon: Landmark },
+  { name: "Generali Central Life Insurance", icon: ShieldCheck },
+  { name: "NSDL Payments Bank", icon: Wallet },
+  { name: "IDBI Bank", icon: Landmark },
+  { name: "Muscat Finance", icon: Briefcase },
 ];
 
 export default function TrustedPartners() {

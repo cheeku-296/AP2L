@@ -46,6 +46,8 @@ function FooterColumn({
           >
             <Link
               href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
               className="
                 group
                 inline-flex
