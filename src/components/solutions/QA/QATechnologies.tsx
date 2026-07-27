@@ -51,7 +51,7 @@ export default function QATechnologies() {
           <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
             {/* Light mode image */}
             <Image
-              src="/images/solutions/QA/technologies.png"
+              src="/images/solutions/QA/QA.png"
               alt="Technologies compatible with cliQTest"
               fill
               className="object-cover dark:hidden"
@@ -59,7 +59,7 @@ export default function QATechnologies() {
             />
             {/* Dark mode image */}
             <Image
-              src="/images/solutions/QA/technologies_dark.png"
+              src="/images/solutions/QA/QA.png"
               alt="Technologies compatible with cliQTest"
               fill
               className="object-cover hidden dark:block"
