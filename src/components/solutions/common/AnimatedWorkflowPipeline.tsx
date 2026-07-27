@@ -31,7 +31,7 @@ interface AnimatedWorkflowPipelineProps {
 const defaultTheme = {
   glowTop: "bg-violet-500/10",
   glowBottom: "bg-fuchsia-500/10",
-  iconBorder: "border-violet-500/50 text-violet-400 hover:border-violet-400 hover:bg-violet-600 hover:text-white hover:shadow-lg hover:shadow-violet-500/30",
+  iconBorder: "border-violet-500/50 text-violet-400",
   iconActiveBg: "bg-violet-600 border-violet-400 text-white shadow-xl shadow-violet-500/40 scale-110",
   iconActiveText: "text-white",
   iconActiveShadow: "shadow-violet-500/40",
@@ -66,17 +66,14 @@ export default function AnimatedWorkflowPipeline({
   themeColors = defaultTheme,
 }: AnimatedWorkflowPipelineProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [isPaused, setIsPaused] = useState<boolean>(false);
-
   // Auto-cycle through steps to illustrate continuous workflow
   useEffect(() => {
-    if (isPaused) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % steps.length);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isPaused, steps.length]);
+  }, [steps.length]);
 
   return (
     <section className="relative w-full py-12 md:py-16 bg-slate-950 transition-colors duration-500 overflow-hidden">
@@ -119,8 +116,6 @@ export default function AnimatedWorkflowPipeline({
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${
             steps.length === 6 ? "xl:grid-cols-6" : "xl:grid-cols-5"
           } gap-6 relative`}
@@ -134,9 +129,7 @@ export default function AnimatedWorkflowPipeline({
               <motion.div
                 key={step.id}
                 variants={itemVariants}
-                onClick={() => setActiveIndex(index)}
-                onMouseEnter={() => setActiveIndex(index)}
-                className="group relative flex flex-col items-center text-center cursor-pointer"
+                className="group relative flex flex-col items-center text-center select-none"
               >
                 {/* Icon Wrapper */}
                 <div className="relative">
@@ -161,7 +154,7 @@ export default function AnimatedWorkflowPipeline({
                       size={26}
                       strokeWidth={1.5}
                       className={`transition-all duration-300 ${
-                        isActive ? "scale-110 rotate-3" : "group-hover:scale-110"
+                        isActive ? "scale-110 rotate-3" : ""
                       }`}
                     />
                   </div>
@@ -172,19 +165,21 @@ export default function AnimatedWorkflowPipeline({
                       {/* Base Line */}
                       <div className={`h-[2px] w-full rounded-full bg-gradient-to-r ${themeColors.connectorGradient} opacity-60`} />
 
-                      {/* Traveling Light Pulse Beam Animation */}
-                      <motion.div
-                        className={`absolute top-0 bottom-0 w-12 rounded-full bg-gradient-to-r ${themeColors.pulseBeamGradient}`}
-                        animate={{
-                          x: ["-100%", "250%"],
-                        }}
-                        transition={{
-                          duration: 2.2,
-                          repeat: Infinity,
-                          ease: "easeInOut",
-                          delay: index * 0.4,
-                        }}
-                      />
+                      {/* Traveling Light Pulse Beam Animation – Only active when THIS step is active */}
+                      {isActive && (
+                        <motion.div
+                          key={`pulse-beam-${index}-${activeIndex}`}
+                          className={`absolute top-0 bottom-0 w-12 rounded-full bg-gradient-to-r ${themeColors.pulseBeamGradient}`}
+                          animate={{
+                            x: ["-100%", "250%"],
+                          }}
+                          transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                          }}
+                        />
+                      )}
                     </div>
                   )}
                 </div>
@@ -193,12 +188,12 @@ export default function AnimatedWorkflowPipeline({
                 <div className="mt-4">
                   <h3
                     className={`font-urbanist text-sm font-bold transition-colors duration-300 ${
-                      isActive ? themeColors.titleActiveText : "text-white group-hover:text-violet-400"
+                      isActive ? themeColors.titleActiveText : "text-white"
                     }`}
                   >
                     {step.title}
                   </h3>
-                  <p className="mt-1 font-inter text-xs leading-relaxed text-slate-400 group-hover:text-slate-300 max-w-[160px] mx-auto">
+                  <p className="mt-1 font-inter text-xs leading-relaxed text-slate-400 max-w-[160px] mx-auto">
                     {step.description}
                   </p>
                 </div>

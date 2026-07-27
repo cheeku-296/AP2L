@@ -201,13 +201,13 @@ export default function ITCapabilities() {
                     {/* Removed features count */}
                   </div>
 
-                  {isSelected && (
+                  {/* {isSelected && (
                     <div className="absolute -right-0.5 top-1/2 -translate-y-1/2 w-1.5 h-8 rounded-l-full bg-gradient-to-b from-violet-600 to-fuchsia-600" />
-                  )}
+                  )} */}
                   {isSelected && !isPaused && (
                     <motion.div
                       key={`progress-${currentIndex}`}
-                      className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-violet-600 to-fuchsia-600"
+                      className="absolute bottom-0 left-0 h-0.5 bg-violet-600"
                       initial={{ width: "0%" }}
                       animate={{ width: "100%" }}
                       transition={{ duration: AUTO_DELAY / 1000, ease: "linear" }}
