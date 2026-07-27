@@ -131,8 +131,6 @@ export default function QACapabilities() {
   return (
     <section
       className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -180,6 +178,8 @@ export default function QACapabilities() {
                 <motion.button
                   key={cap.id}
                   onClick={() => handleSelect(idx)}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
                   whileHover={{ x: 6 }}
                   className={`group relative flex-1 w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
                     isSelected
