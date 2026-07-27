@@ -1,32 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { 
+  MousePointerClick, 
+  Database, 
+  GitCommit, 
+  Bug, 
+  ShieldCheck, 
+  LineChart 
+} from "lucide-react";
 
 const capabilities = [
   {
     title: "No-Code Test Automation",
     description: "Visual drag-and-drop automation for all skill levels.",
+    icon: MousePointerClick,
   },
   {
     title: "AI Test Data Generation",
     description: "Synthesize realistic, secure data on demand.",
+    icon: Database,
   },
   {
     title: "Requirement Traceability",
     description: "End-to-end linking for complete visibility.",
+    icon: GitCommit,
   },
   {
     title: "Smart Defect Intelligence",
     description: "Predict, classify, and prioritize issues with ML.",
+    icon: Bug,
   },
   {
     title: "Enterprise Governance",
     description: "Policy enforcement and compliance reporting.",
+    icon: ShieldCheck,
   },
   {
     title: "Release Readiness Analytics",
     description: "AI-driven risk assessment for confident deployments.",
+    icon: LineChart,
   }
 ];
 
@@ -76,7 +89,13 @@ export default function KeyCapabilities() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843b7]/50 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle2 className="text-[#a855f7]" size={24} />
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-[#6843b7]/20 p-2 rounded-lg text-[#a855f7]"
+                >
+                  <cap.icon size={24} />
+                </motion.div>
                 <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
               <p className="text-slate-400 font-manrope text-sm leading-relaxed">

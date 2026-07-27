@@ -1,6 +1,6 @@
-import NetraaHero from "@/src/components/Products/Netraa/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Netraa/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Netraa/KeyCapabilities/KeyCapabilities";
+import NetraaHero from "@/src/components/products-hero/Netraa/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Netraa/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Netraa/KeyCapabilities/KeyCapabilities";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

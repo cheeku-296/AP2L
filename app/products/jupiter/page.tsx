@@ -1,6 +1,6 @@
-import JupiterHero from "@/src/components/Products/Jupiter/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Jupiter/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Jupiter/KeyCapabilities/KeyCapabilities";
+import JupiterHero from "@/src/components/products-hero/Jupiter/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Jupiter/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Jupiter/KeyCapabilities/KeyCapabilities";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

@@ -1,7 +1,7 @@
-import CliqtestHero from "@/src/components/Products/Cliqtest/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Cliqtest/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Cliqtest/KeyCapabilities/KeyCapabilities";
-import Integrations from "@/src/components/Products/Cliqtest/Integrations/Integrations";
+import CliqtestHero from "@/src/components/products-hero/Cliqtest/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Cliqtest/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Cliqtest/KeyCapabilities/KeyCapabilities";
+import Integrations from "@/src/components/products-hero/Cliqtest/Integrations/Integrations";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

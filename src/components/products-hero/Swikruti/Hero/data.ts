@@ -1,5 +1,5 @@
 export const swikrutiHeroData = {
-  backgroundImage: "/images/Products/swikruti.png",
+  backgroundImage: "/images/Products-hero/swikruti.png",
   titleLine1: "Consent Management &",
   titleHighlight: "DPDPA Compliance",
   titleLine2: "for Enterprise Privacy",

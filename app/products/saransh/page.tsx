@@ -1,6 +1,6 @@
-import SaranshHero from "@/src/components/Products/Saransh/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Saransh/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Saransh/KeyCapabilities/KeyCapabilities";
+import SaranshHero from "@/src/components/products-hero/Saransh/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Saransh/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Saransh/KeyCapabilities/KeyCapabilities";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

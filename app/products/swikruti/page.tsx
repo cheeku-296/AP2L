@@ -1,7 +1,7 @@
-import SwikrutiHero from "@/src/components/Products/Swikruti/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Swikruti/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Swikruti/KeyCapabilities/KeyCapabilities";
-import Integrations from "@/src/components/Products/Swikruti/Integrations/Integrations";
+import SwikrutiHero from "@/src/components/products-hero/Swikruti/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Swikruti/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Swikruti/KeyCapabilities/KeyCapabilities";
+import Integrations from "@/src/components/products-hero/Swikruti/Integrations/Integrations";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

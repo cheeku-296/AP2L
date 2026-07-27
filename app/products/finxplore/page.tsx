@@ -1,7 +1,7 @@
-import FinxploreHero from "@/src/components/Products/Finxplore/Hero/Hero";
-import BusinessValues from "@/src/components/Products/Finxplore/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/Finxplore/KeyCapabilities/KeyCapabilities";
-import Integrations from "@/src/components/Products/Finxplore/Integrations/Integrations";
+import FinxploreHero from "@/src/components/products-hero/Finxplore/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/Finxplore/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/Finxplore/KeyCapabilities/KeyCapabilities";
+import Integrations from "@/src/components/products-hero/Finxplore/Integrations/Integrations";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

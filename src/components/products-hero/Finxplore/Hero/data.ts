@@ -1,5 +1,5 @@
 export const finxploreHeroData = {
-  backgroundImage: "/images/Products/finxplore.png",
+  backgroundImage: "/images/Products-hero/finxplore.png",
   titleLine1: "Real-Time AI-Powered",
   titleHighlight: "Risk & Fraud Detection",
   titleLine2: "for Financial Institutions",

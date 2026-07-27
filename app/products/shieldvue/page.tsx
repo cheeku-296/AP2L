@@ -1,6 +1,6 @@
-import ShieldVUEHero from "@/src/components/Products/ShieldVUE/Hero/Hero";
-import BusinessValues from "@/src/components/Products/ShieldVUE/BusinessValues/BusinessValues";
-import KeyCapabilities from "@/src/components/Products/ShieldVUE/KeyCapabilities/KeyCapabilities";
+import ShieldVUEHero from "@/src/components/products-hero/ShieldVUE/Hero/Hero";
+import BusinessValues from "@/src/components/products-hero/ShieldVUE/BusinessValues/BusinessValues";
+import KeyCapabilities from "@/src/components/products-hero/ShieldVUE/KeyCapabilities/KeyCapabilities";
 import CTA from "@/src/components/common/CTA/CTA";
 
 export const metadata = {

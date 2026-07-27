@@ -21,7 +21,7 @@ const products = [
     title: "ShieldVUE",
     description: "End-to-End Software Supply Chain Security. Protect your infrastructure with automated SBOM management, continuous vulnerability scanning, and cryptographic asset governance. Gain complete visibility into your dependencies and ensure compliance with industry standards through our zero-trust architecture, neutralizing threats before they ever reach production.",
     href: "/products/shieldvue",
-    image: "/images/products/shieldvue.png",
+    image: "/images/products/shieldvue-light.png",
     icon: ShieldCheck,
     tags: ["SBOM Management", "Vulnerability Scanning", "Zero Trust"],
   },
@@ -30,7 +30,7 @@ const products = [
     title: "NETRAA AI-OPS",
     description: "Explainable AI for Intelligent Observability and rapid Root Cause Analysis. Consolidate your logs, metrics, and traces into a single pane of glass. Leverage machine learning algorithms to instantly identify anomalies, correlate events across distributed systems, and reduce your Mean Time to Resolution (MTTR) by up to 80%.",
     href: "/products/netraa",
-    image: "/images/products/netraa.png",
+    image: "/images/products/netraa-light.png",
     icon: Activity,
     tags: ["Predictive Alerts", "Log Analytics", "AIOps"],
   },
@@ -39,7 +39,7 @@ const products = [
     title: "cliQTest",
     description: "AI-Powered Test Automation Platform enabling zero-touch continuous testing. Automate complex scenarios and ensure flawless deployments across every environment. Empower your QA teams with self-healing scripts, intelligent test generation, and seamless CI/CD integration that scales dynamically with your architecture.",
     href: "/products/cliqtest",
-    image: "/images/products/cliqtest.png",
+    image: "/images/products/cliqtest-light.png",
     icon: TestTube2,
     tags: ["No-Code Automation", "Cross-Browser", "AI Test Generation"],
   },
@@ -48,7 +48,7 @@ const products = [
     title: "JUPITER",
     description: "Modern, AI-Powered IT Service Desk. Resolve tickets faster with intelligent routing, automated workflows, and robust self-service capabilities for your enterprise. Streamline your entire IT support lifecycle by deflecting routine queries and delivering context-aware assistance to your employees 24/7.",
     href: "/products/jupiter",
-    image: "/images/products/jupiter.png",
+    image: "/images/products/jupiter-light.png",
     icon: Headset,
     tags: ["ITSM Automation", "SLA Tracking", "Smart Routing"],
   },
@@ -57,7 +57,7 @@ const products = [
     title: "FINXPLORE",
     description: "Real-time AI-Powered Risk & Fraud Detection for financial institutions. Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings, enforce AML protocols, and ensure absolute regulatory compliance.",
     href: "/products/finxplore",
-    image: "/images/products/finxplore.png",
+    image: "/images/products/finxplore-light.png",
     icon: Search,
     tags: ["AML Compliance", "Anomaly Detection", "Risk Scoring"],
   },
@@ -66,7 +66,7 @@ const products = [
     title: "SWIKRUTI",
     description: "Consent Management & DPDPA Compliance platform for enterprise privacy. Keep your customer data compliant, secure, and fully auditable. Provide users with transparent control over their digital footprint while seamlessly mapping consent lifecycles across your data ecosystem to prevent unauthorized access.",
     href: "/products/swikruti",
-    image: "/images/products/swikruti.png",
+    image: "/images/products/swikruti-light.png",
     icon: FileCheck2,
     tags: ["Data Privacy", "DPDPA Ready", "Consent Ledger"],
   },
@@ -210,7 +210,7 @@ export default function PlatformOverview() {
                   src={activeProduct.image}
                   alt={`${activeProduct.title} Interface Mockup`}
                   fill
-                  className="object-cover object-left transition-transform duration-1000 hover:scale-[1.03]"
+                  className="object-cover object-left transition-transform duration-1000 hover:scale-[1]"
                 />
               </div>
 
