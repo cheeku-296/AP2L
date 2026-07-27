@@ -111,18 +111,18 @@ const faqData = [
 
 export default function FAQClient() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  
+
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(faqData.length / itemsPerPage);
-  
+
   const currentFaqs = faqData.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  
+
   const goToPage = (page: number) => {
     setCurrentPage(page);
     setOpenIndex(null); // Reset open FAQ when changing pages
@@ -136,10 +136,10 @@ export default function FAQClient() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-left mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Frequently Ask Question</h2>
           <p className="text-gray-500 text-sm">
-            <Link href="/contact" className="text-[#090A1F] cursor-pointer font-medium hover:underline">Contact us</Link>
+            {/* <Link href="/contact" className="text-[#090A1F] cursor-pointer font-medium hover:underline">Contact us</Link> */}
           </p>
         </div>
 
@@ -148,8 +148,8 @@ export default function FAQClient() {
           <div className="flex-1 flex flex-col justify-between">
             <div className="space-y-4 min-h-[450px]">
               {currentFaqs.map((faq, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="bg-white rounded-md shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gray-50 overflow-hidden transition-all duration-300"
                 >
                   <button
@@ -165,17 +165,16 @@ export default function FAQClient() {
                       )}
                     </div>
                   </button>
-                  <div 
-                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                      openIndex === index ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                    }`}
+                  <div
+                    className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-40 pb-5 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
                   >
                     <p className="text-gray-500 text-sm leading-relaxed">{faq.answer}</p>
                   </div>
                 </div>
               ))}
             </div>
-            
+
             {/* Pagination Numbers */}
             {totalPages > 1 && (
               <div className="flex justify-center items-center gap-2 mt-10">
@@ -183,11 +182,10 @@ export default function FAQClient() {
                   <button
                     key={i}
                     onClick={() => goToPage(i + 1)}
-                    className={`w-8 h-8 rounded flex items-center justify-center text-sm font-medium transition-colors ${
-                      currentPage === i + 1 
-                        ? 'bg-gray-400 text-white shadow-md' 
-                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                    }`}
+                    className={`w-8 h-8 rounded flex items-center justify-center text-sm font-medium transition-colors ${currentPage === i + 1
+                      ? 'bg-gray-400 text-white shadow-md'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                      }`}
                   >
                     {i + 1}
                   </button>
@@ -200,12 +198,12 @@ export default function FAQClient() {
           <div className="flex-1 flex flex-col items-center pt-4">
             {/* Illustration */}
             <div className="relative w-full max-w-sm h-64 mb-10 flex justify-center items-center">
-               <Image 
-                 src="/images/faq/question.png" 
-                 alt="Frequently Asked Questions" 
-                 fill
-                 className="object-contain"
-               />
+              <Image
+                src="/images/faq/question.png"
+                alt="Frequently Asked Questions"
+                fill
+                className="object-contain"
+              />
             </div>
 
             <h3 className="text-[28px] font-bold mb-3 text-black">Any Question?</h3>
@@ -215,9 +213,9 @@ export default function FAQClient() {
               <div className="mb-4">
                 <label className="text-[13px] text-gray-700 font-medium block mb-2">Let me know.</label>
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Enter Here" 
+                  <input
+                    type="text"
+                    placeholder="Enter Here"
                     className="w-full px-4 py-3 rounded border border-gray-400 focus:outline-none focus:border-gray-500 focus:ring-0 text-[13px] text-gray-900 placeholder-gray-500 bg-white"
                   />
                 </div>
