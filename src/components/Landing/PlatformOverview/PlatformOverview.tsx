@@ -143,7 +143,7 @@ export default function PlatformOverview() {
               <button
                 key={product.id}
                 onClick={() => setActiveId(product.id)}
-                className={`relative w-full px-1 sm:px-2 md:px-3 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
+                className={`relative w-full pl-1 sm:pl-1.5 md:pl-2 pr-1.5 sm:pr-2 md:pr-2.5 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
                   ? `text-white dark:text-slate-900 border-transparent shadow-md`
                   : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-800 dark:hover:text-slate-200"
                   }`}
@@ -155,7 +155,7 @@ export default function PlatformOverview() {
                     transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
                   />
                 )}
-                <div className="relative h-6 w-9 sm:h-7 sm:w-10 md:h-7.5 md:w-11 flex-shrink-0">
+                <div className="relative h-7.5 w-11 sm:h-8.5 sm:w-13 md:h-9.5 md:w-15 flex-shrink-0">
                   <Image
                     src={product.logo}
                     alt={`${product.title} logo`}
