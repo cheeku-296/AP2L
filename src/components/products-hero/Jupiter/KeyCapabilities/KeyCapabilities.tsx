@@ -1,29 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { Headset, Share2, Layers, Clock, Library } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "Centralized Service Desk",
-    description: "Single point for ticket creation, categorization, tracking, and closure.",
-  },
-  {
-    title: "Automated Ticket Assignment",
-    description: "Dynamic routing based on service type and engineer expertise.",
-  },
-  {
-    title: "Multi-Level Support Workflow",
-    description: "Structured escalation (L1 → L2 → Dev/Infra) based on time and effort.",
-  },
-  {
-    title: "SLA & SLO Governance",
-    description: "Configurable thresholds, early breach alerts, and compliance tracking.",
-  },
-  {
-    title: "Knowledge & Analytics Hub",
-    description: "Reuse historical resolutions for faster support with real-time visibility into ticket status, workload, and SLA trends.",
-  }
+  { title: "Centralized Service Desk", description: "Single point for ticket creation, categorization, tracking, and closure.", icon: Headset },
+  { title: "Automated Ticket Assignment", description: "Dynamic routing based on service type and engineer expertise.", icon: Share2 },
+  { title: "Multi-Level Support Workflow", description: "Structured escalation (L1 → L2 → Dev/Infra) based on time and effort.", icon: Layers },
+  { title: "SLA & SLO Governance", description: "Configurable thresholds, early breach alerts, and compliance tracking.", icon: Clock },
+  { title: "Knowledge & Analytics Hub", description: "Reuse historical resolutions for faster support with real-time visibility into ticket status, workload, and SLA trends.", icon: Library }
 ];
 
 export default function KeyCapabilities() {
@@ -73,7 +58,13 @@ export default function KeyCapabilities() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle2 className="text-blue-400" size={24} />
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-[text-blue-400]/20 p-2 rounded-lg text-blue-400"
+                >
+                  <cap.icon size={24} />
+                </motion.div>
                 <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
               <p className="text-slate-400 font-manrope text-sm leading-relaxed">

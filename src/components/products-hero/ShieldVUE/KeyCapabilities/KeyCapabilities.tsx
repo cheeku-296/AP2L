@@ -1,17 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { Map, Database, Wand2, FileText, Box, Search, BarChart3, Shield } from "lucide-react";
 
 const capabilities = [
-  "Vulnerability Mapping: Identify and prioritize security risks.",
-  "Central Repository: Secure storage for SBOM inventories.",
-  "AI Remediation: AI-powered fix recommendations.",
-  "Compliance Reporting: Generate audit-ready compliance reports.",
-  "SBOM Generation: Automated SBOM creation and management.",
-  "Component Discovery: Discover software components & dependencies.",
-  "Dashboard & Analytics: Real-time security and compliance insights.",
-  "Security & Governance: Centralized risk and policy management.",
+  { title: "Vulnerability Mapping", description: "Identify and prioritize security risks.", icon: Map },
+  { title: "Central Repository", description: "Secure storage for SBOM inventories.", icon: Database },
+  { title: "AI Remediation", description: "AI-powered fix recommendations.", icon: Wand2 },
+  { title: "Compliance Reporting", description: "Generate audit-ready compliance reports.", icon: FileText },
+  { title: "SBOM Generation", description: "Automated SBOM creation and management.", icon: Box },
+  { title: "Component Discovery", description: "Discover software components & dependencies.", icon: Search },
+  { title: "Dashboard & Analytics", description: "Real-time security and compliance insights.", icon: BarChart3 },
+  { title: "Security & Governance", description: "Centralized risk and policy management.", icon: Shield }
 ];
 
 export default function KeyCapabilities() {
@@ -51,11 +51,9 @@ export default function KeyCapabilities() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {capabilities.map((cap, index) => {
-              const [title, desc] = cap.split(": ");
-              return (
+            {capabilities.map((cap, index) => (
                 <motion.div
-                  key={title}
+                  key={cap.title}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -63,15 +61,20 @@ export default function KeyCapabilities() {
                   className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-5 backdrop-blur-sm hover:bg-slate-800 transition-colors"
                 >
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="text-violet-400 mt-1 shrink-0" size={20} />
+                    <motion.div
+                      whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                      transition={{ duration: 0.4 }}
+                      className="bg-violet-500/20 p-2 rounded-lg text-violet-400 shrink-0"
+                    >
+                      <cap.icon size={20} />
+                    </motion.div>
                     <div>
-                      <h4 className="font-semibold text-white mb-1">{title}</h4>
-                      <p className="text-sm text-slate-400 leading-relaxed">{desc}</p>
+                      <h4 className="font-semibold text-white mb-1">{cap.title}</h4>
+                      <p className="text-sm text-slate-400 leading-relaxed">{cap.description}</p>
                     </div>
                   </div>
                 </motion.div>
-              );
-            })}
+              ))}
           </div>
       </div>
     </section>

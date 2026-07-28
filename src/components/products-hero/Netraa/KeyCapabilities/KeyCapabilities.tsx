@@ -1,33 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { AlertTriangle, Eye, Database, GitMerge, Zap, LineChart } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "Incident Analysis",
-    description: "Accelerates root cause investigation and impact assessment.",
-  },
-  {
-    title: "AI Observability",
-    description: "Provides real-time operational insights and system visibility.",
-  },
-  {
-    title: "Data Ingestion",
-    description: "Collects logs, metrics, events, and traces from multiple sources.",
-  },
-  {
-    title: "Event Correlation",
-    description: "Connects related incidents across applications and infrastructure.",
-  },
-  {
-    title: "RCA Automation",
-    description: "Automates root cause identification and resolution workflows.",
-  },
-  {
-    title: "AI Analytics",
-    description: "Delivers predictive insights and actionable recommendations.",
-  }
+  { title: "Incident Analysis", description: "Accelerates root cause investigation and impact assessment.", icon: AlertTriangle },
+  { title: "AI Observability", description: "Provides real-time operational insights and system visibility.", icon: Eye },
+  { title: "Data Ingestion", description: "Collects logs, metrics, events, and traces from multiple sources.", icon: Database },
+  { title: "Event Correlation", description: "Connects related incidents across applications and infrastructure.", icon: GitMerge },
+  { title: "RCA Automation", description: "Automates root cause identification and resolution workflows.", icon: Zap },
+  { title: "AI Analytics", description: "Delivers predictive insights and actionable recommendations.", icon: LineChart }
 ];
 
 export default function KeyCapabilities() {
@@ -77,7 +59,13 @@ export default function KeyCapabilities() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle2 className="text-indigo-400" size={24} />
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-[text-indigo-400]/20 p-2 rounded-lg text-indigo-400"
+                >
+                  <cap.icon size={24} />
+                </motion.div>
                 <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
               <p className="text-slate-400 font-manrope text-sm leading-relaxed">

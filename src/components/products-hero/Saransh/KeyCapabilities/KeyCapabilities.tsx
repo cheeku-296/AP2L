@@ -1,33 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { CloudOff, CheckCircle, Lock, AlertOctagon, Activity, Server } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "Environment Independence",
-    description: "No live service dependency.",
-  },
-  {
-    title: "Release Validation",
-    description: "Continuous DevOps validation with performance and timing simulation.",
-  },
-  {
-    title: "Security Handling",
-    description: "TLS, tokens & role controls.",
-  },
-  {
-    title: "Fault Simulation",
-    description: "Latency, errors & resiliency testing.",
-  },
-  {
-    title: "Behavior Modeling",
-    description: "Functional and negative scenarios with realistic service behavior.",
-  },
-  {
-    title: "Service Virtualization",
-    description: "REST, SOAP, JMS & TCP simulation.",
-  }
+  { title: "Environment Independence", description: "No live service dependency.", icon: CloudOff },
+  { title: "Release Validation", description: "Continuous DevOps validation with performance and timing simulation.", icon: CheckCircle },
+  { title: "Security Handling", description: "TLS, tokens & role controls.", icon: Lock },
+  { title: "Fault Simulation", description: "Latency, errors & resiliency testing.", icon: AlertOctagon },
+  { title: "Behavior Modeling", description: "Functional and negative scenarios with realistic service behavior.", icon: Activity },
+  { title: "Service Virtualization", description: "REST, SOAP, JMS & TCP simulation.", icon: Server }
 ];
 
 export default function KeyCapabilities() {
@@ -77,7 +59,13 @@ export default function KeyCapabilities() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle2 className="text-teal-400" size={24} />
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-[text-teal-400]/20 p-2 rounded-lg text-teal-400"
+                >
+                  <cap.icon size={24} />
+                </motion.div>
                 <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
               <p className="text-slate-400 font-manrope text-sm leading-relaxed">

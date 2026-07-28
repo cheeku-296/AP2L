@@ -1,33 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2 } from "lucide-react";
+import { SearchCode, ShieldAlert, Activity, Network, Briefcase, FileCheck } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "Anomaly Detection",
-    description: "Uncover hidden patterns and outliers using unsupervised learning.",
-  },
-  {
-    title: "AML Transaction Monitoring",
-    description: "Automated screening against sanctions, PEPs, and watchlists.",
-  },
-  {
-    title: "Risk Scoring",
-    description: "Dynamic risk scores for every transaction, customer, and merchant.",
-  },
-  {
-    title: "Fraud Ring Detection",
-    description: "Graph-based analysis to identify organised fraud networks.",
-  },
-  {
-    title: "Case Management",
-    description: "Streamlined workflow for investigators to review and act.",
-  },
-  {
-    title: "Regulatory Reporting",
-    description: "Generate audit-ready reports for SAR, AML, and regulatory bodies.",
-  },
+  { title: "Anomaly Detection", description: "Uncover hidden patterns and outliers using unsupervised learning.", icon: SearchCode },
+  { title: "AML Transaction Monitoring", description: "Automated screening against sanctions, PEPs, and watchlists.", icon: ShieldAlert },
+  { title: "Risk Scoring", description: "Dynamic risk scores for every transaction, customer, and merchant.", icon: Activity },
+  { title: "Fraud Ring Detection", description: "Graph-based analysis to identify organised fraud networks.", icon: Network },
+  { title: "Case Management", description: "Streamlined workflow for investigators to review and act.", icon: Briefcase },
+  { title: "Regulatory Reporting", description: "Generate audit-ready reports for SAR, AML, and regulatory bodies.", icon: FileCheck }
 ];
 
 export default function KeyCapabilities() {
@@ -74,7 +56,13 @@ export default function KeyCapabilities() {
               className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843B7]/50 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle2 className="text-[#9e7be9]" size={24} />
+                <motion.div
+                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-[text-[#9e7be9]]/20 p-2 rounded-lg text-[#9e7be9]"
+                >
+                  <cap.icon size={24} />
+                </motion.div>
                 <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
               </div>
               <p className="text-slate-400 font-manrope text-sm leading-relaxed">{cap.description}</p>

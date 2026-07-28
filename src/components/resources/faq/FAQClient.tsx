@@ -128,8 +128,25 @@ export default function FAQClient() {
     setOpenIndex(null); // Reset open FAQ when changing pages
   };
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-white pt-40 pb-24 px-4 md:px-8 relative overflow-hidden font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Background Text */}
       <div className="absolute top-20 left-0 w-full text-center pointer-events-none select-none z-0 overflow-hidden">
         <h1 className="text-[10vw] font-bold whitespace-nowrap text-gray-50 opacity-80 mt-0">Frequently Ask Question</h1>
