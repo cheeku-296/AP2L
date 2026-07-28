@@ -19,6 +19,7 @@ const products = [
   {
     id: "shieldvue",
     title: "ShieldVUE",
+    logo: "/products-logo/sv_logo.png",
     description: "End-to-End Software Supply Chain Security. Protect your infrastructure with automated SBOM management, continuous vulnerability scanning, and cryptographic asset governance. Gain complete visibility into your dependencies and ensure compliance with industry standards through our zero-trust architecture, neutralizing threats before they ever reach production.",
     href: "/products/shieldvue",
     image: "/images/products/shieldvue-light.png",
@@ -28,6 +29,7 @@ const products = [
   {
     id: "netraa",
     title: "NETRAA AI-OPS",
+    logo: "/products-logo/netraa_logo.png",
     description: "Explainable AI for Intelligent Observability and rapid Root Cause Analysis. Consolidate your logs, metrics, and traces into a single pane of glass. Leverage machine learning algorithms to instantly identify anomalies, correlate events across distributed systems, and reduce your Mean Time to Resolution (MTTR) by up to 80%.",
     href: "/products/netraa",
     image: "/images/products/netraa-light.png",
@@ -37,6 +39,7 @@ const products = [
   {
     id: "cliqtest",
     title: "cliQTest",
+    logo: "/products-logo/cliqtest_logo.png",
     description: "AI-Powered Test Automation Platform enabling zero-touch continuous testing. Automate complex scenarios and ensure flawless deployments across every environment. Empower your QA teams with self-healing scripts, intelligent test generation, and seamless CI/CD integration that scales dynamically with your architecture.",
     href: "/products/cliqtest",
     image: "/images/products/cliqtest-light.png",
@@ -46,6 +49,7 @@ const products = [
   {
     id: "jupiter",
     title: "JUPITER",
+    logo: "/products-logo/jupiter_logo.png",
     description: "Modern, AI-Powered IT Service Desk. Resolve tickets faster with intelligent routing, automated workflows, and robust self-service capabilities for your enterprise. Streamline your entire IT support lifecycle by deflecting routine queries and delivering context-aware assistance to your employees 24/7.",
     href: "/products/jupiter",
     image: "/images/products/jupiter-light.png",
@@ -55,6 +59,7 @@ const products = [
   {
     id: "finxplore",
     title: "FINXPLORE",
+    logo: "/products-logo/finxplore_logo.png",
     description: "Real-time AI-Powered Risk & Fraud Detection for financial institutions. Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings, enforce AML protocols, and ensure absolute regulatory compliance.",
     href: "/products/finxplore",
     image: "/images/products/finxplore-light.png",
@@ -64,6 +69,7 @@ const products = [
   {
     id: "swikruti",
     title: "SWIKRUTI",
+    logo: "/products-logo/swikruti_logo.png",
     description: "Consent Management & DPDPA Compliance platform for enterprise privacy. Keep your customer data compliant, secure, and fully auditable. Provide users with transparent control over their digital footprint while seamlessly mapping consent lifecycles across your data ecosystem to prevent unauthorized access.",
     href: "/products/swikruti",
     image: "/images/products/swikruti-light.png",
@@ -73,6 +79,7 @@ const products = [
   {
     id: "saransh",
     title: "SARANSH",
+    logo: "/products-logo/saransh_logo.png",
     description: "AI-Enabled Service Virtualization. Isolate complex subsystems and simulate behaviors to enable continuous testing in isolated sandbox environments. Decouple your development cycles from third-party API dependencies by replicating realistic stateful behaviors and edge-case failure scenarios on demand.",
     href: "/products/saransh",
     image: "/images/products/saransh.png",
@@ -128,27 +135,35 @@ export default function PlatformOverview() {
           </div>
         </div>
 
-        {/* Pill Navigation */}
-        <div className="flex flex-wrap items-center justify-start gap-2 md:gap-3 mb-8">
+        {/* Pill Navigation - Single View 7-Column Grid (No Scrollbar) */}
+        <div className="grid grid-cols-7 gap-1 sm:gap-2 md:gap-2.5 w-full mb-8">
           {products.map((product) => {
             const isActive = activeId === product.id;
             return (
               <button
                 key={product.id}
                 onClick={() => setActiveId(product.id)}
-                className={`relative px-5 py-2.5 rounded-full font-semibold text-[13px] uppercase tracking-wider transition-colors duration-300 border focus:outline-none ${isActive
-                  ? `text-white dark:text-slate-900 border-transparent`
+                className={`relative w-full px-1 sm:px-2 md:px-3 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
+                  ? `text-white dark:text-slate-900 border-transparent shadow-md`
                   : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-800 dark:hover:text-slate-200"
                   }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="activePill"
-                    className="absolute inset-0 rounded-full bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
+                    className="absolute inset-0 rounded-2xl bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
                     transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
                   />
                 )}
-                <span className="relative z-10">{product.title}</span>
+                <div className="relative h-6 w-9 sm:h-7 sm:w-10 md:h-7.5 md:w-11 flex-shrink-0">
+                  <Image
+                    src={product.logo}
+                    alt={`${product.title} logo`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="truncate max-w-full text-center">{product.title}</span>
               </button>
             );
           })}
@@ -169,6 +184,14 @@ export default function PlatformOverview() {
               {/* Left Content Area */}
               <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative z-20">
                 <div className="flex items-center gap-4 mb-6">
+                  <div className="relative h-14 w-24 md:h-16 md:w-28 flex-shrink-0 rounded-2xl bg-white/10 p-2 border border-white/15 flex items-center justify-center shadow-lg">
+                    <Image
+                      src={activeProduct.logo}
+                      alt={`${activeProduct.title} logo`}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  </div>
                   <h3 className="text-3xl md:text-4xl lg:text-[40px] font-bold font-urbanist text-white tracking-tight">
                     {activeProduct.title}
                   </h3>
