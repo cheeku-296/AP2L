@@ -35,7 +35,7 @@ export default function QATechnologies() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              cliQTest works with the technologies you already use. No migration required.
+              AP2L works with the technologies you already use. No migration required.
             </motion.p>
           </div>
         </div>
