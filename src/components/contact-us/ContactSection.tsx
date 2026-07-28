@@ -405,7 +405,7 @@ export default function ContactSection() {
                               firstName: e.target.value,
                             })
                           }
-                          placeholder="John"
+                          placeholder="Arpit"
                           className="
                             w-full
                             rounded-2xl
@@ -447,7 +447,7 @@ export default function ContactSection() {
                               lastName: e.target.value,
                             })
                           }
-                          placeholder="Doe"
+                          placeholder="G"
                           className="
                             w-full
                             rounded-2xl
@@ -538,7 +538,7 @@ export default function ContactSection() {
                               designation: e.target.value,
                             })
                           }
-                          placeholder="Software Architect"
+                          placeholder="Software Developer"
                           className="
                             w-full
                             rounded-2xl
@@ -587,7 +587,7 @@ export default function ContactSection() {
                               email: e.target.value,
                             })
                           }
-                          placeholder="john@company.com"
+                          placeholder="arpit@apmosys.com"
                           className="
                             w-full
                             rounded-2xl
