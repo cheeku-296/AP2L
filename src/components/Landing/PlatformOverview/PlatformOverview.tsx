@@ -151,16 +151,16 @@ export default function PlatformOverview() {
                 {isActive && (
                   <motion.div
                     layoutId="activePill"
-                    className="absolute inset-0 rounded-2xl bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
+                    className="absolute inset-0 rounded-xl bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
                     transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
                   />
                 )}
-                <div className="relative h-6 w-9 sm:h-6.5 sm:w-10 md:h-7 md:w-11 flex-shrink-0">
+                <div className="relative h-6 w-6 md:h-7 md:w-7 flex-shrink-0 -ml-1 sm:-ml-1.5 md:-ml-2">
                   <Image
                     src={product.logo}
                     alt={`${product.title} logo`}
                     fill
-                    className="object-contain"
+                    className="object-cover object-center"
                   />
                 </div>
                 <span className="truncate max-w-full text-center">{product.title}</span>
@@ -184,7 +184,7 @@ export default function PlatformOverview() {
               {/* Left Content Area */}
               <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative z-20">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="relative h-14 w-24 md:h-16 md:w-28 flex-shrink-0 rounded-2xl bg-white/10 p-2 border border-white/15 flex items-center justify-center shadow-lg">
+                  <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 rounded-2xl bg-white/10 p-2 border border-white/15 flex items-center justify-center shadow-lg">
                     <Image
                       src={activeProduct.logo}
                       alt={`${activeProduct.title} logo`}
