@@ -11,7 +11,7 @@ const featured = {
   title: "How Enterprise AI is Reshaping Digital Transformation",
   description:
     "Discover how organizations are leveraging AI, cloud engineering, and automation to build resilient and future-ready enterprises.",
-  image: "/blogs/blog-1-new.png",
+  image: "/images/resources/blogs/blog-1.png",
   date: "July 2026",
 };
 
@@ -19,21 +19,21 @@ const latest = [
   {
     id: "2",
     title: "The Future of Intelligent Automation",
-    image: "/blogs/blog-2-new.png",
+    image: "/images/resources/blogs/blog-2.png",
     category: "Automation",
     date: "July 2026",
   },
   {
     id: "3",
     title: "Cybersecurity Trends Every Enterprise Should Know",
-    image: "/blogs/blog-3-new.png",
+    image: "/images/resources/blogs/blog-3.png",
     category: "Cybersecurity",
     date: "June 2026",
   },
   {
     id: "4",
     title: "Building Cloud Native Applications at Scale",
-    image: "/blogs/blog-4-new.png",
+    image: "/images/resources/blogs/blog-4.png",
     category: "Cloud",
     date: "June 2026",
   },

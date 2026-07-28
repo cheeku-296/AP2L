@@ -216,7 +216,7 @@ export default function FAQClient() {
             {/* Illustration */}
             <div className="relative w-full max-w-sm h-64 mb-10 flex justify-center items-center">
               <Image
-                src="/images/faq/question.png"
+                src="/images/common/faq-question.png"
                 alt="Frequently Asked Questions"
                 fill
                 className="object-contain"

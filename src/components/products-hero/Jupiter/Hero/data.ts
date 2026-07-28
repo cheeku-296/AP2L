@@ -1,5 +1,5 @@
 export const jupiterHeroData = {
-  backgroundImage: "/products-logo/jupiter.png",
+  backgroundImage: "/images/products/logos/jupiter-logo-alt.png",
   titleLine1: "AI-Powered",
   titleHighlight: "IT Service Desk",
   titleLine2: "& Ticket Management",

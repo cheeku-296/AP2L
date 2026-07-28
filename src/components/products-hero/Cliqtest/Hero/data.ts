@@ -1,5 +1,5 @@
 export const cliqtestHeroData = {
-  backgroundImage: "/products-logo/cliqtest.png",
+  backgroundImage: "/images/products/logos/cliqtest-logo-alt.png",
   titleLine1: "The AI-Powered",
   titleHighlight: "Automated Testing",
   titleLine2: "Platform",

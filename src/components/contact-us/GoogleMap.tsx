@@ -11,7 +11,7 @@ const locations = [
     address: "Office No. C315, 3rd Floor, Apeejay House,\n39/12, Haddows Road, Nungambakkam,\nChennai - 600 006",
     phone: "+91 44 4976 5601",
     email: "chennai@apmosys.com",
-    image: "/images/locations/chennai.png",
+    image: "/images/common/locations/chennai.png",
   },
   {
     id: "bbsr",
@@ -19,7 +19,7 @@ const locations = [
     address: "ApMoSys Technologies Pvt. Ltd., Fortune Towers,\n4th Floor, A Zone, Nandankanan Road,\nChandrasekharpur, Bhubaneswar - 751023, Odisha",
     phone: "+91 674 4976 5602",
     email: "bbsr@apmosys.com",
-    image: "/images/locations/bbsr.png",
+    image: "/images/common/locations/bbsr.png",
   },
   {
     id: "uae",
@@ -27,7 +27,7 @@ const locations = [
     address: "ApMoSys Technology FZ-LLC, B05-716A\nBusiness Center 04, RAKEZ Business Zone - FZ\nRAK, UAE. PO BOX 10055",
     phone: "+971 4 4976 5603",
     email: "uae@apmosys.com",
-    image: "/images/locations/uae.png",
+    image: "/images/common/locations/uae.png",
   }
 ];
 

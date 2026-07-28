@@ -62,7 +62,7 @@ function getBlogData(id: string) {
       author: { name: "Preslas team", role: "Engineering Team", avatar: "https://i.pravatar.cc/150?u=preslas" },
       date: "July 12, 2026",
       readTime: "6 min read",
-      image: "/blogs/blog-1-new.png",
+      image: "/images/resources/blogs/blog-1.png",
       content: defaultContent,
     },
     "2": {
@@ -73,7 +73,7 @@ function getBlogData(id: string) {
       author: { name: "Arpit Gupta", role: "Cloud Architect", avatar: "https://i.pravatar.cc/150?u=arpit" },
       date: "July 10, 2026",
       readTime: "5 min read",
-      image: "/blogs/blog-2-new.png",
+      image: "/images/resources/blogs/blog-2.png",
       content: defaultContent,
     },
     "3": {
@@ -84,7 +84,7 @@ function getBlogData(id: string) {
       author: { name: "Anish Nale", role: "Security Researcher", avatar: "https://i.pravatar.cc/150?u=anish" },
       date: "July 08, 2026",
       readTime: "7 min read",
-      image: "/blogs/blog-3-new.png",
+      image: "/images/resources/blogs/blog-3.png",
       content: defaultContent,
     },
     "4": {
@@ -95,7 +95,7 @@ function getBlogData(id: string) {
       author: { name: "Himagni Dutta", role: "Automation Lead", avatar: "https://i.pravatar.cc/150?u=himagni" },
       date: "July 05, 2026",
       readTime: "4 min read",
-      image: "/blogs/blog-4-new.png",
+      image: "/images/resources/blogs/blog-4.png",
       content: defaultContent,
     },
     "5": {
@@ -106,7 +106,7 @@ function getBlogData(id: string) {
       author: { name: "GCD", role: "Principal Strategist", avatar: "https://i.pravatar.cc/150?u=gcd" },
       date: "July 02, 2026",
       readTime: "8 min read",
-      image: "/blogs/blog-5-new.png",
+      image: "/images/resources/blogs/blog-5.png",
       content: defaultContent,
     },
     "6": {
@@ -117,7 +117,7 @@ function getBlogData(id: string) {
       author: { name: "Preslas team", role: "Engineering Team", avatar: "https://i.pravatar.cc/150?u=preslas2" },
       date: "June 28, 2026",
       readTime: "5 min read",
-      image: "/blogs/blog-6-new.png",
+      image: "/images/resources/blogs/blog-6.png",
       content: defaultContent,
     },
     "7": {
@@ -128,7 +128,7 @@ function getBlogData(id: string) {
       author: { name: "Arpit Gupta", role: "Cloud Architect", avatar: "https://i.pravatar.cc/150?u=arpit2" },
       date: "June 25, 2026",
       readTime: "4 min read",
-      image: "/blogs/blog-7-new.png",
+      image: "/images/resources/blogs/blog-7.png",
       content: defaultContent,
     },
   };

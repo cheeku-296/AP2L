@@ -27,14 +27,14 @@ export default function Hero() {
         className="absolute -top-[10%] -left-[5%] -right-[5%] h-[130%] w-[110%]"
       >
         <Image
-          src="/landing-hero/light-hero1.png"
+          src="/images/heroes/landing-hero-light.png"
           alt="Hero Section"
           fill
           priority
           className="object-cover object-center dark:hidden"
         />
         <Image
-          src="/landing-hero/dark-hero.png"
+          src="/images/heroes/landing-hero-dark.png"
           alt="Hero Section Dark"
           fill
           priority

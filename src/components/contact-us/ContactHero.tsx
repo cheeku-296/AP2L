@@ -32,7 +32,7 @@ export default function ContactHero() {
         {/* Replace these later */}
 
         <Image
-          src="/contact-hero/contacthero_light.png"
+          src="/images/heroes/contact-hero-light.png"
           alt="Contact Hero"
           fill
           priority
@@ -40,7 +40,7 @@ export default function ContactHero() {
         />
 
         <Image
-          src="/contact-hero/contacthero_dark.png"
+          src="/images/heroes/contact-hero-dark.png"
           alt="Contact Hero"
           fill
           priority

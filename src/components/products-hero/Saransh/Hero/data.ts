@@ -1,5 +1,5 @@
 export const saranshHeroData = {
-  backgroundImage: "/products-logo/sharansh.png",
+  backgroundImage: "/images/products/logos/saransh-logo-alt.png",
   titleLine1: "AI-Enabled Service",
   titleHighlight: "Virtualization",
   titleLine2: "& Simulation",

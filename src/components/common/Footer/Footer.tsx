@@ -251,7 +251,7 @@ export default function Footer() {
               className="inline-flex items-center gap-4"
             >
               <Image
-                src="/logo/logo.png"
+                src="/branding/logo.png"
                 alt="AP2L"
                 width={55}
                 height={55}

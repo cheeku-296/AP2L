@@ -44,7 +44,7 @@ function Logo({
 
         <div className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-slate-900/10 bg-slate-900/5 backdrop-blur-xl">
           <Image
-            src="/logo/logo.png"
+            src="/branding/logo.png"
             alt="AP2L Logo"
             width={28}
             height={28}

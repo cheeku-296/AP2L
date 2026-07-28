@@ -22,7 +22,7 @@ const blogs = [
     title: "How AI is Transforming Enterprise Software",
     description:
       "Explore how artificial intelligence is enabling businesses to automate workflows, enhance decision making and deliver exceptional customer experiences.",
-    image: "/blogs/blog-1-new.png",
+    image: "/images/resources/blogs/blog-1.png",
     readTime: "6 min read",
   },
   {
@@ -31,7 +31,7 @@ const blogs = [
     title: "Cloud Engineering Best Practices",
     description:
       "Learn how enterprises build scalable cloud-native applications with security and performance in mind.",
-    image: "/blogs/blog-2-new.png",
+    image: "/images/resources/blogs/blog-2.png",
     readTime: "5 min read",
   },
   {
@@ -40,7 +40,7 @@ const blogs = [
     title: "Preparing for Modern Cyber Threats",
     description:
       "Best practices for strengthening enterprise security with modern cybersecurity strategies.",
-    image: "/blogs/blog-3-new.png",
+    image: "/images/resources/blogs/blog-3.png",
     readTime: "7 min read",
   },
   {
@@ -49,7 +49,7 @@ const blogs = [
     title: "Intelligent Process Automation",
     description:
       "Discover how automation is reducing operational costs while increasing business efficiency.",
-    image: "/blogs/blog-4-new.png",
+    image: "/images/resources/blogs/blog-4.png",
     readTime: "4 min read",
   },
   {
@@ -58,7 +58,7 @@ const blogs = [
     title: "Digital Transformation Roadmap",
     description:
       "A practical guide for organizations planning enterprise-wide digital transformation initiatives.",
-    image: "/blogs/blog-5-new.png",
+    image: "/images/resources/blogs/blog-5.png",
     readTime: "8 min read",
   },
   {
@@ -67,7 +67,7 @@ const blogs = [
     title: "Generative AI in Business",
     description:
       "Understanding how Generative AI is creating new opportunities across enterprise ecosystems.",
-    image: "/blogs/blog-6-new.png",
+    image: "/images/resources/blogs/blog-6.png",
     readTime: "5 min read",
   },
   {
@@ -76,7 +76,7 @@ const blogs = [
     title: "The Shift to Serverless Architecture",
     description:
       "Why enterprises are adopting serverless computing to reduce operational overhead.",
-    image: "/blogs/blog-7-new.png",
+    image: "/images/resources/blogs/blog-7.png",
     readTime: "4 min read",
   },
 ];

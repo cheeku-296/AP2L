@@ -1,5 +1,5 @@
 export const netraaHeroData = {
-  backgroundImage: "/products-logo/netraa.png",
+  backgroundImage: "/images/products/logos/netraa-logo-alt.png",
   eyebrow: "NEXT-GENERATION OBSERVABILITY",
   titleLine1: "End-to-End Intelligent",
   titleLine2: "Observability, Powered By AI",

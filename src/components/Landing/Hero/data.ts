@@ -11,5 +11,5 @@ export const heroData: HeroData = {
   description: "Empowering enterprises with AI-driven innovation, intelligent automation, and cloud-native platforms that accelerate digital transformation, strengthen operational resilience, and unlock sustainable growth.",
   primaryButton: "Explore Products",
   primaryButtonLink: "/#products",
-  backgroundImage: "/landing-hero/light-hero.png"
+  backgroundImage: "/images/heroes/landing-hero-light-alt.png"
 };
