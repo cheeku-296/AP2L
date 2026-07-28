@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 import { CheckSquare, Sliders, Users, Settings, ShieldAlert, Bell } from "lucide-react";
 
 const capabilities = [
-  { title: "Consent Collection", description: "Capture granular consent across multiple touchpoints with clear language.", icon: CheckSquare },
-  { title: "Preference Management", description: "Allow users to update their preferences and revoke consent anytime.", icon: Sliders },
-  { title: "Data Subject Requests", description: "Automate DSAR workflows for access, rectification, and deletion.", icon: Users },
-  { title: "Policy Engine", description: "Define and enforce consent‑based data usage policies enterprise‑wide.", icon: Settings },
-  { title: "Vendor Risk Management", description: "Monitor third‑party compliance and data processing agreements.", icon: ShieldAlert },
-  { title: "Breach Notification", description: "Automated incident response and regulatory notification workflows.", icon: Bell }
+  { title: "Consent Collection", description: "Seamlessly capture granular user consent across multiple digital touchpoints using clear, legally compliant language.", bgImage: "card_bg_compliance_1785225796232.png" },
+  { title: "Preference Management", description: "Empower your users with a self-service portal to instantly update privacy preferences and revoke consent at any time.", bgImage: "card_bg_discovery_1785225815517.png" },
+  { title: "Data Subject Requests", description: "Fully automate Data Subject Access Request (DSAR) workflows to rapidly handle data access, rectification, and deletion.", bgImage: "netraa_bg_incident_1785226432886.png" },
+  { title: "Policy Engine", description: "Define and strictly enforce consent-based data usage policies and access controls across your entire enterprise ecosystem.", bgImage: "card_bg_ai_1785225786234.png" },
+  { title: "Vendor Risk Management", description: "Continuously monitor third-party vendors for privacy compliance and automatically track data processing agreements.", bgImage: "card_bg_security_1785225837046.png" },
+  { title: "Breach Notification", description: "Accelerate your incident response with automated workflows for rapid data breach identification and regulatory notification.", bgImage: "card_bg_vuln_map_1785225764334.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-16 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/20 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#9e7be9]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,8 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Privacy <span className="text-[#6843B7]">by Design</span>
+                Privacy
+                <span className="text-[#6843B7]">by Design</span>
               </h2>
             </motion.div>
           </div>
@@ -38,7 +39,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Capabilities that embed privacy into every layer of your data ecosystem.
               </p>
             </motion.div>
@@ -52,20 +53,27 @@ export default function KeyCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843B7]/50 transition-all duration-300"
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#6843B7]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[#6843B7]/20 p-2 rounded-lg text-[#6843B7]"
-                >
-                  <cap.icon size={24} />
-                </motion.div>
-                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
               </div>
-              <p className="text-slate-400 font-manrope text-sm leading-relaxed">{cap.description}</p>
             </motion.div>
           ))}
         </div>

@@ -13,45 +13,45 @@ import {
 const capabilities = [
   {
     title: "No-Code Test Automation",
-    description: "Visual drag-and-drop automation for all skill levels.",
-    icon: MousePointerClick,
+    description: "Accelerate testing with an intuitive, visual drag-and-drop interface designed for teams of all technical skill levels.",
+    bgImage: "card_bg_discovery_1785225815517.png",
   },
   {
     title: "AI Test Data Generation",
-    description: "Synthesize realistic, secure data on demand.",
-    icon: Database,
+    description: "Automatically synthesize highly realistic, secure, and compliant test data on demand to bypass privacy bottlenecks.",
+    bgImage: "card_bg_repo_1785225775920.png",
   },
   {
     title: "Requirement Traceability",
-    description: "End-to-end linking for complete visibility.",
-    icon: GitCommit,
+    description: "Ensure complete project visibility by establishing automated end-to-end linking between requirements and test cases.",
+    bgImage: "card_bg_compliance_1785225796232.png",
   },
   {
     title: "Smart Defect Intelligence",
-    description: "Predict, classify, and prioritize issues with ML.",
-    icon: Bug,
+    description: "Leverage machine learning algorithms to proactively predict, classify, and prioritize critical software defects.",
+    bgImage: "card_bg_ai_1785225786234.png",
   },
   {
     title: "Enterprise Governance",
-    description: "Policy enforcement and compliance reporting.",
-    icon: ShieldCheck,
+    description: "Maintain strict quality standards with automated policy enforcement and comprehensive audit-ready compliance reporting.",
+    bgImage: "card_bg_security_1785225837046.png",
   },
   {
     title: "Release Readiness Analytics",
-    description: "AI-driven risk assessment for confident deployments.",
-    icon: LineChart,
+    description: "Deploy with confidence using AI-driven risk assessments that accurately predict the stability of your next release.",
+    bgImage: "card_bg_analytics_1785225826204.png",
   }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843b7]/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-16 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843b7]/20 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#9e7be9]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -59,7 +59,8 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Intelligence built into <span className="text-white">every layer</span>
+                Intelligence built into <br/>
+                <span className="text-[#9D7BEE]">every layer</span>
               </h2>
             </motion.div>
           </div>
@@ -71,7 +72,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Capabilities designed to empower your QA teams and accelerate your release cycles.
               </p>
             </motion.div>
@@ -85,22 +86,27 @@ export default function KeyCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843b7]/50 transition-all duration-300"
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9D7BEE]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[#6843b7]/20 p-2 rounded-lg text-[#a855f7]"
-                >
-                  <cap.icon size={24} />
-                </motion.div>
-                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
               </div>
-              <p className="text-slate-400 font-manrope text-sm leading-relaxed">
-                {cap.description}
-              </p>
             </motion.div>
           ))}
         </div>

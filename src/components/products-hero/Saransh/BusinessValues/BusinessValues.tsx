@@ -1,33 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, ShieldCheck, PieChart, CheckCircle, ShieldAlert } from "lucide-react";
-
 const values = [
   {
     title: "Faster Release Cycles",
     description: "Reduces dependency bottlenecks and accelerates application delivery.",
-    icon: Zap,
   },
   {
     title: "Regulatory Compliance",
     description: "Ensures secure and compliant testing across enterprise environments.",
-    icon: ShieldCheck,
   },
   {
     title: "Cost Optimization",
     description: "Minimizes testing effort and reduces infrastructure costs.",
-    icon: PieChart,
   },
   {
     title: "Improved Quality",
     description: "Enhances release confidence through predictable and reliable validation.",
-    icon: CheckCircle,
   },
   {
     title: "Risk Reduction",
     description: "Identifies integration issues early to prevent production failures.",
-    icon: ShieldAlert,
   },
 ];
 
@@ -37,7 +30,7 @@ export default function BusinessValues() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
         {/* Header section */}
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +59,6 @@ export default function BusinessValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => {
-            const Icon = value.icon;
             return (
               <motion.div
                 key={value.title}
@@ -74,16 +66,20 @@ export default function BusinessValues() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 rounded-2xl bg-white border border-slate-200 overflow-hidden"
+                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80"
               >
-                <div className="flex gap-5 items-start">
-                  <div className="shrink-0 p-3 rounded-full bg-slate-50 text-slate-600">
-                    <Icon size={28} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 font-urbanist">{value.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-[15px] font-manrope">{value.description}</p>
-                  </div>
+                {/* Violet Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700" />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="mb-4 font-urbanist text-[22px] font-bold tracking-tight text-slate-900 transition-colors">
+                    {value.title}
+                  </h3>
+                  
+                  <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </motion.div>
             );

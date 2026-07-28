@@ -24,15 +24,15 @@ export default function TrustedPartners() {
   const marqueePartners = [...partners, ...partners];
 
   return (
-    <section className="relative w-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500 py-12 md:py-16">
+    <section className="relative w-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500 py-6 md:py-8">
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         <div className="flex flex-col md:flex-row items-center">
           {/* Static Text Section (Left) */}
           <div className="w-full md:w-[30%] lg:w-[25%] mb-8 md:mb-0 flex-shrink-0 z-20">
-            <p className="font-manrope text-[15px] font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-left">
-              Backed by the best companies<br />
-              and visionary angels.
+            <p className="font-manrope text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-left">
+              Trusted by industry leaders<br />
+               worldwide.
             </p>
           </div>
 

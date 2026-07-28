@@ -1,41 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Map, Database, Wand2, FileText, Box, Search, BarChart3, Shield } from "lucide-react";
+import { Map, Database, Wand2, FileText, Box, Search, BarChart3, Shield, ChevronRight } from "lucide-react";
 
 const capabilities = [
-  { title: "Vulnerability Mapping", description: "Identify and prioritize security risks.", icon: Map },
-  { title: "Central Repository", description: "Secure storage for SBOM inventories.", icon: Database },
-  { title: "AI Remediation", description: "AI-powered fix recommendations.", icon: Wand2 },
-  { title: "Compliance Reporting", description: "Generate audit-ready compliance reports.", icon: FileText },
-  { title: "SBOM Generation", description: "Automated SBOM creation and management.", icon: Box },
-  { title: "Component Discovery", description: "Discover software components & dependencies.", icon: Search },
-  { title: "Dashboard & Analytics", description: "Real-time security and compliance insights.", icon: BarChart3 },
-  { title: "Security & Governance", description: "Centralized risk and policy management.", icon: Shield }
+  { title: "Vulnerability Mapping", description: "Automatically scan and prioritize complex security risks to visualize your attack surface.", bgImage: "card_bg_vuln_map_1785225764334.png" },
+  { title: "Central Repository", description: "Maintain a single, secure source of truth to easily track all your SBOM inventories.", bgImage: "card_bg_repo_1785225775920.png" },
+  { title: "AI Remediation", description: "Leverage advanced machine learning to receive intelligent, context-aware fix recommendations.", bgImage: "card_bg_ai_1785225786234.png" },
+  { title: "Compliance Reporting", description: "Generate comprehensive, audit-ready reports tailored to SOC2, GDPR, and ISO standards.", bgImage: "card_bg_compliance_1785225796232.png" },
+  { title: "SBOM Generation", description: "Instantly create and manage Software Bill of Materials in standard formats like CycloneDX.", bgImage: "card_bg_sbom_1785225806160.png" },
+  { title: "Component Discovery", description: "Deeply analyze your codebase to automatically discover hidden third-party dependencies.", bgImage: "card_bg_discovery_1785225815517.png" },
+  { title: "Dashboard & Analytics", description: "Access a unified pane of glass for real-time security postures and actionable threat intelligence.", bgImage: "card_bg_analytics_1785225826204.png" },
+  { title: "Security & Governance", description: "Enforce centralized security policies across your entire software development lifecycle.", bgImage: "card_bg_security_1785225837046.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+    <section className="py-16 bg-[#080816] text-white overflow-hidden relative">
       {/* Decorative Glows */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-violet-600/20 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-fuchsia-600/20 rounded-full blur-[120px] translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-violet-900/20 rounded-full blur-[150px] pointer-events-none translate-x-1/4 -translate-y-1/4" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none -translate-x-1/4 translate-y-1/4" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
         {/* Header section */}
-        <div className="mb-8 md:mb-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Powerful Capabilities for <span className="text-violet-400">Total Security</span>
+              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-4">
+                Powerful Capabilities for <br />
+                <span className="text-[#9D7BEE]">Total Security</span>
               </h2>
             </motion.div>
           </div>
-          
+
           <div className="md:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -43,39 +44,44 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 A comprehensive suite of tools designed to discover, track, and remediate vulnerabilities across your entire software supply chain.
               </p>
             </motion.div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {capabilities.map((cap, index) => (
-                <motion.div
-                  key={cap.title}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-5 backdrop-blur-sm hover:bg-slate-800 transition-colors"
-                >
-                  <div className="flex items-start gap-3">
-                    <motion.div
-                      whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                      transition={{ duration: 0.4 }}
-                      className="bg-violet-500/20 p-2 rounded-lg text-violet-400 shrink-0"
-                    >
-                      <cap.icon size={20} />
-                    </motion.div>
-                    <div>
-                      <h4 className="font-semibold text-white mb-1">{cap.title}</h4>
-                      <p className="text-sm text-slate-400 leading-relaxed">{cap.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {capabilities.map((cap, index) => (
+            <motion.div
+              key={cap.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9D7BEE]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
+            >
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-10 transition-opacity duration-500 group-hover:opacity-30  mix-blend-screen rounded-full blur-[2px]"
+                style={{
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -33,8 +33,11 @@ const values = [
 
 export default function BusinessValues() {
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-24 bg-white relative overflow-hidden">
+      {/* Background Accent */}
+      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-[400px] h-[400px] rounded-full bg-violet-500/5 dark:bg-violet-500/10 blur-[100px] pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Header section */}
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -65,7 +68,6 @@ export default function BusinessValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => {
-            const Icon = value.icon;
             return (
               <motion.div
                 key={value.title}
@@ -73,16 +75,20 @@ export default function BusinessValues() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-500/5 transition-all duration-300"
+                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80"
               >
-                <div className="flex gap-5 items-start">
-                  <div className="shrink-0 h-12 w-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
-                    <Icon size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 font-urbanist">{value.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-[15px] font-manrope">{value.description}</p>
-                  </div>
+                {/* Purple Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700" />
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  <h3 className="mb-4 font-urbanist text-[22px] font-bold tracking-tight text-slate-900 transition-colors">
+                    {value.title}
+                  </h3>
+                  
+                  <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
               </motion.div>
             );

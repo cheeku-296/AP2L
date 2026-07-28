@@ -27,10 +27,10 @@ const metrics = [
 
 export default function BusinessValues() {
   return (
-    <section className="py-24 bg-white text-slate-900 border-t border-slate-100">
+    <section className="py-16 bg-white text-slate-900 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -65,7 +65,7 @@ export default function BusinessValues() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-8 hover:border-[#6843b7]/50 transition-colors group shadow-sm"
+              className="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:border-[#6843b7]/50 transition-colors group shadow-sm"
             >
               <div className="text-5xl font-bold font-urbanist text-slate-900 mb-4 group-hover:text-[#9e7be9] transition-colors">
                 {metric.stat}

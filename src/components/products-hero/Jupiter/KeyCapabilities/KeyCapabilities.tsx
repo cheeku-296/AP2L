@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 import { Headset, Share2, Layers, Clock, Library } from "lucide-react";
 
 const capabilities = [
-  { title: "Centralized Service Desk", description: "Single point for ticket creation, categorization, tracking, and closure.", icon: Headset },
-  { title: "Automated Ticket Assignment", description: "Dynamic routing based on service type and engineer expertise.", icon: Share2 },
-  { title: "Multi-Level Support Workflow", description: "Structured escalation (L1 → L2 → Dev/Infra) based on time and effort.", icon: Layers },
-  { title: "SLA & SLO Governance", description: "Configurable thresholds, early breach alerts, and compliance tracking.", icon: Clock },
-  { title: "Knowledge & Analytics Hub", description: "Reuse historical resolutions for faster support with real-time visibility into ticket status, workload, and SLA trends.", icon: Library }
+  { title: "Centralized Service Desk", description: "Establish a single, unified point of contact for seamless ticket creation, intelligent categorization, and end-to-end tracking.", bgImage: "card_bg_repo_1785225775920.png" },
+  { title: "Automated Ticket Assignment", description: "Instantly route incoming support requests dynamically based on the specific service type and the engineer's technical expertise.", bgImage: "netraa_bg_correlation_1785226463423.png" },
+  { title: "Multi-Level Support Workflow", description: "Implement highly structured escalation paths from L1 to L2 and Dev/Infra based on resolution time and effort required.", bgImage: "card_bg_discovery_1785225815517.png" },
+  { title: "SLA & SLO Governance", description: "Maintain strict service quality with highly configurable thresholds, automated early breach alerts, and comprehensive compliance tracking.", bgImage: "card_bg_compliance_1785225796232.png" },
+  { title: "Knowledge & Analytics Hub", description: "Easily reuse historical resolutions for faster support delivery while gaining real-time visibility into your team's workload and SLA trends.", bgImage: "card_bg_analytics_1785225826204.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-24 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
         
         {/* Header section */}
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Key <span className="text-white">Capabilities</span>
+                Key <span className="text-[#9D7BEE]">Capabilities</span>
               </h2>
             </motion.div>
           </div>
@@ -40,7 +40,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Powerful ticket routing, workflow automation, and real-time analytics to supercharge your IT support operations.
               </p>
             </motion.div>
@@ -54,22 +54,27 @@ export default function KeyCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm"
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-blue-400/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[text-blue-400]/20 p-2 rounded-lg text-blue-400"
-                >
-                  <cap.icon size={24} />
-                </motion.div>
-                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
               </div>
-              <p className="text-slate-400 font-manrope text-sm leading-relaxed">
-                {cap.description}
-              </p>
             </motion.div>
           ))}
         </div>

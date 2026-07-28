@@ -123,15 +123,10 @@ A unified enterprise platform designed to help organizations build resilient sys
               <motion.div
                 key={feature.id}
                 variants={itemVariants}
-                className="group relative flex flex-col p-8 rounded-[24px] border border-slate-200/80 bg-white overflow-hidden transition-all duration-500"
+                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500"
               >
                 {/* Purple Light Ray Effect */}
-                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/10 blur-[50px] rounded-full transition-colors duration-700" />
-                
-                {/* Icon Container */}
-                <div className="relative mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-violet-50/80 border border-violet-100 text-violet-600 transition-all duration-500">
-                  <Icon size={26} strokeWidth={1.5} />
-                </div>
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700" />
                 
                 {/* Content */}
                 <div className="relative z-10">

@@ -47,7 +47,7 @@ export default function Integrations() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-2xl p-6 shadow-sm"
+              className="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm"
             >
               <h3 className="text-[#6843B7] font-semibold mb-4 text-lg">{group.category}</h3>
               <div className="flex flex-wrap gap-2">

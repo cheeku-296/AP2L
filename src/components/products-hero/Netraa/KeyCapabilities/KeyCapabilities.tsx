@@ -4,24 +4,24 @@ import { motion } from "framer-motion";
 import { AlertTriangle, Eye, Database, GitMerge, Zap, LineChart } from "lucide-react";
 
 const capabilities = [
-  { title: "Incident Analysis", description: "Accelerates root cause investigation and impact assessment.", icon: AlertTriangle },
-  { title: "AI Observability", description: "Provides real-time operational insights and system visibility.", icon: Eye },
-  { title: "Data Ingestion", description: "Collects logs, metrics, events, and traces from multiple sources.", icon: Database },
-  { title: "Event Correlation", description: "Connects related incidents across applications and infrastructure.", icon: GitMerge },
-  { title: "RCA Automation", description: "Automates root cause identification and resolution workflows.", icon: Zap },
-  { title: "AI Analytics", description: "Delivers predictive insights and actionable recommendations.", icon: LineChart }
+  { title: "Incident Analysis", description: "Accelerates root cause investigation and impact assessment with intelligent log parsing and anomaly detection to drastically reduce MTTR.", bgImage: "netraa_bg_incident_1785226432886.png" },
+  { title: "AI Observability", description: "Provides real-time operational insights and system visibility. Continuously monitor application health and track dynamic microservice dependencies.", bgImage: "netraa_bg_observability_1785226443996.png" },
+  { title: "Data Ingestion", description: "Collects logs, metrics, events, and traces from multiple sources, unifying them into a centralized data lake for high-performance analysis.", bgImage: "netraa_bg_ingestion_1785226454227.png" },
+  { title: "Event Correlation", description: "Connects related incidents across applications and infrastructure. Intelligently group fragmented alerts into singular, highly actionable priority incidents.", bgImage: "netraa_bg_correlation_1785226463423.png" },
+  { title: "RCA Automation", description: "Automates root cause identification and resolution workflows, automatically surfacing underlying failure points to accelerate system recovery.", bgImage: "netraa_bg_incident_1785226432886.png" },
+  { title: "AI Analytics", description: "Delivers predictive insights and actionable recommendations. Forecast potential system degradation to proactively optimize your IT infrastructure before outages occur.", bgImage: "netraa_bg_observability_1785226443996.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-16 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-900/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
 
         {/* Header section */}
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,8 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Intelligence built into <span className="text-white">every layer</span>
+                Intelligence built into <br/>
+                <span className="text-[#9D7BEE]">every layer</span>
               </h2>
             </motion.div>
           </div>
@@ -41,7 +42,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Capabilities designed to empower your operations team and accelerate your incident response cycles.
               </p>
             </motion.div>
@@ -55,22 +56,27 @@ export default function KeyCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-indigo-500/50 transition-all duration-300"
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9D7BEE]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[text-indigo-400]/20 p-2 rounded-lg text-indigo-400"
-                >
-                  <cap.icon size={24} />
-                </motion.div>
-                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
               </div>
-              <p className="text-slate-400 font-manrope text-sm leading-relaxed">
-                {cap.description}
-              </p>
             </motion.div>
           ))}
         </div>

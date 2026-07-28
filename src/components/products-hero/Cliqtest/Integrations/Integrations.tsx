@@ -65,7 +65,7 @@ export default function Integrations() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
+              className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
             >
               <h3 className="text-slate-800 font-semibold mb-2 text-lg">
                 {group.category}

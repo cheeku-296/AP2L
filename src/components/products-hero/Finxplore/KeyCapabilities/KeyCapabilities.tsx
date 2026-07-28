@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 import { SearchCode, ShieldAlert, Activity, Network, Briefcase, FileCheck } from "lucide-react";
 
 const capabilities = [
-  { title: "Anomaly Detection", description: "Uncover hidden patterns and outliers using unsupervised learning.", icon: SearchCode },
-  { title: "AML Transaction Monitoring", description: "Automated screening against sanctions, PEPs, and watchlists.", icon: ShieldAlert },
-  { title: "Risk Scoring", description: "Dynamic risk scores for every transaction, customer, and merchant.", icon: Activity },
-  { title: "Fraud Ring Detection", description: "Graph-based analysis to identify organised fraud networks.", icon: Network },
-  { title: "Case Management", description: "Streamlined workflow for investigators to review and act.", icon: Briefcase },
-  { title: "Regulatory Reporting", description: "Generate audit-ready reports for SAR, AML, and regulatory bodies.", icon: FileCheck }
+  { title: "Anomaly Detection", description: "Uncover hidden behavioural patterns and transactional outliers instantly using advanced unsupervised machine learning models.", bgImage: "netraa_bg_incident_1785226432886.png" },
+  { title: "AML Transaction Monitoring", description: "Automate compliance with continuous, real-time transaction screening against global sanctions, PEPs, and critical watchlists.", bgImage: "card_bg_vuln_map_1785225764334.png" },
+  { title: "Risk Scoring", description: "Calculate highly accurate, dynamic risk scores for every single transaction, customer interaction, and merchant profile.", bgImage: "card_bg_analytics_1785225826204.png" },
+  { title: "Fraud Ring Detection", description: "Utilize sophisticated graph-based data analysis to easily identify and dismantle deeply organized financial fraud networks.", bgImage: "netraa_bg_correlation_1785226463423.png" },
+  { title: "Case Management", description: "Empower your investigators with a streamlined, unified workflow to review flagged cases and take decisive action rapidly.", bgImage: "card_bg_discovery_1785225815517.png" },
+  { title: "Regulatory Reporting", description: "Automatically generate comprehensive, audit-ready reports for Suspicious Activity Reports (SAR), AML, and key regulatory bodies.", bgImage: "card_bg_compliance_1785225796232.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/10 rounded-full blur-[150px] pointer-events-none" />
+    <section className="py-16 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/20 rounded-full blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#9e7be9]/10 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,8 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Built for <span className="text-[#9e7be9]">Financial Security</span>
+                Built for <br/>
+                <span className="text-[#9e7be9]">Financial Security</span>
               </h2>
             </motion.div>
           </div>
@@ -38,7 +39,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-300 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Enterprise-grade capabilities to detect, investigate, and prevent fraud at scale.
               </p>
             </motion.div>
@@ -52,20 +53,27 @@ export default function KeyCapabilities() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 backdrop-blur-sm hover:bg-slate-800 hover:border-[#6843B7]/50 transition-all duration-300"
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9e7be9]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              <div className="flex items-center gap-3 mb-4">
-                <motion.div
-                  whileHover={{ scale: 1.15, rotate: [0, -10, 10, -10, 0] }}
-                  transition={{ duration: 0.4 }}
-                  className="bg-[text-[#9e7be9]]/20 p-2 rounded-lg text-[#9e7be9]"
-                >
-                  <cap.icon size={24} />
-                </motion.div>
-                <h3 className="font-semibold text-lg text-white font-urbanist">{cap.title}</h3>
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                </div>
               </div>
-              <p className="text-slate-400 font-manrope text-sm leading-relaxed">{cap.description}</p>
             </motion.div>
           ))}
         </div>
