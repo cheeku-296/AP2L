@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { SearchCode, ShieldAlert, Activity, Network, Briefcase, FileCheck } from "lucide-react";
 
 const capabilities = [
-  { title: "Anomaly Detection", description: "Uncover hidden behavioural patterns and transactional outliers instantly using advanced unsupervised machine learning models.", bgImage: "netraa_bg_incident_1785226432886.png" },
-  { title: "AML Transaction Monitoring", description: "Automate compliance with continuous, real-time transaction screening against global sanctions, PEPs, and critical watchlists.", bgImage: "card_bg_vuln_map_1785225764334.png" },
-  { title: "Risk Scoring", description: "Calculate highly accurate, dynamic risk scores for every single transaction, customer interaction, and merchant profile.", bgImage: "card_bg_analytics_1785225826204.png" },
-  { title: "Fraud Ring Detection", description: "Utilize sophisticated graph-based data analysis to easily identify and dismantle deeply organized financial fraud networks.", bgImage: "netraa_bg_correlation_1785226463423.png" },
-  { title: "Case Management", description: "Empower your investigators with a streamlined, unified workflow to review flagged cases and take decisive action rapidly.", bgImage: "card_bg_discovery_1785225815517.png" },
-  { title: "Regulatory Reporting", description: "Automatically generate comprehensive, audit-ready reports for Suspicious Activity Reports (SAR), AML, and key regulatory bodies.", bgImage: "card_bg_compliance_1785225796232.png" }
+  { title: "Anomaly Detection", description: "Uncover hidden behavioural patterns and transactional outliers instantly using advanced unsupervised machine learning models.", bgImage: "netraa-incident-bg.png" },
+  { title: "AML Transaction Monitoring", description: "Automate compliance with continuous, real-time transaction screening against global sanctions, PEPs, and critical watchlists.", bgImage: "vuln-map-bg.png" },
+  { title: "Risk Scoring", description: "Calculate highly accurate, dynamic risk scores for every single transaction, customer interaction, and merchant profile.", bgImage: "analytics-bg.png" },
+  { title: "Fraud Ring Detection", description: "Utilize sophisticated graph-based data analysis to easily identify and dismantle deeply organized financial fraud networks.", bgImage: "netraa-correlation-bg.png" },
+  { title: "Case Management", description: "Empower your investigators with a streamlined, unified workflow to review flagged cases and take decisive action rapidly.", bgImage: "discovery-bg.png" },
+  { title: "Regulatory Reporting", description: "Automatically generate comprehensive, audit-ready reports for Suspicious Activity Reports (SAR), AML, and key regulatory bodies.", bgImage: "compliance-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -60,7 +60,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 

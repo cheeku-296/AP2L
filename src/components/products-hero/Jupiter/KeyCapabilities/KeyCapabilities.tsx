@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Headset, Share2, Layers, Clock, Library } from "lucide-react";
 
 const capabilities = [
-  { title: "Centralized Service Desk", description: "Establish a single, unified point of contact for seamless ticket creation, intelligent categorization, and end-to-end tracking.", bgImage: "card_bg_repo_1785225775920.png" },
-  { title: "Automated Ticket Assignment", description: "Instantly route incoming support requests dynamically based on the specific service type and the engineer's technical expertise.", bgImage: "netraa_bg_correlation_1785226463423.png" },
-  { title: "Multi-Level Support Workflow", description: "Implement highly structured escalation paths from L1 to L2 and Dev/Infra based on resolution time and effort required.", bgImage: "card_bg_discovery_1785225815517.png" },
-  { title: "SLA & SLO Governance", description: "Maintain strict service quality with highly configurable thresholds, automated early breach alerts, and comprehensive compliance tracking.", bgImage: "card_bg_compliance_1785225796232.png" },
-  { title: "Knowledge & Analytics Hub", description: "Easily reuse historical resolutions for faster support delivery while gaining real-time visibility into your team's workload and SLA trends.", bgImage: "card_bg_analytics_1785225826204.png" }
+  { title: "Centralized Service Desk", description: "Establish a single, unified point of contact for seamless ticket creation, intelligent categorization, and end-to-end tracking.", bgImage: "repo-bg.png" },
+  { title: "Automated Ticket Assignment", description: "Instantly route incoming support requests dynamically based on the specific service type and the engineer's technical expertise.", bgImage: "netraa-correlation-bg.png" },
+  { title: "Multi-Level Support Workflow", description: "Implement highly structured escalation paths from L1 to L2 and Dev/Infra based on resolution time and effort required.", bgImage: "discovery-bg.png" },
+  { title: "SLA & SLO Governance", description: "Maintain strict service quality with highly configurable thresholds, automated early breach alerts, and comprehensive compliance tracking.", bgImage: "compliance-bg.png" },
+  { title: "Knowledge & Analytics Hub", description: "Easily reuse historical resolutions for faster support delivery while gaining real-time visibility into your team's workload and SLA trends.", bgImage: "analytics-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -61,7 +61,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 

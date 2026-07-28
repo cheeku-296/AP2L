@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { CheckSquare, Sliders, Users, Settings, ShieldAlert, Bell } from "lucide-react";
 
 const capabilities = [
-  { title: "Consent Collection", description: "Seamlessly capture granular user consent across multiple digital touchpoints using clear, legally compliant language.", bgImage: "card_bg_compliance_1785225796232.png" },
-  { title: "Preference Management", description: "Empower your users with a self-service portal to instantly update privacy preferences and revoke consent at any time.", bgImage: "card_bg_discovery_1785225815517.png" },
-  { title: "Data Subject Requests", description: "Fully automate Data Subject Access Request (DSAR) workflows to rapidly handle data access, rectification, and deletion.", bgImage: "netraa_bg_incident_1785226432886.png" },
-  { title: "Policy Engine", description: "Define and strictly enforce consent-based data usage policies and access controls across your entire enterprise ecosystem.", bgImage: "card_bg_ai_1785225786234.png" },
-  { title: "Vendor Risk Management", description: "Continuously monitor third-party vendors for privacy compliance and automatically track data processing agreements.", bgImage: "card_bg_security_1785225837046.png" },
-  { title: "Breach Notification", description: "Accelerate your incident response with automated workflows for rapid data breach identification and regulatory notification.", bgImage: "card_bg_vuln_map_1785225764334.png" }
+  { title: "Consent Collection", description: "Seamlessly capture granular user consent across multiple digital touchpoints using clear, legally compliant language.", bgImage: "compliance-bg.png" },
+  { title: "Preference Management", description: "Empower your users with a self-service portal to instantly update privacy preferences and revoke consent at any time.", bgImage: "discovery-bg.png" },
+  { title: "Data Subject Requests", description: "Fully automate Data Subject Access Request (DSAR) workflows to rapidly handle data access, rectification, and deletion.", bgImage: "netraa-incident-bg.png" },
+  { title: "Policy Engine", description: "Define and strictly enforce consent-based data usage policies and access controls across your entire enterprise ecosystem.", bgImage: "ai-bg.png" },
+  { title: "Vendor Risk Management", description: "Continuously monitor third-party vendors for privacy compliance and automatically track data processing agreements.", bgImage: "security-bg.png" },
+  { title: "Breach Notification", description: "Accelerate your incident response with automated workflows for rapid data breach identification and regulatory notification.", bgImage: "vuln-map-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -60,7 +60,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 

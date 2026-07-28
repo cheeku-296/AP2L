@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { AlertTriangle, Eye, Database, GitMerge, Zap, LineChart } from "lucide-react";
 
 const capabilities = [
-  { title: "Incident Analysis", description: "Accelerates root cause investigation and impact assessment with intelligent log parsing and anomaly detection to drastically reduce MTTR.", bgImage: "netraa_bg_incident_1785226432886.png" },
-  { title: "AI Observability", description: "Provides real-time operational insights and system visibility. Continuously monitor application health and track dynamic microservice dependencies.", bgImage: "netraa_bg_observability_1785226443996.png" },
-  { title: "Data Ingestion", description: "Collects logs, metrics, events, and traces from multiple sources, unifying them into a centralized data lake for high-performance analysis.", bgImage: "netraa_bg_ingestion_1785226454227.png" },
-  { title: "Event Correlation", description: "Connects related incidents across applications and infrastructure. Intelligently group fragmented alerts into singular, highly actionable priority incidents.", bgImage: "netraa_bg_correlation_1785226463423.png" },
-  { title: "RCA Automation", description: "Automates root cause identification and resolution workflows, automatically surfacing underlying failure points to accelerate system recovery.", bgImage: "netraa_bg_incident_1785226432886.png" },
-  { title: "AI Analytics", description: "Delivers predictive insights and actionable recommendations. Forecast potential system degradation to proactively optimize your IT infrastructure before outages occur.", bgImage: "netraa_bg_observability_1785226443996.png" }
+  { title: "Incident Analysis", description: "Accelerates root cause investigation and impact assessment with intelligent log parsing and anomaly detection to drastically reduce MTTR.", bgImage: "netraa-incident-bg.png" },
+  { title: "AI Observability", description: "Provides real-time operational insights and system visibility. Continuously monitor application health and track dynamic microservice dependencies.", bgImage: "netraa-observability-bg.png" },
+  { title: "Data Ingestion", description: "Collects logs, metrics, events, and traces from multiple sources, unifying them into a centralized data lake for high-performance analysis.", bgImage: "netraa-ingestion-bg.png" },
+  { title: "Event Correlation", description: "Connects related incidents across applications and infrastructure. Intelligently group fragmented alerts into singular, highly actionable priority incidents.", bgImage: "netraa-correlation-bg.png" },
+  { title: "RCA Automation", description: "Automates root cause identification and resolution workflows, automatically surfacing underlying failure points to accelerate system recovery.", bgImage: "netraa-incident-bg.png" },
+  { title: "AI Analytics", description: "Delivers predictive insights and actionable recommendations. Forecast potential system degradation to proactively optimize your IT infrastructure before outages occur.", bgImage: "netraa-observability-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -63,7 +63,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 

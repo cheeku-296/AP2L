@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { Map, Database, Wand2, FileText, Box, Search, BarChart3, Shield, ChevronRight } from "lucide-react";
 
 const capabilities = [
-  { title: "Vulnerability Mapping", description: "Automatically scan and prioritize complex security risks to visualize your attack surface.", bgImage: "card_bg_vuln_map_1785225764334.png" },
-  { title: "Central Repository", description: "Maintain a single, secure source of truth to easily track all your SBOM inventories.", bgImage: "card_bg_repo_1785225775920.png" },
-  { title: "AI Remediation", description: "Leverage advanced machine learning to receive intelligent, context-aware fix recommendations.", bgImage: "card_bg_ai_1785225786234.png" },
-  { title: "Compliance Reporting", description: "Generate comprehensive, audit-ready reports tailored to SOC2, GDPR, and ISO standards.", bgImage: "shieldvue_bg_4.png" },
-  { title: "SBOM Generation", description: "Instantly create and manage Software Bill of Materials in standard formats like CycloneDX.", bgImage: "card_bg_sbom_1785225806160.png" },
-  { title: "Component Discovery", description: "Deeply analyze your codebase to automatically discover hidden third-party dependencies.", bgImage: "shieldvue_bg_6.png" },
-  { title: "Dashboard & Analytics", description: "Access a unified pane of glass for real-time security postures and actionable threat intelligence.", bgImage: "card_bg_analytics_1785225826204.png" },
-  { title: "Security & Governance", description: "Enforce centralized security policies across your entire software development lifecycle.", bgImage: "shieldvue_bg_8.png" }
+  { title: "Vulnerability Mapping", description: "Automatically scan and prioritize complex security risks to visualize your attack surface.", bgImage: "vuln-map-bg.png" },
+  { title: "Central Repository", description: "Maintain a single, secure source of truth to easily track all your SBOM inventories.", bgImage: "repo-bg.png" },
+  { title: "AI Remediation", description: "Leverage advanced machine learning to receive intelligent, context-aware fix recommendations.", bgImage: "ai-bg.png" },
+  { title: "Compliance Reporting", description: "Generate comprehensive, audit-ready reports tailored to SOC2, GDPR, and ISO standards.", bgImage: "shieldvue-4-bg.png" },
+  { title: "SBOM Generation", description: "Instantly create and manage Software Bill of Materials in standard formats like CycloneDX.", bgImage: "sbom-bg.png" },
+  { title: "Component Discovery", description: "Deeply analyze your codebase to automatically discover hidden third-party dependencies.", bgImage: "shieldvue-6-bg.png" },
+  { title: "Dashboard & Analytics", description: "Access a unified pane of glass for real-time security postures and actionable threat intelligence.", bgImage: "analytics-bg.png" },
+  { title: "Security & Governance", description: "Enforce centralized security policies across your entire software development lifecycle.", bgImage: "shieldvue-8-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -65,7 +65,7 @@ export default function KeyCapabilities() {
               <div
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-10 transition-opacity duration-500 group-hover:opacity-30  mix-blend-screen rounded-full blur-[2px]"
                 style={{
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`,
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center'
                 }}

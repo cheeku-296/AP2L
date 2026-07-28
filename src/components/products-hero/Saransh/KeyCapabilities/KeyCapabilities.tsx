@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { CloudOff, CheckCircle, Lock, AlertOctagon, Activity, Server } from "lucide-react";
 
 const capabilities = [
-  { title: "Environment Independence", description: "Completely eliminate live service dependencies to ensure uninterrupted, isolated testing environments.", bgImage: "card_bg_discovery_1785225815517.png" },
-  { title: "Release Validation", description: "Accelerate your DevOps pipeline with continuous validation, simulating real-world performance and timing.", bgImage: "card_bg_compliance_1785225796232.png" },
-  { title: "Security Handling", description: "Seamlessly test secure integrations using built-in support for TLS, dynamic tokens, and complex role-based access controls.", bgImage: "card_bg_security_1785225837046.png" },
-  { title: "Fault Simulation", description: "Proactively test system resiliency by deliberately injecting latency, unexpected errors, and network failures.", bgImage: "netraa_bg_incident_1785226432886.png" },
-  { title: "Behavior Modeling", description: "Accurately model both functional and negative edge-case scenarios with highly realistic, stateful service behavior.", bgImage: "card_bg_ai_1785225786234.png" },
-  { title: "Service Virtualization", description: "Instantly create high-fidelity virtual replicas of critical REST, SOAP, JMS, and TCP services.", bgImage: "card_bg_repo_1785225775920.png" }
+  { title: "Environment Independence", description: "Completely eliminate live service dependencies to ensure uninterrupted, isolated testing environments.", bgImage: "discovery-bg.png" },
+  { title: "Release Validation", description: "Accelerate your DevOps pipeline with continuous validation, simulating real-world performance and timing.", bgImage: "compliance-bg.png" },
+  { title: "Security Handling", description: "Seamlessly test secure integrations using built-in support for TLS, dynamic tokens, and complex role-based access controls.", bgImage: "security-bg.png" },
+  { title: "Fault Simulation", description: "Proactively test system resiliency by deliberately injecting latency, unexpected errors, and network failures.", bgImage: "netraa-incident-bg.png" },
+  { title: "Behavior Modeling", description: "Accurately model both functional and negative edge-case scenarios with highly realistic, stateful service behavior.", bgImage: "ai-bg.png" },
+  { title: "Service Virtualization", description: "Instantly create high-fidelity virtual replicas of critical REST, SOAP, JMS, and TCP services.", bgImage: "repo-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -62,7 +62,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 

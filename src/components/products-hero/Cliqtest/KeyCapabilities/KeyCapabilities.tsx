@@ -14,32 +14,32 @@ const capabilities = [
   {
     title: "No-Code Test Automation",
     description: "Accelerate testing with an intuitive, visual drag-and-drop interface designed for teams of all technical skill levels.",
-    bgImage: "card_bg_discovery_1785225815517.png",
+    bgImage: "discovery-bg.png",
   },
   {
     title: "AI Test Data Generation",
     description: "Automatically synthesize highly realistic, secure, and compliant test data on demand to bypass privacy bottlenecks.",
-    bgImage: "card_bg_repo_1785225775920.png",
+    bgImage: "repo-bg.png",
   },
   {
     title: "Requirement Traceability",
     description: "Ensure complete project visibility by establishing automated end-to-end linking between requirements and test cases.",
-    bgImage: "card_bg_compliance_1785225796232.png",
+    bgImage: "compliance-bg.png",
   },
   {
     title: "Smart Defect Intelligence",
     description: "Leverage machine learning algorithms to proactively predict, classify, and prioritize critical software defects.",
-    bgImage: "card_bg_ai_1785225786234.png",
+    bgImage: "ai-bg.png",
   },
   {
     title: "Enterprise Governance",
     description: "Maintain strict quality standards with automated policy enforcement and comprehensive audit-ready compliance reporting.",
-    bgImage: "card_bg_security_1785225837046.png",
+    bgImage: "security-bg.png",
   },
   {
     title: "Release Readiness Analytics",
     description: "Deploy with confidence using AI-driven risk assessments that accurately predict the stability of your next release.",
-    bgImage: "card_bg_analytics_1785225826204.png",
+    bgImage: "analytics-bg.png",
   }
 ];
 
@@ -93,7 +93,7 @@ export default function KeyCapabilities() {
               <div 
                 className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
                 style={{ 
-                  backgroundImage: `url('/images/products/${cap.bgImage}')`, 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
                   backgroundSize: 'cover', 
                   backgroundPosition: 'center' 
                 }} 
