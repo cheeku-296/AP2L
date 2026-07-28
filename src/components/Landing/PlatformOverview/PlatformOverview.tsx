@@ -29,7 +29,7 @@ const products = [
   {
     id: "netraa",
     title: "NETRAA AI-OPS",
-    logo: "/products-logo/netraa_logo.png",
+    logo: "/products-logo/netraa_logo copy.png",
     description: "Explainable AI for Intelligent Observability and rapid Root Cause Analysis. Consolidate your logs, metrics, and traces into a single pane of glass. Leverage machine learning algorithms to instantly identify anomalies, correlate events across distributed systems, and reduce your Mean Time to Resolution (MTTR) by up to 80%.",
     href: "/products/netraa",
     image: "/images/products/netraa-light.png",
@@ -39,7 +39,7 @@ const products = [
   {
     id: "cliqtest",
     title: "cliQTest",
-    logo: "/products-logo/cliqtest_logo.png",
+    logo: "/products-logo/cliqtest_logo copy.png",
     description: "AI-Powered Test Automation Platform enabling zero-touch continuous testing. Automate complex scenarios and ensure flawless deployments across every environment. Empower your QA teams with self-healing scripts, intelligent test generation, and seamless CI/CD integration that scales dynamically with your architecture.",
     href: "/products/cliqtest",
     image: "/images/products/cliqtest-light.png",
@@ -49,7 +49,7 @@ const products = [
   {
     id: "jupiter",
     title: "JUPITER",
-    logo: "/products-logo/jupiter_logo.png",
+    logo: "/products-logo/jupiter_logo copy.png",
     description: "Modern, AI-Powered IT Service Desk. Resolve tickets faster with intelligent routing, automated workflows, and robust self-service capabilities for your enterprise. Streamline your entire IT support lifecycle by deflecting routine queries and delivering context-aware assistance to your employees 24/7.",
     href: "/products/jupiter",
     image: "/images/products/jupiter-light.png",
@@ -59,7 +59,7 @@ const products = [
   {
     id: "finxplore",
     title: "FINXPLORE",
-    logo: "/products-logo/finxplore_logo.png",
+    logo: "/products-logo/finxplore_logo copy.png",
     description: "Real-time AI-Powered Risk & Fraud Detection for financial institutions. Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings, enforce AML protocols, and ensure absolute regulatory compliance.",
     href: "/products/finxplore",
     image: "/images/products/finxplore-light.png",
@@ -69,7 +69,7 @@ const products = [
   {
     id: "swikruti",
     title: "SWIKRUTI",
-    logo: "/products-logo/swikruti_logo.png",
+    logo: "/products-logo/swikruti_logo copy.png",
     description: "Consent Management & DPDPA Compliance platform for enterprise privacy. Keep your customer data compliant, secure, and fully auditable. Provide users with transparent control over their digital footprint while seamlessly mapping consent lifecycles across your data ecosystem to prevent unauthorized access.",
     href: "/products/swikruti",
     image: "/images/products/swikruti-light.png",
@@ -79,7 +79,7 @@ const products = [
   {
     id: "saransh",
     title: "SARANSH",
-    logo: "/products-logo/saransh_logo.png",
+    logo: "/products-logo/saransh_logo copy.png",
     description: "AI-Enabled Service Virtualization. Isolate complex subsystems and simulate behaviors to enable continuous testing in isolated sandbox environments. Decouple your development cycles from third-party API dependencies by replicating realistic stateful behaviors and edge-case failure scenarios on demand.",
     href: "/products/saransh",
     image: "/images/products/saransh.png",
@@ -143,7 +143,7 @@ export default function PlatformOverview() {
               <button
                 key={product.id}
                 onClick={() => setActiveId(product.id)}
-                className={`relative w-full pl-1 sm:pl-1.5 md:pl-2 pr-1.5 sm:pr-2 md:pr-2.5 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
+                className={`relative w-full pl-0 sm:pl-0.5 md:pl-1 pr-1 sm:pr-1.5 md:pr-2 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
                   ? `text-white dark:text-slate-900 border-transparent shadow-md`
                   : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-800 dark:hover:text-slate-200"
                   }`}
@@ -155,7 +155,7 @@ export default function PlatformOverview() {
                     transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
                   />
                 )}
-                <div className="relative h-7.5 w-11 sm:h-8.5 sm:w-13 md:h-9.5 md:w-15 flex-shrink-0">
+                <div className="relative h-6 w-9 sm:h-6.5 sm:w-10 md:h-7 md:w-11 flex-shrink-0">
                   <Image
                     src={product.logo}
                     alt={`${product.title} logo`}
