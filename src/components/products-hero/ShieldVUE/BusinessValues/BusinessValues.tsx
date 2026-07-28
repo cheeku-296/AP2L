@@ -75,11 +75,15 @@ export default function BusinessValues() {
                 transition={{ delay: index * 0.1 }}
                 className="group p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-violet-200 hover:shadow-xl hover:shadow-violet-500/5 transition-all duration-300"
               >
-                <div className="h-12 w-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
-                  <Icon size={24} />
+                <div className="flex gap-5 items-start">
+                  <div className="shrink-0 h-12 w-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center group-hover:scale-110 group-hover:bg-violet-600 group-hover:text-white transition-all duration-300">
+                    <Icon size={24} />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 font-urbanist">{value.title}</h3>
+                    <p className="text-slate-600 leading-relaxed text-[15px] font-manrope">{value.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-[15px]">{value.description}</p>
               </motion.div>
             );
           })}
