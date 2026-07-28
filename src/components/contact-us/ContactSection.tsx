@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Mail,
@@ -11,12 +11,26 @@ import {
   Headphones,
   Send,
   CheckCircle,
-    ArrowRight,
+  ArrowRight,
+  ChevronDown,
+  Check,
 } from "lucide-react";
 
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const [formData, setFormData] = useState({
     firstName: "",
@@ -398,15 +412,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -437,15 +454,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -481,15 +501,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -522,15 +545,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -568,15 +594,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -609,15 +638,18 @@ export default function ContactSection() {
                             border
                             border-slate-900/10
                             dark:border-slate-700
-                            bg-white/70
-                            dark:bg-slate-900/40
+                            bg-white
+                            dark:bg-slate-800/80
                             px-5
                             py-3
                             text-sm
+                            text-slate-900
+                            dark:text-white
                             outline-none
                             transition-all
                             duration-300
                             placeholder:text-slate-400
+                            dark:placeholder:text-slate-500
                             focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
@@ -636,48 +668,140 @@ export default function ContactSection() {
                         Interested Product
                       </label>
 
-                      <select
-                        required
-                        value={formData.product}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            product: e.target.value,
-                          })
-                        }
-                        className="
-                          w-full
-                          rounded-2xl
-                          border
-                          border-slate-900/10
-                          dark:border-slate-700
-                          bg-white/70
-                          dark:bg-slate-900/40
-                          px-5
-                          py-3
-                          text-sm
-                          outline-none
-                          transition-all
-                          duration-300
-                          focus:border-violet-500
-                          focus:ring-4
-                          focus:ring-violet-500/10
-                        "
-                      >
-                        <option value="">
-                          Select a Product
-                        </option>
+                      <div className="relative" ref={dropdownRef}>
+                        {/* Hidden native select for HTML5 form validation */}
+                        <select
+                          required
+                          value={formData.product}
+                          onChange={(e) =>
+                            setFormData({
+                              ...formData,
+                              product: e.target.value,
+                            })
+                          }
+                          className="sr-only"
+                          tabIndex={-1}
+                          aria-hidden="true"
+                        >
+                          <option value="">Select a Product</option>
+                          {products.map((product) => (
+                            <option key={product} value={product}>
+                              {product}
+                            </option>
+                          ))}
+                        </select>
 
-                        {products.map((product) => (
-                          <option
-                            key={product}
-                            value={product}
+                        {/* Custom Dropdown Trigger */}
+                        <button
+                          type="button"
+                          onClick={() => setIsDropdownOpen((prev) => !prev)}
+                          className="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            rounded-2xl
+                            border
+                            border-slate-900/10
+                            dark:border-slate-700
+                            bg-white
+                            dark:bg-slate-800/80
+                            px-5
+                            py-3
+                            text-sm
+                            text-left
+                            outline-none
+                            transition-all
+                            duration-300
+                            focus:border-violet-500
+                            focus:ring-4
+                            focus:ring-violet-500/10
+                            cursor-pointer
+                          "
+                        >
+                          <span
+                            className={
+                              formData.product
+                                ? "text-slate-900 dark:text-white font-medium"
+                                : "text-slate-400 dark:text-slate-500"
+                            }
                           >
-                            {product}
-                          </option>
-                        ))}
+                            {formData.product || "Select a Product"}
+                          </span>
+                          <ChevronDown
+                            className={`h-4 w-4 text-slate-400 transition-transform duration-300 ${
+                              isDropdownOpen ? "rotate-180 text-violet-500" : ""
+                            }`}
+                          />
+                        </button>
 
-                      </select>
+                        {/* Custom Dropdown Menu */}
+                        <AnimatePresence>
+                          {isDropdownOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -8, scale: 0.98 }}
+                              animate={{ opacity: 1, y: 4, scale: 1 }}
+                              exit={{ opacity: 0, y: -8, scale: 0.98 }}
+                              transition={{ duration: 0.15, ease: "easeOut" }}
+                              className="
+                                absolute
+                                left-0
+                                right-0
+                                z-50
+                                mt-1
+                                max-h-60
+                                overflow-y-auto
+                                rounded-2xl
+                                border
+                                border-slate-200
+                                dark:border-slate-700
+                                bg-white
+                                dark:bg-slate-900
+                                p-2
+                                shadow-xl
+                                backdrop-blur-xl
+                              "
+                            >
+                              {products.map((product) => {
+                                const isSelected = formData.product === product;
+                                return (
+                                  <button
+                                    key={product}
+                                    type="button"
+                                    onClick={() => {
+                                      setFormData({ ...formData, product });
+                                      setIsDropdownOpen(false);
+                                    }}
+                                    className={`
+                                      flex
+                                      w-full
+                                      items-center
+                                      justify-between
+                                      rounded-xl
+                                      px-4
+                                      py-2.5
+                                      text-sm
+                                      transition-colors
+                                      duration-150
+                                      cursor-pointer
+                                      ${
+                                        isSelected
+                                          ? "bg-violet-50 dark:bg-violet-950/60 font-semibold text-violet-600 dark:text-violet-400"
+                                          : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white"
+                                      }
+                                    `}
+                                  >
+                                    <span>{product}</span>
+                                    {isSelected && (
+                                      <Check className="h-4 w-4 text-violet-600 dark:text-violet-400" />
+                                    )}
+                                  </button>
+                                );
+                              })}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
 
                     </div>
 
@@ -707,15 +831,18 @@ export default function ContactSection() {
                           border
                           border-slate-900/10
                           dark:border-slate-700
-                          bg-white/70
-                          dark:bg-slate-900/40
+                          bg-white
+                          dark:bg-slate-800/80
                           px-5
                           py-3
                           text-sm
+                          text-slate-900
+                          dark:text-white
                           outline-none
                           transition-all
                           duration-300
                           placeholder:text-slate-400
+                          dark:placeholder:text-slate-500
                           focus:border-violet-500
                           focus:ring-4
                           focus:ring-violet-500/10
