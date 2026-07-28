@@ -1,14 +1,6 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import {
-  ShieldCheck,
-  Clock,
-  FileCheck,
-  AlertTriangle,
-  TrendingUp,
-  Lock,
-} from "lucide-react";
 
 const metrics = [
   {
@@ -16,42 +8,36 @@ const metrics = [
     label: "Vulnerability Detection",
     value: "99.9%",
     description: "Catch vulnerabilities before they reach production with comprehensive scanning.",
-    icon: ShieldCheck,
   },
   {
     id: "remediation",
     label: "Faster Remediation",
     value: "70%",
     description: "Reduce mean time to remediate with intelligent prioritization.",
-    icon: Clock,
   },
   {
     id: "compliance",
     label: "Compliance Automation",
     value: "80%",
     description: "Less manual effort for evidence collection and reporting.",
-    icon: FileCheck,
   },
   {
     id: "risk",
     label: "Risk Reduction",
     value: "60%",
     description: "Lower overall security risk through continuous monitoring.",
-    icon: AlertTriangle,
   },
   {
     id: "roi",
     label: "Security ROI",
     value: "4x",
     description: "Average ROI achieved in first year by proactive security.",
-    icon: TrendingUp,
   },
   {
     id: "coverage",
     label: "Supply Chain Coverage",
     value: "100%",
     description: "Full visibility into dependencies and third‑party components.",
-    icon: Lock,
   },
 ];
 
@@ -113,28 +99,28 @@ export default function SecMetrics() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {metrics.map((metric) => {
-            const Icon = metric.icon;
             return (
               <motion.div
                 key={metric.id}
                 variants={itemVariants}
-                className="group relative p-5 rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 dark:hover:border-violet-600 overflow-hidden"
+                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80 dark:hover:border-violet-500/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 via-violet-500/0 to-fuchsia-500/0 group-hover:from-violet-500/5 group-hover:via-violet-500/5 group-hover:to-fuchsia-500/5 transition-all duration-500 pointer-events-none" />
+                {/* Purple Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700" />
+
                 <div className="relative z-10">
-                  <div className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-violet-500/20">
-                    <Icon size={20} strokeWidth={1.5} />
-                  </div>
-                  <div className="font-urbanist text-3xl md:text-4xl font-extrabold tracking-tight bg-gradient-to-br from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+                  {/* Value */}
+                  <div className="font-urbanist text-3xl md:text-4xl font-extrabold tracking-tight text-violet-600 dark:text-violet-400 mb-2">
                     {metric.value}
                   </div>
-                  <h3 className="mt-1 font-urbanist text-base font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                  
+                  <h3 className="mb-2 font-urbanist text-[22px] font-bold text-slate-900 dark:text-white transition-colors">
                     {metric.label}
                   </h3>
-                  <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  
+                  <p className="font-manrope text-[15px] leading-relaxed text-slate-600 dark:text-slate-400">
                     {metric.description}
                   </p>
-                  {/* <div className="mt-4 h-0.5 w-0 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 transition-all duration-300 group-hover:w-full" /> */}
                 </div>
               </motion.div>
             );
