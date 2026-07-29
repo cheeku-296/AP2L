@@ -20,7 +20,7 @@ export default function FinxploreHero() {
           className="object-cover object-center opacity-100 scale-110"
         />
         {/* Dark gradient overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50 pointer-events-none" />
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50 pointer-events-none" /> */}
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none" />
       </ParallaxBackground>
