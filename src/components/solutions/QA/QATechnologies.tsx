@@ -15,7 +15,7 @@ export default function QATechnologies() {
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         {/* Header – Centered */}
         {/* Header section */}
-        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -48,10 +48,10 @@ export default function QATechnologies() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="relative w-full"
         >
-          <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
+          <div className="relative w-full h-[400px] md:h-[550px] lg:h-[680px] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
             {/* Light mode image */}
             <Image
-              src="/images/solutions/QA/QA.png"
+              src="/solutions/qa/2.png"
               alt="Technologies compatible with cliQTest"
               fill
               className="object-cover dark:hidden"
@@ -59,7 +59,7 @@ export default function QATechnologies() {
             />
             {/* Dark mode image */}
             <Image
-              src="/images/solutions/QA/QA.png"
+              src="/solutions/qa/2.png"
               alt="Technologies compatible with cliQTest"
               fill
               className="object-cover hidden dark:block"

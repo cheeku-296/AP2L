@@ -13,9 +13,9 @@ export default function SecTechnologies() {
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         {/* Header section */}
-        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -24,9 +24,9 @@ export default function SecTechnologies() {
               Integrated with Your Security Stack
             </motion.h2>
           </div>
-          
+
           <div className="md:pt-2">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -45,7 +45,7 @@ export default function SecTechnologies() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="relative w-full max-w-7xl mx-auto"
         >
-          <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
+          <div className="relative w-full h-[450px] md:h-[600px] lg:h-[720px] rounded-xl overflow-hidden ">
             <Image
               src="/images/solutions/security/security.png"
               alt="Security technologies compatible with AP2L"

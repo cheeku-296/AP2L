@@ -14,7 +14,7 @@ export default function QABenefits() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-2 md:mb-2 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,14 +47,13 @@ export default function QABenefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative w-full rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-violet-500/10"
+          className="relative w-full h-[400px] md:h-[550px] lg:h-[680px] rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-violet-500/10"
         >
           <Image
-            src="/images/solutions/QA/benefits.png" // Replace with your actual image path
+            src="/solutions/qa/1.png" // Replace with your actual image path
             alt="Benefits of AI-Powered Testing - AP2L Platform"
-            width={1600}
-            height={900}
-            className="w-full h-auto"
+            fill
+            className="object-cover object-center"
             priority
           />
         </motion.div>
