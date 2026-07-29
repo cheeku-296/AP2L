@@ -117,7 +117,7 @@ export default function PlatformOverview() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
             >
-              The AP2L Products
+              The AP2L Innovations
             </motion.h2>
 
           </div>
