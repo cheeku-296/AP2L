@@ -55,6 +55,8 @@ export default function SecurityPage() {
             description="Protect your applications, infrastructure, and software supply chain with AI-powered security, continuous compliance, vulnerability management, and enterprise-grade cyber resilience."
             primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
+            secondaryButtonText="Explore Insights"
+            secondaryButtonLink="/resources/blog"
           />
         )}
       </main>

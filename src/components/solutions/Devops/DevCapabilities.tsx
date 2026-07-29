@@ -17,50 +17,82 @@ const capabilities = [
   {
     id: "ci-cd",
     title: "Intelligent CI/CD Automation",
-    description: "Automate your entire delivery pipeline with AI‑powered orchestration and intelligent quality gates.",
+    description: "Automate the complete software delivery pipeline with intelligent build orchestration, continuous integration, automated testing, deployment governance, and release automation to accelerate delivery while maintaining quality.",
     icon: GitBranch,
     image: "/images/solutions/devops/cicd_automation.png",
-    features: ["Automated testing", "Smart quality gates", "Rollback automation", "Deployment insights"],
+    features: [
+      "Intelligent build orchestration",
+      "Continuous integration & testing",
+      "Deployment governance",
+      "Release automation",
+    ],
   },
   {
     id: "observability",
-    title: "Real‑Time Observability",
-    description: "Gain deep insights into your applications with end‑to‑end tracing and predictive analytics.",
+    title: "Enterprise Observability & Operational Intelligence",
+    description: "Gain complete visibility across applications, infrastructure, cloud environments, and distributed services with real-time monitoring, predictive analytics, and proactive incident detection.",
     icon: Activity,
     image: "/images/solutions/devops/realtimeobservability.png",
-    features: ["Distributed tracing", "Log aggregation", "Performance metrics", "Anomaly detection"],
+    features: [
+      "End-to-End Distributed Tracing",
+      "Centralized Log Management",
+      "Infrastructure & Application Monitoring",
+      "Real-Time Performance Analytics",
+      "Intelligent Anomaly Detection",
+      "Root Cause Analysis",
+    ],
   },
   {
     id: "security",
-    title: "DevSecOps Integration",
-    description: "Embed security into every stage of your pipeline with automated scanning and compliance checks.",
+    title: "Integrated DevSecOps",
+    description: "Embed security throughout the development lifecycle by integrating vulnerability scanning, policy enforcement, compliance validation, and automated security controls directly into CI/CD pipelines.",
     icon: Shield,
     image: "/images/solutions/devops/devsecops.png",
-    features: ["SAST & DAST integration", "SBOM generation", "Policy enforcement", "Compliance reporting"],
+    features: [
+      "Vulnerability scanning",
+      "Policy enforcement",
+      "Compliance validation",
+      "Automated security controls",
+    ],
   },
   {
     id: "infrastructure",
-    title: "Infrastructure as Code",
-    description: "Manage and provision cloud resources with declarative configurations and version control.",
+    title: "Infrastructure as Code (IaC)",
+    description: "Provision, configure, and manage infrastructure consistently across cloud and hybrid environments using Infrastructure as Code to improve scalability, governance, and operational efficiency.",
     icon: Server,
     image: "/images/solutions/devops/infra.png",
-    features: ["Terraform integration", "Cloud provisioning", "State management", "Drift detection"],
+    features: [
+      "Consistent infrastructure provisioning",
+      "Cloud & hybrid management",
+      "Governance & compliance",
+      "Operational efficiency",
+    ],
   },
   {
     id: "cloud",
-    title: "Multi‑Cloud Management",
-    description: "Seamlessly manage deployments across AWS, Azure, GCP, and hybrid environments.",
+    title: "Multi-Cloud & Hybrid Cloud Management",
+    description: "Simplify deployment, monitoring, and governance across AWS, Microsoft Azure, Google Cloud, private cloud, Kubernetes, and hybrid environments through centralized management.",
     icon: Cloud,
     image: "/images/solutions/devops/multicloud.png",
-    features: ["AWS, Azure, GCP", "Hybrid cloud", "Kubernetes management", "Auto‑scaling"],
+    features: [
+      "AWS, Azure, Google Cloud",
+      "Private cloud & hybrid environments",
+      "Kubernetes management",
+      "Centralized governance",
+    ],
   },
   {
     id: "automation",
-    title: "Workflow Automation",
-    description: "Automate repetitive tasks and orchestrate complex workflows across your entire toolchain.",
+    title: "Workflow Automation & Release Orchestration",
+    description: "Automate repetitive operational tasks, approval workflows, deployment orchestration, rollback strategies, and release governance to improve operational efficiency and reduce manual intervention.",
     icon: Zap,
     image: "/images/solutions/devops/automation.png",
-    features: ["Task orchestration", "Event‑driven automation", "Custom workflows", "Integration hub"],
+    features: [
+      "Approval workflows automation",
+      "Deployment orchestration",
+      "Rollback strategies",
+      "Release governance",
+    ],
   },
 ];
 
@@ -114,7 +146,7 @@ export default function DevCapabilities() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Enterprise DevOps Capabilities
+              Intelligent Platform Engineering
             </motion.h2>
           </div>
           
@@ -126,7 +158,7 @@ export default function DevCapabilities() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              From CI/CD automation to observability and security — everything you need to build and scale.
+              Accelerate development, automate operations, strengthen security, and simplify infrastructure management.
             </motion.p>
           </div>
         </div>

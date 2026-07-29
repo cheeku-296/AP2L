@@ -45,8 +45,8 @@ const steps: WorkflowStep[] = [
 export default function ITWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="End‑to‑End IT Support Workflow"
-      subtitle="From ticket ingestion to resolution — AP2L automates and streamlines every step."
+      title="Intelligent Service Delivery Across Every Stage"
+      subtitle="Automate incident management, ticket routing, service fulfilment, and continuous improvement for faster, more reliable IT support."
       steps={steps}
     />
   );

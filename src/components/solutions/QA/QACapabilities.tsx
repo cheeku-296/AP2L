@@ -18,84 +18,85 @@ const capabilities = [
     id: "test-automation",
     title: "AI-Powered Test Automation",
     description:
-      "Intelligent test case generation that learns from your application behavior and automatically creates comprehensive test suites.",
+      "Leverage intelligent automation to generate, execute, maintain, and optimize test cases while significantly reducing manual effort and accelerating software validation.",
     icon: Code2,
     image: "/images/solutions/QA/Test_automation.png",
     features: [
+      "AI test case generation",
       "Self-healing test scripts",
-      "Visual regression testing",
-      "Parallel test execution",
-      "Cross-browser testing",
+      "Parallel execution optimization",
+      "Manual effort reduction",
     ],
   },
   {
     id: "no-code-testing",
-    title: "No-Code Testing Platform",
+    title: "Low-Code & No-Code Test Automation",
     description:
-      "Empower your entire team with intuitive visual test creation—no coding expertise required.",
+      "Empower both technical and business users to create scalable automated tests without extensive programming expertise, accelerating adoption across teams.",
     icon: LayoutTemplate,
     image: "/images/solutions/QA/No_Code.png",
     features: [
-      "Visual test builder",
-      "Record & playback",
-      "Drag-and-drop workflows",
-      "Test templates library",
+      "Visual test creation",
+      "Low-code & no-code platform",
+      "Technical & business user enablement",
+      "Accelerated team adoption",
     ],
   },
   {
     id: "mobile-testing",
-    title: "Mobile & Web Testing",
+    title: "Cross-Platform Web & Mobile Testing",
     description:
-      "Comprehensive testing across all platforms with real device cloud and emulator support.",
+      "Validate seamless user experiences across browsers, operating systems, devices, and mobile platforms using unified test orchestration.",
     icon: Monitor,
     image: "/images/solutions/QA/mobile_web.png",
     features: [
-      "Real device testing",
-      "iOS & Android support",
-      "Responsive testing",
-      "Performance monitoring",
+      "Cross-browser validation",
+      "Mobile platform testing",
+      "Operating system coverage",
+      "Unified test orchestration",
     ],
   },
   {
     id: "api-testing",
-    title: "API & Microservices Testing",
+    title: "API & Microservices Validation",
     description:
-      "Validate your microservices architecture with comprehensive API testing and service virtualization.",
+      "Ensure the reliability, security, and performance of modern distributed architectures through comprehensive API, integration, and microservices testing.",
     icon: Cloud,
     image: "/images/solutions/QA/API&Microservice.png",
     features: [
-      "REST & GraphQL testing",
-      "Service virtualization",
-      "Contract testing",
-      "Load testing",
+      "Comprehensive API testing",
+      "Integration testing",
+      "Microservices validation",
+      "Distributed architecture coverage",
     ],
   },
   {
     id: "security-testing",
     title: "Security & Compliance Testing",
     description:
-      "Automated security scanning embedded in your test pipeline to catch vulnerabilities early.",
+      "Embed security throughout the Software Development Lifecycle by continuously identifying vulnerabilities, validating security controls, and ensuring regulatory compliance before production deployment.",
     icon: Lock,
     image: "/images/solutions/QA/sec&comp.png",
     features: [
-      "SAST & DAST integration",
-      "OWASP compliance",
-      "Vulnerability scanning",
-      "Security policy enforcement",
+      "Integrated SAST & DAST Analysis",
+      "Continuous Vulnerability Assessment",
+      "OWASP Security Validation",
+      "Automated Compliance Verification",
+      "Security Policy Enforcement",
     ],
   },
   {
     id: "ci-cd-integration",
-    title: "CI/CD Pipeline Integration",
+    title: "CI/CD Quality Integration",
     description:
-      "Seamlessly integrate with your DevOps workflow for continuous testing and quality gates.",
+      "Integrate intelligent testing seamlessly into your DevSecOps pipeline to enable continuous validation, faster feedback loops, and automated release governance.",
     icon: GitBranch,
     image: "/images/solutions/QA/cicd.png",
     features: [
-      "Jenkins & GitHub Actions",
-      "Quality gates enforcement",
-      "Automated reports",
-      "Git integration",
+      "DevSecOps pipeline integration",
+      "Continuous quality validation",
+      "Faster feedback loops",
+      "Automated release governance",
     ],
   },
 ];
@@ -149,7 +150,7 @@ export default function QACapabilities() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Enterprise-Grade Testing Capabilities
+              Quality Engineering for Modern Software
             </motion.h2>
           </div>
           
@@ -161,8 +162,7 @@ export default function QACapabilities() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              From automated functional testing to performance and security
-              scanning—everything your QA team needs.
+              Deliver continuous quality with AI-driven automation, intelligent analytics, and integrated quality assurance.
             </motion.p>
           </div>
         </div>

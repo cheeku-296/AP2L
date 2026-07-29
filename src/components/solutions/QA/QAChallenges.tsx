@@ -13,45 +13,45 @@ import {
 const challenges = [
   {
     id: "test-coverage",
-    title: "Inadequate Test Coverage",
-    description: "Critical bugs slip through to production",
+    title: "Limited Test Coverage",
+    description: "Traditional testing leaves critical scenarios untested, increasing production risks.",
     icon: AlertCircle,
-    impact: "40% defects reach production",
+    impact: "Limited Test Coverage",
   },
   {
     id: "slow-cycles",
-    title: "Slow Testing Cycles",
-    description: "Bottlenecks delay releases by days",
+    title: "Slow-Release Validation",
+    description: "Lengthy validation cycles delay releases and slow business innovation.",
     icon: Clock,
-    impact: "70% longer release cycles",
+    impact: "Slow-Release Validation",
   },
   {
     id: "maintenance",
-    title: "Test Maintenance Overhead",
-    description: "Constant updates waste QA time",
+    title: "High Test Maintenance Effort",
+    description: "Frequent application changes require constant test updates, consuming engineering time.",
     icon: GitBranch,
-    impact: "40% of QA time lost",
+    impact: "High Test Maintenance Effort",
   },
   {
-    id: "skill-gap",
-    title: "Skill Gaps in Testing",
-    description: "Finding skilled QA engineers is hard",
+    id: "qa-onboarding",
+    title: "Extended QA Onboarding",
+    description: "Building skilled QA teams takes time, delaying project delivery.",
     icon: Users,
-    impact: "6+ months to onboard",
+    impact: "Extended QA Onboarding",
   },
   {
     id: "security",
-    title: "Security Vulnerabilities",
-    description: "Security testing is often an afterthought",
+    title: "Increased Security Exposure",
+    description: "Late security testing increases vulnerabilities, costs, and organizational risk.",
     icon: Shield,
-    impact: "$4.45M breach cost",
+    impact: "Increased Security Exposure",
   },
   {
     id: "performance",
-    title: "Performance Bottlenecks",
-    description: "Load testing skipped or done late",
+    title: "Performance Risks",
+    description: "Insufficient performance testing leads to scalability issues and production outages.",
     icon: TrendingUp,
-    impact: "60% outages due to perf",
+    impact: "Performance Risks",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function QAChallenges() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              What&apos;s Holding Your QA Back?
+              Why Modern QA Teams Struggle
             </motion.h2>
           </div>
           
@@ -113,8 +113,7 @@ export default function QAChallenges() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Modern QA teams face critical challenges that impact quality, speed,
-              and business outcomes. Here&apos;s what&apos;s slowing you down.
+             Modern software is more complex than ever. Traditional testing can't keep up with rapid releases, distributed systems, and rising quality expectations.
             </motion.p>
           </div>
         </div>
@@ -184,7 +183,7 @@ export default function QAChallenges() {
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold">Business Impact</h3>
               <p className="font-inter text-sm text-white/80 mt-1">
-                These challenges directly affect cost, quality, and customer satisfaction.
+                Challenges impact customer experience, compliance, efficiency, and growth.
               </p>
             </div>
 
@@ -207,7 +206,7 @@ export default function QAChallenges() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-urbanist text-lg font-bold">
-                      {challenge.impact}
+                      {challenge.title}
                     </div>
                     <p className="font-inter text-sm text-white/80 leading-tight">
                       {challenge.description}

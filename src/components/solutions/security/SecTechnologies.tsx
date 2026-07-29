@@ -21,7 +21,7 @@ export default function SecTechnologies() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Integrated with Your Security Stack
+              Seamless Security Integration
             </motion.h2>
           </div>
 
@@ -33,7 +33,7 @@ export default function SecTechnologies() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              AP2L seamlessly integrates with the tools you already use — SIEM, vulnerability scanners, and more.
+              AP2L Integrates with your security, DevSecOps, cloud, CI/CD, SIEM, and governance platforms without disrupting existing workflows.
             </motion.p>
           </div>
         </div>

@@ -6,38 +6,38 @@ const metrics = [
   {
     id: "deployment",
     label: "Deployment Frequency",
-    value: "10x",
-    description: "More frequent deployments with automated CI/CD pipelines.",
+    value: "10×",
+    description: "Accelerate software releases through intelligent CI/CD automation, release orchestration, and continuous delivery practices.",
   },
   {
     id: "speed",
-    label: "Deployment Speed",
+    label: "Faster Deployment Cycles",
     value: "75%",
-    description: "Faster deployments with parallel execution and automation.",
+    description: "Reduce deployment time through automated pipelines, parallel execution, infrastructure automation, and intelligent workflow optimization.",
   },
   {
     id: "security",
-    label: "Security Compliance",
+    label: "Continuous Security Validation",
     value: "100%",
-    description: "Automated security scanning in every pipeline stage.",
+    description: "Ensure every deployment is validated against security policies, compliance requirements, and automated governance controls before reaching production.",
   },
   {
     id: "roi",
-    label: "DevOps ROI",
-    value: "4.5x",
-    description: "Average ROI achieved by enterprises in first year.",
+    label: "Return on DevOps Investment",
+    value: "4.5×",
+    description: "Increase engineering productivity, reduce operational costs, and maximize infrastructure efficiency through intelligent automation.",
   },
   {
     id: "efficiency",
-    label: "Operational Efficiency",
+    label: "Higher Operational Efficiency",
     value: "60%",
-    description: "Less time spent on infrastructure management.",
+    description: "Reduce manual operational effort through infrastructure automation, workflow orchestration, and centralized platform management.",
   },
   {
     id: "uptime",
-    label: "System Uptime",
+    label: "Enterprise-Grade Availability",
     value: "99.99%",
-    description: "High availability with intelligent observability.",
+    description: "Maintain highly available, resilient, and continuously monitored applications through intelligent observability and proactive incident management.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function DevMetrics() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Measurable DevOps Impact
+              Transform DevOps into a Competitive Advantage
             </motion.h2>
           </div>
           
@@ -88,7 +88,7 @@ export default function DevMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprise teams using AP2L&apos;s DevOps platform.
+              Deliver faster releases, improve reliability, and boost engineering productivity with enterprise-grade DevOps.
             </motion.p>
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function DevTechnologies() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Compatible with Your Stack
+              Seamless Technology Integration
             </motion.h2>
           </div>
 
@@ -35,7 +35,7 @@ export default function DevTechnologies() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              AP2L integrates with the tools you already use. No migration required.
+              AP2L Integrates with your DevOps, cloud, security, monitoring, and automation tools without disrupting existing workflows.
             </motion.p>
           </div>
         </div>

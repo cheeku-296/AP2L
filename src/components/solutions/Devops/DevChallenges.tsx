@@ -13,51 +13,45 @@ import {
 const challenges = [
   {
     id: "deployment-speed",
-    title: "Slow Deployments",
-    description: "Manual processes delay releases",
+    title: "Slow & Manual Release Pipelines",
+    description: "Manual deployments and fragmented workflows slow releases and reduce engineering productivity.",
     icon: Clock,
-    impact: "70% slower",
-    severity: 85,
+    impact: "Slow & Manual Release Pipelines",
   },
   {
     id: "security-gaps",
-    title: "Security Vulnerabilities",
-    description: "Testing is an afterthought",
+    title: "Security Integrated Too Late",
+    description: "Late security validation increases deployment risks, remediation costs, and compliance issues.",
     icon: Shield,
-    impact: "$4.45M breach",
-    severity: 95,
+    impact: "Security Integrated Too Late",
   },
   {
     id: "infrastructure",
-    title: "Infrastructure Sprawl",
-    description: "Multi‑cloud complexity",
+    title: "Complex Infrastructure Management",
+    description: "Managing multi-cloud and hybrid infrastructure increases complexity and governance challenges.",
     icon: Server,
-    impact: "45% budget waste",
-    severity: 70,
+    impact: "Complex Infrastructure Management",
   },
   {
     id: "observability",
-    title: "Limited Observability",
-    description: "No real‑time insights",
+    title: "Limited Operational Visibility",
+    description: "Limited visibility delays issue detection, incident resolution, and service reliability.",
     icon: AlertCircle,
-    impact: "70% unresolved",
-    severity: 75,
+    impact: "Limited Operational Visibility",
   },
   {
     id: "configuration",
-    title: "Configuration Drift",
-    description: "Inconsistent environments",
+    title: "Environment Inconsistency",
+    description: "Inconsistent environments increase deployment failures and operational risk.",
     icon: GitBranch,
-    impact: "60% incidents",
-    severity: 65,
+    impact: "Environment Inconsistency",
   },
   {
     id: "automation",
-    title: "Automation Debt",
-    description: "Legacy scripts overhead",
+    title: "Legacy Automation Bottlenecks",
+    description: "Outdated automation slows delivery, limits scalability, and wastes engineering time.",
     icon: Zap,
-    impact: "50% time lost",
-    severity: 60,
+    impact: "Legacy Automation Bottlenecks",
   },
 ];
 
@@ -107,7 +101,7 @@ export default function DevChallenges() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              What&apos;s Slowing Your DevOps?
+              Modern Software Needs Intelligent DevOps
             </motion.h2>
           </div>
           
@@ -119,9 +113,7 @@ export default function DevChallenges() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Modern software delivery faces multiple engineering and operational
-              bottlenecks that impact release velocity, security, reliability and
-              business outcomes.
+              Traditional deployment struggles to keep pace with distributed teams, cloud-native applications, and rapid release cycles.
             </motion.p>
           </div>
         </div>
@@ -191,7 +183,7 @@ export default function DevChallenges() {
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold">Business Impact</h3>
               <p className="font-inter text-sm text-white/80 mt-1">
-                These challenges directly affect speed, cost and customer experience.
+                Challenges impact agility, customer experience, costs, and resilience.
               </p>
             </div>
 

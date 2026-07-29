@@ -16,80 +16,82 @@ import {
 const capabilities = [
   {
     id: "ai-triage",
-    title: "AI-Powered Ticket Triage",
-    description: "Intelligent routing and prioritization of tickets based on urgency, impact, and agent expertise.",
+    title: "AI-Powered Incident & Ticket Management",
+    description: "Automatically classify, prioritize, route, and resolve incidents using intelligent automation to reduce response times and improve service desk productivity.",
     icon: Bot,
     image: "/images/solutions/IT/ticket.png",
     features: [
-      "Smart ticket categorization",
-      "Priority-based routing",
-      "Agent skill matching",
-      "SLA prediction",
+      "Automatic incident classification",
+      "Priority-based ticket routing",
+      "Automated incident resolution",
+      "Response time reduction",
     ],
   },
   {
     id: "virtual-agents",
-    title: "Intelligent Virtual Agents",
-    description: "AI chatbots that resolve common queries instantly, 24/7, without human intervention.",
+    title: "Intelligent Virtual Assistants",
+    description: "Provide employees with always-available virtual support capable of resolving common issues, answering IT queries, and guiding users through service requests without human intervention.",
     icon: Headset,
     image: "/images/solutions/IT/agents.png",
     features: [
-      "Natural language understanding",
-      "Self-service resolution",
-      "Seamless handoff to agents",
-      "Multi-channel support",
+      "Always-available 24/7 support",
+      "Common issue resolution",
+      "IT query assistance",
+      "Guided service requests",
     ],
   },
   {
     id: "knowledge-base",
-    title: "Self-Service Knowledge Base",
-    description: "Centralized repository of articles, FAQs, and solutions accessible to employees anytime.",
+    title: "Enterprise Self-Service Portal & Knowledge Management",
+    description: "Enable employees to resolve common IT issues independently through an intelligent knowledge base, automated service catalog, and guided self-service experiences.",
     icon: BookOpen,
     image: "/images/solutions/IT/knowledgebase.png",
     features: [
-      "AI-powered search",
-      "Automatic article suggestions",
-      "Feedback loop",
-      "Multi-language support",
+      "Independent IT issue resolution",
+      "Intelligent knowledge base",
+      "Automated service catalog",
+      "Guided self-service experiences",
     ],
   },
   {
     id: "workflow-automation",
-    title: "Workflow Automation",
-    description: "Automate repetitive tasks, approvals, and escalations across your IT service management.",
+    title: "Workflow Automation & Service Orchestration",
+    description: "Automate repetitive IT operations, approval workflows, service requests, incident escalations, and operational processes to improve consistency and reduce manual effort.",
     icon: GitBranch,
     image: "/images/solutions/IT/workflow_automation.png",
     features: [
-      "No-code automation builder",
-      "Approval workflows",
-      "Escalation rules",
-      "Integration with ITSM",
+      "No-Code Workflow Builder",
+      "Automated Approval Processes",
+      "Intelligent Escalation Rules",
+      "Service Request Automation",
+      "Enterprise ITSM Integration",
+      "Process Orchestration",
     ],
   },
   {
     id: "proactive-alerts",
-    title: "Proactive Alerting",
-    description: "Notify users and agents about system status, outages, and scheduled maintenance before they ask.",
+    title: "Proactive Monitoring & Intelligent Alerting",
+    description: "Identify infrastructure issues, service disruptions, and potential failures before they impact users through intelligent monitoring, predictive analytics, and automated notifications.",
     icon: Bell,
     image: "/images/solutions/IT/alerts.png",
     features: [
-      "Real-time notifications",
-      "Scheduled maintenance alerts",
-      "Incident communication",
-      "Customizable channels",
+      "Infrastructure issue identification",
+      "Service disruption detection",
+      "Predictive analytics",
+      "Automated notifications",
     ],
   },
   {
     id: "multi-channel",
-    title: "Multi-Channel Support",
-    description: "Unify email, chat, Slack, Teams, and portal into a single queue for seamless support.",
+    title: "Omnichannel Service Delivery",
+    description: "Deliver consistent IT support across web portals, email, chat, collaboration platforms, mobile applications, and virtual assistants through a unified service experience.",
     icon: Smartphone,
     image: "/images/solutions/IT/channels.png",
     features: [
-      "Email integration",
-      "Live chat",
-      "Slack & Teams",
-      "Portal self-service",
+      "Web portals & email support",
+      "Chat & collaboration platforms",
+      "Mobile applications support",
+      "Unified service experience",
     ],
   },
 ];
@@ -141,7 +143,7 @@ export default function ITCapabilities() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Modern IT Support Capabilities
+              Intelligent IT Service Management
             </motion.h2>
           </div>
           
@@ -153,7 +155,7 @@ export default function ITCapabilities() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              From AI-powered triage to multi-channel support — everything your IT team needs to deliver exceptional service.
+              Streamline IT operations with AI-powered service management, intelligent automation, proactive monitoring, and integrated workflows.
             </motion.p>
           </div>
         </div>

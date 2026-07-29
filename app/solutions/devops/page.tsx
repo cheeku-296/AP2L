@@ -66,6 +66,8 @@ export default function DevOpsPage() {
             description="Build, secure, and deploy faster with intelligent CI/CD automation, cloud-native infrastructure, DevSecOps practices, and enterprise-grade deployment pipelines."
             primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
+            secondaryButtonText="Explore Insights"
+            secondaryButtonLink="/resources/blog"
           />
         )}
       </main>

@@ -21,7 +21,7 @@ export default function ITTechnologies() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Integrated with Your IT Stack
+              Seamless IT Integration
             </motion.h2>
           </div>
           
@@ -33,7 +33,7 @@ export default function ITTechnologies() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              AP2L seamlessly integrates with your existing ITSM tools, collaboration platforms, and communication channels.
+              AP2L Integrates with your ITSM, collaboration, identity, cloud, monitoring, and service platforms without disrupting existing workflows.
             </motion.p>
           </div>
         </div>

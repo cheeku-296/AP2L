@@ -14,12 +14,12 @@ const steps: WorkflowStep[] = [
   {
     id: "plan",
     title: "Plan & Analyze",
-    description: "AI analyzes your application and identifies test scenarios",
+    description: "From requirement analysis to production deployment, AP2L automates and orchestrates testing",
     icon: Code2,
   },
   {
     id: "generate",
-    title: "Generate Tests",
+    title: "Generate tests",
     description: "Creates comprehensive test suites covering all layers",
     icon: TestTube2,
   },
@@ -52,8 +52,8 @@ const steps: WorkflowStep[] = [
 export default function QAWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="Streamlined Testing Workflow"
-      subtitle="From planning to deployment — AP2L automates every step of the testing lifecycle."
+      title="Continuous Quality Across Every Stage"
+      subtitle="Automate the testing lifecycle to deliver faster feedback, better collaboration, and consistent software quality."
       steps={steps}
     />
   );

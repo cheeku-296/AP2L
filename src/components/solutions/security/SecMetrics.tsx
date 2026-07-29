@@ -5,39 +5,39 @@ import { motion, Variants } from "framer-motion";
 const metrics = [
   {
     id: "detection",
-    label: "Vulnerability Detection",
+    label: "Vulnerability Detection Accuracy",
     value: "99.9%",
-    description: "Catch vulnerabilities before they reach production with comprehensive scanning.",
+    description: "Identify security vulnerabilities early through continuous scanning, intelligent analysis, and proactive risk assessment before they impact production systems.",
   },
   {
     id: "remediation",
-    label: "Faster Remediation",
+    label: "Faster Risk Remediation",
     value: "70%",
-    description: "Reduce mean time to remediate with intelligent prioritization.",
+    description: "Reduce Mean Time to Remediate (MTTR) through intelligent prioritization, automated workflows, and actionable security insights.",
   },
   {
     id: "compliance",
-    label: "Compliance Automation",
+    label: "Compliance Process Automation",
     value: "80%",
-    description: "Less manual effort for evidence collection and reporting.",
+    description: "Automate evidence collection, policy validation, and audit reporting to significantly reduce manual compliance effort.",
   },
   {
     id: "risk",
-    label: "Risk Reduction",
+    label: "Overall Risk Reduction",
     value: "60%",
-    description: "Lower overall security risk through continuous monitoring.",
+    description: "Continuously monitor software assets, dependencies, and security posture to proactively minimize organizational risk.",
   },
   {
     id: "roi",
-    label: "Security ROI",
-    value: "4x",
-    description: "Average ROI achieved in first year by proactive security.",
+    label: "Security Return on Investment",
+    value: "4×",
+    description: "Lower operational costs, improve remediation efficiency, and maximize the value of enterprise security investments.",
   },
   {
     id: "coverage",
-    label: "Supply Chain Coverage",
+    label: "Software Supply Chain Visibility",
     value: "100%",
-    description: "Full visibility into dependencies and third‑party components.",
+    description: "Gain complete transparency across applications, third-party libraries, open-source components, and software dependencies with comprehensive SBOM management.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function SecMetrics() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Measurable Security Impact
+              Measurable Business Outcomes
             </motion.h2>
           </div>
           
@@ -86,7 +86,7 @@ export default function SecMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprises using AP2L&apos;s security and compliance platform.
+              Reduce cyber risk, strengthen compliance, improve software transparency, and accelerate secure software delivery with enterprise-grade security automation.
             </motion.p>
           </div>
         </div>

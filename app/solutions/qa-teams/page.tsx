@@ -87,6 +87,8 @@ export default function QAPage() {
             description="Accelerate software quality with AI-powered testing, intelligent automation, and enterprise-grade QA solutions."
             primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
+            secondaryButtonText="Explore Insights"
+            secondaryButtonLink="/resources/blog"
           />
         )}
       </main>

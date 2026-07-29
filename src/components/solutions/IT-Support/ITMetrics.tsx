@@ -5,39 +5,39 @@ import { motion, Variants } from "framer-motion";
 const metrics = [
   {
     id: "resolution",
-    label: "Faster Resolution",
+    label: "Faster Incident Resolution",
     value: "50%",
-    description: "Reduce mean time to resolution with AI-powered triage and automation.",
+    description: "Reduce Mean Time to Resolution (MTTR) through intelligent ticket prioritization, automated routing, and AI-assisted troubleshooting.",
   },
   {
     id: "automation",
-    label: "Automation Rate",
+    label: "Service Automation",
     value: "60%",
-    description: "Automate repetitive queries with intelligent virtual agents.",
+    description: "Automate repetitive incidents, service requests, and employee queries using intelligent workflows and virtual assistants.",
   },
   {
     id: "csat",
-    label: "CSAT Improvement",
-    value: "4.5x",
-    description: "Improve user satisfaction with faster, more accurate support.",
+    label: "Higher Employee Satisfaction",
+    value: "4.5×",
+    description: "Deliver faster, more personalized support experiences that improve user satisfaction and strengthen the digital workplace experience.",
   },
   {
     id: "cost",
-    label: "Lower Cost Per Ticket",
+    label: "Lower Operational Costs",
     value: "30%",
-    description: "Reduce operational costs through automation and self-service.",
+    description: "Reduce support expenses through intelligent automation, self-service capabilities, and optimized service management processes.",
   },
   {
     id: "sla",
-    label: "SLA Adherence",
+    label: "SLA Achievement",
     value: "95%",
-    description: "Consistently meet service level agreements with automated workflows.",
+    description: "Maintain consistent service quality and meet enterprise service level agreements through automated monitoring, workflow governance, and proactive service management.",
   },
   {
     id: "efficiency",
-    label: "Team Efficiency",
-    value: "2x",
-    description: "Double the productivity of your support teams with AI assistance.",
+    label: "Greater Service Desk Productivity",
+    value: "2×",
+    description: "Enable IT teams to manage higher workloads efficiently through AI-assisted operations, automation, and centralized service management.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function ITMetrics() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Measurable IT Support Impact
+              Smarter IT Services
             </motion.h2>
           </div>
           
@@ -86,7 +86,7 @@ export default function ITMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprises using AP2L&apos;s IT support platform.
+              Improve operational efficiency, reduce service costs, accelerate issue resolution, and enhance employee experiences with intelligent service automation.
             </motion.p>
           </div>
         </div>

@@ -13,45 +13,45 @@ import {
 const challenges = [
   {
     id: "supply-chain",
-    title: "Supply Chain Risks",
-    description: "Unvetted dependencies and open-source vulnerabilities.",
+    title: "Software Supply Chain Exposure",
+    description: "Limited visibility into software dependencies increases the risk of vulnerable code reaching production.",
     icon: ShieldAlert,
-    impact: "65% of breaches via third-party",
+    impact: "Software Supply Chain Exposure",
   },
   {
     id: "compliance",
-    title: "Compliance Overload",
-    description: "Multiple frameworks (SOC2, ISO, HIPAA, GDPR) with manual reporting.",
+    title: "Complex Compliance Requirements",
+    description: "Manual compliance processes increase operational overhead and the risk of compliance gaps.",
     icon: BarChart3,
-    impact: "40% of audit findings are compliance gaps",
+    impact: "Complex Compliance Requirements",
   },
   {
     id: "incident-response",
-    title: "Slow Incident Response",
-    description: "Detection and remediation lag due to siloed tools.",
+    title: "Delayed Threat Detection & Response",
+    description: "Disconnected security tools delay threat detection, investigation, and remediation.",
     icon: Clock,
-    impact: "Mean time to remediate: 280 days",
+    impact: "Delayed Threat Detection & Response",
   },
   {
     id: "visibility",
-    title: "Limited Threat Visibility",
-    description: "Incomplete monitoring across cloud and on‑prem.",
+    title: "Limited Risk Visibility",
+    description: "Without continuous monitoring, organizations struggle to identify emerging security risks.",
     icon: Globe,
-    impact: "70% of threats go undetected",
+    impact: "Limited Risk Visibility",
   },
   {
     id: "security-debt",
-    title: "Accumulated Security Debt",
-    description: "Legacy vulnerabilities pile up without prioritization.",
+    title: "Growing Technical Debt",
+    description: "Unpatched vulnerabilities and outdated dependencies increase risk and remediation costs.",
     icon: Lock,
-    impact: "50% of fixes are for known issues",
+    impact: "Growing Technical Debt",
   },
   {
-    id: "zero-day",
-    title: "Zero‑Day Vulnerabilities",
-    description: "New exploits emerge faster than patching cycles.",
+    id: "cyber-threats",
+    title: "Accelerating Cyber Threats",
+    description: "Evolving cyber threats demand proactive security validation and continuous protection.",
     icon: AlertTriangle,
-    impact: "60% of zero‑days exploited within days",
+    impact: "Accelerating Cyber Threats",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function SecChallenges() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Security & Compliance Hurdles
+              Modern Security Needs Continuous Protection
             </motion.h2>
           </div>
           
@@ -113,8 +113,7 @@ export default function SecChallenges() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Modern security teams struggle with supply chain risks,
-              ever‑changing regulations, and the speed of attacks.
+              Traditional security struggles to keep pace with open-source software, cloud platforms, and evolving cyber threats.
             </motion.p>
           </div>
         </div>
@@ -131,7 +130,7 @@ export default function SecChallenges() {
           >
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold text-black dark:text-white">
-                Security Risks
+                Security Challenges
               </h3>
               <p className="font-inter text-sm text-slate-600 dark:text-slate-400 mt-1">
                 Common vulnerabilities and operational gaps.
@@ -184,7 +183,7 @@ export default function SecChallenges() {
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold">Business Impact</h3>
               <p className="font-inter text-sm text-white/80 mt-1">
-                These challenges directly affect cost, compliance, and customer trust.
+                Security challenges affect resilience, compliance, customer trust, and business continuity.
               </p>
             </div>
 
@@ -207,7 +206,7 @@ export default function SecChallenges() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-urbanist text-lg font-bold">
-                      {challenge.impact}
+                      {challenge.title}
                     </div>
                     <p className="font-inter text-sm text-white/80 leading-tight">
                       {challenge.description}

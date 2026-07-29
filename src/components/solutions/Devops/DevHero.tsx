@@ -79,12 +79,7 @@ export default function DevHero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="mt-8 text-5xl font-medium leading-[1.08] tracking-tight text-black dark:text-white md:text-7xl"
         >
-          Build, Secure &
-          <br />
-
-          {/* <span className="bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500 bg-clip-text text-transparent"> */}
-            Deploy Faster
-          {/* </span> */}
+          Accelerate Delivery with Intelligent DevOps
         </motion.h1>
 
         {/* Description */}
@@ -95,9 +90,7 @@ export default function DevHero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-slate-700 dark:text-slate-300 md:text-xl"
         >
-          Accelerate software delivery with intelligent CI/CD automation,
-          cloud-native infrastructure, DevSecOps practices, and scalable
-          deployment pipelines built for modern enterprises.
+          Streamline software delivery with CI/CD automation, cloud-native infrastructure, DevSecOps, and platform engineering.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -112,7 +105,7 @@ export default function DevHero() {
             href="/contact"
             className="group inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3.5 md:py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 dark:bg-white dark:text-slate-900"
           >
-            Contact Us
+            Talk to a DevOps Expert
 
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
@@ -126,7 +119,7 @@ export default function DevHero() {
             }
             className="rounded-full border border-slate-300 bg-white/60 px-8 py-3.5 md:py-4 text-sm font-semibold text-slate-900 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:bg-white/80 dark:border-slate-700 dark:bg-slate-900/40 dark:text-white"
           >
-            View Services
+            Explore Capabilities
           </button>
         </motion.div>
 

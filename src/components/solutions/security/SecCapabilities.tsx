@@ -16,51 +16,82 @@ import {
 const capabilities = [
   {
     id: "sbom",
-    title: "Automated SBOM Management",
-    description: "Generate and maintain Software Bill of Materials across your entire codebase.",
+    title: "Automated SBOM Lifecycle Management",
+    description: "Generate, maintain, analyze, and govern Software Bills of Materials (SBOMs) throughout the software lifecycle to improve visibility, transparency, and software integrity.",
     icon: FileCheck,
     image: "/images/solutions/security/sbom.png",
-    features: ["Continuous SBOM generation", "Dependency tracking", "License compliance", "Risk scoring"],
+    features: [
+      "Continuous SBOM Generation",
+      "Component & Dependency Discovery",
+      "License Compliance Validation",
+      "Software Risk Assessment",
+      "Version & Asset Traceability",
+    ],
   },
   {
     id: "vulnerability",
-    title: "Continuous Vulnerability Scanning",
-    description: "Detect known vulnerabilities in real-time and prioritize based on exploitability.",
+    title: "Continuous Vulnerability Intelligence",
+    description: "Continuously discover, prioritize, and monitor vulnerabilities across applications, dependencies, containers, and enterprise environments using intelligent risk analysis.",
     icon: ShieldCheck,
     image: "/images/solutions/security/vulnerability.png",
-    features: ["SAST & DAST integration", "Zero-day detection", "Priority-based alerts", "Automated fixes"],
+    features: [
+      "Vulnerability discovery & monitoring",
+      "Container & environment scanning",
+      "Intelligent risk analysis",
+      "Prioritized security insight",
+    ],
   },
   {
     id: "compliance",
-    title: "Compliance Automation",
-    description: "Automate evidence collection and reporting for SOC2, ISO 27001, HIPAA, GDPR.",
+    title: "Compliance & Governance Automation",
+    description: "Automate compliance assessments, evidence collection, policy validation, and reporting across industry regulations and security frameworks to simplify audit readiness.",
     icon: AlertOctagon,
     image: "/images/solutions/security/compliance&automation.png",
-    features: ["Pre-built control frameworks", "Continuous monitoring", "Audit-ready reports", "Policy enforcement"],
+    features: [
+      "Automated compliance assessments",
+      "Evidence collection & validation",
+      "Policy validation & reporting",
+      "Audit readiness simplification",
+    ],
   },
   {
     id: "incident",
-    title: "Intelligent Incident Response",
-    description: "AI-powered threat detection and automated playbooks for rapid mitigation.",
+    title: "Intelligent Threat Detection & Incident Response",
+    description: "Accelerate threat identification and incident resolution through automated workflows, contextual security insights, and prioritized remediation guidance.",
     icon: Search,
     image: "/images/solutions/security/IntelligentResponse.png",
-    features: ["Threat correlation", "Playbook automation", "Forensic analysis", "Integration with SIEM"],
+    features: [
+      "Automated threat identification",
+      "Accelerated incident resolution",
+      "Contextual security insights",
+      "Prioritized remediation guidance",
+    ],
   },
   {
     id: "zero-trust",
-    title: "Zero-Trust Architecture",
-    description: "Implement least‑privilege access and continuous verification across all resources.",
+    title: "Zero Trust Security Architecture",
+    description: "Adopt a Zero Trust approach by continuously verifying identities, software integrity, infrastructure security, and access controls across your digital ecosystem.",
     icon: Lock,
     image: "/images/solutions/security/zero_trust.png",
-    features: ["Access control policies", "Identity verification", "Network segmentation", "Micro-segmentation"],
+    features: [
+      "Identity continuous verification",
+      "Software integrity validation",
+      "Infrastructure security control",
+      "Ecosystem access management",
+    ],
   },
   {
     id: "devsecops",
-    title: "DevSecOps Pipeline Integration",
-    description: "Embed security into CI/CD with automated gates and policy-as-code.",
+    title: "DevSecOps Integration",
+    description: "Embed security directly into CI/CD pipelines, enabling continuous security validation, automated policy enforcement, and secure software delivery without slowing development.",
     icon: GitBranch,
     image: "/images/solutions/security/devsecops.png",
-    features: ["Shift-left scanning", "Security gates", "Automated compliance checks", "Infrastructure scanning"],
+    features: [
+      "CI/CD security embedding",
+      "Continuous security validation",
+      "Automated policy enforcement",
+      "Secure software delivery",
+    ],
   },
 ];
 
@@ -111,7 +142,7 @@ export default function SecCapabilities() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Enterprise‑Grade Security & Compliance
+              Comprehensive Software Supply Chain Protection
             </motion.h2>
           </div>
           
@@ -123,7 +154,7 @@ export default function SecCapabilities() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              From SBOM generation to automated incident response — everything you need to secure your software supply chain.
+              Protect applications and software assets with integrated security, automated governance, continuous compliance, and risk-driven vulnerability management.
             </motion.p>
           </div>
         </div>

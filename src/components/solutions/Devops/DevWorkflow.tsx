@@ -45,8 +45,8 @@ const steps: WorkflowStep[] = [
 export default function DevWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="End-to-End DevOps Workflow"
-      subtitle="From code commit to production — AP2L automates and secures every step."
+      title="Continuous Delivery Across Every Stage"
+      subtitle="Automate the complete DevOps lifecycle for faster, secure, and reliable software delivery."
       steps={steps}
     />
   );

@@ -13,45 +13,45 @@ import {
 const challenges = [
   {
     id: "ticket-volume",
-    title: "High Ticket Volume",
-    description: "Overwhelmed teams struggle to keep up with incoming requests.",
+    title: "Increasing Support Demand",
+    description: "Growing ticket volumes strain IT teams, making it harder to maintain response times and service quality.",
     icon: Inbox,
-    impact: "70% of tickets are repetitive",
+    impact: "Increasing Support Demand",
   },
   {
     id: "repetitive-queries",
-    title: "Repetitive Queries",
-    description: "Agents answer the same questions repeatedly, wasting time.",
+    title: "Repetitive Manual Requests",
+    description: "Routine requests consume valuable IT resources and reduce focus on high-priority work.",
     icon: MessageCircle,
-    impact: "40% of time spent on duplicates",
+    impact: "Repetitive Manual Requests",
   },
   {
     id: "siloed-tools",
-    title: "Siloed Tools",
-    description: "Disconnected systems create visibility gaps and slow resolution.",
-    icon: Wrench, // ✅ fixed
-    impact: "60% of teams have fragmented tools",
+    title: "Fragmented IT Ecosystems",
+    description: "Disconnected IT systems reduce visibility, delay issue resolution, and complicate service management.",
+    icon: Wrench,
+    impact: "Fragmented IT Ecosystems",
   },
   {
     id: "resolution-time",
-    title: "Slow Resolution Times",
-    description: "Manual triage and routing delay first response and resolution.",
+    title: "Delayed Incident Resolution",
+    description: "Manual ticket handling increases resolution times and disrupts business operations.",
     icon: Clock,
-    impact: "Mean resolution time: 24+ hours",
+    impact: "Delayed Incident Resolution",
   },
   {
     id: "user-frustration",
-    title: "User Frustration",
-    description: "Long wait times and poor self-service lead to low CSAT scores.",
+    title: "Reduced Employee Experience",
+    description: "Slow responses and limited self-service reduce employee satisfaction and productivity.",
     icon: AlertCircle,
-    impact: "40% of users abandon requests",
+    impact: "Reduced Employee Experience",
   },
   {
     id: "agent-burnout",
-    title: "Agent Burnout",
-    description: "High workload and repetitive tasks lead to team churn.",
+    title: "Rising Operational Costs",
+    description: "Manual processes and repetitive tasks increase support costs and operational inefficiencies.",
     icon: Users,
-    impact: "30% annual agent turnover",
+    impact: "Rising Operational Costs",
   },
 ];
 
@@ -101,7 +101,7 @@ export default function ITChallenges() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              IT Support Bottlenecks
+              Modern IT Support Needs Intelligent Service Management
             </motion.h2>
           </div>
           
@@ -113,8 +113,7 @@ export default function ITChallenges() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Modern IT teams are overwhelmed by high ticket volumes,
-              repetitive queries, and disconnected tools that slow everything down.
+              Traditional support struggles to keep pace with hybrid workplaces, cloud applications, and growing service demands.
             </motion.p>
           </div>
         </div>
@@ -131,7 +130,7 @@ export default function ITChallenges() {
           >
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold text-black dark:text-white">
-                Support Bottlenecks
+                Operational Challenges
               </h3>
               <p className="font-inter text-sm text-slate-600 dark:text-slate-400 mt-1">
                 Common challenges slowing down IT support teams.
@@ -184,7 +183,7 @@ export default function ITChallenges() {
             <div className="mb-6">
               <h3 className="font-urbanist text-xl font-bold">Business Impact</h3>
               <p className="font-inter text-sm text-white/80 mt-1">
-                These challenges directly affect cost, employee satisfaction, and productivity.
+                IT support challenges impact productivity, operational costs, employee experience, and business continuity.
               </p>
             </div>
 
@@ -207,7 +206,7 @@ export default function ITChallenges() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="font-urbanist text-lg font-bold">
-                      {challenge.impact}
+                      {challenge.title}
                     </div>
                     <p className="font-inter text-sm text-white/80 leading-tight">
                       {challenge.description}

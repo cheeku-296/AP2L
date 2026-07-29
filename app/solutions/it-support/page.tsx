@@ -55,6 +55,8 @@ export default function ITSupportPage() {
             description="Transform service delivery, automate repetitive workflows, accelerate incident resolution, and provide exceptional support experiences with AP2L's intelligent IT operations platform."
             primaryButtonText="Contact Us"
             primaryButtonLink="/contact"
+            secondaryButtonText="Explore Insights"
+            secondaryButtonLink="/resources/blog"
           />
         )}
       </main>

@@ -14,50 +14,50 @@ import {
 const industries = [
   {
     id: "fintech",
-    name: "FinTech & Banking",
-    description: "Ensure compliance, security, and performance for financial applications.",
+    name: "Banking & Financial Services",
+    description: "Deliver secure, compliant, and high-availability applications that meet regulatory requirements while maintaining exceptional customer experiences.",
     icon: Wallet,
-    stats: "99.99% uptime",
+    stats: "99.99% Availability",
     wide: true,
   },
   {
     id: "healthcare",
-    name: "Healthcare",
-    description: "HIPAA‑compliant testing for critical healthcare applications.",
+    name: "Healthcare & Life Sciences",
+    description: "Ensure patient safety, regulatory compliance, data privacy, and application reliability across healthcare ecosystems.",
     icon: Stethoscope,
-    stats: "100% compliance",
+    stats: "Regulatory-Ready Testing",
     wide: false,
   },
   {
     id: "ecommerce",
-    name: "E‑commerce & Retail",
-    description: "Handle peak loads with automated performance testing.",
+    name: "Retail & Digital Commerce",
+    description: "Validate scalable customer experiences capable of handling high transaction volumes during peak demand.",
     icon: ShoppingCart,
-    stats: "10M+ transactions",
+    stats: "Millions of Transactions Validated",
     wide: false,
   },
   {
     id: "enterprise",
-    name: "Enterprise Software",
-    description: "Complex enterprise application testing at scale.",
+    name: "Enterprise Applications",
+    description: "Improve software quality across ERP, CRM, HRMS, and large-scale enterprise platforms through intelligent automation.",
     icon: Building2,
-    stats: "95% coverage",
+    stats: "Enterprise-Scale Quality Assurance",
     wide: true,
   },
   {
     id: "tech",
     name: "SaaS & Technology",
-    description: "Continuous testing for rapid release cycles.",
+    description: "Support continuous delivery with automated quality validation across rapidly evolving cloud-native applications.",
     icon: Cpu,
-    stats: "50+ releases/mo",
+    stats: "Continuous Release Enablement",
     wide: true,
   },
   {
     id: "global",
     name: "Global Enterprises",
-    description: "Distributed testing for multi‑region deployments.",
+    description: "Execute distributed testing across multiple regions, teams, cloud environments, and deployment pipelines with centralized governance.",
     icon: Globe2,
-    stats: "Global scale",
+    stats: "Enterprise-Grade Scalability",
     wide: false,
   },
 ];
@@ -96,7 +96,7 @@ export default function QAIndustries() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6">
-                Trusted Across Industries
+                Trusted Across Mission-Critical Industries
               </h2>
             </motion.div>
           </div>
@@ -109,7 +109,7 @@ export default function QAIndustries() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
-                From FinTech to Healthcare, organizations worldwide rely on AP2L for quality assurance.
+                Delivering secure, reliable, compliant, and high-performing software for enterprise and regulated environments.
               </p>
             </motion.div>
           </div>

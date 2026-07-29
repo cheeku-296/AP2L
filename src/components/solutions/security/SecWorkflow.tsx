@@ -45,8 +45,8 @@ const steps: WorkflowStep[] = [
 export default function SecWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="End‑to‑End Security & Compliance Workflow"
-      subtitle="From discovery to reporting — AP2L automates the entire security lifecycle."
+      title="Continuous Security Across the Software Lifecycle"
+      subtitle="Automate software discovery, vulnerability management, compliance, and continuous monitoring for secure software delivery."
       steps={steps}
     />
   );

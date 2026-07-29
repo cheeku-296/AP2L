@@ -5,39 +5,39 @@ import { motion, Variants } from "framer-motion";
 const metrics = [
   {
     id: "speed",
-    label: "Test Execution Speed",
+    label: "Faster Test Execution",
     value: "75%",
-    description: "Faster test execution with parallel runs and intelligent test selection.",
+    description: "Accelerate regression cycles through intelligent test orchestration, parallel execution, and AI-driven optimization.",
   },
   {
     id: "coverage",
-    label: "Test Coverage",
+    label: "Requirement & Test Coverage",
     value: "95%",
-    description: "Comprehensive coverage with AI‑generated test cases.",
+    description: "Improve validation across functional, regression, API, security, and performance testing with AI-assisted test generation.",
   },
   {
     id: "defects",
-    label: "Defects Found Early",
-    value: "3x",
-    description: "More defects detected in development phase with shift‑left testing.",
+    label: "Earlier Defect Detection",
+    value: "3×",
+    description: "Identify issues during development rather than production by adopting continuous quality practices and Shift-Left testing.",
   },
   {
     id: "releases",
     label: "Release Velocity",
-    value: "2x",
-    description: "Double the releases with automated quality gates.",
+    value: "2×",
+    description: "Deliver high-quality software more frequently through automated validation, continuous testing, and release-ready quality gates.",
   },
   {
     id: "roi",
-    label: "Testing ROI",
-    value: "4.5x",
-    description: "Average ROI achieved by QA teams in first year.",
+    label: "Return on Testing Investment",
+    value: "4.5×",
+    description: "Reduce testing costs while maximizing engineering productivity, release confidence, and operational efficiency.",
   },
   {
     id: "maintenance",
-    label: "Maintenance Reduction",
+    label: "Lower Test Maintenance Effort",
     value: "60%",
-    description: "Less time spent on test maintenance with self‑healing tests.",
+    description: "Minimize script failures and maintenance overhead through adaptive, self-healing automation capabilities.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function QAMetrics() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
             >
-              Measurable Impact on Quality
+              Measurable Business Outcomes
             </motion.h2>
           </div>
           
@@ -90,7 +90,7 @@ export default function QAMetrics() {
               transition={{ delay: 0.2 }}
               className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              Real metrics from enterprise QA teams using AP2L&apos;s AI‑powered testing platform.
+              Trusted by enterprise QA teams to deliver faster releases, higher quality software, and measurable operational efficiency.
             </motion.p>
           </div>
         </div>

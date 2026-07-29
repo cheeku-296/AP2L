@@ -79,12 +79,7 @@ export default function ITHero() {
           transition={{ delay: 0.1, duration: 0.6 }}
           className="mt-8 text-5xl font-medium leading-[1.08] tracking-tight text-black dark:text-white md:text-7xl"
         >
-          Modernize
-          <br />
-
-          {/* <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-violet-500 bg-clip-text text-transparent"> */}
-            IT Support
-          {/* </span> */}
+          Transform IT Support into Intelligent Operations
         </motion.h1>
 
         {/* Description */}
@@ -95,9 +90,7 @@ export default function ITHero() {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="mt-8 max-w-3xl text-lg font-light leading-relaxed text-slate-700 dark:text-slate-300 md:text-xl"
         >
-          Deliver faster incident resolution, automate repetitive service
-          requests, streamline IT operations, and enhance user experiences
-          with AI-powered support solutions.
+          Modernize IT support with AI-powered service management, intelligent automation, proactive operations, and seamless employee experiences.
         </motion.p>
 
         {/* CTA */}
@@ -112,7 +105,7 @@ export default function ITHero() {
             href="/contact"
             className="group inline-flex items-center justify-center rounded-full bg-slate-900 px-8 py-3.5 md:py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 dark:bg-white dark:text-slate-900"
           >
-            Contact Us
+            Talk to an IT Expert
 
             <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
@@ -126,7 +119,7 @@ export default function ITHero() {
             }
             className="rounded-full border border-slate-300 bg-white/60 px-8 py-3.5 md:py-4 text-sm font-semibold text-slate-900 backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:bg-white/80 dark:border-slate-700 dark:bg-slate-900/40 dark:text-white"
           >
-            View Services
+            Explore Capabilities
           </button>
         </motion.div>
 

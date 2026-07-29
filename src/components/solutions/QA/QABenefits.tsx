@@ -22,7 +22,7 @@ export default function QABenefits() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6">
-                Benefits of AI-Powered Testing
+                Turn Quality into a Business Advantage
               </h2>
             </motion.div>
           </div>
@@ -35,7 +35,7 @@ export default function QABenefits() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Real results from enterprise QA teams using AP2L&apos;s AI-powered testing platform.
+                Improve software quality, reduce costs, accelerate releases, and build customer confidence with intelligent quality engineering.
               </p>
             </motion.div>
           </div>
