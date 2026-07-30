@@ -3,105 +3,89 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import {
-  Code2,
-  LayoutTemplate,
-  Monitor,
-  Cloud,
-  Lock,
-  GitBranch,
-  CheckCircle2,
-} from "lucide-react";
 
 const capabilities = [
   {
     id: "test-automation",
     title: "AI-Powered Test Automation",
-    description:
-      "Leverage intelligent automation to generate, execute, maintain, and optimize test cases while significantly reducing manual effort and accelerating software validation.",
-    icon: Code2,
+    shortTitle: "AI Automation",
+    description: "Leverage intelligent automation to generate, execute, maintain, and optimize test cases while significantly reducing manual effort and accelerating software validation.",
     image: "/images/solutions/QA/Test_automation.png",
     features: [
-      "AI test case generation",
-      "Self-healing test scripts",
-      "Parallel execution optimization",
-      "Manual effort reduction",
+      { title: "AI test case generation", desc: "Automatically create robust test scenarios using advanced machine learning models." },
+      { title: "Self-healing test scripts", desc: "Dynamically adapt to UI changes to prevent script failures." },
+      { title: "Parallel execution", desc: "Run thousands of tests concurrently to drastically reduce cycle times." },
+      { title: "Manual effort reduction", desc: "Eliminate repetitive maintenance tasks to focus on test strategy." },
     ],
   },
   {
     id: "no-code-testing",
     title: "Low-Code & No-Code Test Automation",
-    description:
-      "Empower both technical and business users to create scalable automated tests without extensive programming expertise, accelerating adoption across teams.",
-    icon: LayoutTemplate,
+    shortTitle: "Low-Code",
+    description: "Empower both technical and business users to create scalable automated tests without extensive programming expertise, accelerating adoption across teams.",
     image: "/images/solutions/QA/No_Code.png",
     features: [
-      "Visual test creation",
-      "Low-code & no-code platform",
-      "Technical & business user enablement",
-      "Accelerated team adoption",
+      { title: "Visual test creation", desc: "Design comprehensive tests using intuitive drag-and-drop interfaces." },
+      { title: "No-code platform", desc: "Bridge the gap between developers and QA with accessible tools." },
+      { title: "Business enablement", desc: "Allow product owners to directly validate complex business logic." },
+      { title: "Accelerated adoption", desc: "Onboard new team members instantly with a flat learning curve." },
     ],
   },
   {
     id: "mobile-testing",
     title: "Cross-Platform Web & Mobile Testing",
-    description:
-      "Validate seamless user experiences across browsers, operating systems, devices, and mobile platforms using unified test orchestration.",
-    icon: Monitor,
+    shortTitle: "Cross-Platform",
+    description: "Validate seamless user experiences across browsers, operating systems, devices, and mobile platforms using unified test orchestration.",
     image: "/images/solutions/QA/mobile_web.png",
     features: [
-      "Cross-browser validation",
-      "Mobile platform testing",
-      "Operating system coverage",
-      "Unified test orchestration",
+      { title: "Cross-browser validation", desc: "Ensure pixel-perfect rendering across Chrome, Firefox, Safari, and Edge." },
+      { title: "Mobile platform testing", desc: "Execute automated tests on real iOS and Android devices." },
+      { title: "OS coverage", desc: "Validate application stability across Windows, macOS, and Linux." },
+      { title: "Unified orchestration", desc: "Manage all platforms from a single, centralized control plane." },
     ],
   },
   {
     id: "api-testing",
     title: "API & Microservices Validation",
-    description:
-      "Ensure the reliability, security, and performance of modern distributed architectures through comprehensive API, integration, and microservices testing.",
-    icon: Cloud,
+    shortTitle: "API Testing",
+    description: "Ensure the reliability, security, and performance of modern distributed architectures through comprehensive API, integration, and microservices testing.",
     image: "/images/solutions/QA/API&Microservice.png",
     features: [
-      "Comprehensive API testing",
-      "Integration testing",
-      "Microservices validation",
-      "Distributed architecture coverage",
+      { title: "Comprehensive API testing", desc: "Automate REST, GraphQL, and SOAP endpoint validation seamlessly." },
+      { title: "Integration testing", desc: "Verify data flow and state changes between connected systems." },
+      { title: "Microservices validation", desc: "Isolate and test individual services in complex architectures." },
+      { title: "Distributed coverage", desc: "Ensure robust communication across entire distributed networks." },
     ],
   },
   {
     id: "security-testing",
     title: "Security & Compliance Testing",
-    description:
-      "Embed security throughout the Software Development Lifecycle by continuously identifying vulnerabilities, validating security controls, and ensuring regulatory compliance before production deployment.",
-    icon: Lock,
+    shortTitle: "Security QA",
+    description: "Embed security throughout the Software Development Lifecycle by continuously identifying vulnerabilities, validating security controls, and ensuring regulatory compliance before production deployment.",
     image: "/images/solutions/QA/sec&comp.png",
     features: [
-      "Integrated SAST & DAST Analysis",
-      "Continuous Vulnerability Assessment",
-      "OWASP Security Validation",
-      "Automated Compliance Verification",
-      "Security Policy Enforcement",
+      { title: "SAST & DAST Analysis", desc: "Perform deep static and dynamic security testing during builds." },
+      { title: "Vulnerability Assessment", desc: "Identify critical flaws in code and third-party dependencies." },
+      { title: "OWASP Validation", desc: "Automatically test for the top 10 most critical security risks." },
+      { title: "Compliance Verification", desc: "Generate audit-ready compliance reports for enterprise standards." },
     ],
   },
   {
     id: "ci-cd-integration",
     title: "CI/CD Quality Integration",
-    description:
-      "Integrate intelligent testing seamlessly into your DevSecOps pipeline to enable continuous validation, faster feedback loops, and automated release governance.",
-    icon: GitBranch,
+    shortTitle: "CI/CD QA",
+    description: "Integrate intelligent testing seamlessly into your DevSecOps pipeline to enable continuous validation, faster feedback loops, and automated release governance.",
     image: "/images/solutions/QA/cicd.png",
     features: [
-      "DevSecOps pipeline integration",
-      "Continuous quality validation",
-      "Faster feedback loops",
-      "Automated release governance",
+      { title: "Pipeline integration", desc: "Embed quality gates directly into Jenkins, GitLab, or GitHub Actions." },
+      { title: "Continuous validation", desc: "Trigger automated test suites instantly on every code commit." },
+      { title: "Faster feedback loops", desc: "Deliver actionable insights to developers within minutes." },
+      { title: "Release governance", desc: "Block deployments automatically if quality thresholds fail." },
     ],
   },
 ];
 
-const AUTO_DELAY = 4000;
+const AUTO_DELAY = 6000;
 
 export default function QACapabilities() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -130,177 +114,141 @@ export default function QACapabilities() {
   };
 
   return (
-    <section
-      className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden"
-    >
-      {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/3" />
-      </div>
-
+    <section className="relative w-full py-10 md:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-500 overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        {/* Header Section */}
+        
         {/* Header section */}
-        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6 md:mb-0"
             >
               Quality Engineering for Modern Software
             </motion.h2>
           </div>
           
-          <div className="md:pt-2">
+          <div className="md:pt-3">
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+              className="font-manrope text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
               Deliver continuous quality with AI-driven automation, intelligent analytics, and integrated quality assurance.
             </motion.p>
           </div>
         </div>
 
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch">
-          {/* Left - Capability List with Icons Only */}
-          <div className="lg:col-span-4 flex flex-col gap-3">
+        {/* Top Navigation Tabs */}
+        <div className="w-full border-b border-slate-200 dark:border-slate-800 mb-8 lg:mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full">
             {capabilities.map((cap, idx) => {
-              const Icon = cap.icon;
               const isSelected = currentIndex === idx;
               return (
-                <motion.button
+                <button
                   key={cap.id}
                   onClick={() => handleSelect(idx)}
                   onMouseEnter={() => setIsPaused(true)}
                   onMouseLeave={() => setIsPaused(false)}
-                  whileHover={{ x: 6 }}
-                  className={`group relative flex-1 w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
+                  className={`relative flex items-center justify-center pb-4 text-[15px] font-medium whitespace-nowrap transition-colors duration-300 ${
                     isSelected
-                      ? "bg-white dark:bg-slate-900 shadow-lg dark:shadow-none border border-violet-200 dark:border-violet-900/50"
-                      : "bg-transparent border border-transparent hover:bg-white/50 dark:hover:bg-slate-900/50"
+                      ? "text-violet-600 dark:text-violet-400"
+                      : "text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
                   }`}
                 >
-                  {/* Icon Only - No Image */}
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${
-                      isSelected
-                        ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
-                        : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-slate-300 dark:group-hover:bg-slate-600"
-                    }`}
-                  >
-                    <Icon size={18} strokeWidth={1.5} />
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h4
-                      className={`font-urbanist font-bold text-sm transition-colors ${
-                        isSelected
-                          ? "text-black dark:text-white"
-                          : "text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white"
-                      }`}
-                    >
-                      {cap.title}
-                    </h4>
-                  
-                  </div>
-
-                  {/* {isSelected && (
-                    <div className="absolute -right-0.5 top-1/2 -translate-y-1/2 w-1.5 h-8 rounded-l-full bg-gradient-to-b from-violet-600 to-fuchsia-600" />
-                  )} */}
-
-                  {/* Auto-advance progress bar */}
-                  {isSelected && !isPaused && (
+                  {cap.shortTitle}
+                  {isSelected && (
                     <motion.div
-                      key={`progress-${currentIndex}`}
-                      className="absolute bottom-0 left-0 h-0.5 bg-violet-600"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: AUTO_DELAY / 1000, ease: "linear" }}
+                      layoutId="qaActiveTab"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-violet-600 dark:bg-violet-500"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                </motion.button>
+                  {isSelected && !isPaused && (
+                     <motion.div
+                       key={`progress-${currentIndex}`}
+                       className="absolute bottom-0 left-0 h-[2px] bg-violet-300 dark:bg-violet-800"
+                       initial={{ width: "0%" }}
+                       animate={{ width: "100%" }}
+                       transition={{ duration: AUTO_DELAY / 1000, ease: "linear" }}
+                     />
+                  )}
+                </button>
               );
             })}
           </div>
+        </div>
 
-          {/* Right - Detail View with Full Image */}
-          <div className="lg:col-span-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selected.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="relative h-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg dark:shadow-none flex flex-col"
-              >
-                {/* Full Width Image at Top */}
-                <div className="relative w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+        {/* Content Area */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selected.id}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex flex-col gap-10 lg:gap-14"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Top Row: Title/Description & Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              
+              {/* Left Side: Title & Description */}
+              <div className="lg:col-span-5 flex flex-col justify-center">
+                <h2 className="font-urbanist text-3xl md:text-4xl lg:text-[42px] leading-tight font-normal text-indigo-950 dark:text-indigo-200 uppercase tracking-wide mb-6">
+                  {selected.title}
+                </h2>
+                <p className="font-manrope text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {selected.description}
+                </p>
+              </div>
+
+              {/* Right Side: Image */}
+              <div className="lg:col-span-7 w-full flex justify-center">
+                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={selected.image}
                     alt={selected.title}
                     fill
-                    className="object-cover"
+                    className="object-cover object-[center_75%]"
                     priority
                   />
-                  {/* Gradient Overlay */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/40 to-transparent dark:from-slate-900/80 dark:via-slate-900/40" /> */}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row: Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 w-full">
+              {selected.features.map((feature, idx) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 md:p-6 rounded-md hover:shadow-xl hover:shadow-violet-900/5 transition-all duration-300 group"
+                >
+                  <div className="absolute -top-12 -right-12 w-40 h-40 bg-violet-400/15 dark:bg-violet-500/10 rounded-full blur-[30px] pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:bg-violet-400/25" />
                   
-                  {/* Icon overlay on image */}
-                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 dark:bg-slate-900/90 shadow-lg backdrop-blur-sm">
-                    {(() => {
-                      const Icon = selected.icon;
-                      return <Icon size={24} className="text-violet-600 dark:text-violet-400" />;
-                    })()}
+                  <div className="relative z-10">
+                    <h4 className="font-urbanist text-[19px] font-medium text-slate-900 dark:text-white mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="font-manrope text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {feature.desc}
+                    </p>
                   </div>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-                {/* Content Below Image */}
-                <div className="relative z-10 flex-1 p-6 md:p-8">
-                  <div className="flex flex-col h-full">
-                    {/* Title & Description */}
-                    <div className="mb-6">
-                      <h3 className="font-urbanist text-2xl font-bold text-black dark:text-white">
-                        {selected.title}
-                      </h3>
-                      <p className="mt-2 font-inter text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {selected.description}
-                      </p>
-                    </div>
-
-                    {/* Features Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {selected.features.map((feature, idx) => (
-                        <motion.div
-                          key={feature}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
-                        >
-                          <CheckCircle2
-                            size={16}
-                            className="text-violet-600 dark:text-violet-400 shrink-0"
-                          />
-                          <span className="font-inter text-sm text-slate-700 dark:text-slate-300">
-                            {feature}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
       </div>
     </section>
   );

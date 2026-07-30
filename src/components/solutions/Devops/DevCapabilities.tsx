@@ -3,100 +3,94 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import {
-  GitBranch,
-  Cloud,
-  Shield,
-  Activity,
-  Server,
-  Zap,
-  CheckCircle2,
-} from "lucide-react";
 
 const capabilities = [
   {
     id: "ci-cd",
     title: "Intelligent CI/CD Automation",
+    shortTitle: "CI/CD Automation",
     description: "Automate the complete software delivery pipeline with intelligent build orchestration, continuous integration, automated testing, deployment governance, and release automation to accelerate delivery while maintaining quality.",
-    icon: GitBranch,
-    image: "/images/solutions/devops/cicd_automation.png",
+    image: "/solutions/features/devops/1.png",
     features: [
-      "Intelligent build orchestration",
-      "Continuous integration & testing",
-      "Deployment governance",
-      "Release automation",
+      { title: "Intelligent Build Orchestration", desc: "Dynamically route and prioritize builds for maximum efficiency and speed." },
+      { title: "Continuous Integration & Testing", desc: "Automatically run test suites on every commit to catch bugs early in the cycle." },
+      { title: "Deployment Governance", desc: "Enforce strict deployment policies and approval gates for secure releases." },
+      { title: "Release Automation", desc: "Seamlessly push code to production with zero downtime and complete confidence." },
     ],
   },
   {
     id: "observability",
-    title: "Enterprise Observability & Operational Intelligence",
+    title: "Enterprise Observability",
+    shortTitle: "Observability",
     description: "Gain complete visibility across applications, infrastructure, cloud environments, and distributed services with real-time monitoring, predictive analytics, and proactive incident detection.",
-    icon: Activity,
-    image: "/images/solutions/devops/realtimeobservability.png",
+    image: "/solutions/features/devops/2.png",
+    imagePosition: "object-[center_40%]",
     features: [
-      "End-to-End Distributed Tracing",
-      "Centralized Log Management",
-      "Infrastructure & Application Monitoring",
-      "Real-Time Performance Analytics",
-      "Intelligent Anomaly Detection",
-      "Root Cause Analysis",
+      { title: "End-to-End Tracing", desc: "Track requests seamlessly across distributed microservices to pinpoint latency issues." },
+      { title: "Centralized Logging", desc: "Aggregate logs from all sources into a single, searchable platform for rapid debugging." },
+      { title: "Performance Analytics", desc: "Monitor infrastructure metrics in real-time to ensure optimal application performance." },
+      { title: "Anomaly Detection", desc: "Identify unusual patterns instantly using machine learning before they impact users." },
     ],
   },
   {
     id: "security",
     title: "Integrated DevSecOps",
+    shortTitle: "DevSecOps",
     description: "Embed security throughout the development lifecycle by integrating vulnerability scanning, policy enforcement, compliance validation, and automated security controls directly into CI/CD pipelines.",
-    icon: Shield,
-    image: "/images/solutions/devops/devsecops.png",
+    image: "/solutions/features/devops/3.png",
+    imagePosition: "object-[center_40%]",
     features: [
-      "Vulnerability scanning",
-      "Policy enforcement",
-      "Compliance validation",
-      "Automated security controls",
+      { title: "Vulnerability Scanning", desc: "Automatically scan code, containers, and dependencies for flaws during every build." },
+      { title: "Policy Enforcement", desc: "Prevent non-compliant code from reaching production with automated gating." },
+      { title: "Compliance Validation", desc: "Generate audit-ready reports for regulatory standards without manual effort." },
+      { title: "Automated Controls", desc: "Embed security guardrails without slowing down developers or compromising velocity." },
     ],
   },
   {
     id: "infrastructure",
-    title: "Infrastructure as Code (IaC)",
+    title: "Infrastructure as Code",
+    shortTitle: "Infrastructure (IaC)",
     description: "Provision, configure, and manage infrastructure consistently across cloud and hybrid environments using Infrastructure as Code to improve scalability, governance, and operational efficiency.",
-    icon: Server,
-    image: "/images/solutions/devops/infra.png",
+    image: "/solutions/features/devops/4.png",
+    imagePosition: "object-[center_40%]",
     features: [
-      "Consistent infrastructure provisioning",
-      "Cloud & hybrid management",
-      "Governance & compliance",
-      "Operational efficiency",
+      { title: "Consistent Provisioning", desc: "Deploy identical environments every single time to ensure complete reliability." },
+      { title: "Cloud Management", desc: "Unify management across AWS, Azure, and Google Cloud with a single control plane." },
+      { title: "Governance & Compliance", desc: "Maintain strict control over infrastructure changes and enforce security baselines." },
+      { title: "Operational Efficiency", desc: "Reduce manual configuration and eliminate configuration drift completely across teams." },
     ],
   },
   {
     id: "cloud",
-    title: "Multi-Cloud & Hybrid Cloud Management",
+    title: "Multi-Cloud Management",
+    shortTitle: "Multi-Cloud",
     description: "Simplify deployment, monitoring, and governance across AWS, Microsoft Azure, Google Cloud, private cloud, Kubernetes, and hybrid environments through centralized management.",
-    icon: Cloud,
-    image: "/images/solutions/devops/multicloud.png",
+    image: "/solutions/features/devops/5.png",
+    imagePosition: "object-[center_40%]",
     features: [
-      "AWS, Azure, Google Cloud",
-      "Private cloud & hybrid environments",
-      "Kubernetes management",
-      "Centralized governance",
+      { title: "AWS, Azure, GCP", desc: "Native integration with all major public cloud providers for maximum flexibility." },
+      { title: "Hybrid Environments", desc: "Seamlessly bridge on-premise data centers with the cloud for unified operations." },
+      { title: "Kubernetes Management", desc: "Orchestrate containerized applications at massive scale with automated scaling capabilities." },
+      { title: "Centralized Governance", desc: "Enforce unified policies regardless of where workloads run to minimize risk." },
     ],
   },
   {
     id: "automation",
-    title: "Workflow Automation & Release Orchestration",
+    title: "Release Orchestration",
+    shortTitle: "Automation",
     description: "Automate repetitive operational tasks, approval workflows, deployment orchestration, rollback strategies, and release governance to improve operational efficiency and reduce manual intervention.",
-    icon: Zap,
-    image: "/images/solutions/devops/automation.png",
+    image: "/solutions/features/devops/6.png",
+    imagePosition: "object-[center_40%]",
     features: [
-      "Approval workflows automation",
-      "Deployment orchestration",
-      "Rollback strategies",
-      "Release governance",
+      { title: "Approval Workflows", desc: "Automate complex, multi-stage approval processes to eliminate manual bottlenecks." },
+      { title: "Deployment Orchestration", desc: "Coordinate releases across dozens of interrelated services with absolute precision." },
+      { title: "Rollback Strategies", desc: "Instantly revert to stable versions if anomalies are detected post-deployment." },
+      { title: "Release Governance", desc: "Ensure every release meets strict enterprise standards and compliance requirements." },
     ],
   },
 ];
 
-const AUTO_DELAY = 4000; // ms between auto‑advances
+const AUTO_DELAY = 6000; // ms between auto-advances
 
 export default function DevCapabilities() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -118,185 +112,151 @@ export default function DevCapabilities() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentIndex, isPaused]);
+  }, [currentIndex, isPaused, restartTimer]);
 
   const handleSelect = (idx: number) => {
     setCurrentIndex(idx);
   };
 
   return (
-    <section
-      className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden"
-    >
-      {/* Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/3" />
-      </div>
-
+    <section className="relative w-full py-10 md:py-16 bg-white dark:bg-[#0a0a0a] transition-colors duration-500 overflow-hidden">
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        {/* Header */}
+        
         {/* Header section */}
-        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6 md:mb-0"
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6 md:mb-0"
             >
               Intelligent Platform Engineering
             </motion.h2>
           </div>
           
-          <div className="md:pt-2">
+          <div className="md:pt-3">
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+              className="font-manrope text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
               Accelerate development, automate operations, strengthen security, and simplify infrastructure management.
             </motion.p>
           </div>
         </div>
 
-        {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:items-stretch">
-          {/* Left - Capability List with Icons Only */}
-          <div className="lg:col-span-4 flex flex-col gap-3">
+        {/* Top Navigation Tabs */}
+        <div className="w-full border-b border-slate-200 dark:border-slate-800 mb-8 lg:mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full">
             {capabilities.map((cap, idx) => {
-              const Icon = cap.icon;
               const isSelected = currentIndex === idx;
               return (
-                <motion.button
+                <button
                   key={cap.id}
                   onClick={() => handleSelect(idx)}
                   onMouseEnter={() => setIsPaused(true)}
                   onMouseLeave={() => setIsPaused(false)}
-                  whileHover={{ x: 6 }}
-                  className={`group relative flex-1 w-full flex items-center gap-4 p-4 rounded-xl text-left transition-all duration-300 overflow-hidden ${
+                  className={`relative flex items-center justify-center pb-4 text-[15px] font-medium whitespace-nowrap transition-colors duration-300 ${
                     isSelected
-                      ? "bg-white dark:bg-slate-900 shadow-lg dark:shadow-none border border-violet-200 dark:border-violet-900/50"
-                      : "bg-transparent border border-transparent hover:bg-white/50 dark:hover:bg-slate-900/50"
+                      ? "text-violet-600 dark:text-violet-400"
+                      : "text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
                   }`}
                 >
-                  {/* Icon Only - No Image */}
-                  <div
-                    className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg transition-all duration-300 ${
-                      isSelected
-                        ? "bg-violet-600 text-white shadow-lg shadow-violet-500/30"
-                        : "bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-400 group-hover:bg-slate-300 dark:group-hover:bg-slate-600"
-                    }`}
-                  >
-                    <Icon size={18} strokeWidth={1.5} />
-                  </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h4
-                      className={`font-urbanist font-bold text-sm transition-colors ${
-                        isSelected
-                          ? "text-black dark:text-white"
-                          : "text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-white"
-                      }`}
-                    >
-                      {cap.title}
-                    </h4>
-                    {/* Removed features count */}
-                  </div>
-
-                  {/* {isSelected && (
-                    <div className="absolute -right-0.5 top-1/2 -translate-y-1/2 w-1.5 h-8 rounded-l-full bg-gradient-to-b from-violet-600 to-fuchsia-600" />
-                  )} */}
-
-                  {/* Auto-advance progress bar */}
-                  {isSelected && !isPaused && (
+                  {cap.shortTitle}
+                  {/* Active Indicator Line */}
+                  {isSelected && (
                     <motion.div
-                      key={`progress-${currentIndex}`}
-                      className="absolute bottom-0 left-0 h-0.5 bg-violet-600"
-                      initial={{ width: "0%" }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: AUTO_DELAY / 1000, ease: "linear" }}
+                      layoutId="activeTab"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-violet-600 dark:bg-violet-500"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
-                </motion.button>
+                  {/* Auto-advance progress indicator on the active tab */}
+                  {isSelected && !isPaused && (
+                     <motion.div
+                       key={`progress-${currentIndex}`}
+                       className="absolute bottom-0 left-0 h-[2px] bg-violet-300 dark:bg-violet-800"
+                       initial={{ width: "0%" }}
+                       animate={{ width: "100%" }}
+                       transition={{ duration: AUTO_DELAY / 1000, ease: "linear" }}
+                     />
+                  )}
+                </button>
               );
             })}
           </div>
+        </div>
 
-          {/* Right - Detail View with Full Image */}
-          <div className="lg:col-span-8">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selected.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-                className="relative h-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg dark:shadow-none flex flex-col"
-              >
-                {/* Full Width Image at Top */}
-                <div className="relative w-full h-48 md:h-56 lg:h-64 overflow-hidden">
+        {/* Content Area */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={selected.id}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex flex-col gap-10 lg:gap-14"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Top Row: Title/Description & Image */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              
+              {/* Left Side: Title & Description */}
+              <div className="lg:col-span-5 flex flex-col justify-center">
+                <h2 className="font-urbanist text-3xl md:text-4xl lg:text-[42px] leading-tight font-normal text-indigo-950 dark:text-indigo-200 uppercase tracking-wide mb-6">
+                  {selected.title}
+                </h2>
+                <p className="font-manrope text-base md:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                  {selected.description}
+                </p>
+              </div>
+
+              {/* Right Side: Image */}
+              <div className="lg:col-span-7 w-full flex justify-center">
+                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={selected.image}
                     alt={selected.title}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
-                  {/* Gradient Overlay */}
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-white/40 to-transparent dark:from-slate-900/80 dark:via-slate-900/40" /> */}
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Row: Feature Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 w-full">
+              {selected.features.map((feature, idx) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="relative overflow-hidden bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 md:p-6 rounded-md hover:shadow-xl hover:shadow-violet-900/5 transition-all duration-300 group"
+                >
+                  {/* Subtle top-right glow */}
+                  <div className="absolute -top-12 -right-12 w-40 h-40 bg-violet-400/15 dark:bg-violet-500/10 rounded-full blur-[30px] pointer-events-none transition-transform duration-500 group-hover:scale-110 group-hover:bg-violet-400/25" />
                   
-                  {/* Icon overlay on image */}
-                  <div className="absolute bottom-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 dark:bg-slate-900/90 shadow-lg backdrop-blur-sm">
-                    {(() => {
-                      const Icon = selected.icon;
-                      return <Icon size={24} className="text-violet-600 dark:text-violet-400" />;
-                    })()}
+                  <div className="relative z-10">
+                    <h4 className="font-urbanist text-[19px] font-medium text-slate-900 dark:text-white mb-2">
+                      {feature.title}
+                    </h4>
+                    <p className="font-manrope text-[16px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {feature.desc}
+                    </p>
                   </div>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
 
-                {/* Content Below Image */}
-                <div className="relative z-10 flex-1 p-6 md:p-8">
-                  <div className="flex flex-col h-full">
-                    {/* Title & Description */}
-                    <div className="mb-6">
-                      <h3 className="font-urbanist text-2xl font-bold text-black dark:text-white">
-                        {selected.title}
-                      </h3>
-                      <p className="mt-2 font-inter text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {selected.description}
-                      </p>
-                    </div>
-
-                    {/* Features Grid */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      {selected.features.map((feature, idx) => (
-                        <motion.div
-                          key={feature}
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: idx * 0.1 }}
-                          className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700"
-                        >
-                          <CheckCircle2
-                            size={16}
-                            className="text-violet-600 dark:text-violet-400 shrink-0"
-                          />
-                          <span className="font-inter text-sm text-slate-700 dark:text-slate-300">
-                            {feature}
-                          </span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-        </div>
       </div>
     </section>
   );
