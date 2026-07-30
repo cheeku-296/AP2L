@@ -10,7 +10,8 @@ const capabilities = [
     title: "Automated SBOM Lifecycle Management",
     shortTitle: "SBOM",
     description: "Generate, maintain, analyze, and govern Software Bills of Materials (SBOMs) throughout the software lifecycle to improve visibility, transparency, and software integrity.",
-    image: "/images/solutions/security/sbom.png",
+    image: "/solutions/features/security/1.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Continuous SBOM Generation", desc: "Automatically create updated SBOMs upon every successful software build." },
       { title: "Component Discovery", desc: "Deeply trace and map every open-source and proprietary dependency." },
@@ -23,7 +24,8 @@ const capabilities = [
     title: "Continuous Vulnerability Intelligence",
     shortTitle: "Vulnerability",
     description: "Continuously discover, prioritize, and monitor vulnerabilities across applications, dependencies, containers, and enterprise environments using intelligent risk analysis.",
-    image: "/images/solutions/security/vulnerability.png",
+    image: "/solutions/features/security/2.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Vulnerability discovery", desc: "Scan continuously to uncover CVEs within code and libraries." },
       { title: "Container scanning", desc: "Identify hidden security flaws inside Docker and Kubernetes setups." },
@@ -36,7 +38,8 @@ const capabilities = [
     title: "Compliance & Governance Automation",
     shortTitle: "Compliance",
     description: "Automate compliance assessments, evidence collection, policy validation, and reporting across industry regulations and security frameworks to simplify audit readiness.",
-    image: "/images/solutions/security/compliance&automation.png",
+    image: "/solutions/features/security/3.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Automated assessments", desc: "Continuously map controls against SOC2, HIPAA, and ISO frameworks." },
       { title: "Evidence collection", desc: "Gather audit documentation automatically without manual intervention." },
@@ -49,7 +52,8 @@ const capabilities = [
     title: "Intelligent Threat Detection",
     shortTitle: "Threat Detection",
     description: "Accelerate threat identification and incident resolution through automated workflows, contextual security insights, and prioritized remediation guidance.",
-    image: "/images/solutions/security/IntelligentResponse.png",
+    image: "/solutions/features/security/4.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Automated threat identification", desc: "Detect anomalous behaviors quickly using advanced ML algorithms." },
       { title: "Accelerated resolution", desc: "Execute automated runbooks to instantly isolate security breaches." },
@@ -62,7 +66,8 @@ const capabilities = [
     title: "Zero Trust Security Architecture",
     shortTitle: "Zero Trust",
     description: "Adopt a Zero Trust approach by continuously verifying identities, software integrity, infrastructure security, and access controls across your digital ecosystem.",
-    image: "/images/solutions/security/zero_trust.png",
+    image: "/solutions/features/security/5.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Identity verification", desc: "Enforce strict authentication protocols for every access request." },
       { title: "Integrity validation", desc: "Ensure software binaries remain completely untampered in transit." },
@@ -75,7 +80,8 @@ const capabilities = [
     title: "DevSecOps Integration",
     shortTitle: "DevSecOps",
     description: "Embed security directly into CI/CD pipelines, enabling continuous security validation, automated policy enforcement, and secure software delivery without slowing development.",
-    image: "/images/solutions/security/devsecops.png",
+    image: "/solutions/features/security/6.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "CI/CD security embedding", desc: "Integrate security scanners natively into build automation tools." },
       { title: "Continuous validation", desc: "Analyze code automatically on every single developer commit." },
@@ -216,7 +222,7 @@ export default function SecCapabilities() {
                     src={selected.image}
                     alt={selected.title}
                     fill
-                    className="object-cover object-[center_75%]"
+                    className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
                 </div>
