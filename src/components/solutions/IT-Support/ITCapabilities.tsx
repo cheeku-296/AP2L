@@ -10,7 +10,8 @@ const capabilities = [
     title: "AI-Powered Incident & Ticket Management",
     shortTitle: "AI Incident Mgt",
     description: "Automatically classify, prioritize, route, and resolve incidents using intelligent automation to reduce response times and improve service desk productivity.",
-    image: "/images/solutions/IT/ticket.png",
+    image: "/solutions/features/it-support/1.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Automatic classification", desc: "Instantly categorize incoming tickets based on deep historical text analysis." },
       { title: "Priority-based routing", desc: "Assign critical incidents directly to specialized resolution teams immediately." },
@@ -23,7 +24,8 @@ const capabilities = [
     title: "Intelligent Virtual Assistants",
     shortTitle: "Virtual Agents",
     description: "Provide employees with always-available virtual support capable of resolving common issues, answering IT queries, and guiding users through service requests without human intervention.",
-    image: "/images/solutions/IT/agents.png",
+    image: "/solutions/features/it-support/2.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "24/7 support availability", desc: "Provide continuous assistance globally regardless of time zones." },
       { title: "Common issue resolution", desc: "Automatically handle password resets and simple access requests." },
@@ -36,7 +38,8 @@ const capabilities = [
     title: "Enterprise Self-Service Portal",
     shortTitle: "Self-Service",
     description: "Enable employees to resolve common IT issues independently through an intelligent knowledge base, automated service catalog, and guided self-service experiences.",
-    image: "/images/solutions/IT/knowledgebase.png",
+    image: "/solutions/features/it-support/3.png",
+    imagePosition: "object-[center_20%]",
     features: [
       { title: "Independent resolution", desc: "Empower users to fix their own issues rapidly and efficiently." },
       { title: "Intelligent knowledge base", desc: "Deliver contextual, up-to-date solutions based on user inquiries." },
@@ -49,7 +52,8 @@ const capabilities = [
     title: "Workflow Automation & Orchestration",
     shortTitle: "Workflow",
     description: "Automate repetitive IT operations, approval workflows, service requests, incident escalations, and operational processes to improve consistency and reduce manual effort.",
-    image: "/images/solutions/IT/workflow_automation.png",
+    image: "/solutions/features/it-support/4.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "No-Code Workflow Builder", desc: "Design complex IT processes visually without any software programming." },
       { title: "Automated Approvals", desc: "Route requests dynamically to designated managers for instant sign-off." },
@@ -62,7 +66,8 @@ const capabilities = [
     title: "Proactive Monitoring & Alerting",
     shortTitle: "Monitoring",
     description: "Identify infrastructure issues, service disruptions, and potential failures before they impact users through intelligent monitoring, predictive analytics, and automated notifications.",
-    image: "/images/solutions/IT/alerts.png",
+    image: "/solutions/features/it-support/5.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Infrastructure identification", desc: "Monitor server health and network latency in real-time." },
       { title: "Service disruption detection", desc: "Flag application downtime immediately to minimize business impact." },
@@ -75,7 +80,8 @@ const capabilities = [
     title: "Omnichannel Service Delivery",
     shortTitle: "Omnichannel",
     description: "Deliver consistent IT support across web portals, email, chat, collaboration platforms, mobile applications, and virtual assistants through a unified service experience.",
-    image: "/images/solutions/IT/channels.png",
+    image: "/solutions/features/it-support/6.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Web & email support", desc: "Manage traditional support channels efficiently from a unified dashboard." },
       { title: "Collaboration platforms", desc: "Integrate ticketing seamlessly directly into Microsoft Teams and Slack." },
@@ -216,7 +222,7 @@ export default function ITCapabilities() {
                     src={selected.image}
                     alt={selected.title}
                     fill
-                    className="object-cover object-[center_75%]"
+                    className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
                 </div>
