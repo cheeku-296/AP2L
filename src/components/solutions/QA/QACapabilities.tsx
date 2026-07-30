@@ -10,7 +10,8 @@ const capabilities = [
     title: "AI-Powered Test Automation",
     shortTitle: "AI Automation",
     description: "Leverage intelligent automation to generate, execute, maintain, and optimize test cases while significantly reducing manual effort and accelerating software validation.",
-    image: "/images/solutions/QA/Test_automation.png",
+    image: "/solutions/features/qa/1.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "AI test case generation", desc: "Automatically create robust test scenarios using advanced machine learning models." },
       { title: "Self-healing test scripts", desc: "Dynamically adapt to UI changes to prevent script failures." },
@@ -23,7 +24,8 @@ const capabilities = [
     title: "Low-Code & No-Code Test Automation",
     shortTitle: "Low-Code",
     description: "Empower both technical and business users to create scalable automated tests without extensive programming expertise, accelerating adoption across teams.",
-    image: "/images/solutions/QA/No_Code.png",
+    image: "/solutions/features/qa/2.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Visual test creation", desc: "Design comprehensive tests using intuitive drag-and-drop interfaces." },
       { title: "No-code platform", desc: "Bridge the gap between developers and QA with accessible tools." },
@@ -36,7 +38,8 @@ const capabilities = [
     title: "Cross-Platform Web & Mobile Testing",
     shortTitle: "Cross-Platform",
     description: "Validate seamless user experiences across browsers, operating systems, devices, and mobile platforms using unified test orchestration.",
-    image: "/images/solutions/QA/mobile_web.png",
+    image: "/solutions/features/qa/3.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Cross-browser validation", desc: "Ensure pixel-perfect rendering across Chrome, Firefox, Safari, and Edge." },
       { title: "Mobile platform testing", desc: "Execute automated tests on real iOS and Android devices." },
@@ -49,7 +52,8 @@ const capabilities = [
     title: "API & Microservices Validation",
     shortTitle: "API Testing",
     description: "Ensure the reliability, security, and performance of modern distributed architectures through comprehensive API, integration, and microservices testing.",
-    image: "/images/solutions/QA/API&Microservice.png",
+    image: "/solutions/features/qa/4.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Comprehensive API testing", desc: "Automate REST, GraphQL, and SOAP endpoint validation seamlessly." },
       { title: "Integration testing", desc: "Verify data flow and state changes between connected systems." },
@@ -62,7 +66,8 @@ const capabilities = [
     title: "Security & Compliance Testing",
     shortTitle: "Security QA",
     description: "Embed security throughout the Software Development Lifecycle by continuously identifying vulnerabilities, validating security controls, and ensuring regulatory compliance before production deployment.",
-    image: "/images/solutions/QA/sec&comp.png",
+    image: "/solutions/features/qa/5.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "SAST & DAST Analysis", desc: "Perform deep static and dynamic security testing during builds." },
       { title: "Vulnerability Assessment", desc: "Identify critical flaws in code and third-party dependencies." },
@@ -75,7 +80,8 @@ const capabilities = [
     title: "CI/CD Quality Integration",
     shortTitle: "CI/CD QA",
     description: "Integrate intelligent testing seamlessly into your DevSecOps pipeline to enable continuous validation, faster feedback loops, and automated release governance.",
-    image: "/images/solutions/QA/cicd.png",
+    image: "/solutions/features/qa/6.png",
+    imagePosition: "object-[center_40%]",
     features: [
       { title: "Pipeline integration", desc: "Embed quality gates directly into Jenkins, GitLab, or GitHub Actions." },
       { title: "Continuous validation", desc: "Trigger automated test suites instantly on every code commit." },
@@ -211,12 +217,12 @@ export default function QACapabilities() {
 
               {/* Right Side: Image */}
               <div className="lg:col-span-7 w-full flex justify-center">
-                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl bg-slate-50 dark:bg-slate-900/50">
+                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden shadow-xl bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={selected.image}
                     alt={selected.title}
                     fill
-                    className="object-cover object-[center_75%]"
+                    className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
                 </div>

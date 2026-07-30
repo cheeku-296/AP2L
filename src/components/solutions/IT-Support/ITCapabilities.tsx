@@ -211,7 +211,7 @@ export default function ITCapabilities() {
 
               {/* Right Side: Image */}
               <div className="lg:col-span-7 w-full flex justify-center">
-                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden border border-slate-200 dark:border-slate-800 shadow-xl bg-slate-50 dark:bg-slate-900/50">
+                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden shadow-xl bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={selected.image}
                     alt={selected.title}
