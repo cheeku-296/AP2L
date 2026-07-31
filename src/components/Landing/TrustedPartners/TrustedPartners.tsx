@@ -2,21 +2,22 @@
 
 import { motion } from "framer-motion";
 import { Landmark, Building, ShieldCheck, Activity, Briefcase, Wallet } from "lucide-react";
+import Image from "next/image";
 
 const partners = [
-  { name: "CRIS", icon: Building },
-  { name: "Axis Bank", icon: Landmark },
-  { name: "FDC", icon: Activity },
-  { name: "Protean", icon: ShieldCheck },
+  { name: "CRIS", icon: Building, logo: "/clients/cris_logo.png" },
+  { name: "Axis Bank", icon: Landmark, logo: "/clients/axis_bank.png" },
+  { name: "FDC", icon: Activity, logo: "/clients/fdc.jpeg" },
+  { name: "Protean", icon: ShieldCheck, logo: "/clients/protean.svg" },
   { name: "L&T Finance", icon: Wallet },
-  { name: "Bank of Maharashtra", icon: Landmark },
-  { name: "UCO Bank", icon: Landmark },
-  { name: "RBL Bank", icon: Landmark },
-  { name: "ABCD Bank", icon: Landmark },
-  { name: "Generali Central Life Insurance", icon: ShieldCheck },
-  { name: "NSDL Payments Bank", icon: Wallet },
-  { name: "IDBI Bank", icon: Landmark },
-  { name: "Muscat Finance", icon: Briefcase },
+  { name: "Bank of Maharashtra", icon: Landmark, logo: "/clients/bank_of_maharashtra.svg" },
+  { name: "UCO Bank", icon: Landmark, logo: "/clients/uco_bank.svg" },
+  { name: "RBL Bank", icon: Landmark, logo: "/clients/rbl_bank.svg" },
+  { name: "ABCD Bank", icon: Landmark, logo: "/clients/abcd_bank.png" },
+  { name: "Generali Central Life Insurance", icon: ShieldCheck, logo: "/clients/generali_centeral.png" },
+  { name: "NSDL Payments Bank", icon: Wallet, logo: "/clients/nsdl.png" },
+  { name: "IDBI Bank", icon: Landmark, logo: "/clients/idbi_bank.png" },
+  { name: "Muscat Finance", icon: Briefcase, logo: "/clients/muscat_finance.png" },
 ];
 
 export default function TrustedPartners() {
@@ -57,15 +58,14 @@ export default function TrustedPartners() {
                 {marqueePartners.map((partner, index) => {
                   const Icon = partner.icon;
                   return (
-                    <div
-                      key={index}
-                      className="flex items-center justify-center gap-3 whitespace-nowrap group cursor-default opacity-80 hover:opacity-100 transition-opacity"
-                    >
-                      <Icon 
-                        size={22} 
-                        strokeWidth={1.5} 
-                        className="text-slate-400 dark:text-slate-500" 
-                      />
+                    <div key={index} className="flex items-center justify-center gap-3 whitespace-nowrap group cursor-default opacity-80 hover:opacity-100 transition-opacity">
+                      {partner.logo ? (
+                        <div className="relative h-7 w-7 md:h-8 md:w-8 transition-all duration-300 shrink-0">
+                          <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
+                        </div>
+                      ) : (
+                        <Icon size={22} strokeWidth={1.5} className="text-slate-400 dark:text-slate-500 shrink-0" />
+                      )}
                       <h3 className="font-urbanist text-lg font-bold tracking-tight text-slate-500 dark:text-slate-400">
                         {partner.name}
                       </h3>
