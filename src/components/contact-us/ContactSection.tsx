@@ -97,10 +97,27 @@ export default function ContactSection() {
     },
   ];
 
+  const validatePhone = (phone: string) => {
+    if (!phone.trim()) return "Phone number is required.";
+    const digits = phone.replace(/\D/g, "");
+    if (!/^\+?[0-9\s\-\(\)]{7,20}$/.test(phone.trim()) || digits.length < 7 || digits.length > 15) {
+      return "Please enter a valid phone number (7 to 15 digits).";
+    }
+    return null;
+  };
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMessage(null);
+
+    // Validate phone number
+    const pError = validatePhone(formData.phone);
+    if (pError) {
+      setErrorMessage(pError);
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const res = await fetch("/api/contact", {
@@ -419,7 +436,7 @@ export default function ContactSection() {
 
                       <div>
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          First Name
+                          First Name <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -461,7 +478,7 @@ export default function ContactSection() {
 
                       <div>
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Last Name
+                          Last Name <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -508,7 +525,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Company
+                          Company <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -552,7 +569,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Designation
+                          Designation <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -600,7 +617,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Business Email
+                          Business Email <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -645,10 +662,11 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Phone Number
+                          Phone Number <span className="text-red-500">*</span>
                         </label>
 
                         <input
+                          type="tel"
                           required
                           value={formData.phone}
                           onChange={(e) =>
@@ -691,7 +709,7 @@ export default function ContactSection() {
                     <div>
 
                       <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        Interested Product
+                        Interested Product <span className="text-red-500">*</span>
                       </label>
 
                       <div className="relative" ref={dropdownRef}>
@@ -836,7 +854,7 @@ export default function ContactSection() {
                     <div>
 
                       <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        Tell us about your requirements
+                        Tell us about your requirements <span className="text-red-500">*</span>
                       </label>
 
                       <textarea

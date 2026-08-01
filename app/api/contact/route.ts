@@ -15,10 +15,19 @@ export async function POST(req: Request) {
       message,
     } = body;
 
-    // Basic validation
-    if (!firstName || !email || !message) {
+    // Mandatory fields validation
+    if (!firstName || !lastName || !company || !designation || !email || !phone || !product || !message) {
       return NextResponse.json(
-        { error: "Missing required fields (First Name, Email, or Message)." },
+        { error: "Please fill in all mandatory fields." },
+        { status: 400 }
+      );
+    }
+
+    // Phone number validation (7-15 digits allowed)
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (!/^\+?[0-9\s\-\(\)]{7,20}$/.test(phone) || phoneDigits.length < 7 || phoneDigits.length > 15) {
+      return NextResponse.json(
+        { error: "Please enter a valid phone number (7 to 15 digits)." },
         { status: 400 }
       );
     }
