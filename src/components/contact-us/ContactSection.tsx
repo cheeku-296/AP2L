@@ -19,6 +19,7 @@ import {
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -96,16 +97,35 @@ export default function ContactSection() {
     },
   ];
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Simulated network round-trip — replace with your real submission call
-    // (API route, server action, or third-party form handler).
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+
       setIsSubmitted(true);
-    }, 1200);
+    } catch (err: unknown) {
+      console.error("Form submission error:", err);
+      setErrorMessage(
+        err instanceof Error ? err.message : "Failed to send message. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function resetForm() {
@@ -120,6 +140,7 @@ export default function ContactSection() {
       message: "",
       consent: false,
     });
+    setErrorMessage(null);
     setIsSubmitted(false);
   }
 
@@ -387,6 +408,11 @@ export default function ContactSection() {
                     onSubmit={handleSubmit}
                     className="mt-10 space-y-6"
                   >
+                    {errorMessage && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 dark:border-red-900/50 dark:bg-red-950/40 p-4 text-sm text-red-600 dark:text-red-400 font-medium">
+                        {errorMessage}
+                      </div>
+                    )}
                     <div className="grid gap-6 md:grid-cols-2">
 
                       {/* First Name */}
