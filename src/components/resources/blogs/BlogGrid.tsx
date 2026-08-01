@@ -17,6 +17,15 @@ const filters = [
 
 const blogs = [
   {
+    id: 8,
+    category: "Cybersecurity",
+    title: "Resilience Operations Center (ROC): The Intelligent Nerve Center of Modern Cyber Resilience",
+    description:
+      "Discover how a Resilience Operations Center (ROC) converges cybersecurity, IT operations, business continuity, and risk intelligence into a unified, AI-driven framework.",
+    image: "/images/resources/blogs/rocblog.png",
+    readTime: "8 min read",
+  },
+  {
     id: 1,
     category: "AI",
     title: "How AI is Transforming Enterprise Software",
