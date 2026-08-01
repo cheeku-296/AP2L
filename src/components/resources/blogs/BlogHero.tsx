@@ -171,7 +171,7 @@ export default function BlogHero() {
 
         {/* Bottom */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -190,7 +190,7 @@ export default function BlogHero() {
           <span className="h-1 w-1 rounded-full bg-slate-400" />
 
           <span>Enterprise Technology</span>
-        </motion.div>
+        </motion.div> */}
       </div>
 
     </section>
