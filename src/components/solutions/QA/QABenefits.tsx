@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function QABenefits() {
   return (
-    <section className="relative w-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500 py-16 md:py-24">
+    <section className="relative w-full overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500 py-16 md:py-24">
       {/* Background Decorations (subtle) */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-violet-500/5 dark:bg-violet-500/8 blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-fuchsia-500/4 dark:bg-fuchsia-500/6 blur-3xl" />
-      </div>
+      </div> */}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
         {/* Header section */}
@@ -26,7 +26,7 @@ export default function QABenefits() {
               </h2>
             </motion.div>
           </div>
-          
+
           <div className="md:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ export default function QABenefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="relative w-full h-[400px] md:h-[550px] lg:h-[680px] rounded-2xl overflow-hidden border border-slate-200/60 dark:border-slate-700/60 shadow-2xl shadow-violet-500/10"
+          className="relative w-full h-[300px] md:h-[450px] lg:h-[550px] rounded-2xl overflow-hidden"
         >
           <Image
-            src="/solutions/qa/1.png" // Replace with your actual image path
+            src="/new/1.png" // Replace with your actual image path
             alt="Benefits of AI-Powered Testing - AP2L Platform"
             fill
             className="object-cover object-center"
