@@ -1,62 +1,114 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { TrendingUp } from "lucide-react";
-import WalletIcon from "@/components/ui/wallet-icon";
-import HeartIcon from "@/components/ui/heart-icon";
-import ShoppingCartIcon from "@/components/ui/shopping-cart-icon";
-import GearIcon from "@/components/ui/gear-icon";
-import CpuIcon from "@/components/ui/cpu-icon";
-import GlobeIcon from "@/components/ui/globe-icon";
+import Image from "next/image";
 
-const industries = [
+type CardVariant = "hero" | "wide" | "banner" | "standard";
+
+interface IndustryItem {
+  id: string;
+  name: string;
+  description: string;
+  image: string;
+  variant: CardVariant;
+  imagePosition: string;
+  priority?: boolean;
+}
+
+const variantStyles: Record<
+  CardVariant,
+  {
+    container: string;
+    overlay: string;
+    content: string;
+    textWidth: string;
+  }
+> = {
+  hero: {
+    container: "lg:col-span-2 lg:row-span-2 min-h-[440px] lg:min-h-[480px]",
+    overlay:
+      "absolute left-0 top-0 bottom-0 w-full md:w-3/5 h-full z-10 bg-gradient-to-t md:bg-gradient-to-r from-white via-white/90 to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-transparent",
+    content: "flex flex-col justify-end md:justify-center h-full p-7 md:p-10",
+    textWidth: "max-w-full md:max-w-md lg:max-w-lg",
+  },
+  wide: {
+    container: "lg:col-span-2 lg:row-span-1 min-h-[280px] lg:min-h-[300px]",
+    overlay:
+      "absolute left-0 top-0 bottom-0 w-full md:w-3/5 h-full z-10 bg-gradient-to-t md:bg-gradient-to-r from-white via-white/90 to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-transparent",
+    content: "flex flex-col justify-end md:justify-center h-full p-7 md:p-8",
+    textWidth: "max-w-full md:max-w-sm lg:max-w-md",
+  },
+  banner: {
+    container: "lg:col-span-3 lg:row-span-1 min-h-[300px] lg:min-h-[320px]",
+    overlay:
+      "absolute left-0 top-0 bottom-0 w-full md:w-3/5 h-full z-10 bg-gradient-to-t md:bg-gradient-to-r from-white via-white/90 to-transparent dark:from-slate-950 dark:via-slate-950/90 dark:to-transparent",
+    content: "flex flex-col justify-end md:justify-center h-full p-7 md:p-9",
+    textWidth: "max-w-full md:max-w-md lg:max-w-xl",
+  },
+  standard: {
+    container: "lg:col-span-1 lg:row-span-1 min-h-[280px] lg:min-h-[320px]",
+    overlay:
+      "absolute left-0 right-0 bottom-0 w-full h-3/4 z-10 bg-gradient-to-t from-white via-white/80 to-transparent dark:from-slate-950 dark:via-slate-950/80 dark:to-transparent",
+    content: "flex flex-col justify-end h-full p-6 md:p-7",
+    textWidth: "max-w-full",
+  },
+};
+
+const industries: IndustryItem[] = [
   {
     id: "fintech",
     name: "Banking & Financial Services",
-    description: "Deliver secure, compliant, and high-availability applications that meet regulatory requirements while maintaining exceptional customer experiences.",
-    icon: WalletIcon,
-    stats: "99.99% Availability",
-    wide: true,
+    description:
+      "Deliver secure, compliant, and high-availability applications that meet regulatory requirements while maintaining exceptional customer experiences.",
+    image: "/images/solutions/qa-industries/bank.png",
+    variant: "hero",
+    imagePosition: "object-cover object-right md:object-center",
+    priority: true,
   },
   {
     id: "healthcare",
     name: "Healthcare & Life Sciences",
-    description: "Ensure patient safety, regulatory compliance, data privacy, and application reliability across healthcare ecosystems.",
-    icon: HeartIcon,
-    stats: "Regulatory-Ready Testing",
-    wide: false,
+    description:
+      "Ensure patient safety, regulatory compliance, data privacy, and application reliability across healthcare ecosystems.",
+    image: "/images/solutions/qa-industries/healthcaree.png",
+    variant: "standard",
+    imagePosition: "object-cover object-center",
   },
   {
     id: "ecommerce",
     name: "Retail & Digital Commerce",
-    description: "Validate scalable customer experiences capable of handling high transaction volumes during peak demand.",
-    icon: ShoppingCartIcon,
-    stats: "Millions of Transactions Validated",
-    wide: false,
+    description:
+      "Validate scalable customer experiences capable of handling high transaction volumes during peak demand.",
+    image: "/images/solutions/qa-industries/retail.png",
+    variant: "standard",
+    imagePosition: "object-cover object-center",
   },
   {
     id: "enterprise",
     name: "Enterprise Applications",
-    description: "Improve software quality across ERP, CRM, HRMS, and large-scale enterprise platforms through intelligent automation.",
-    icon: GearIcon,
-    stats: "Enterprise-Scale Quality Assurance",
-    wide: true,
+    description:
+      "Improve software quality across ERP, CRM, HRMS, and large-scale enterprise platforms through intelligent automation.",
+    image: "/images/solutions/qa-industries/erp.png",
+    variant: "standard",
+    imagePosition: "object-cover object-center",
   },
   {
     id: "tech",
     name: "SaaS & Technology",
-    description: "Support continuous delivery with automated quality validation across rapidly evolving cloud-native applications.",
-    icon: CpuIcon,
-    stats: "Continuous Release Enablement",
-    wide: true,
+    description:
+      "Support continuous delivery with automated quality validation across rapidly evolving cloud-native applications.",
+    image: "/images/solutions/qa-industries/saaas.png",
+    variant: "wide",
+    imagePosition: "object-cover object-right",
   },
   {
     id: "global",
     name: "Global Enterprises",
-    description: "Execute distributed testing across multiple regions, teams, cloud environments, and deployment pipelines with centralized governance.",
-    icon: GlobeIcon,
-    stats: "Enterprise-Grade Scalability",
-    wide: false,
+    description:
+      "Execute distributed testing across multiple regions, teams, cloud environments, and deployment pipelines with centralized governance.",
+    image: "/images/solutions/qa-industries/globall.png",
+    variant: "banner",
+    imagePosition: "object-cover object-right",
   },
 ];
 
@@ -65,256 +117,105 @@ const containerVariants: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.1,
     },
   },
 };
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
 };
 
 export default function QAIndustries() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      {/* Background */}
+    <section className="relative w-full py-12 md:py-20 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+      {/* Subtle ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] translate-y-1/2 translate-x-1/3" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[140px] -translate-y-1/2" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[140px] translate-y-1/2" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-10 md:mb-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <motion.div
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white"
             >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-6">
-                Trusted Across Mission-Critical Industries
-              </h2>
-            </motion.div>
+              Trusted Across Mission-Critical Industries
+            </motion.h2>
           </div>
-          
+
           <div className="md:pt-2">
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="font-manrope text-xl md:text-[22px] text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Delivering secure, reliable, compliant, and high-performing software for enterprise and regulated environments.
-              </p>
-            </motion.div>
+              Delivering secure, reliable, compliant, and high-performing software for enterprise and regulated environments.
+            </motion.p>
           </div>
         </div>
 
-        {/* Desktop Bento Grid – staggered layout */}
-        <div className="hidden lg:grid grid-cols-3 gap-3 auto-rows-min">
-          {/* Row 1: FinTech (wide) + Healthcare */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-2 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              {/* Hollow icon container */}
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <WalletIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                FinTech & Banking
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Ensure compliance, security, and performance for financial applications.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  99.99% uptime
-                </span>
-              </div>
-            </div>
-          </motion.div>
+        {/* Image-First Bento Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5"
+        >
+          {industries.map((item) => {
+            const vStyle = variantStyles[item.variant];
 
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-1 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <HeartIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                Healthcare
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                HIPAA‑compliant testing for critical healthcare applications.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  100% compliance
-                </span>
-              </div>
-            </div>
-          </motion.div>
+            return (
+              <motion.div
+                key={item.id}
+                variants={itemVariants}
+                className={`group relative overflow-hidden rounded-md border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm hover:shadow-2xl hover:shadow-violet-500/10 hover:border-violet-500/40 transition-all duration-300 hover:-translate-y-1 ${vStyle.container}`}
+              >
+                {/* Background Illustration */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={item.priority}
+                    className={`${item.imagePosition} group-hover:scale-[1.03] group-hover:brightness-[1.03] transition-all duration-700 ease-out`}
+                  />
+                </div>
 
-          {/* Row 2: E-commerce (normal) + Enterprise (wide) */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-1 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <ShoppingCartIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                E‑commerce & Retail
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Handle peak loads with automated performance testing.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  10M+ transactions
-                </span>
-              </div>
-            </div>
-          </motion.div>
+                {/* Directional Soft Gradient Overlay (Localized over text) */}
+                <div className={vStyle.overlay} />
 
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-2 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <GearIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                Enterprise Software
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Complex enterprise application testing at scale.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  95% coverage
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Row 3: SaaS (wide) + Global (normal) */}
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-2 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <CpuIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                SaaS & Technology
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Continuous testing for rapid release cycles.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  50+ releases/mo
-                </span>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="col-span-1 row-span-1 group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-          >
-            <div className="relative z-10">
-              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <GlobeIcon size={24} strokeWidth={1.5} />
-              </div>
-              <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                Global Enterprises
-              </h3>
-              <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Distributed testing for multi‑region deployments.
-              </p>
-              <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                  Global scale
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Tablet & Mobile */}
-        <div className="lg:hidden">
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl"
-          >
-            {industries.map((industry) => {
-              const Icon = industry.icon;
-              return (
-                <motion.div
-                  key={industry.id}
-                  variants={itemVariants}
-                  className="group p-5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 hover:border-violet-300 dark:hover:border-violet-600"
-                >
-                  <div className="relative z-10">
-                    <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                      <Icon size={24} strokeWidth={1.5} />
-                    </div>
-                    <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-                      {industry.name}
+                {/* Card Content Overlay */}
+                <div className={`relative z-20 ${vStyle.content}`}>
+                  <div className={vStyle.textWidth}>
+                    <h3 className="font-urbanist text-xl md:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors duration-200">
+                      {item.name}
                     </h3>
-                    <p className="mt-1 font-inter text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                      {industry.description}
+
+                    <p className="mt-2 font-manrope text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                      {item.description}
                     </p>
-                    <div className="mt-3 flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 w-fit">
-                      <TrendingUp size={14} className="text-violet-600 dark:text-violet-400" />
-                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
-                        {industry.stats}
-                      </span>
-                    </div>
                   </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
     </section>
   );
