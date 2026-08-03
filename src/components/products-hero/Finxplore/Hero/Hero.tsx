@@ -1,7 +1,6 @@
 "use client";
 
-// import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import Image from "next/image";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { finxploreHeroData } from "./data";
@@ -19,8 +18,6 @@ export default function FinxploreHero() {
           priority
           className="object-cover object-center opacity-100 scale-110"
         />
-        {/* Dark gradient overlay for readability */}
-        {/* <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/50 pointer-events-none" /> */}
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none" />
       </ParallaxBackground>
@@ -40,7 +37,7 @@ export default function FinxploreHero() {
             className="group inline-flex items-center justify-center gap-2 rounded-md bg-[#6843B7] px-6 py-3 text-sm font-semibold font-manrope text-white shadow-lg shadow-[#6843B7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
           >
             {buttonText}
-            <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            <ArrowRightIcon size={20} className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
       </div>

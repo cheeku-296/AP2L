@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import PlusIcon from "@/components/ui/plus-icon";
+import MinusIcon from "@/components/ui/minus-icon";
+import HelpCircleIcon from "@/components/ui/help-circle-icon";
 
 const faqs = [
   {
@@ -57,7 +59,6 @@ export default function QAFAQ() {
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         
-        {/* Header Section */}
         {/* Header section */}
         <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -110,9 +111,9 @@ export default function QAFAQ() {
                       : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 group-hover:bg-violet-100 dark:group-hover:bg-violet-900/30"
                   }`}>
                     {isOpen ? (
-                      <Minus size={18} strokeWidth={2.5} />
+                      <MinusIcon size={18} />
                     ) : (
-                      <Plus size={18} strokeWidth={2.5} />
+                      <PlusIcon size={18} />
                     )}
                   </div>
                 </button>
@@ -155,7 +156,7 @@ export default function QAFAQ() {
             className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition-all hover:scale-105 hover:shadow-violet-500/50"
           >
             Contact Our QA Experts
-            <HelpCircle size={16} />
+            <HelpCircleIcon size={16} />
           </a>
         </motion.div>
       </div>

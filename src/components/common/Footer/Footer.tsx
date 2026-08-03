@@ -87,26 +87,29 @@ function FooterColumn({
 }
 
 // ================= FooterBottom.tsx =================
-import { FaLinkedinIn, FaXTwitter, FaInstagram, FaFacebookF } from "react-icons/fa6";
+import LinkedinIcon from "@/components/ui/linkedin-icon";
+import TwitterIcon from "@/components/ui/twitter-icon";
+import InstagramIcon from "@/components/ui/instagram-icon";
+import FacebookIcon from "@/components/ui/facebook-icon";
 
 const socialLinks = [
   {
-    icon: FaLinkedinIn,
+    icon: LinkedinIcon,
     href: "https://www.linkedin.com/company/apmosys-the-consulting-services-company/",
     label: "LinkedIn",
   },
   {
-    icon: FaXTwitter,
+    icon: TwitterIcon,
     href: "https://x.com/apmosysofficial",
     label: "Twitter",
   },
   {
-    icon: FaInstagram,
+    icon: InstagramIcon,
     href: "https://www.instagram.com/apmosys_technologies",
     label: "Instagram",
   },
   {
-    icon: FaFacebookF,
+    icon: FacebookIcon,
     href: "https://www.facebook.com/ApMoSys",
     label: "Facebook",
   },

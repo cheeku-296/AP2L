@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import MenuIcon from "@/components/ui/menu-icon";
+import XIcon from "@/components/ui/x-icon";
+import ChevronDownIcon from "@/components/ui/chevron-down-icon";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { NavigationItem } from "./types";
@@ -245,7 +247,7 @@ function Dropdown({
       <button className={`group flex h-12 items-center gap-1 font-[family-name:var(--font-manrope)] text-[11px] font-bold uppercase tracking-[0.2em] transition duration-300 ${scrolled ? "text-slate-700 hover:text-slate-900" : "text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"}`}>
         <span>{title}</span>
 
-        <ChevronDown
+        <ChevronDownIcon
           size={16}
           className={`transition-all duration-300 ${
             open ? "rotate-180 text-violet-400" : ""
@@ -383,7 +385,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
         aria-label="Open Navigation Menu"
         className={`rounded-xl border p-2 backdrop-blur lg:hidden transition-colors ${scrolled ? 'border-slate-200 bg-white shadow-sm' : 'border-slate-900/10 dark:border-slate-800 bg-slate-900/5 dark:bg-white/10'}`}
       >
-        <Menu size={22} className={scrolled ? "text-slate-900" : "text-slate-900 dark:text-white"} />
+        <MenuIcon size={22} className={scrolled ? "text-slate-900" : "text-slate-900 dark:text-white"} />
       </button>
 
       <AnimatePresence>
@@ -429,7 +431,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
                   aria-label="Close Navigation Menu"
                   className="rounded-lg p-2 transition hover:bg-slate-900/5 dark:hover:bg-white/10"
                 >
-                  <X
+                  <XIcon
                     size={22}
                     className="text-slate-900 dark:text-white"
                   />
@@ -482,7 +484,7 @@ function MobileMenu({ scrolled }: { scrolled?: boolean }) {
                       >
                         <span>{item.title}</span>
 
-                        <ChevronDown
+                        <ChevronDownIcon
                           size={18}
                           className={`transition-transform duration-300 ${
                             expanded === item.title

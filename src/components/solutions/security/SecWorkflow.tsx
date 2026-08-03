@@ -1,44 +1,42 @@
 "use client";
 
 import AnimatedWorkflowPipeline, { WorkflowStep } from "@/src/components/solutions/common/AnimatedWorkflowPipeline";
-import {
-  Search,
-  FileCheck,
-  ShieldCheck,
-  Lock,
-  GitBranch,
-} from "lucide-react";
+import SearchIcon from "@/components/ui/search-icon";
+import CheckIcon from "@/components/ui/check-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import LockIcon from "@/components/ui/lock-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
 
 const steps: WorkflowStep[] = [
   {
     id: "discover",
     title: "Discover",
     description: "Continuous discovery of assets, dependencies, and potential threats.",
-    icon: Search,
+    icon: SearchIcon,
   },
   {
     id: "assess",
     title: "Assess",
     description: "Risk-based vulnerability assessment and compliance gap analysis.",
-    icon: FileCheck,
+    icon: CheckIcon,
   },
   {
     id: "remediate",
     title: "Remediate",
     description: "Automated patching and policy enforcement with AI-powered prioritization.",
-    icon: ShieldCheck,
+    icon: ShieldIcon,
   },
   {
     id: "monitor",
     title: "Monitor",
     description: "Real‑time threat monitoring, anomaly detection, and incident alerting.",
-    icon: Lock,
+    icon: LockIcon,
   },
   {
     id: "report",
     title: "Report",
     description: "Generate audit‑ready reports and compliance evidence on demand.",
-    icon: GitBranch,
+    icon: ChartLineIcon,
   },
 ];
 

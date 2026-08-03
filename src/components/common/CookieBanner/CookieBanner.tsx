@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { X } from "lucide-react";
+import XIcon from "@/components/ui/x-icon";
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,7 +63,7 @@ export default function CookieBanner() {
                 className="rounded-full p-1.5 text-slate-400 hover:bg-slate-100 hover:text-slate-600 dark:hover:bg-slate-800 dark:hover:text-slate-300 sm:hidden ml-2"
                 aria-label="Close"
               >
-                <X size={16} />
+                <XIcon size={16} />
               </button>
             </div>
           </div>

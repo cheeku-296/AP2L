@@ -1,44 +1,42 @@
 "use client";
 
 import AnimatedWorkflowPipeline, { WorkflowStep } from "@/src/components/solutions/common/AnimatedWorkflowPipeline";
-import {
-  Inbox,
-  Cpu,
-  Wrench,
-  Users,
-  BarChart3,
-} from "lucide-react";
+import LayersIcon from "@/components/ui/layers-icon";
+import CpuIcon from "@/components/ui/cpu-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import UsersIcon from "@/components/ui/users-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
 
 const steps: WorkflowStep[] = [
   {
     id: "ingest",
     title: "Ingest",
     description: "Unify tickets, chats, emails, and alerts into a single queue.",
-    icon: Inbox,
+    icon: LayersIcon,
   },
   {
     id: "triage",
     title: "Triage",
     description: "AI-powered categorization, prioritization, and routing.",
-    icon: Cpu,
+    icon: CpuIcon,
   },
   {
     id: "resolve",
     title: "Resolve",
     description: "Automated resolution via virtual agents or knowledge base.",
-    icon: Wrench,
+    icon: GearIcon,
   },
   {
     id: "escalate",
     title: "Escalate",
     description: "Seamless handoff to human agents with full context.",
-    icon: Users,
+    icon: UsersIcon,
   },
   {
     id: "analyze",
     title: "Analyze",
     description: "Gain insights from ticket data to improve continuously.",
-    icon: BarChart3,
+    icon: ChartLineIcon,
   },
 ];
 

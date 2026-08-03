@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Settings, X } from "lucide-react";
+import GearIcon from "@/components/ui/gear-icon";
+import XIcon from "@/components/ui/x-icon";
 import { useThemeConfig } from "@/src/context/ThemeConfigContext";
 
 interface ThemeBuilderProps {
@@ -28,25 +29,22 @@ export default function ThemeBuilder({ components }: ThemeBuilderProps) {
             <div className="mb-6 flex items-center justify-between">
               <div>
                 <h3 className="font-urbanist text-lg font-bold text-slate-900 dark:text-white">Theme Builder</h3>
-                <p className="text-xs text-slate-500 mt-1">Force independent component themes</p>
+                <p className="font-manrope text-xs text-slate-500">Customize per component</p>
               </div>
-              <button 
+              <button
                 onClick={() => setIsPanelOpen(false)}
-                className="p-1.5 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-500"
+                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors p-1"
               >
-                <X size={16} />
+                <XIcon size={18} />
               </button>
             </div>
-            
-            <div className="flex flex-col gap-3">
+
+            <div className="space-y-4">
               {components.map((comp) => {
                 const currentTheme = componentThemes[comp.id] || "global";
-                
                 return (
-                  <div key={comp.id} className="flex items-center justify-between group">
-                    <span className="text-sm font-medium text-slate-700 dark:text-slate-300 transition-colors group-hover:text-violet-600 dark:group-hover:text-violet-400">
-                      {comp.label}
-                    </span>
+                  <div key={comp.id} className="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-800/50">
+                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300 font-urbanist">{comp.label}</span>
                     <div className="flex bg-slate-100 dark:bg-slate-800 rounded-lg p-1 gap-1">
                       <button 
                         onClick={() => toggleTheme(comp.id, "light")}
@@ -80,7 +78,7 @@ export default function ThemeBuilder({ components }: ThemeBuilderProps) {
         className="flex h-14 w-14 items-center justify-center rounded-full bg-violet-600 text-white shadow-[0_0_40px_rgba(109,40,217,0.4)] hover:bg-violet-700 transition-all hover:scale-105 active:scale-95"
         title="Component Theme Configurator"
       >
-        <Settings size={24} className={isPanelOpen ? "animate-[spin_4s_linear_infinite]" : ""} />
+        <GearIcon size={24} className={isPanelOpen ? "animate-[spin_4s_linear_infinite]" : ""} />
       </button>
     </div>
   );

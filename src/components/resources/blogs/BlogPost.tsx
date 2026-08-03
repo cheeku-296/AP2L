@@ -4,8 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import CTA from "@/src/components/common/CTA/CTA";
-import { ArrowLeft, Clock, Calendar, Link as LinkIcon, Check } from "lucide-react";
-import { FaTwitter, FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import ArrowLeftIcon from "@/components/ui/arrow-left-icon";
+import ClockIcon from "@/components/ui/clock-icon";
+import CalendarIcon from "@/components/ui/calendar-icon";
+import CheckIcon from "@/components/ui/check-icon";
+import TwitterIcon from "@/components/ui/twitter-icon";
+import LinkedinIcon from "@/components/ui/linkedin-icon";
+import FacebookIcon from "@/components/ui/facebook-icon";
+import InstagramIcon from "@/components/ui/instagram-icon";
 import { motion, useScroll, useSpring } from "framer-motion";
 
 import { allBlogs } from "./data";
@@ -25,31 +31,33 @@ export default function BlogPost({ id }: { id: string }) {
   });
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    if (typeof window !== "undefined") {
+      navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
   };
 
   return (
-    <article className="relative min-h-screen bg-white text-slate-900">
-      {/* Reading Progress Bar */}
+    <article className="min-h-screen bg-white text-slate-800 font-sans">
+      {/* Scroll Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-cyan-400 origin-left z-[100]"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 origin-left z-50"
         style={{ scaleX }}
       />
 
-      {/* Hero Section */}
-      <div className="relative w-full pt-28 md:pt-36 pb-12 md:pb-16 flex flex-col justify-end overflow-hidden mt-[68px] min-h-[480px]">
+      {/* Hero Header */}
+      <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-slate-50 border-b border-slate-200">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src={blogData.image}
-            alt={blogData.title}
-            fill
-            className="object-cover"
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src={blogData.image} 
+            alt={blogData.title} 
+            fill 
+            className="object-cover object-center opacity-30 scale-105"
             priority
           />
-          {/* Gradients for readability - Light Theme */}
+          {/* Gradients for readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-white via-white/85 to-white/40" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
         </div>
@@ -60,7 +68,7 @@ export default function BlogPost({ id }: { id: string }) {
             href="/resources/blog"
             className="inline-flex items-center gap-2 text-violet-700 hover:text-violet-900 transition-colors mb-6 text-sm font-semibold tracking-wider uppercase bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm border border-slate-200/80 hover:border-violet-300 w-fit"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeftIcon size={16} />
             Back to Blog
           </Link>
 
@@ -69,7 +77,7 @@ export default function BlogPost({ id }: { id: string }) {
               {blogData.category}
             </span>
             <div className="flex items-center gap-2 text-slate-600 text-sm font-medium">
-              <Clock size={16} />
+              <ClockIcon size={16} />
               {blogData.readTime}
             </div>
           </div>
@@ -101,7 +109,7 @@ export default function BlogPost({ id }: { id: string }) {
 
             {/* Date */}
             <div className="flex items-center gap-3 text-slate-600 font-medium">
-              <Calendar size={20} className="text-violet-600" />
+              <CalendarIcon size={20} className="text-violet-600" />
               {blogData.date}
             </div>
 
@@ -110,106 +118,42 @@ export default function BlogPost({ id }: { id: string }) {
               <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Connect With Us</h4>
               <div className="flex gap-3">
                 <a href="https://x.com/apmosysofficial" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-slate-900 hover:text-white hover:shadow-md transition-all">
-                  <FaTwitter size={18} />
+                  <TwitterIcon size={18} />
                 </a>
                 <a href="https://www.linkedin.com/company/apmosys-the-consulting-services-company/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-blue-700 hover:text-white hover:shadow-md transition-all">
-                  <FaLinkedin size={18} />
+                  <LinkedinIcon size={18} />
                 </a>
                 <a href="https://www.facebook.com/ApMoSys" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-blue-600 hover:text-white hover:shadow-md transition-all">
-                  <FaFacebook size={18} />
+                  <FacebookIcon size={18} />
                 </a>
                 <a href="https://www.instagram.com/apmosys_technologies" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-pink-600 hover:text-white hover:shadow-md transition-all">
-                  <FaInstagram size={18} />
+                  <InstagramIcon size={18} />
                 </a>
                 <button onClick={handleCopyLink} aria-label="Copy Link" className="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-600 hover:bg-violet-600 hover:text-white hover:shadow-md transition-all relative">
-                  {copied ? <Check size={18} className="text-green-500" /> : <LinkIcon size={18} />}
+                  {copied ? <CheckIcon size={18} className="text-green-500" /> : <CheckIcon size={18} />}
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Main Content Area */}
-        <div className="max-w-3xl w-full">
-          {/* Custom Styled Prose Content */}
+        {/* Main Post Body */}
+        <div className="flex-1 max-w-3xl">
           <div 
-            className="prose-custom"
+            className="prose prose-slate prose-lg max-w-none prose-headings:font-medium prose-headings:tracking-tight prose-a:text-violet-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl"
             dangerouslySetInnerHTML={{ __html: blogData.content }}
           />
-
-          <style dangerouslySetInnerHTML={{__html: `
-            .prose-custom h2 {
-              font-size: 2rem;
-              font-weight: 600;
-              margin-top: 3rem;
-              margin-bottom: 1.5rem;
-              color: #0f172a;
-              letter-spacing: -0.025em;
-            }
-            .prose-custom h2:first-child { margin-top: 0; }
-            
-            .prose-custom h3 {
-              font-size: 1.5rem;
-              font-weight: 700;
-              margin-top: 2rem;
-              margin-bottom: 1rem;
-              color: #0f172a;
-            }
-
-            .prose-custom p {
-              font-size: 1.125rem;
-              line-height: 1.8;
-              margin-bottom: 1.5rem;
-              color: #334155;
-            }
-
-            .prose-custom ul {
-              list-style-type: disc;
-              padding-left: 1.5rem;
-              margin-bottom: 2rem;
-            }
-            .prose-custom li {
-              font-size: 1.125rem;
-              line-height: 1.8;
-              margin-bottom: 0.5rem;
-              color: #334155;
-              font-weight: 400;
-            }
-            .prose-custom strong { font-weight: 700; color: #0f172a; }
-
-            .prose-custom blockquote {
-              border-left: 4px solid #8b5cf6;
-              padding-left: 1.5rem;
-              margin: 2.5rem 0;
-              font-size: 1.25rem;
-              font-style: italic;
-              font-weight: 500;
-              line-height: 1.6;
-              color: #1e293b;
-              background: linear-gradient(to right, rgba(139, 92, 246, 0.08), transparent);
-              padding: 1.5rem;
-              border-radius: 0 1rem 1rem 0;
-            }
-          `}} />
-
-          {/* Bottom Tags */}
-          <div className="mt-16 pt-8 border-t border-slate-200 flex flex-wrap gap-2">
-            {["AI", "Enterprise", "Digital Transformation", "Cloud"].map(tag => (
-              <span key={tag} className="px-4 py-2 rounded-full bg-slate-100 text-sm font-medium text-slate-700 hover:bg-violet-100 hover:text-violet-700 transition-colors cursor-pointer shadow-sm">
-                #{tag}
-              </span>
-            ))}
-          </div>
         </div>
+
       </div>
-      
+
+      {/* CTA Section */}
       <CTA 
-        headline="Ready to Transform Your Enterprise?"
-        description="Join the organizations building the future with AP2L's AI-powered software ecosystem."
-        primaryButtonText="Get a Free Consultation"
-        primaryButtonLink="/contact"
-        secondaryButtonText="Explore Knowledge Hub"
-        secondaryButtonLink="/resources/blog"
+        headline="Ready to Accelerate Your Digital Transformation?" 
+        description="Book a demo today and learn how AP2L solutions empower enterprises to innovate faster and operate with full confidence."
+        primaryButtonText="Request Demo"
+        secondaryButtonText="Explore All Solutions"
+        secondaryButtonLink="/solutions/qa-teams"
         forceLight={true}
       />
     </article>

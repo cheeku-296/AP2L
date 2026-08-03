@@ -1,83 +1,94 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CloudOff, CheckCircle, Lock, AlertOctagon, Activity, Server } from "lucide-react";
+import GlobeIcon from "@/components/ui/globe-icon";
+import CheckIcon from "@/components/ui/check-icon";
+import LockIcon from "@/components/ui/lock-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
+import DatabaseIcon from "@/components/ui/database-icon";
 
 const capabilities = [
-  { title: "Environment Independence", description: "Completely eliminate live service dependencies to ensure uninterrupted, isolated testing environments.", bgImage: "discovery-bg.png" },
-  { title: "Release Validation", description: "Accelerate your DevOps pipeline with continuous validation, simulating real-world performance and timing.", bgImage: "compliance-bg.png" },
-  { title: "Security Handling", description: "Seamlessly test secure integrations using built-in support for TLS, dynamic tokens, and complex role-based access controls.", bgImage: "security-bg.png" },
-  { title: "Fault Simulation", description: "Proactively test system resiliency by deliberately injecting latency, unexpected errors, and network failures.", bgImage: "netraa-incident-bg.png" },
-  { title: "Behavior Modeling", description: "Accurately model both functional and negative edge-case scenarios with highly realistic, stateful service behavior.", bgImage: "ai-bg.png" },
-  { title: "Service Virtualization", description: "Instantly create high-fidelity virtual replicas of critical REST, SOAP, JMS, and TCP services.", bgImage: "repo-bg.png" }
+  {
+    title: "Environment-on-Demand",
+    description: "Provision virtual environments rapidly to run parallel automated test execution without waiting for static infrastructure.",
+    icon: GlobeIcon,
+  },
+  {
+    title: "Privacy-Safe Test Data",
+    description: "Generate synthetic, realistic test datasets with built-in masking to meet strict data privacy regulations like DPDPA.",
+    icon: CheckIcon,
+  },
+  {
+    title: "Service Virtualization",
+    description: "Simulate third-party APIs and legacy dependencies to unblock testing cycles early in the development process.",
+    icon: LockIcon,
+  },
+  {
+    title: "Quality Gate Enforcement",
+    description: "Automate release readiness criteria with policy-based governance directly embedded inside your CI/CD pipelines.",
+    icon: ShieldIcon,
+  },
+  {
+    title: "Predictive Analytics",
+    description: "Gain real-time visibility into test trends, flaw patterns, and environment health metrics to proactively fix issues.",
+    icon: ChartLineIcon,
+  },
+  {
+    title: "Centralized Asset Repository",
+    description: "Manage test configurations, mock services, and dataset schemas from a single, unified enterprise dashboard.",
+    icon: DatabaseIcon,
+  },
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-[#080816] text-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-teal-600/20 rounded-full blur-[150px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-emerald-600/10 rounded-full blur-[150px] pointer-events-none" />
-
-      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
-
-        {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Key <span className="text-[#9D7BEE]">Capabilities</span>
-              </h2>
-            </motion.div>
-          </div>
-
-          <div className="md:pt-2">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
-                Advanced features that empower teams to test faster, scale securely, and optimize end-to-end integration cycles.
-              </p>
-            </motion.div>
-          </div>
+    <section className="py-24 bg-slate-900 text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-urbanist text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white mb-6"
+          >
+            Key Capabilities
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-manrope text-lg md:text-[20px] text-slate-300 leading-relaxed"
+          >
+            Empower enterprise teams with complete control over test environments, synthetic data generation, and release governance.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {capabilities.map((cap, index) => (
-            <motion.div
-              key={cap.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-teal-400/50 transition-colors duration-500 flex flex-col min-h-[160px]"
-            >
-              {/* Background Image (Bottom Left Half-Cut) */}
-              <div 
-                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
-                style={{ 
-                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
-                  backgroundSize: 'cover', 
-                  backgroundPosition: 'center' 
-                }} 
-              />
-
-              {/* Content Wrapper */}
-              <div className="relative z-10 flex flex-col h-full flex-1">
-                {/* Text Container */}
-                <div>
-                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
-                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {capabilities.map((cap, index) => {
+            const Icon = cap.icon;
+            return (
+              <motion.div
+                key={cap.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative flex flex-col p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:bg-slate-950 transition-all duration-300 hover:border-violet-500/50"
+              >
+                <div className="shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-500/30 text-violet-400 bg-violet-950/40 mb-6 group-hover:scale-110 transition-transform">
+                  <Icon size={24} />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <h3 className="font-urbanist text-xl font-bold text-white mb-3 tracking-tight">
+                  {cap.title}
+                </h3>
+                <p className="font-manrope text-sm text-slate-400 leading-relaxed">
+                  {cap.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

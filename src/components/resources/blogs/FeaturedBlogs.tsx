@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import { motion } from "framer-motion";
 
 const featured = {
@@ -42,20 +42,12 @@ const latest = [
 export default function FeaturedBlogs() {
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-20 dark:bg-slate-950">
-      {/* Background */}
-
       <div className="absolute inset-0 overflow-hidden">
-
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-violet-500/10 blur-[140px]" />
-
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[140px]" />
-
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-
-        {/* Header */}
-
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +55,6 @@ export default function FeaturedBlogs() {
           transition={{ duration: .6 }}
           className="mb-16 max-w-3xl text-left"
         >
-
           <h2 className="mt-5 text-4xl font-medium tracking-tight text-slate-900 dark:text-white md:text-5xl">
             Latest Thinking from AP2L
           </h2>
@@ -73,13 +64,9 @@ export default function FeaturedBlogs() {
             cybersecurity, cloud engineering, automation,
             and enterprise technology.
           </p>
-
         </motion.div>
 
         <div className="grid gap-8 lg:grid-cols-[1.6fr_.9fr]">
-
-          {/* Featured */}
-
           <motion.article
             whileHover={{ y: -6 }}
             className="overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:border-violet-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-violet-700 group flex flex-col"
@@ -114,38 +101,30 @@ export default function FeaturedBlogs() {
 
                 <div className="mt-auto pt-6 inline-flex items-center gap-2 text-sm font-semibold text-violet-600 transition-all group-hover:gap-3">
                   Read Article
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRightIcon size={16} />
                 </div>
               </div>
             </Link>
           </motion.article>
 
-          {/* Latest */}
-
           <div className="space-y-6">
-
             {latest.map((article) => (
-
               <motion.article
                 key={article.title}
                 whileHover={{ x: 6 }}
                 className="rounded-md border border-slate-200 bg-white shadow-sm transition-all hover:shadow-md hover:border-violet-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-violet-700"
               >
                 <Link href={`/blogs/${article.id}`} className="flex gap-4 p-3 h-full">
-
                   <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-md">
-
                     <Image
                       src={article.image}
                       alt={article.title}
                       fill
                       className="object-cover"
                     />
-
                   </div>
 
                   <div className="flex flex-col justify-center w-full">
-
                     <span className="text-xs uppercase tracking-[0.18em] text-violet-600">
                       {article.category}
                     </span>
@@ -159,23 +138,16 @@ export default function FeaturedBlogs() {
                         {article.date}
                       </span>
                       <span className="text-xs font-bold text-violet-600 flex items-center gap-1 group">
-                        Read more <ArrowRight size={12} className="transition-transform group-hover:translate-x-1" />
+                        Read more <ArrowRightIcon size={14} className="transition-transform group-hover:translate-x-1" />
                       </span>
                     </div>
-
                   </div>
-
                 </Link>
               </motion.article>
-
             ))}
-
           </div>
-
         </div>
-
       </div>
-
     </section>
   );
 }

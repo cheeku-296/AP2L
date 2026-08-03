@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { shieldvueHeroData } from "./data";
 
@@ -39,7 +39,7 @@ export default function ShieldVUEHero() {
                 className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#6843b7] px-6 py-3 font-manrope text-sm font-semibold text-white shadow-lg shadow-[#6843b7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
               >
                 {buttonText}
-                <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                <ArrowRightIcon size={20} className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
           </div>

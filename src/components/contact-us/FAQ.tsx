@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import PlusIcon from "@/components/ui/plus-icon";
+import MinusIcon from "@/components/ui/minus-icon";
 
 export default function FAQ() {
   const [active, setActive] = useState<number | null>(0);
@@ -42,18 +43,13 @@ export default function FAQ() {
 
   return (
     <section className="relative overflow-hidden bg-white py-12 dark:bg-slate-950">
-      {/* Background */}
-
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-20 h-96 w-96 rounded-xl bg-violet-500/10 blur-[150px]" />
-
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-xl bg-fuchsia-500/10 blur-[160px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.35fr_0.65fr] items-start">
-          {/* Header */}
-
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -70,91 +66,89 @@ export default function FAQ() {
             </p>
           </motion.div>
 
-          {/* FAQ */}
-
           <div className="space-y-3">
-          {faqs.map((faq, index) => {
-            const open = active === index;
+            {faqs.map((faq, index) => {
+              const open = active === index;
 
-            return (
-              <motion.div
-                key={faq.question}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: .45,
-                  delay: index * 0.05,
-                }}
-                className="
-                  overflow-hidden
-                  rounded-xl
-                  border
-                  border-slate-900/10
-                  bg-white/40
-                  backdrop-blur-xl
-                  dark:border-slate-800
-                  dark:bg-slate-900/40
-                "
-              >
-                <button
-                  onClick={() =>
-                    setActive(open ? null : index)
-                  }
+              return (
+                <motion.div
+                  key={faq.question}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: .45,
+                    delay: index * 0.05,
+                  }}
                   className="
-                    flex
-                    w-full
-                    items-center
-                    justify-between
-                    px-5
-                    py-4
-                    text-left
+                    overflow-hidden
+                    rounded-xl
+                    border
+                    border-slate-900/10
+                    bg-white/40
+                    backdrop-blur-xl
+                    dark:border-slate-800
+                    dark:bg-slate-900/40
                   "
                 >
-                  <span className="text-lg font-semibold text-slate-900 dark:text-white">
-                    {faq.question}
-                  </span>
+                  <button
+                    onClick={() =>
+                      setActive(open ? null : index)
+                    }
+                    className="
+                      flex
+                      w-full
+                      items-center
+                      justify-between
+                      px-5
+                      py-4
+                      text-left
+                    "
+                  >
+                    <span className="text-lg font-semibold text-slate-900 dark:text-white">
+                      {faq.question}
+                    </span>
 
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10">
-                    {open ? (
-                      <Minus className="h-5 w-5 text-violet-500" />
-                    ) : (
-                      <Plus className="h-5 w-5 text-violet-500" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10">
+                      {open ? (
+                        <MinusIcon size={20} className="text-violet-500" />
+                      ) : (
+                        <PlusIcon size={20} className="text-violet-500" />
+                      )}
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {open && (
+                      <motion.div
+                        initial={{
+                          height: 0,
+                          opacity: 0,
+                        }}
+                        animate={{
+                          height: "auto",
+                          opacity: 1,
+                        }}
+                        exit={{
+                          height: 0,
+                          opacity: 0,
+                        }}
+                        transition={{
+                          duration: .3,
+                        }}
+                      >
+                        <div className="border-t border-slate-900/10 px-5 py-4 dark:border-slate-800">
+                          <p className="font-manrope leading-8 text-slate-600 dark:text-slate-400">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </motion.div>
                     )}
-                  </div>
-                </button>
-
-                <AnimatePresence>
-                  {open && (
-                    <motion.div
-                      initial={{
-                        height: 0,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        height: "auto",
-                        opacity: 1,
-                      }}
-                      exit={{
-                        height: 0,
-                        opacity: 0,
-                      }}
-                      transition={{
-                        duration: .3,
-                      }}
-                    >
-                      <div className="border-t border-slate-900/10 px-5 py-4 dark:border-slate-800">
-                        <p className="font-manrope leading-8 text-slate-600 dark:text-slate-400">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            );
-          })}
-        </div>
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

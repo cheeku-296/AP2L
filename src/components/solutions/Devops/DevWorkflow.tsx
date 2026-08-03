@@ -1,44 +1,42 @@
 "use client";
 
 import AnimatedWorkflowPipeline, { WorkflowStep } from "@/src/components/solutions/common/AnimatedWorkflowPipeline";
-import {
-  Code2,
-  GitBranch,
-  Shield,
-  Activity,
-  Rocket,
-} from "lucide-react";
+import GearIcon from "@/components/ui/gear-icon";
+import LayersIcon from "@/components/ui/layers-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import EyeIcon from "@/components/ui/eye-icon";
+import RocketIcon from "@/components/ui/rocket-icon";
 
 const steps: WorkflowStep[] = [
   {
     id: "plan",
     title: "Plan & Code",
     description: "Version control and collaboration with automated code reviews.",
-    icon: Code2,
+    icon: GearIcon,
   },
   {
     id: "build",
     title: "Build & Test",
     description: "Automated builds with integrated testing and quality gates.",
-    icon: GitBranch,
+    icon: LayersIcon,
   },
   {
     id: "secure",
     title: "Security Scan",
     description: "Shift-left security scanning for vulnerabilities and compliance.",
-    icon: Shield,
+    icon: ShieldIcon,
   },
   {
     id: "deploy",
     title: "Deploy & Monitor",
     description: "Automated deployment with real-time observability and alerts.",
-    icon: Activity,
+    icon: EyeIcon,
   },
   {
     id: "release",
     title: "Release & Scale",
     description: "Seamless releases with auto‑scaling and performance optimization.",
-    icon: Rocket,
+    icon: RocketIcon,
   },
 ];
 

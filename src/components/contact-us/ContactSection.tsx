@@ -2,19 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Clock,
-  Shield,
-  Headphones,
-  Send,
-  CheckCircle,
-  ArrowRight,
-  ChevronDown,
-  Check,
-} from "lucide-react";
+import MailIcon from "@/components/ui/mail-icon";
+import PhoneIcon from "@/components/ui/phone-icon";
+import MapPinIcon from "@/components/ui/map-pin-icon";
+import ClockIcon from "@/components/ui/clock-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import RocketIcon from "@/components/ui/rocket-icon";
+import CheckIcon from "@/components/ui/check-icon";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
+import ChevronDownIcon from "@/components/ui/chevron-down-icon";
 
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,22 +43,22 @@ export default function ContactSection() {
 
   const contactInfo = [
     {
-      icon: MapPin,
+      icon: MapPinIcon,
       title: "Corporate Office",
       value: "ApMoSys Technologies Pvt. Ltd.\nMahape, Navi Mumbai",
     },
     {
-      icon: Mail,
+      icon: MailIcon,
       title: "Sales",
       value: "sales@ap2l.ai",
     },
     {
-      icon: Phone,
+      icon: PhoneIcon,
       title: "Phone",
       value: "+91 89768 19122",
     },
     {
-      icon: Clock,
+      icon: ClockIcon,
       title: "Working Hours",
       value: "Monday - Friday\n09:00 AM - 06:00 PM",
     },
@@ -81,17 +77,17 @@ export default function ContactSection() {
 
   const highlights = [
     {
-      icon: Clock,
+      icon: ClockIcon,
       title: "Quick Response",
       description: "Usually within 24 hours",
     },
     {
-      icon: Shield,
+      icon: ShieldIcon,
       title: "Secure Communication",
       description: "Enterprise-grade privacy",
     },
     {
-      icon: Headphones,
+      icon: RocketIcon,
       title: "Enterprise Experts",
       description: "Talk directly with specialists",
     },
@@ -396,7 +392,7 @@ export default function ContactSection() {
                   rounded-2xl
                   bg-violet-500/10
                 ">
-                  <Mail className="h-6 w-6 text-violet-500" />
+                  <MailIcon size={24} className="text-violet-500" />
                 </div>
 
                 <div>
@@ -772,8 +768,9 @@ export default function ContactSection() {
                           >
                             {formData.product || "Select a Product"}
                           </span>
-                          <ChevronDown
-                            className={`h-4 w-4 text-slate-400 transition-transform duration-300 ${
+                          <ChevronDownIcon
+                            size={16}
+                            className={`text-slate-400 transition-transform duration-300 ${
                               isDropdownOpen ? "rotate-180 text-violet-500" : ""
                             }`}
                           />
@@ -837,7 +834,7 @@ export default function ContactSection() {
                                   >
                                     <span>{product}</span>
                                     {isSelected && (
-                                      <Check className="h-4 w-4 text-violet-600 dark:text-violet-400" />
+                                      <CheckIcon size={16} className="text-violet-600 dark:text-violet-400" />
                                     )}
                                   </button>
                                 );
@@ -976,7 +973,7 @@ export default function ContactSection() {
                       ) : (
                         <>
                           Send Message
-                          <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+                          <RocketIcon size={16} className="transition-transform duration-300 group-hover:translate-x-0.5" />
                         </>
                       )}
                     </button>
@@ -1017,7 +1014,7 @@ export default function ContactSection() {
                         shadow-violet-500/30
                       "
                     >
-                      <CheckCircle className="h-8 w-8" />
+                      <CheckIcon size={32} />
                     </motion.div>
 
                     <h3 className="mt-6 text-2xl font-semibold text-slate-900 dark:text-white">
@@ -1056,7 +1053,7 @@ export default function ContactSection() {
                       "
                     >
                       Send Another Message
-                      <ArrowRight className="h-4 w-4" />
+                      <ArrowRightIcon size={16} />
                     </button>
 
                   </motion.div>

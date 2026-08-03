@@ -1,14 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Bot, 
-  GitMerge, 
-  ShieldCheck, 
-  Headset, 
-  LineChart,
-  Cloud
-} from "lucide-react";
+import CpuIcon from "@/components/ui/cpu-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import LayersIcon from "@/components/ui/layers-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
+import GlobeIcon from "@/components/ui/globe-icon";
 import Link from "next/link";
 
 const solutions = [
@@ -16,7 +14,7 @@ const solutions = [
     id: "qa-teams",
     shortName: "QA & Automation",
     title: "For QA Teams",
-    icon: Bot,
+    icon: CpuIcon,
     description: "Accelerate your testing lifecycle, improve requirement coverage, and deploy with absolute confidence using AI-driven automation.",
     href: "/solutions/qa-teams",
   },
@@ -24,7 +22,7 @@ const solutions = [
     id: "devops",
     shortName: "CI/CD & Observability",
     title: "For DevOps",
-    icon: GitMerge,
+    icon: GearIcon,
     description: "Seamlessly integrate security and observability directly into your CI/CD pipelines for unbreakable, high-velocity deployments.",
     href: "/solutions/devops",
   },
@@ -32,7 +30,7 @@ const solutions = [
     id: "security-compliance",
     shortName: "Compliance",
     title: "For Security",
-    icon: ShieldCheck,
+    icon: ShieldIcon,
     description: "Ensure complete regulatory readiness and proactive vulnerability mitigation across your ecosystem with zero-trust architecture.",
     href: "/solutions/security-compliance",
   },
@@ -40,7 +38,7 @@ const solutions = [
     id: "it-support",
     shortName: "Incident Management",
     title: "For IT Support",
-    icon: Headset,
+    icon: LayersIcon,
     description: "Automate incident management, slash resolution times, and elevate service delivery with intelligent routing.",
     href: "/solutions/it-support",
   },
@@ -48,7 +46,7 @@ const solutions = [
     id: "fintech",
     shortName: "Risk Detection",
     title: "For FinTech",
-    icon: LineChart,
+    icon: ChartLineIcon,
     description: "Detect anomalies in real-time, enforce stringent AML compliance, and protect sensitive financial data seamlessly.",
     href: "/solutions/fintech",
   },
@@ -56,7 +54,7 @@ const solutions = [
     id: "cloud-engineering",
     shortName: "Cloud Infrastructure",
     title: "For Cloud Teams",
-    icon: Cloud,
+    icon: GlobeIcon,
     description: "Optimize cloud infrastructure, ensure high availability, and seamlessly automate scaling and resource provisioning.",
     href: "/solutions/cloud",
   },
@@ -78,13 +76,6 @@ export default function KeySolutions() {
             >
               Built for High-Performance Teams
             </motion.h2>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-            </motion.div>
           </div>
           
           <div className="md:pt-2">
@@ -148,7 +139,7 @@ export default function KeySolutions() {
                   {/* Background Icon for Large Cards */}
                   {isLarge && (
                     <div className="absolute right-0 bottom-0 top-0 w-1/2 overflow-hidden flex items-center justify-end pr-4 pointer-events-none transition-transform duration-700 group-hover:scale-105">
-                      <IconComponent size={240} strokeWidth={0.5} className="text-violet-600/10 dark:text-violet-400/10 translate-x-12 translate-y-12" />
+                      <IconComponent size={200} className="text-violet-600/10 dark:text-violet-400/10 translate-x-12 translate-y-12" />
                     </div>
                   )}
                 </Link>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import ArrowLeftIcon from "@/components/ui/arrow-left-icon";
 
 export default function NotFound() {
   return (
@@ -26,7 +26,7 @@ export default function NotFound() {
           href="/"
           className="group relative flex items-center gap-2 rounded-full bg-white px-8 py-4 font-semibold text-[#090A1F] transition-all hover:bg-slate-200 hover:scale-105 shadow-xl shadow-white/10"
         >
-          <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
+          <ArrowLeftIcon size={20} className="transition-transform group-hover:-translate-x-1" />
           Back to Homepage
         </Link>
       </div>

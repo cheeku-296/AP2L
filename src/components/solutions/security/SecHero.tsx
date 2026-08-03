@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function SecHero() {
@@ -107,7 +107,7 @@ export default function SecHero() {
           >
             Talk to a Security Expert
 
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRightIcon size={20} className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <button

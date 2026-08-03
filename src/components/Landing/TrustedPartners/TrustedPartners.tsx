@@ -1,27 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Landmark, Building, ShieldCheck, Activity, Briefcase, Wallet } from "lucide-react";
+import GlobeIcon from "@/components/ui/globe-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import WalletIcon from "@/components/ui/wallet-icon";
 import Image from "next/image";
 
 const partners = [
-  { name: "CRIS", icon: Building, logo: "/clients/cris_logo.png" },
-  { name: "Axis Bank", icon: Landmark, logo: "/clients/axis_bank.png" },
-  { name: "FDC", icon: Activity, logo: "/clients/fdc.jpeg" },
-  { name: "Protean", icon: ShieldCheck, logo: "/clients/protean.svg" },
-  { name: "L&T Finance", icon: Wallet },
-  { name: "Bank of Maharashtra", icon: Landmark, logo: "/clients/bank_of_maharashtra.svg" },
-  { name: "UCO Bank", icon: Landmark, logo: "/clients/uco_bank.svg" },
-  { name: "RBL Bank", icon: Landmark, logo: "/clients/rbl_bank.svg" },
-  { name: "ABCD Bank", icon: Landmark, logo: "/clients/abcd_bank.png" },
-  { name: "Generali Central Life Insurance", icon: ShieldCheck, logo: "/clients/generali_centeral.png" },
-  { name: "NSDL Payments Bank", icon: Wallet, logo: "/clients/nsdl.png" },
-  { name: "IDBI Bank", icon: Landmark, logo: "/clients/idbi_bank.png" },
-  { name: "Muscat Finance", icon: Briefcase, logo: "/clients/muscat_finance.png" },
+  { name: "CRIS", icon: GearIcon, logo: "/clients/cris_logo.png" },
+  { name: "Axis Bank", icon: GlobeIcon, logo: "/clients/axis_bank.png" },
+  { name: "FDC", icon: ShieldIcon, logo: "/clients/fdc.jpeg" },
+  { name: "Protean", icon: ShieldIcon, logo: "/clients/protean.svg" },
+  { name: "L&T Finance", icon: WalletIcon },
+  { name: "Bank of Maharashtra", icon: GlobeIcon, logo: "/clients/bank_of_maharashtra.svg" },
+  { name: "UCO Bank", icon: GlobeIcon, logo: "/clients/uco_bank.svg" },
+  { name: "RBL Bank", icon: GlobeIcon, logo: "/clients/rbl_bank.svg" },
+  { name: "ABCD Bank", icon: GlobeIcon, logo: "/clients/abcd_bank.png" },
+  { name: "Generali Central Life Insurance", icon: ShieldIcon, logo: "/clients/generali_centeral.png" },
+  { name: "NSDL Payments Bank", icon: WalletIcon, logo: "/clients/nsdl.png" },
+  { name: "IDBI Bank", icon: GlobeIcon, logo: "/clients/idbi_bank.png" },
+  { name: "Muscat Finance", icon: GearIcon, logo: "/clients/muscat_finance.png" },
 ];
 
 export default function TrustedPartners() {
-  // Duplicate array to create a seamless infinite loop
   const marqueePartners = [...partners, ...partners];
 
   return (
@@ -29,7 +31,6 @@ export default function TrustedPartners() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         <div className="flex flex-col md:flex-row items-center">
-          {/* Static Text Section (Left) */}
           <div className="w-full md:w-[30%] lg:w-[25%] mb-8 md:mb-0 flex-shrink-0 z-20">
             <p className="font-manrope text-lg font-medium leading-relaxed text-slate-500 dark:text-slate-400 text-left">
               Trusted by industry leaders<br />
@@ -37,14 +38,10 @@ export default function TrustedPartners() {
             </p>
           </div>
 
-          {/* Marquee Container (Right) */}
           <div className="relative w-full md:w-[70%] lg:w-[75%] flex flex-col items-center justify-center overflow-hidden">
-            
-            {/* Left/Right Fade Masks */}
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-slate-50 dark:from-slate-950 to-transparent" />
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-slate-50 dark:from-slate-950 to-transparent" />
 
-            {/* Scrolling Content */}
             <div className="flex w-[200%] overflow-hidden">
               <motion.div
                 animate={{ x: ["0%", "-50%"] }}
@@ -64,7 +61,7 @@ export default function TrustedPartners() {
                           <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
                         </div>
                       ) : (
-                        <Icon size={22} strokeWidth={1.5} className="text-slate-400 dark:text-slate-500 shrink-0" />
+                        <Icon size={22} className="text-slate-400 dark:text-slate-500 shrink-0" />
                       )}
                       <h3 className="font-urbanist text-lg font-bold tracking-tight text-slate-500 dark:text-slate-400">
                         {partner.name}

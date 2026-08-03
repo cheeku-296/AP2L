@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import Image from "next/image";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { cliqtestHeroData } from "./data";
@@ -18,7 +18,6 @@ export default function CliqtestHero() {
           priority
           className="object-cover object-center transition-opacity duration-500 opacity-100 scale-110"
         />
-        {/* <div className="absolute inset-0 bg-gradient-to-r pointer-events-none transition-colors duration-500 from-black/95 via-black/80 to-black/30" /> */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t pointer-events-none transition-colors duration-500 from-black to-transparent" />
       </ParallaxBackground>
 
@@ -45,7 +44,7 @@ export default function CliqtestHero() {
               className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-[#6843b7] px-6 py-3 text-sm font-semibold font-manrope text-white shadow-lg shadow-[#6843b7]/25 transition-all hover:-translate-y-0.5 hover:bg-[#5a3aa3]"
             >
               {buttonText}
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon size={20} className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </div>

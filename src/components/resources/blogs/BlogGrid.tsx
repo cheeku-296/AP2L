@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
+import ClockIcon from "@/components/ui/clock-icon";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import { motion } from "framer-motion";
 
 const filters = [
@@ -183,7 +184,7 @@ export default function BlogGrid() {
                       {blog.category}
                     </span>
                     <span className="flex items-center gap-1 text-sm text-slate-500">
-                      <Clock className="h-4 w-4" />
+                      <ClockIcon size={16} />
                       {blog.readTime}
                     </span>
                   </div>
@@ -198,7 +199,7 @@ export default function BlogGrid() {
 
                   <div className="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-semibold text-violet-600 transition-all group-hover:gap-3">
                     Read Article
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRightIcon size={16} />
                   </div>
                 </div>
               </Link>

@@ -2,7 +2,7 @@
 
 // import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import ParallaxBackground from "@/src/components/common/ParallaxBackground/ParallaxBackground";
 import { jupiterHeroData } from "./data";
 
@@ -43,7 +43,7 @@ export default function JupiterHero() {
               className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-md bg-slate-600 px-6 py-3 text-sm font-semibold font-manrope text-white shadow-lg shadow-blue-500/25 transition-all hover:-translate-y-0.5 hover:bg-blue-400"
             >
               {buttonText}
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon size={20} className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
         </div>

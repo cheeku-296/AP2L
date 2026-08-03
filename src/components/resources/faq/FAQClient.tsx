@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Plus, Minus } from "lucide-react";
+import PlusIcon from "@/components/ui/plus-icon";
+import MinusIcon from "@/components/ui/minus-icon";
 
 // Expanded FAQ data
 const faqData = [
@@ -176,9 +177,9 @@ export default function FAQClient() {
                     <span className="font-medium text-gray-700 text-sm md:text-[15px] pr-8">{faq.question}</span>
                     <div className="flex-shrink-0 w-7 h-7 rounded-full bg-gray-400 flex items-center justify-center transition-colors duration-300 shadow-sm">
                       {openIndex === index ? (
-                        <Minus className="w-4 h-4 text-white" />
+                        <MinusIcon size={16} className="text-white" />
                       ) : (
-                        <Plus className="w-4 h-4 text-white" />
+                        <PlusIcon size={16} className="text-white" />
                       )}
                     </div>
                   </button>

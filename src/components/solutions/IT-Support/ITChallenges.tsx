@@ -1,56 +1,54 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import {
-  Inbox,
-  MessageCircle,
-  Wrench, // ✅ changed from Tool
-  Clock,
-  AlertCircle,
-  Users,
-  } from "lucide-react";
+import LayersIcon from "@/components/ui/layers-icon";
+import MailIcon from "@/components/ui/mail-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import ClockIcon from "@/components/ui/clock-icon";
+import UserIcon from "@/components/ui/user-icon";
+import UsersIcon from "@/components/ui/users-icon";
 
 const challenges = [
   {
     id: "ticket-volume",
     title: "Increasing Support Demand",
     description: "Growing ticket volumes strain IT teams, making it harder to maintain response times and service quality.",
-    icon: Inbox,
+    icon: LayersIcon,
     impact: "Increasing Support Demand",
   },
   {
     id: "repetitive-queries",
     title: "Repetitive Manual Requests",
     description: "Routine requests consume valuable IT resources and reduce focus on high-priority work.",
-    icon: MessageCircle,
+    icon: MailIcon,
     impact: "Repetitive Manual Requests",
   },
   {
     id: "siloed-tools",
     title: "Fragmented IT Ecosystems",
     description: "Disconnected IT systems reduce visibility, delay issue resolution, and complicate service management.",
-    icon: Wrench,
+    icon: GearIcon,
     impact: "Fragmented IT Ecosystems",
   },
   {
     id: "resolution-time",
     title: "Delayed Incident Resolution",
     description: "Manual ticket handling increases resolution times and disrupts business operations.",
-    icon: Clock,
+    icon: ClockIcon,
     impact: "Delayed Incident Resolution",
   },
   {
     id: "user-frustration",
     title: "Reduced Employee Experience",
     description: "Slow responses and limited self-service reduce employee satisfaction and productivity.",
-    icon: AlertCircle,
+    icon: UserIcon,
     impact: "Reduced Employee Experience",
   },
   {
     id: "agent-burnout",
     title: "Rising Operational Costs",
     description: "Manual processes and repetitive tasks increase support costs and operational inefficiencies.",
-    icon: Users,
+    icon: UsersIcon,
     impact: "Rising Operational Costs",
   },
 ];
@@ -83,7 +81,6 @@ const cardRightVariants: Variants = {
 export default function ITChallenges() {
   return (
     <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
@@ -91,8 +88,6 @@ export default function ITChallenges() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        {/* Header */}
-        {/* Header section */}
         <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
@@ -118,9 +113,7 @@ export default function ITChallenges() {
           </div>
         </div>
 
-        {/* Split Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          {/* Left Card – Support Bottlenecks */}
           <motion.div
             variants={cardLeftVariants}
             initial="hidden"
@@ -153,7 +146,7 @@ export default function ITChallenges() {
                     className="group flex items-start gap-3 py-3 border-b border-slate-100 dark:border-slate-800 last:border-0 hover:pl-2 transition-all duration-200"
                   >
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 transition-all duration-300 group-hover:bg-violet-600 dark:group-hover:bg-violet-500 group-hover:text-white">
-                      <Icon size={16} strokeWidth={1.5} />
+                      <Icon size={16} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="font-urbanist text-sm font-semibold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
@@ -169,7 +162,6 @@ export default function ITChallenges() {
             </motion.div>
           </motion.div>
 
-          {/* Right Card – Business Impact */}
           <motion.div
             variants={cardRightVariants}
             initial="hidden"
@@ -177,7 +169,6 @@ export default function ITChallenges() {
             viewport={{ once: true }}
             className="relative overflow-hidden bg-[#161221] rounded-2xl border border-violet-400/20 shadow-2xl shadow-violet-500/20 p-6 lg:p-8 flex flex-col text-white"
           >
-            {/* Ray of light effect */}
             <div className="absolute top-0 right-0 w-[150%] h-[150%] bg-gradient-to-bl from-white/20 via-transparent to-transparent pointer-events-none -translate-y-1/2 translate-x-1/4 rotate-12 blur-lg" />
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/20 rounded-full blur-3xl pointer-events-none" />
             <div className="mb-6">
@@ -217,27 +208,6 @@ export default function ITChallenges() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom CTA (optional – uncomment if needed) */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <p className="font-inter text-sm text-slate-600 dark:text-slate-400 max-w-2xl">
-            Every challenge above is addressed through AP2L's intelligent IT support platform.
-          </p>
-          <div className="mt-6">
-            <a
-              href="#capabilities"
-              className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition-all hover:scale-105 hover:shadow-violet-500/50"
-            >
-              Explore Our Solutions →
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import ArrowDownIcon from "@/components/ui/arrow-down-icon";
 
 interface LoadMoreProps {
   hasMore?: boolean;
@@ -66,10 +66,9 @@ export default function LoadMore({
             <>
               Load More Articles
 
-              <ArrowDown
+              <ArrowDownIcon
+                size={16}
                 className="
-                  h-4
-                  w-4
                   transition-transform
                   duration-300
                   group-hover:translate-y-1

@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function BlogHero() {
@@ -19,10 +19,8 @@ export default function BlogHero() {
   return (
     <section
       ref={containerRef}
-      className="bg-slate-50 relative w-full h-[80vh] md:min-h-screen min-h-[500px] md:min-h-[600px] rounded-none md: overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
+      className="bg-slate-50 relative w-full h-[80vh] md:min-h-screen min-h-[500px] md:min-h-[600px] rounded-none overflow-hidden flex flex-col items-center justify-start pt-[100px] md:pt-[120px] text-center"
     >
-      {/* Background */}
-
       <motion.div
         style={{ y }}
         className="absolute -left-[5%] -right-[5%] -top-[10%] h-[130%] w-[110%]"
@@ -44,23 +42,9 @@ export default function BlogHero() {
         />
       </motion.div>
 
-      {/* Overlay */}
-
-      {/* <div className="absolute inset-0 bg-white/10 dark:bg-slate-950/30" /> */}
-
-      {/* Glow */}
-
       <div className="absolute left-1/2 top-24 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-violet-500/10 blur-[140px]" />
 
-      {/* Content */}
-
       <div className="relative z-20 mx-auto flex max-w-4xl flex-col items-center px-6">
-        {/* Badge */}
-
-
-
-        {/* Heading */}
-
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -82,8 +66,6 @@ export default function BlogHero() {
           Enterprise Innovation
         </motion.h1>
 
-        {/* Description */}
-
         <motion.p
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,8 +84,6 @@ export default function BlogHero() {
           Explore expert insights, technology trends, AI innovations,
           enterprise solutions, and digital transformation strategies.
         </motion.p>
-
-        {/* CTA */}
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -135,7 +115,7 @@ export default function BlogHero() {
           >
             Talk To Our Experts
 
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRightIcon size={20} className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
 
           <button
@@ -168,31 +148,7 @@ export default function BlogHero() {
             Explore Articles
           </button>
         </motion.div>
-
-        {/* Bottom */}
-
-        {/* <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-16 flex items-center ga text-sm text-slate-500 dark:text-slate-400"
-        >
-          <span>AI</span>
-
-          <span className="h-1 w-1 rounded-full bg-slate-400" />
-
-          <span>Cloud</span>
-
-          <span className="h-1 w-1 rounded-full bg-slate-400" />
-
-          <span>Cybersecurity</span>
-
-          <span className="h-1 w-1 rounded-full bg-slate-400" />
-
-          <span>Enterprise Technology</span>
-        </motion.div> */}
       </div>
-
     </section>
   );
 }

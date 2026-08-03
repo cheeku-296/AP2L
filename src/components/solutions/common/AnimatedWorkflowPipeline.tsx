@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
-import { LucideIcon } from "lucide-react";
 
 export interface WorkflowStep {
   id: string;
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
 }
 
 interface AnimatedWorkflowPipelineProps {
@@ -66,7 +65,7 @@ export default function AnimatedWorkflowPipeline({
   themeColors = defaultTheme,
 }: AnimatedWorkflowPipelineProps) {
   const [activeIndex, setActiveIndex] = useState<number>(0);
-  // Auto-cycle through steps to illustrate continuous workflow
+
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % steps.length);
@@ -77,14 +76,14 @@ export default function AnimatedWorkflowPipeline({
 
   return (
     <section className="relative w-full py-12 md:py-16 bg-slate-950 transition-colors duration-500 overflow-hidden">
-      {/* Background Orbs – preserved exact original style */}
+      {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className={`absolute top-0 left-0 w-[500px] h-[500px] ${themeColors.glowTop} rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3`} />
         <div className={`absolute bottom-0 right-0 w-[500px] h-[500px] ${themeColors.glowBottom} rounded-full blur-[120px] translate-y-1/2 translate-x-1/3`} />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        {/* Header Section – preserved exact original grid & text styling */}
+        {/* Header Section */}
         <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2
@@ -110,7 +109,7 @@ export default function AnimatedWorkflowPipeline({
           </div>
         </div>
 
-        {/* Horizontal Workflow Steps – exact grid layout */}
+        {/* Horizontal Workflow Steps */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -133,7 +132,6 @@ export default function AnimatedWorkflowPipeline({
               >
                 {/* Icon Wrapper */}
                 <div className="relative">
-                  {/* Active Glowing Pulse Ring behind icon */}
                   {isActive && (
                     <motion.div
                       layoutId="activeIconRing"
@@ -152,20 +150,16 @@ export default function AnimatedWorkflowPipeline({
                   >
                     <Icon
                       size={26}
-                      strokeWidth={1.5}
                       className={`transition-all duration-300 ${
                         isActive ? "scale-110 rotate-3" : ""
                       }`}
                     />
                   </div>
 
-                  {/* Animated Flowing Connector Line (Desktop) */}
                   {!isLast && (
                     <div className="hidden xl:block absolute top-1/2 left-[calc(100%+20px)] -translate-y-1/2 w-28 pointer-events-none z-0 overflow-hidden">
-                      {/* Base Line */}
                       <div className={`h-[2px] w-full rounded-full bg-gradient-to-r ${themeColors.connectorGradient} opacity-60`} />
 
-                      {/* Traveling Light Pulse Beam Animation – Only active when THIS step is active */}
                       {isActive && (
                         <motion.div
                           key={`pulse-beam-${index}-${activeIndex}`}

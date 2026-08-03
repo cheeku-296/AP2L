@@ -1,56 +1,54 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import {
-  AlertCircle,
-  Clock,
-  GitBranch,
-  Shield,
-  Server,
-  Zap,
-} from "lucide-react";
+import ClockIcon from "@/components/ui/clock-icon";
+import ShieldIcon from "@/components/ui/shield-icon";
+import DatabaseIcon from "@/components/ui/database-icon";
+import EyeIcon from "@/components/ui/eye-icon";
+import LayersIcon from "@/components/ui/layers-icon";
+import RocketIcon from "@/components/ui/rocket-icon";
 
 const challenges = [
   {
     id: "deployment-speed",
     title: "Slow & Manual Release Pipelines",
     description: "Manual deployments and fragmented workflows slow releases and reduce engineering productivity.",
-    icon: Clock,
+    icon: ClockIcon,
     impact: "Slow & Manual Release Pipelines",
   },
   {
     id: "security-gaps",
     title: "Security Integrated Too Late",
     description: "Late security validation increases deployment risks, remediation costs, and compliance issues.",
-    icon: Shield,
+    icon: ShieldIcon,
     impact: "Security Integrated Too Late",
   },
   {
     id: "infrastructure",
     title: "Complex Infrastructure Management",
     description: "Managing multi-cloud and hybrid infrastructure increases complexity and governance challenges.",
-    icon: Server,
+    icon: DatabaseIcon,
     impact: "Complex Infrastructure Management",
   },
   {
     id: "observability",
     title: "Limited Operational Visibility",
     description: "Limited visibility delays issue detection, incident resolution, and service reliability.",
-    icon: AlertCircle,
+    icon: EyeIcon,
     impact: "Limited Operational Visibility",
   },
   {
     id: "configuration",
     title: "Environment Inconsistency",
     description: "Inconsistent environments increase deployment failures and operational risk.",
-    icon: GitBranch,
+    icon: LayersIcon,
     impact: "Environment Inconsistency",
   },
   {
     id: "automation",
     title: "Legacy Automation Bottlenecks",
     description: "Outdated automation slows delivery, limits scalability, and wastes engineering time.",
-    icon: Zap,
+    icon: RocketIcon,
     impact: "Legacy Automation Bottlenecks",
   },
 ];
@@ -83,7 +81,6 @@ const cardRightVariants: Variants = {
 export default function DevChallenges() {
   return (
     <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3" />
@@ -91,8 +88,6 @@ export default function DevChallenges() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
-        {/* Header */}
-        {/* Header section */}
         <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
@@ -118,9 +113,7 @@ export default function DevChallenges() {
           </div>
         </div>
 
-        {/* Split Cards with left margin */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch ml-4 md:ml-8">
-          {/* Left Card – Engineering Challenges */}
           <motion.div
             variants={cardLeftVariants}
             initial="hidden"
@@ -153,7 +146,7 @@ export default function DevChallenges() {
                     className="group flex items-start gap-3 py-3 border-b border-slate-100 dark:border-slate-800 last:border-0 hover:pl-2 transition-all duration-200"
                   >
                     <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-50 dark:bg-violet-900/20 text-violet-600 dark:text-violet-400 transition-all duration-300 group-hover:bg-violet-600 dark:group-hover:bg-violet-500 group-hover:text-white">
-                      <Icon size={16} strokeWidth={1.5} />
+                      <Icon size={16} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="font-urbanist text-sm font-semibold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
@@ -169,7 +162,6 @@ export default function DevChallenges() {
             </motion.div>
           </motion.div>
 
-          {/* Right Card – Business Impact */}
           <motion.div
             variants={cardRightVariants}
             initial="hidden"
@@ -177,7 +169,6 @@ export default function DevChallenges() {
             viewport={{ once: true }}
             className="relative overflow-hidden bg-[#161221] rounded-2xl border border-violet-400/20 shadow-2xl shadow-violet-500/20 p-6 lg:p-8 flex flex-col text-white"
           >
-            {/* Ray of light effect */}
             <div className="absolute top-0 right-0 w-[150%] h-[150%] bg-gradient-to-bl from-white/20 via-transparent to-transparent pointer-events-none -translate-y-1/2 translate-x-1/4 rotate-12 blur-lg" />
             <div className="absolute -top-12 -right-12 w-48 h-48 bg-white/20 rounded-full blur-3xl pointer-events-none" />
             <div className="mb-6">
@@ -217,28 +208,6 @@ export default function DevChallenges() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Bottom CTA */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
-          <p className="font-inter text-sm text-slate-600 dark:text-slate-400 max-w-2xl">
-            Every challenge above is addressed through AP2L's integrated DevOps, QA,
-            Security and Cloud Engineering platform.
-          </p>
-          <div className="mt-6">
-            <a
-              href="#capabilities"
-              className="inline-flex items-center gap-2 rounded-full bg-violet-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-violet-500/30 transition-all hover:scale-105 hover:shadow-violet-500/50"
-            >
-              Explore Our Solutions →
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
-        </motion.div> */}
       </div>
     </section>
   );

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import ArrowRightIcon from "@/components/ui/arrow-right-icon";
 
 interface CTAProps {
   headline?: React.ReactNode;
@@ -70,7 +70,7 @@ export default function CTA({
               className={`group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border bg-transparent px-8 py-3.5 text-base font-medium transition-all ${forceLight ? 'border-slate-300 text-slate-900 hover:bg-slate-50 hover:border-slate-400' : 'border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-900 hover:border-slate-400 dark:hover:border-slate-600'}`}
             >
               {secondaryButtonText}
-              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+              <ArrowRightIcon size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
         </motion.div>
