@@ -1,5 +1,5 @@
 import { forwardRef, useImperativeHandle } from "react";
-import { motion, useAnimate } from "motion/react";
+import { motion, useAnimate } from "framer-motion";
 import type { AnimatedIconHandle, AnimatedIconProps } from "./types";
 
 const BugIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
