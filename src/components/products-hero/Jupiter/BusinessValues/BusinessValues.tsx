@@ -1,30 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
+import RocketIcon from "@/components/ui/rocket-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import LockIcon from "@/components/ui/lock-icon";
+import LayersIcon from "@/components/ui/layers-icon";
+import EyeIcon from "@/components/ui/eye-icon";
+import UserIcon from "@/components/ui/user-icon";
+
 const values = [
   {
     title: "Faster Resolution",
     description: "Accelerates incident response and reduces downtime.",
+    icon: RocketIcon,
   },
   {
     title: "Reduced Manual Dependency",
     description: "Automates ticket handling and repetitive service desk activities.",
+    icon: GearIcon,
   },
   {
     title: "Improved IT Governance",
     description: "Ensures structured, accountable, and SLA-driven service delivery.",
+    icon: LockIcon,
   },
   {
     title: "Consistent Service Delivery",
     description: "Standardizes incident management through defined workflows and escalation paths.",
+    icon: LayersIcon,
   },
   {
     title: "Enhanced Visibility",
     description: "Provides real-time insights across incidents, workloads, and SLAs.",
+    icon: EyeIcon,
   },
   {
     title: "Better End-User Experience",
     description: "Delivers faster support, improved responsiveness, and reliable service outcomes.",
+    icon: UserIcon,
   },
 ];
 
@@ -32,7 +45,6 @@ export default function BusinessValues() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        
         {/* Header section */}
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -46,7 +58,7 @@ export default function BusinessValues() {
               </h2>
             </motion.div>
           </div>
-          
+
           <div className="md:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -63,6 +75,7 @@ export default function BusinessValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => {
+            const Icon = value.icon;
             return (
               <motion.div
                 key={value.title}
@@ -70,17 +83,24 @@ export default function BusinessValues() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-300/80"
+                className="group relative flex flex-col px-7 py-6 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-300/80"
               >
-                {/* purple Light Ray Effect */}
-                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700" />
-                
+                {/* Purple Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700 pointer-events-none" />
+
                 {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="mb-4 font-urbanist text-[22px] font-bold tracking-tight text-slate-900 transition-colors">
-                    {value.title}
-                  </h3>
-                  
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header Row: Icon + Title */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-violet-600/30 dark:border-violet-400/30 text-violet-600 dark:text-violet-400 bg-violet-50/50 dark:bg-violet-950/30 transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={22} aria-hidden="true" />
+                    </div>
+                    <h3 className="font-urbanist text-[20px] font-bold tracking-tight text-slate-900 leading-snug">
+                      {value.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
                   <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
                     {value.description}
                   </p>
@@ -89,7 +109,6 @@ export default function BusinessValues() {
             );
           })}
         </div>
-        
       </div>
     </section>
   );

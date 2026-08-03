@@ -1,44 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, BellOff, Activity, Lightbulb, TrendingUp } from "lucide-react";
+import RocketIcon from "@/components/ui/rocket-icon";
+import CpuIcon from "@/components/ui/cpu-icon";
+import LayersIcon from "@/components/ui/layers-icon";
+import EyeIcon from "@/components/ui/eye-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
+import GlobeIcon from "@/components/ui/globe-icon";
 
 const values = [
   {
     title: "Faster Response",
     description: "Dramatically reduces your Mean Time to Resolution (MTTR) by utilizing automated root cause analysis.",
-    icon: Zap,
+    icon: RocketIcon,
   },
   {
     title: "Reduced Alert Noise",
     description: "Eliminates monitoring fatigue by using advanced machine learning to filter out false positives.",
-    icon: BellOff,
+    icon: CpuIcon,
   },
   {
     title: "Operational Efficiency",
     description: "Simplifies complex system monitoring by consolidating metrics, logs, and traces into a single view.",
-    icon: Activity,
+    icon: LayersIcon,
   },
   {
     title: "Actionable Insights",
     description: "Automatically converts massive volumes of raw operational data into contextualized, actionable insights.",
-    icon: Lightbulb,
+    icon: EyeIcon,
   },
   {
     title: "Predictive Operations",
     description: "Proactively identifies underlying system anomalies long before they can impact your end-users.",
-    icon: TrendingUp,
+    icon: ChartLineIcon,
+  },
+  {
+    title: "Unified AIOps Governance",
+    description: "Centralizes IT operations telemetry for end-to-end service observability.",
+    icon: GlobeIcon,
   },
 ];
 
 export default function BusinessValues() {
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
+    <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 w-[400px] h-[400px] rounded-full bg-[#9e7be9]/5 dark:bg-[#9e7be9]/10 blur-[100px] pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        
         {/* Header section */}
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -52,7 +61,7 @@ export default function BusinessValues() {
               </h2>
             </motion.div>
           </div>
-          
+
           <div className="md:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -69,6 +78,7 @@ export default function BusinessValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((value, index) => {
+            const Icon = value.icon;
             return (
               <motion.div
                 key={value.title}
@@ -76,17 +86,24 @@ export default function BusinessValues() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group relative flex flex-col px-8 py-5 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80"
+                className="group relative flex flex-col px-7 py-6 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80"
               >
                 {/* Glow Effect */}
-                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/10 blur-[50px] rounded-full transition-colors duration-700" />
-                
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/10 blur-[50px] rounded-full transition-colors duration-700 pointer-events-none" />
+
                 {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="mb-4 font-urbanist text-[22px] font-bold tracking-tight text-slate-900 transition-colors">
-                    {value.title}
-                  </h3>
-                  
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header Row: Icon + Title */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-violet-600/30 dark:border-violet-400/30 text-violet-600 dark:text-violet-400 bg-violet-50/50 dark:bg-violet-950/30 transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={22} aria-hidden="true" />
+                    </div>
+                    <h3 className="font-urbanist text-[20px] font-bold tracking-tight text-slate-900 leading-snug">
+                      {value.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
                   <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
                     {value.description}
                   </p>
@@ -95,7 +112,6 @@ export default function BusinessValues() {
             );
           })}
         </div>
-        
       </div>
     </section>
   );

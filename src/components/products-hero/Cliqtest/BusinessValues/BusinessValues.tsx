@@ -1,36 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
+import RocketIcon from "@/components/ui/rocket-icon";
+import CpuIcon from "@/components/ui/cpu-icon";
+import EyeIcon from "@/components/ui/eye-icon";
+import BugIcon from "@/components/ui/bug-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import ChartLineIcon from "@/components/ui/chart-line-icon";
 
-const metrics = [
+const values = [
   {
     title: "Faster Test Execution",
-    stat: "80%",
-    description: "Faster Test case design. Reduces MTTR through automated RCA. Accelerates incident resolution.",
+    description: "Accelerates test case design and execution. Reduces MTTR through automated root cause analysis.",
+    icon: RocketIcon,
   },
   {
     title: "Reduced Manual Effort",
-    stat: "70%",
-    description: "Reduction of Manual Effort. Eliminates false positives using AI. Improves alert accuracy and focus.",
+    description: "Reduces manual testing effort by up to 70%. Eliminates false positives using AI for improved alert accuracy.",
+    icon: CpuIcon,
   },
   {
     title: "Better Requirement Coverage",
-    stat: "60%",
-    description: "Better Requirement Coverage. Simplifies monitoring and analysis. Reduces manual troubleshooting effort.",
+    description: "Simplifies monitoring and analysis across test suites, maximizing requirement traceability.",
+    icon: EyeIcon,
   },
   {
     title: "Reduced Defect Leakage",
-    stat: "50%",
-    description: "Reduced Defect Leakage. Converts operational data into insights. Supports faster decision-making.",
-  }
+    description: "Converts operational data into actionable insights, preventing production bugs and defects.",
+    icon: BugIcon,
+  },
+  {
+    title: "Continuous Quality Integration",
+    description: "Embeds automated quality validation directly into DevSecOps CI/CD release pipelines.",
+    icon: GearIcon,
+  },
+  {
+    title: "Predictive Defect Intelligence",
+    description: "Uses machine learning algorithms to identify high-risk code paths before testing begins.",
+    icon: ChartLineIcon,
+  },
 ];
 
 export default function BusinessValues() {
   return (
-    <section className="py-16 bg-white text-slate-900 border-t border-slate-100">
+    <section className="py-24 bg-white text-slate-900 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header section */}
-        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -42,7 +58,7 @@ export default function BusinessValues() {
               </h2>
             </motion.div>
           </div>
-          
+
           <div className="md:pt-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -57,25 +73,41 @@ export default function BusinessValues() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {metrics.map((metric, index) => (
-            <motion.div
-              key={metric.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:border-[#6843b7]/50 transition-colors group shadow-sm"
-            >
-              <div className="text-5xl font-bold font-urbanist text-slate-900 mb-4 group-hover:text-[#9e7be9] transition-colors">
-                {metric.stat}
-              </div>
-              <h3 className="text-xl font-semibold mb-3 text-slate-800">{metric.title}</h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-manrope">
-                {metric.description}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {values.map((value, index) => {
+            const Icon = value.icon;
+            return (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative flex flex-col px-7 py-6 rounded-md border border-slate-200/80 bg-white overflow-hidden transition-all duration-500 hover:shadow-md hover:border-violet-200/80"
+              >
+                {/* Violet Light Ray Effect */}
+                <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700 pointer-events-none" />
+
+                {/* Content */}
+                <div className="relative z-10 flex flex-col h-full">
+                  {/* Header Row: Icon + Title */}
+                  <div className="flex items-center gap-4 mb-3">
+                    <div className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-violet-600/30 dark:border-violet-400/30 text-violet-600 dark:text-violet-400 bg-violet-50/50 dark:bg-violet-950/30 transition-transform duration-300 group-hover:scale-105">
+                      <Icon size={22} aria-hidden="true" />
+                    </div>
+                    <h3 className="font-urbanist text-[20px] font-bold tracking-tight text-slate-900 leading-snug">
+                      {value.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="font-manrope text-[15px] text-slate-600 leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
