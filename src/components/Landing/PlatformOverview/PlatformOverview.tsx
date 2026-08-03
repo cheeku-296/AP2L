@@ -2,7 +2,16 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import ArrowRightIcon from "@/components/ui/arrow-right-icon";
+import {
+  ShieldCheck,
+  Activity,
+  TestTube2,
+  Headset,
+  Search,
+  FileCheck2,
+  Layers,
+  ArrowRight
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,152 +23,176 @@ const products = [
     description: "End-to-End Software Supply Chain Security. Protect your infrastructure with automated SBOM management, continuous vulnerability scanning, and cryptographic asset governance. Gain complete visibility into your dependencies and ensure compliance with industry standards through our zero-trust architecture, neutralizing threats before they ever reach production.",
     href: "/products/shieldvue",
     image: "/images/products/mockups/shieldvue-mockup-light.png",
-    tags: ["Software Supply Chain", "SBOM Management", "Zero-Trust Governance"]
+    icon: ShieldCheck,
+    tags: ["SBOM Management", "Vulnerability Scanning", "Zero Trust"],
   },
   {
     id: "netraa",
     title: "NETRAA AI-OPS",
     logo: "/images/products/logos/netraa-logo.png",
-    description: "Explainable AI-Driven Observability. Transform complex telemetry into actionable intelligence with automated root cause analysis, predictive fault isolation, and noise suppression. Eliminate monitoring fatigue by correlating logs, metrics, and traces into a single source of truth that dynamically adapts to evolving cloud workloads.",
+    description: "Explainable AI for Intelligent Observability and rapid Root Cause Analysis. Consolidate your logs, metrics, and traces into a single pane of glass. Leverage machine learning algorithms to instantly identify anomalies, correlate events across distributed systems, and reduce your Mean Time to Resolution (MTTR) by up to 80%.",
     href: "/products/netraa",
     image: "/images/products/mockups/netraa-mockup-light.png",
-    tags: ["Explainable AI", "Telemetry Analysis", "Predictive Operations"]
+    icon: Activity,
+    tags: ["Predictive Alerts", "Log Analytics", "AIOps"],
   },
   {
     id: "cliqtest",
     title: "cliQTest",
     logo: "/images/products/logos/cliqtest-logo.png",
-    description: "Autonomous Quality Engineering. Accelerate release velocity with self-healing test automation, risk-based regression suites, and cross-platform validation. Eliminate manual testing bottlenecks with adaptive scripts that automatically update alongside UI and API changes, providing total coverage and zero defect leakage.",
+    description: "AI-Powered Test Automation Platform enabling zero-touch continuous testing. Automate complex scenarios and ensure flawless deployments across every environment. Empower your QA teams with self-healing scripts, intelligent test generation, and seamless CI/CD integration that scales dynamically with your architecture.",
     href: "/products/cliqtest",
     image: "/images/products/mockups/cliqtest-mockup-light.png",
-    tags: ["Self-Healing Automation", "No-Code Scripting", "Regression Intelligence"]
+    icon: TestTube2,
+    tags: ["No-Code Automation", "Cross-Browser", "AI Test Generation"],
   },
   {
     id: "jupiter",
     title: "JUPITER",
     logo: "/images/products/logos/jupiter-logo.png",
-    description: "Next-Gen IT Operations & Service Management. Streamline service desk operations with AI-powered ticket routing, self-service resolution, and real-time SLA tracking. Empower your IT support teams with automated workflows that resolve incidents faster and reduce ticket volume across enterprise environments.",
+    description: "Modern, AI-Powered IT Service Desk. Resolve tickets faster with intelligent routing, automated workflows, and robust self-service capabilities for your enterprise. Streamline your entire IT support lifecycle by deflecting routine queries and delivering context-aware assistance to your employees 24/7.",
     href: "/products/jupiter",
     image: "/images/products/mockups/jupiter-mockup-light.png",
-    tags: ["AI Ticket Routing", "SLA Automation", "Service Management"]
+    icon: Headset,
+    tags: ["ITSM Automation", "SLA Tracking", "Smart Routing"],
   },
   {
     id: "finxplore",
     title: "FINXPLORE",
     logo: "/images/products/logos/finxplore-logo.png",
-    description: "Financial Intelligence & Fraud Risk Prevention. Mitigate transactional risk in real time using deep learning anomaly detection, automated AML compliance screening, and unified fraud analytics. Safeguard your financial ecosystem with millisecond response times and ultra-low false positive rates.",
+    description: "Real-time AI-Powered Risk & Fraud Detection for financial institutions. Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings, enforce AML protocols, and ensure absolute regulatory compliance.",
     href: "/products/finxplore",
     image: "/images/products/mockups/finxplore-mockup-light.png",
-    tags: ["Real-Time Detection", "AML Compliance", "Risk Analytics"]
+    icon: Search,
+    tags: ["AML Compliance", "Anomaly Detection", "Risk Scoring"],
   },
   {
     id: "swikruti",
     title: "SWIKRUTI",
     logo: "/images/products/logos/swikruti-logo.png",
-    description: "Enterprise Consent & Privacy Lifecycle Management. Build user trust with automated consent tracking, automated data mapping, and built-in DPDPA and GDPR compliance frameworks. Manage data subject requests seamlessly while maintaining full auditability across all digital touchpoints.",
+    description: "Consent Management & DPDPA Compliance platform for enterprise privacy. Keep your customer data compliant, secure, and fully auditable. Provide users with transparent control over their digital footprint while seamlessly mapping consent lifecycles across your data ecosystem to prevent unauthorized access.",
     href: "/products/swikruti",
     image: "/images/products/mockups/swikruti-mockup-light.png",
-    tags: ["DPDPA & GDPR", "Consent Lifecycle", "Data Subject Governance"]
+    icon: FileCheck2,
+    tags: ["Data Privacy", "DPDPA Ready", "Consent Ledger"],
   },
   {
     id: "saransh",
     title: "SARANSH",
     logo: "/images/products/logos/saransh-logo.png",
-    description: "Enterprise Test Environment & Data Governance. Virtualize dependent services and generate synthetic, privacy-compliant test data on demand. Eliminate environment bottlenecks and execute parallel testing cycles with predictable quality gates.",
+    description: "AI-Enabled Service Virtualization. Isolate complex subsystems and simulate behaviors to enable continuous testing in isolated sandbox environments. Decouple your development cycles from third-party API dependencies by replicating realistic stateful behaviors and edge-case failure scenarios on demand.",
     href: "/products/saransh",
-    image: "/images/products/mockups/saransh-mockup-light.png",
-    tags: ["Service Virtualization", "Data Synthesis", "Quality Gates"]
-  }
+    image: "/images/products/mockups/saransh-mockup.png",
+    icon: Layers,
+    tags: ["API Mocking", "Stateful Sim", "Sandboxing"],
+  },
 ];
 
 export default function PlatformOverview() {
-  const [activeTab, setActiveTab] = useState(products[0].id);
-
-  const activeProduct = products.find((p) => p.id === activeTab) || products[0];
-  const activeIndex = products.findIndex((p) => p.id === activeTab);
+  const [activeId, setActiveId] = useState(products[0].id);
+  const activeIndex = products.findIndex(p => p.id === activeId);
+  const activeProduct = products[activeIndex] || products[0];
 
   return (
-    <section className="py-24 bg-[#090A1F] text-white relative overflow-hidden transition-colors duration-500">
-      {/* Dynamic Background Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-violet-600/10 blur-[150px] rounded-full pointer-events-none" />
+    <section id="products" className="relative w-full py-10 md:py-12 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-urbanist text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white mb-6 leading-tight"
-          >
-            The AP2L Platform Ecosystem
-          </motion.h2>
+      {/* Decorative Background Glows */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{
+            background: `radial-gradient(circle at center, var(--tw-gradient-stops))`
+          }}
+          className={`absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 opacity-20 dark:opacity-10 bg-gradient-to-br from-violet-600 to-fuchsia-600`}
+        />
+      </div>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-manrope text-lg md:text-[20px] text-slate-300 leading-relaxed"
-          >
-            A unified suite of specialized platforms designed to secure, automate, and optimize your entire enterprise infrastructure.
-          </motion.p>
+      <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
+
+        {/* Header section */}
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
+            >
+              The AP2L Innovations
+            </motion.h2>
+
+          </div>
+          
+          <div className="md:pt-2">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+            >
+              An interconnected AI ecosystem built to automate, secure, and accelerate your engineering lifecycle.
+            </motion.p>
+          </div>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex items-center justify-start md:justify-center overflow-x-auto gap-2 md:gap-3 pb-6 mb-12 scrollbar-none">
+        {/* Pill Navigation - Single View 7-Column Grid (No Scrollbar) */}
+        <div className="grid grid-cols-7 gap-1 sm:gap-2 md:gap-2.5 w-full mb-8">
           {products.map((product) => {
-            const isActive = activeTab === product.id;
+            const isActive = activeId === product.id;
             return (
               <button
                 key={product.id}
-                onClick={() => setActiveTab(product.id)}
-                className={`flex items-center gap-3 px-5 py-3 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${
-                  isActive
-                    ? "bg-violet-600 text-white shadow-lg shadow-violet-600/30 scale-[1.02]"
-                    : "bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white border border-white/10"
-                }`}
+                onClick={() => setActiveId(product.id)}
+                className={`relative w-full pl-0 sm:pl-0.5 md:pl-1 pr-1 sm:pr-1.5 md:pr-2 py-2 md:py-2.5 rounded-2xl font-semibold text-[10px] sm:text-[11px] md:text-[12px] uppercase tracking-tight transition-all duration-300 border focus:outline-none cursor-pointer flex flex-col lg:flex-row items-center justify-center gap-1 sm:gap-1.5 md:gap-2 ${isActive
+                  ? `text-white dark:text-slate-900 border-transparent shadow-md`
+                  : "bg-white dark:bg-slate-900 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 hover:text-slate-800 dark:hover:text-slate-200"
+                  }`}
               >
-                <div className="relative w-5 h-5 flex-shrink-0">
+                {isActive && (
+                  <motion.div
+                    layoutId="activePill"
+                    className="absolute inset-0 rounded-xl bg-slate-800 dark:bg-slate-200 shadow-md -z-10"
+                    transition={{ type: "tween", ease: "easeInOut", duration: 0.25 }}
+                  />
+                )}
+                <div className="relative h-6 w-6 md:h-7 md:w-7 flex-shrink-0 -ml-1 sm:-ml-1.5 md:-ml-2">
                   <Image
                     src={product.logo}
-                    alt={product.title}
+                    alt={`${product.title} logo`}
                     fill
-                    className="object-contain"
+                    className="object-cover object-center"
                   />
                 </div>
-                <span>{product.title}</span>
+                <span className="truncate max-w-full text-center">{product.title}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Active Product Feature Showcase */}
-        <div className="relative min-h-[480px]">
+        {/* Dynamic Display Area */}
+        <div className="w-full relative mt-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProduct.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
-              className={`rounded-2xl bg-[#13111C] border border-white/10 overflow-hidden shadow-2xl flex flex-col md:flex-row items-center ${
-                activeIndex % 2 === 1 ? 'md:flex-row-reverse' : ''
-              }`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className={`w-full h-full min-h-[440px] rounded-[24px] flex flex-col ${activeIndex % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} items-stretch overflow-hidden border border-slate-800 bg-[#13111C] shadow-2xl shadow-violet-900/10 transition-colors duration-700`}
             >
+
               {/* Left Content Area */}
-              <div className="p-8 md:p-12 lg:p-14 w-full md:w-1/2 lg:w-[45%] flex flex-col justify-center">
+              <div className="flex-1 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative z-20">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="relative w-10 h-10 p-2 rounded-xl bg-violet-500/10 border border-violet-500/20">
+                  <div className="relative h-14 w-14 md:h-16 md:w-16 flex-shrink-0 rounded-2xl bg-white/10 p-2 border border-white/15 flex items-center justify-center shadow-lg">
                     <Image
                       src={activeProduct.logo}
-                      alt={activeProduct.title}
+                      alt={`${activeProduct.title} logo`}
                       fill
                       className="object-contain p-1"
                     />
                   </div>
-                  <h3 className="font-urbanist text-2xl md:text-3xl font-bold text-white tracking-tight">
+                  <h3 className="text-3xl md:text-4xl lg:text-[40px] font-bold font-urbanist text-white tracking-tight">
                     {activeProduct.title}
                   </h3>
                 </div>
@@ -185,13 +218,14 @@ export default function PlatformOverview() {
                     className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white text-[15px] font-semibold transition-all hover:-translate-y-0.5 bg-violet-600 hover:bg-violet-500 hover:shadow-lg hover:shadow-violet-600/25"
                   >
                     Explore {activeProduct.title}
-                    <ArrowRightIcon size={18} />
+                    <ArrowRight size={18} />
                   </Link>
                 </div>
               </div>
 
               {/* Right Image Area */}
               <div className="hidden md:block w-1/2 lg:w-[55%] h-auto min-h-[440px] relative">
+                {/* Fade gradient to blend image into the dark background */}
                 <div className={`absolute inset-0 z-10 bg-gradient-to-${activeIndex % 2 === 1 ? 'r' : 'l'} from-transparent via-transparent to-[#13111C] pointer-events-none`} />
                 <div className={`absolute inset-0 z-10 bg-gradient-to-t from-[#13111C] via-transparent to-[#13111C] pointer-events-none opacity-40`} />
                 

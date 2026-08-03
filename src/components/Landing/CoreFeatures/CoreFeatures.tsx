@@ -90,7 +90,7 @@ function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
         <div className="mb-4 flex items-center gap-4">
           {/* Animated Icon Container (52px x 52px) */}
           <div
-            className="flex shrink-0 h-[52px] w-[52px] items-center justify-center rounded-xl bg-violet-50 dark:bg-violet-950/50 border border-violet-100 dark:border-violet-800/40 text-violet-600 dark:text-violet-400 transition-colors duration-300 group-hover:bg-violet-100 dark:group-hover:bg-violet-900/60"
+            className="flex shrink-0 h-[52px] w-[52px] items-center justify-center rounded-xl bg-violet-50 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 transition-colors duration-300 group-hover:bg-violet-100 dark:group-hover:bg-violet-900/60"
             aria-hidden="true"
           >
             <IconComponent ref={iconRef} size={28} strokeWidth={2} />
@@ -111,7 +111,7 @@ function FeatureCard({ feature }: { feature: (typeof features)[number] }) {
 
 export default function CoreFeatures() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-10 md:py-12 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 right-0 -mt-20 -mr-20 w-[400px] h-[400px] rounded-full bg-violet-500/5 dark:bg-violet-500/10 blur-[100px] pointer-events-none" />
 
@@ -125,7 +125,7 @@ export default function CoreFeatures() {
               viewport={{ once: true }}
               className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 dark:text-white mb-6"
             >
-              Core Features & Benefits
+              Core Features &<br/> Benefits
             </motion.h2>
           </div>
 

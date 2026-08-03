@@ -1,88 +1,81 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CheckIcon from "@/components/ui/check-icon";
-import GearIcon from "@/components/ui/gear-icon";
-import UsersIcon from "@/components/ui/users-icon";
-import ShieldIcon from "@/components/ui/shield-icon";
-import BellIcon from "@/components/ui/bell-icon";
+import { CheckSquare, Sliders, Users, Settings, ShieldAlert, Bell } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "Omnichannel Consent Preference Center",
-    description: "Provide users with self-service portals to manage privacy preferences across web, mobile, and offline channels.",
-    icon: UsersIcon,
-  },
-  {
-    title: "Automated Data Discovery",
-    description: "Map and classify PII across enterprise databases to maintain accurate data inventories automatically.",
-    icon: GearIcon,
-  },
-  {
-    title: "DSAR Automation",
-    description: "Streamline Data Subject Access Requests (DSAR) with automated data retrieval and deletion workflows.",
-    icon: CheckIcon,
-  },
-  {
-    title: "Policy & Audit Trail Management",
-    description: "Maintain immutable audit logs of all consent events to comply with DPDPA, GDPR, and global regulations.",
-    icon: ShieldIcon,
-  },
-  {
-    title: "Breach Notification System",
-    description: "Trigger automated incident reporting and user notification workflows during potential data breaches.",
-    icon: BellIcon,
-  },
+  { title: "Consent Collection", description: "Seamlessly capture granular user consent across multiple digital touchpoints using clear, legally compliant language.", bgImage: "compliance-bg.png" },
+  { title: "Preference Management", description: "Empower your users with a self-service portal to instantly update privacy preferences and revoke consent at any time.", bgImage: "discovery-bg.png" },
+  { title: "Data Subject Requests", description: "Fully automate Data Subject Access Request (DSAR) workflows to rapidly handle data access, rectification, and deletion.", bgImage: "netraa-incident-bg.png" },
+  { title: "Policy Engine", description: "Define and strictly enforce consent-based data usage policies and access controls across your entire enterprise ecosystem.", bgImage: "ai-bg.png" },
+  { title: "Vendor Risk Management", description: "Continuously monitor third-party vendors for privacy compliance and automatically track data processing agreements.", bgImage: "security-bg.png" },
+  { title: "Breach Notification", description: "Accelerate your incident response with automated workflows for rapid data breach identification and regulatory notification.", bgImage: "vuln-map-bg.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-urbanist text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white mb-6"
-          >
-            Key Capabilities
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-manrope text-lg md:text-[20px] text-slate-300 leading-relaxed"
-          >
-            Manage consent lifecycles, DSAR requests, and data subject privacy governance with total transparency.
-          </motion.p>
+    <section className="py-12 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6843B7]/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#9e7be9]/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
+                Privacy
+                <span className="text-[#6843B7]">by Design</span>
+              </h2>
+            </motion.div>
+          </div>
+          <div className="md:pt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                Capabilities that embed privacy into every layer of your data ecosystem.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {capabilities.map((cap, index) => {
-            const Icon = cap.icon;
-            return (
-              <motion.div
-                key={cap.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative flex flex-col p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:bg-slate-950 transition-all duration-300 hover:border-violet-500/50"
-              >
-                <div className="shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-500/30 text-violet-400 bg-violet-950/40 mb-6 group-hover:scale-110 transition-transform">
-                  <Icon size={24} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((cap, index) => (
+            <motion.div
+              key={cap.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#6843B7]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
+            >
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
                 </div>
-                <h3 className="font-urbanist text-xl font-bold text-white mb-3 tracking-tight">
-                  {cap.title}
-                </h3>
-                <p className="font-manrope text-sm text-slate-400 leading-relaxed">
-                  {cap.description}
-                </p>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

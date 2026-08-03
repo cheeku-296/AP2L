@@ -11,7 +11,7 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -21,7 +21,7 @@ export default function Integrations() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 mb-6">
-                Seamless <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">Ecosystem Integration</span>
+                Seamless Ecosystem Integration
               </h2>
             </motion.div>
           </div>
@@ -33,7 +33,7 @@ export default function Integrations() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-600 leading-relaxed max-w-2xl">
-                Connect Finxplore with your existing financial infrastructure in minutes.
+                Connect Finxplore with your existing financial infrastructure in minutes to unify data streams and accelerate reconciliation.
               </p>
             </motion.div>
           </div>
@@ -47,7 +47,7 @@ export default function Integrations() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm"
+              className="bg-slate-50 border border-slate-200 rounded-md p-6 shadow-sm"
             >
               <h3 className="text-[#6843B7] font-semibold mb-4 text-lg">{group.category}</h3>
               <div className="flex flex-wrap gap-2">

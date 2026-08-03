@@ -43,7 +43,7 @@ const steps: WorkflowStep[] = [
 export default function ITWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="Intelligent Service Delivery Across Every Stage"
+      title="Intelligent Service Delivery"
       subtitle="Automate incident management, ticket routing, service fulfilment, and continuous improvement for faster, more reliable IT support."
       steps={steps}
     />

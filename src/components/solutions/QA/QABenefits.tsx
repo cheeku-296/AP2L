@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function QABenefits() {
   return (
-    <section className="relative w-full overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500 py-16 md:py-24">
+    <section className="relative w-full overflow-hidden bg-white dark:bg-slate-950 transition-colors duration-500 py-12 md:py-16">
       {/* Background Decorations (subtle) */}
       {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-violet-500/5 dark:bg-violet-500/8 blur-3xl" />

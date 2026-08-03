@@ -24,7 +24,7 @@ export default function CTA({
   forceLight = false,
 }: CTAProps) {
   return (
-    <section className={`relative w-full py-16 md:py-20 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden ${forceLight ? 'bg-white' : 'bg-white dark:bg-slate-950'}`}>
+    <section className={`relative w-full py-12 md:py-16 px-4 sm:px-6 lg:px-8 transition-colors duration-500 overflow-hidden ${forceLight ? 'bg-white' : 'bg-white dark:bg-slate-950'}`}>
       <div className="relative mx-auto max-w-6xl z-10">
 
         {/* Rounded Card Container */}

@@ -109,7 +109,7 @@ export default function BlogGrid() {
   );
 
   return (
-    <section className="relative bg-white py-24 dark:bg-slate-950">
+    <section className="relative bg-white py-16 dark:bg-slate-950">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
 

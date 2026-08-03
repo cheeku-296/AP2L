@@ -9,7 +9,7 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
 
   return (
-    <section className="relative overflow-hidden bg-white py-24 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-white py-16 dark:bg-slate-950">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-24 top-0 h-[380px] w-[380px] rounded-full bg-violet-500/10 blur-[140px]" />
         <div className="absolute -right-24 bottom-0 h-[380px] w-[380px] rounded-full bg-cyan-500/10 blur-[140px]" />

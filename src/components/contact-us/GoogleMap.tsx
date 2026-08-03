@@ -49,7 +49,7 @@ const locations = [
 
 export default function GoogleMap() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-24 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-slate-50 py-16 dark:bg-slate-950">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Header */}
@@ -75,7 +75,7 @@ export default function GoogleMap() {
         </div>
 
         {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {locations.map((location, index) => (
             <motion.div
               key={location.id}
@@ -83,7 +83,7 @@ export default function GoogleMap() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
+              className="group flex flex-col overflow-hidden rounded-md border border-slate-200 bg-white shadow-sm transition-all hover:shadow-xl dark:border-slate-800 dark:bg-slate-900"
             >
               {/* Map Embed */}
               <div className="relative h-60 w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
@@ -123,7 +123,7 @@ export default function GoogleMap() {
                     href={location.mapLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 border-slate-200 py-3 text-xs font-bold uppercase tracking-wider text-slate-700 transition-colors hover:border-slate-800 hover:bg-slate-800 hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-900"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border-2 border-slate-200 py-3 text-xs font-bold uppercase tracking-wider text-slate-700 transition-colors hover:border-slate-800 hover:bg-slate-800 hover:text-white dark:border-slate-700 dark:text-slate-300 dark:hover:border-white dark:hover:bg-white dark:hover:text-slate-900"
                   >
                     View On Map
                   </a>

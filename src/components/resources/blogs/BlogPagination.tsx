@@ -17,7 +17,7 @@ export default function LoadMore({
   if (!hasMore) return null;
 
   return (
-    <section className="relative bg-white py-20 dark:bg-slate-950">
+    <section className="relative bg-white py-16 dark:bg-slate-950">
       <div className="mx-auto flex max-w-7xl justify-center px-6 lg:px-8">
         <motion.button
           whileHover={{

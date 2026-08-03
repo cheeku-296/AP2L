@@ -58,7 +58,7 @@ const itemVariants: Variants = {
 
 export default function DevMetrics() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-10 md:py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/3" />

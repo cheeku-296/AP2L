@@ -58,7 +58,7 @@ const itemVariants: Variants = {
 
 export default function QAMetrics() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-10 md:py-12 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">

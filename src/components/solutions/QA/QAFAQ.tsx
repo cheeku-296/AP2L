@@ -49,7 +49,7 @@ export default function QAFAQ() {
   };
 
   return (
-    <section className="relative w-full py-12 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-10 md:py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

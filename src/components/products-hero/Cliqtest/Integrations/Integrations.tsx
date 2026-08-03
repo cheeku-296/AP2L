@@ -27,7 +27,7 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="py-24 bg-slate-50 text-slate-900 border-t border-slate-200">
+    <section className="py-16 bg-slate-50 text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header section */}
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -51,7 +51,7 @@ export default function Integrations() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-600 leading-relaxed max-w-2xl">
-                Seamlessly connect cliQTest with your existing toolchain.
+                Seamlessly connect cliQTest with your existing toolchain to unify testing workflows, eliminate manual bottlenecks, and accelerate your entire software delivery lifecycle.
               </p>
             </motion.div>
           </div>

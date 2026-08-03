@@ -1,88 +1,83 @@
 "use client";
 
 import { motion } from "framer-motion";
-import UserIcon from "@/components/ui/user-icon";
-import LayersIcon from "@/components/ui/layers-icon";
-import ClockIcon from "@/components/ui/clock-icon";
-import DatabaseIcon from "@/components/ui/database-icon";
-import GearIcon from "@/components/ui/gear-icon";
+import { Headset, Share2, Layers, Clock, Library } from "lucide-react";
 
 const capabilities = [
-  {
-    title: "AI-Powered Service Desk",
-    description: "Automate ticket triage, routing, and resolution using contextual AI virtual agents.",
-    icon: UserIcon,
-  },
-  {
-    title: "SLA Management",
-    description: "Track service level agreements in real time with proactive breach warnings and escalation paths.",
-    icon: ClockIcon,
-  },
-  {
-    title: "Incident Correlation",
-    description: "Group related alerts into unified incident tickets to reduce noise and MTTR.",
-    icon: LayersIcon,
-  },
-  {
-    title: "Knowledge Base Intelligence",
-    description: "Automatically suggest solution articles to support engineers and end-users.",
-    icon: DatabaseIcon,
-  },
-  {
-    title: "Automated Workflows",
-    description: "Execute automated remediation scripts directly from incident tickets.",
-    icon: GearIcon,
-  },
+  { title: "Centralized Service Desk", description: "Establish a single, unified point of contact for seamless ticket creation, intelligent categorization, and end-to-end tracking.", bgImage: "repo-bg.png" },
+  { title: "Automated Ticket Assignment", description: "Instantly route incoming support requests dynamically based on the specific service type and the engineer's technical expertise.", bgImage: "netraa-correlation-bg.png" },
+  { title: "Multi-Level Support Workflow", description: "Implement highly structured escalation paths from L1 to L2 and Dev/Infra based on resolution time and effort required.", bgImage: "discovery-bg.png" },
+  { title: "SLA & SLO Governance", description: "Maintain strict service quality with highly configurable thresholds, automated early breach alerts, and comprehensive compliance tracking.", bgImage: "compliance-bg.png" },
+  { title: "Knowledge & Analytics Hub", description: "Easily reuse historical resolutions for faster support delivery while gaining real-time visibility into your team's workload and SLA trends.", bgImage: "analytics-bg.png" },
+  { title: "AI-Powered Self-Service", description: "Empower employees with intelligent conversational agents to resolve routine IT requests instantly without human intervention.", bgImage: "ai-bg.png" }
 ];
 
 export default function KeyCapabilities() {
   return (
-    <section className="py-24 bg-slate-900 text-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-12 md:mb-16 text-center max-w-3xl mx-auto">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-urbanist text-4xl md:text-5xl lg:text-[52px] font-bold tracking-tight text-white mb-6"
-          >
-            Key Capabilities
-          </motion.h2>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-manrope text-lg md:text-[20px] text-slate-300 leading-relaxed"
-          >
-            Modernize IT service management with intelligent automation, ticket routing, and predictive SLA tracking.
-          </motion.p>
+    <section className="py-16 bg-[#080816] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sky-600/20 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-[1600px] mx-auto px-6 lg:px-16 relative z-10">
+        
+        {/* Header section */}
+        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
+                Key <span className="text-[#9D7BEE]">Capabilities</span>
+              </h2>
+            </motion.div>
+          </div>
+          
+          <div className="md:pt-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              <p className="font-manrope text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
+                Powerful ticket routing, workflow automation, and real-time analytics to supercharge your IT support operations.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {capabilities.map((cap, index) => {
-            const Icon = cap.icon;
-            return (
-              <motion.div
-                key={cap.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative flex flex-col p-8 rounded-2xl border border-slate-800 bg-slate-950/60 hover:bg-slate-950 transition-all duration-300 hover:border-violet-500/50"
-              >
-                <div className="shrink-0 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-500/30 text-violet-400 bg-violet-950/40 mb-6 group-hover:scale-110 transition-transform">
-                  <Icon size={24} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {capabilities.map((cap, index) => (
+            <motion.div
+              key={cap.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-blue-400/50 transition-colors duration-500 flex flex-col min-h-[160px]"
+            >
+              {/* Background Image (Bottom Left Half-Cut) */}
+              <div 
+                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
+                style={{ 
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center' 
+                }} 
+              />
+
+              {/* Content Wrapper */}
+              <div className="relative z-10 flex flex-col h-full flex-1">
+                {/* Text Container */}
+                <div>
+                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
                 </div>
-                <h3 className="font-urbanist text-xl font-bold text-white mb-3 tracking-tight">
-                  {cap.title}
-                </h3>
-                <p className="font-manrope text-sm text-slate-400 leading-relaxed">
-                  {cap.description}
-                </p>
-              </motion.div>
-            );
-          })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

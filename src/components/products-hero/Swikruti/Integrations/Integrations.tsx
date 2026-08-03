@@ -11,7 +11,7 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>

@@ -43,7 +43,7 @@ const values = [
 
 export default function BusinessValues() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
@@ -91,8 +91,8 @@ export default function BusinessValues() {
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Header Row: Icon + Title */}
                   <div className="flex items-center gap-4 mb-3">
-                    <div className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-xl border border-violet-600/30 dark:border-violet-400/30 text-violet-600 dark:text-violet-400 bg-violet-50/50 dark:bg-violet-950/30 transition-transform duration-300 group-hover:scale-105">
-                      <Icon size={22} aria-hidden="true" />
+                    <div className="flex shrink-0 h-[52px] w-[52px] items-center justify-center rounded-md bg-violet-50 text-violet-600 transition-colors duration-300 group-hover:bg-violet-100" aria-hidden="true">
+                      <Icon size={28} strokeWidth={2} />
                     </div>
                     <h3 className="font-urbanist text-[20px] font-bold tracking-tight text-slate-900 leading-snug">
                       {value.title}

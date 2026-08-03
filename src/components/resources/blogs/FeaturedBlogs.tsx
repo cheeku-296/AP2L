@@ -41,7 +41,7 @@ const latest = [
 
 export default function FeaturedBlogs() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 md:py-20 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-white py-12 md:py-16 dark:bg-slate-950">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute left-0 top-0 h-96 w-96 rounded-full bg-violet-500/10 blur-[140px]" />
         <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-cyan-500/10 blur-[140px]" />
