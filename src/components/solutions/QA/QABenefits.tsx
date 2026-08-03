@@ -53,6 +53,7 @@ export default function QABenefits() {
             src="/new/1.png" // Replace with your actual image path
             alt="Benefits of AI-Powered Testing - AP2L Platform"
             fill
+            sizes="100vw"
             className="object-cover object-center"
             priority
           />

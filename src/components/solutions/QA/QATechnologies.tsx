@@ -53,6 +53,7 @@ export default function QATechnologies() {
               src="/new/2.png"
               alt="Technologies compatible with cliQTest"
               fill
+              sizes="100vw"
               className="object-cover object-center"
               priority
             />

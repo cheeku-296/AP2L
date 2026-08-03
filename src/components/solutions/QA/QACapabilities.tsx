@@ -222,6 +222,7 @@ export default function QACapabilities() {
                     src={selected.image}
                     alt={selected.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 60vw"
                     className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
