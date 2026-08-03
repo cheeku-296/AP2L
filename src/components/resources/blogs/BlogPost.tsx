@@ -93,7 +93,7 @@ export default function BlogPost({ id }: { id: string }) {
       </div>
 
       {/* Content Section */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16 flex flex-col lg:flex-row gap-16 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10 md:py-12 flex flex-col lg:flex-row gap-16 relative">
         
         {/* Left Sidebar (Meta & Sharing) */}
         <div className="lg:w-64 shrink-0">

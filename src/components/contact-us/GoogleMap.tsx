@@ -49,7 +49,7 @@ const locations = [
 
 export default function GoogleMap() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-16 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-slate-50 py-12 dark:bg-slate-950">
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Header */}

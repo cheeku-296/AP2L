@@ -135,7 +135,7 @@ const itemVariants: Variants = {
 
 export default function QAIndustries() {
   return (
-    <section className="relative w-full py-10 md:py-16 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-8 md:py-12 bg-slate-50 dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       {/* Subtle ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-md blur-[140px] -translate-y-1/2" />

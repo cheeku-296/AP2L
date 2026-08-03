@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function ContactCTA() {
   return (
-    <section className="relative overflow-hidden bg-white py-16 dark:bg-slate-950">
+    <section className="relative overflow-hidden bg-white py-12 dark:bg-slate-950">
       {/* Background */}
 
       <div className="absolute inset-0 overflow-hidden">
@@ -48,7 +48,7 @@ export default function ContactCTA() {
             py-12
             md:px-14
             lg:px-20
-            lg:py-16
+            lg:py-12
           "
         >
 

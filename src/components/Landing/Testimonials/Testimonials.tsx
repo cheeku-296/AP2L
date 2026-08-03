@@ -98,7 +98,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative w-full py-10 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-8 md:py-12 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
       
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
