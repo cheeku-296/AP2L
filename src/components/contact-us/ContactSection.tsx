@@ -19,6 +19,7 @@ import {
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -96,16 +97,52 @@ export default function ContactSection() {
     },
   ];
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const validatePhone = (phone: string) => {
+    if (!phone.trim()) return "Phone number is required.";
+    const digits = phone.replace(/\D/g, "");
+    if (!/^\+?[0-9\s\-\(\)]{7,20}$/.test(phone.trim()) || digits.length < 7 || digits.length > 15) {
+      return "Please enter a valid phone number (7 to 15 digits).";
+    }
+    return null;
+  };
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Simulated network round-trip — replace with your real submission call
-    // (API route, server action, or third-party form handler).
-    setTimeout(() => {
+    // Validate phone number
+    const pError = validatePhone(formData.phone);
+    if (pError) {
+      setErrorMessage(pError);
       setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message. Please try again.");
+      }
+
       setIsSubmitted(true);
-    }, 1200);
+    } catch (err: unknown) {
+      console.error("Form submission error:", err);
+      setErrorMessage(
+        err instanceof Error ? err.message : "Failed to send message. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function resetForm() {
@@ -120,6 +157,7 @@ export default function ContactSection() {
       message: "",
       consent: false,
     });
+    setErrorMessage(null);
     setIsSubmitted(false);
   }
 
@@ -387,13 +425,18 @@ export default function ContactSection() {
                     onSubmit={handleSubmit}
                     className="mt-10 space-y-6"
                   >
+                    {errorMessage && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 dark:border-red-900/50 dark:bg-red-950/40 p-4 text-sm text-red-600 dark:text-red-400 font-medium">
+                        {errorMessage}
+                      </div>
+                    )}
                     <div className="grid gap-6 md:grid-cols-2">
 
                       {/* First Name */}
 
                       <div>
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          First Name
+                          First Name <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -435,7 +478,7 @@ export default function ContactSection() {
 
                       <div>
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Last Name
+                          Last Name <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -482,7 +525,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Company
+                          Company <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -526,7 +569,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Designation
+                          Designation <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -574,7 +617,7 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Business Email
+                          Business Email <span className="text-red-500">*</span>
                         </label>
 
                         <input
@@ -619,10 +662,11 @@ export default function ContactSection() {
                       <div>
 
                         <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                          Phone Number
+                          Phone Number <span className="text-red-500">*</span>
                         </label>
 
                         <input
+                          type="tel"
                           required
                           value={formData.phone}
                           onChange={(e) =>
@@ -665,7 +709,7 @@ export default function ContactSection() {
                     <div>
 
                       <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        Interested Product
+                        Interested Product <span className="text-red-500">*</span>
                       </label>
 
                       <div className="relative" ref={dropdownRef}>
@@ -810,7 +854,7 @@ export default function ContactSection() {
                     <div>
 
                       <label className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                        Tell us about your requirements
+                        Tell us about your requirements <span className="text-red-500">*</span>
                       </label>
 
                       <textarea

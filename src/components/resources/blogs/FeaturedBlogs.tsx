@@ -6,16 +6,23 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 const featured = {
-  id: "1",
-  category: "Artificial Intelligence",
-  title: "How Enterprise AI is Reshaping Digital Transformation",
+  id: "8",
+  category: "Cybersecurity",
+  title: "Resilience Operations Center (ROC): The Intelligent Nerve Center of Modern Cyber Resilience",
   description:
-    "Discover how organizations are leveraging AI, cloud engineering, and automation to build resilient and future-ready enterprises.",
-  image: "/images/resources/blogs/blog-1.png",
-  date: "July 2026",
+    "Discover how a Resilience Operations Center (ROC) converges cybersecurity, IT operations, business continuity, disaster recovery, and risk management into a single intelligence-driven operational framework.",
+  image: "/images/resources/blogs/rocblog.png",
+  date: "August 2026",
 };
 
 const latest = [
+  {
+    id: "1",
+    title: "How Enterprise AI is Reshaping Digital Transformation",
+    image: "/images/resources/blogs/blog-1.png",
+    category: "Artificial Intelligence",
+    date: "July 2026",
+  },
   {
     id: "2",
     title: "The Future of Intelligent Automation",
@@ -28,13 +35,6 @@ const latest = [
     title: "Cybersecurity Trends Every Enterprise Should Know",
     image: "/images/resources/blogs/blog-3.png",
     category: "Cybersecurity",
-    date: "June 2026",
-  },
-  {
-    id: "4",
-    title: "Building Cloud Native Applications at Scale",
-    image: "/images/resources/blogs/blog-4.png",
-    category: "Cloud",
     date: "June 2026",
   },
 ];

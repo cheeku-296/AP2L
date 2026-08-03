@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Urbanist, Inter, Manrope, Alata, Space_Grotesk } from "next/font/google";
+import { Urbanist, Inter, Manrope, Alata, Space_Grotesk, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/common/Navbar/Navbar";
 import Footer from "@/src/components/common/Footer/Footer";
@@ -24,6 +24,9 @@ import { ThemeProvider } from "@/src/components/theme-provider";
 import { ThemeConfigProvider } from "@/src/context/ThemeConfigContext";
 
 import type { Viewport } from "next";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const viewport: Viewport = {
   themeColor: "#1A1736",
@@ -106,7 +109,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`dark ${urbanist.variable} ${inter.variable} ${manrope.variable} ${alata.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" suppressHydrationWarning className={cn("dark", urbanist.variable, inter.variable, manrope.variable, alata.variable, spaceGrotesk.variable, "font-sans", geist.variable)}>
       <head>
       </head>
       <body suppressHydrationWarning className="font-sans antialiased text-slate-900 dark:text-slate-50 selection:bg-[#6843b7] selection:text-white">

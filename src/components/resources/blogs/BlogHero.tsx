@@ -57,31 +57,7 @@ export default function BlogHero() {
       <div className="relative z-20 mx-auto flex max-w-4xl flex-col items-center px-6">
         {/* Badge */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="
-            inline-flex
-            items-center
-            gap-2
-            rounded-full
-            border
-            border-slate-900/10
-            bg-white/60
-            px-5
-            py-2
-            backdrop-blur-xl
-            dark:border-slate-700
-            dark:bg-slate-900/40
-          "
-        >
-          <BookOpen className="h-4 w-4 text-violet-500" />
 
-          <span className="font-manrope text-[11px] font-bold uppercase tracking-[0.22em] text-slate-700 dark:text-slate-300">
-            Insights & Resources
-          </span>
-        </motion.div>
 
         {/* Heading */}
 
@@ -195,7 +171,7 @@ export default function BlogHero() {
 
         {/* Bottom */}
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -214,7 +190,7 @@ export default function BlogHero() {
           <span className="h-1 w-1 rounded-full bg-slate-400" />
 
           <span>Enterprise Technology</span>
-        </motion.div>
+        </motion.div> */}
       </div>
 
     </section>

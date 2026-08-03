@@ -1,22 +1,20 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import {
-  Building2,
-  Wallet,
-  Stethoscope,
-  ShoppingCart,
-  Globe2,
-  Cpu,
-  TrendingUp,
-} from "lucide-react";
+import { TrendingUp } from "lucide-react";
+import WalletIcon from "@/components/ui/wallet-icon";
+import HeartIcon from "@/components/ui/heart-icon";
+import ShoppingCartIcon from "@/components/ui/shopping-cart-icon";
+import GearIcon from "@/components/ui/gear-icon";
+import CpuIcon from "@/components/ui/cpu-icon";
+import GlobeIcon from "@/components/ui/globe-icon";
 
 const industries = [
   {
     id: "fintech",
     name: "Banking & Financial Services",
     description: "Deliver secure, compliant, and high-availability applications that meet regulatory requirements while maintaining exceptional customer experiences.",
-    icon: Wallet,
+    icon: WalletIcon,
     stats: "99.99% Availability",
     wide: true,
   },
@@ -24,7 +22,7 @@ const industries = [
     id: "healthcare",
     name: "Healthcare & Life Sciences",
     description: "Ensure patient safety, regulatory compliance, data privacy, and application reliability across healthcare ecosystems.",
-    icon: Stethoscope,
+    icon: HeartIcon,
     stats: "Regulatory-Ready Testing",
     wide: false,
   },
@@ -32,7 +30,7 @@ const industries = [
     id: "ecommerce",
     name: "Retail & Digital Commerce",
     description: "Validate scalable customer experiences capable of handling high transaction volumes during peak demand.",
-    icon: ShoppingCart,
+    icon: ShoppingCartIcon,
     stats: "Millions of Transactions Validated",
     wide: false,
   },
@@ -40,7 +38,7 @@ const industries = [
     id: "enterprise",
     name: "Enterprise Applications",
     description: "Improve software quality across ERP, CRM, HRMS, and large-scale enterprise platforms through intelligent automation.",
-    icon: Building2,
+    icon: GearIcon,
     stats: "Enterprise-Scale Quality Assurance",
     wide: true,
   },
@@ -48,7 +46,7 @@ const industries = [
     id: "tech",
     name: "SaaS & Technology",
     description: "Support continuous delivery with automated quality validation across rapidly evolving cloud-native applications.",
-    icon: Cpu,
+    icon: CpuIcon,
     stats: "Continuous Release Enablement",
     wide: true,
   },
@@ -56,7 +54,7 @@ const industries = [
     id: "global",
     name: "Global Enterprises",
     description: "Execute distributed testing across multiple regions, teams, cloud environments, and deployment pipelines with centralized governance.",
-    icon: Globe2,
+    icon: GlobeIcon,
     stats: "Enterprise-Grade Scalability",
     wide: false,
   },
@@ -128,7 +126,7 @@ export default function QAIndustries() {
             <div className="relative z-10">
               {/* Hollow icon container */}
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <Wallet size={24} strokeWidth={1.5} />
+                <WalletIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 FinTech & Banking
@@ -154,7 +152,7 @@ export default function QAIndustries() {
           >
             <div className="relative z-10">
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <Stethoscope size={24} strokeWidth={1.5} />
+                <HeartIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 Healthcare
@@ -181,7 +179,7 @@ export default function QAIndustries() {
           >
             <div className="relative z-10">
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <ShoppingCart size={24} strokeWidth={1.5} />
+                <ShoppingCartIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 E‑commerce & Retail
@@ -207,7 +205,7 @@ export default function QAIndustries() {
           >
             <div className="relative z-10">
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <Building2 size={24} strokeWidth={1.5} />
+                <GearIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 Enterprise Software
@@ -234,7 +232,7 @@ export default function QAIndustries() {
           >
             <div className="relative z-10">
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <Cpu size={24} strokeWidth={1.5} />
+                <CpuIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 SaaS & Technology
@@ -260,7 +258,7 @@ export default function QAIndustries() {
           >
             <div className="relative z-10">
               <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl border border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 transition-transform duration-300 group-hover:scale-105 group-hover:border-violet-700 dark:group-hover:border-violet-300">
-                <Globe2 size={24} strokeWidth={1.5} />
+                <GlobeIcon size={24} strokeWidth={1.5} />
               </div>
               <h3 className="font-urbanist text-lg font-bold text-black dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                 Global Enterprises
