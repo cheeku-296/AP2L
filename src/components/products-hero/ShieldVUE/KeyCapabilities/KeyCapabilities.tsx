@@ -9,9 +9,7 @@ const capabilities = [
   { title: "AI Remediation", description: "Leverage advanced machine learning to receive intelligent, context-aware fix recommendations.", bgImage: "ai-bg.png" },
   { title: "Compliance Reporting", description: "Generate comprehensive, audit-ready reports tailored to SOC2, GDPR, and ISO standards.", bgImage: "shieldvue-4-bg.png" },
   { title: "SBOM Generation", description: "Instantly create and manage Software Bill of Materials in standard formats like CycloneDX.", bgImage: "sbom-bg.png" },
-  { title: "Component Discovery", description: "Deeply analyze your codebase to automatically discover hidden third-party dependencies.", bgImage: "shieldvue-6-bg.png" },
-  { title: "Dashboard & Analytics", description: "Access a unified pane of glass for real-time security postures and actionable threat intelligence.", bgImage: "analytics-bg.png" },
-  { title: "Security & Governance", description: "Enforce centralized security policies across your entire software development lifecycle.", bgImage: "shieldvue-8-bg.png" }
+  { title: "Component Discovery", description: "Deeply analyze your codebase to automatically discover hidden third-party dependencies.", bgImage: "shieldvue-6-bg.png" }
 ];
 
 export default function KeyCapabilities() {
@@ -51,7 +49,7 @@ export default function KeyCapabilities() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {capabilities.map((cap, index) => (
             <motion.div
               key={cap.title}
@@ -59,11 +57,11 @@ export default function KeyCapabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9D7BEE]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-slate-900/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              {/* Background Image (Bottom Left Half-Cut) */}
+              {/* Background Image */}
               <div
-                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-10 transition-opacity duration-500 group-hover:opacity-30  mix-blend-screen rounded-full blur-[2px]"
+                className="absolute -bottom-10 -right-20 w-64 h-64 z-0 opacity-20 transition-all duration-700 group-hover:scale-100 group-hover:opacity-30 mix-blend-screen rounded-full"
                 style={{
                   backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`,
                   backgroundSize: 'cover',
@@ -75,8 +73,8 @@ export default function KeyCapabilities() {
               <div className="relative z-10 flex flex-col h-full flex-1">
                 {/* Text Container */}
                 <div>
-                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
-                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                  <h3 className="mb-3 font-urbanist font-semibold text-[18px] text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-200/80">{cap.description}</p>
                 </div>
               </div>
             </motion.div>

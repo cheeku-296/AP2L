@@ -54,24 +54,24 @@ export default function KeyCapabilities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-[#9e7be9]/50 transition-colors duration-500 flex flex-col min-h-[160px]"
+              className="group relative overflow-hidden px-5 py-4 rounded-md border border-slate-700/60 bg-slate-900/40 backdrop-blur-md hover:border-slate-900/50 transition-colors duration-500 flex flex-col min-h-[160px]"
             >
-              {/* Background Image (Bottom Left Half-Cut) */}
-              <div 
-                className="absolute -bottom-20 -left-20 w-64 h-64 z-0 opacity-20 transition-opacity duration-500 group-hover:opacity-70 mix-blend-screen rounded-full blur-[2px]"
-                style={{ 
-                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`, 
-                  backgroundSize: 'cover', 
-                  backgroundPosition: 'center' 
-                }} 
+              {/* Background Image */}
+              <div
+                className="absolute -bottom-10 -right-20 w-64 h-64 z-0 opacity-20 transition-all duration-700 group-hover:scale-100 group-hover:opacity-30 mix-blend-screen rounded-full"
+                style={{
+                  backgroundImage: `url('/images/products/feature-bgs/${cap.bgImage}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               />
 
               {/* Content Wrapper */}
               <div className="relative z-10 flex flex-col h-full flex-1">
                 {/* Text Container */}
                 <div>
-                  <h3 className="mb-3 font-urbanist text-[18px] font-bold text-white tracking-wide">{cap.title}</h3>
-                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-300/90">{cap.description}</p>
+                  <h3 className="mb-3 font-urbanist font-semibold text-[18px] text-white tracking-wide">{cap.title}</h3>
+                  <p className="font-manrope font-medium text-[15px] leading-[1.6] text-slate-200/80">{cap.description}</p>
                 </div>
               </div>
             </motion.div>

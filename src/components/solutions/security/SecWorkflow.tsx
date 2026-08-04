@@ -43,8 +43,8 @@ const steps: WorkflowStep[] = [
 export default function SecWorkflow() {
   return (
     <AnimatedWorkflowPipeline
-      title="Continuous Security Across the Software Lifecycle"
-      subtitle="Automate software discovery, vulnerability management, compliance, and continuous monitoring for secure software delivery."
+      title="Continuous Software Security"
+      subtitle="Automate vulnerability management, compliance, and monitoring for secure delivery."
       steps={steps}
     />
   );

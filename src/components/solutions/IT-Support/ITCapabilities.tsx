@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const capabilities = [
   {
@@ -119,8 +120,25 @@ export default function ITCapabilities() {
     setCurrentIndex(idx);
   };
 
+  const [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsNavbarHidden(true);
+      } else {
+        setIsNavbarHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <section className="relative w-full py-8 md:py-12 bg-white dark:bg-[#0a0a0a] transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-8 md:py-12 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         
         {/* Header section */}
@@ -150,7 +168,7 @@ export default function ITCapabilities() {
         </div>
 
         {/* Top Navigation Tabs */}
-        <div className="w-full border-b border-slate-200 dark:border-slate-800 mb-8 lg:mb-12">
+        <div className={`sticky z-40 bg-white dark:bg-[#0a0a0a] w-full border-b border-slate-200 dark:border-slate-800 mb-8 lg:mb-12 transition-all duration-300 ${isNavbarHidden ? 'top-0 pt-4' : 'top-[68px] pt-4'}`}>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 w-full">
             {capabilities.map((cap, idx) => {
               const isSelected = currentIndex === idx;
@@ -217,7 +235,7 @@ export default function ITCapabilities() {
 
               {/* Right Side: Image */}
               <div className="lg:col-span-7 w-full flex justify-center">
-                <div className="relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden shadow-xl bg-slate-50 dark:bg-slate-900/50">
+                <div className="group relative w-full h-[220px] md:h-[280px] lg:h-[340px] rounded-md overflow-hidden shadow-xl bg-slate-50 dark:bg-slate-900/50">
                   <Image
                     src={selected.image}
                     alt={selected.title}
@@ -225,6 +243,30 @@ export default function ITCapabilities() {
                     className={`object-cover ${selected.imagePosition || "object-[center_75%]"}`}
                     priority
                   />
+                  
+                  {/* Navigation Arrows */}
+                  <div className="absolute inset-0 flex items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev - 1 + capabilities.length) % capabilities.length);
+                      }}
+                      className="p-2 rounded-full bg-black/20 text-black hover:bg-black/30 backdrop-blur-md transition-colors"
+                      aria-label="Previous capability"
+                    >
+                      <ChevronLeft className="w-6 h-6" />
+                    </button>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCurrentIndex((prev) => (prev + 1) % capabilities.length);
+                      }}
+                      className="p-2 rounded-full bg-black/20 text-black hover:bg-black/30 backdrop-blur-md transition-colors"
+                      aria-label="Next capability"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

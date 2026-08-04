@@ -49,7 +49,7 @@ export default function BusinessValues() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function BusinessValues() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-slate-800 mb-6">
-                Why Choose ShieldVUE?
+                Why ShieldVUE?
               </h2>
             </motion.div>
           </div>

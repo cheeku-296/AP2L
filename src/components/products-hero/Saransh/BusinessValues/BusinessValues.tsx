@@ -46,7 +46,7 @@ export default function BusinessValues() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ export default function BusinessValues() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 mb-6">
-                Why Choose Saransh?
+                Why Saransh?
               </h2>
             </motion.div>
           </div>
@@ -67,7 +67,7 @@ export default function BusinessValues() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-600 leading-relaxed max-w-2xl">
-                Saransh improves testing efficiency, accelerates releases, reduces operational risks, and enhances overall software reliability.
+                Saransh improves testing efficiency, accelerates releases, and enhances software reliability.
               </p>
             </motion.div>
           </div>

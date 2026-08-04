@@ -46,7 +46,7 @@ export default function BusinessValues() {
     <section className="py-16 bg-white text-slate-900 border-t border-slate-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -54,8 +54,7 @@ export default function BusinessValues() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-black mb-6">
-                Unmatched <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#000000] to-[#000000]">Testing Velocity</span>
-              </h2>
+                Why cliQTest ? </h2>
             </motion.div>
           </div>
 

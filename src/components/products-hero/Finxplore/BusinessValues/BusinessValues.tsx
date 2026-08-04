@@ -45,7 +45,7 @@ export default function BusinessValues() {
   return (
     <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-4 md:mb-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ export default function BusinessValues() {
               transition={{ delay: 0.2 }}
             >
               <p className="font-manrope text-xl md:text-[22px] text-slate-600 leading-relaxed max-w-2xl">
-                Protect your financial ecosystem with AI that understands the difference between legitimate behaviour and real threats.
+                Protect your financial ecosystem with AI that distinguishes legitimate behaviour from real threats.
               </p>
             </motion.div>
           </div>
