@@ -50,6 +50,7 @@ export default function ITTechnologies() {
               src="/images/solutions/IT/it.png"
               alt="IT support technologies compatible with AP2L"
               fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
               className="object-cover dark:hidden"
               priority
             />
@@ -57,6 +58,7 @@ export default function ITTechnologies() {
               src="/images/solutions/IT/it.png"
               alt="IT support technologies compatible with AP2L"
               fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
               className="object-cover hidden dark:block"
               priority
             />

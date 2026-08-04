@@ -220,6 +220,7 @@ export default function FAQClient() {
                 src="/images/common/faq-question.png"
                 alt="Frequently Asked Questions"
                 fill
+                sizes="(max-width: 768px) 100vw, 384px"
                 className="object-contain"
               />
             </div>
