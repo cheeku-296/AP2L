@@ -28,7 +28,7 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-white transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full pt-12 md:pt-16 pb-2 md:pb-4 bg-white transition-colors duration-500 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
@@ -37,7 +37,7 @@ export default function Integrations() {
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
         {/* Header Section: Heading on Left, Subheading on Right */}
-        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="mb-0 md:mb-2 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -63,10 +63,10 @@ export default function Integrations() {
         </div>
 
         {/* Content Section: Cards on Left, Image on Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center">
           {/* Left Column - Category Cards */}
           <div className="lg:col-span-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {integrations.map((group, index) => (
                 <motion.div
                   key={group.category}
@@ -74,14 +74,19 @@ export default function Integrations() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative p-6 rounded-2xl border border-slate-200/80 bg-white hover:border-violet-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group relative p-6 rounded-md border border-slate-200/80 bg-white transition-all duration-300 overflow-hidden"
                 >
-                  <h3 className="font-urbanist text-lg font-bold text-slate-900 mb-2 tracking-tight group-hover:text-violet-600 transition-colors">
-                    {group.category}
-                  </h3>
-                  <p className="font-manrope text-[14px] text-slate-600 leading-relaxed">
-                    {group.description}
-                  </p>
+                  {/* Violet Light Ray Effect */}
+                  <div className="absolute -top-20 -right-20 w-48 h-48 bg-violet-400/20 blur-[50px] rounded-full transition-colors duration-700 pointer-events-none" />
+                  
+                  <div className="relative z-10">
+                    <h3 className="font-urbanist text-lg font-bold text-slate-900 mb-2 tracking-tight">
+                      {group.category}
+                    </h3>
+                    <p className="font-manrope text-[14px] text-slate-600 leading-relaxed">
+                      {group.description}
+                    </p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -96,7 +101,7 @@ export default function Integrations() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative w-full max-w-xl lg:max-w-none"
             >
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-white">
+              <div className="relative w-full aspect-[4/3] rounded-md">
                 <Image
                   src="/new/finxplore.png"
                   alt="Finxplore Ecosystem Integration"
