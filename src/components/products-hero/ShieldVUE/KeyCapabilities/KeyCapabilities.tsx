@@ -32,7 +32,7 @@ export default function KeyCapabilities() {
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-4">
                 Powerful Capabilities for <br />
-                <span className="text-[#9D7BEE]">Total Security</span>
+                Total Security
               </h2>
             </motion.div>
           </div>

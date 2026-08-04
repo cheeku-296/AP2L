@@ -29,7 +29,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Key <span className="text-[#9D7BEE]">Capabilities</span>
+                Key Capabilities
               </h2>
             </motion.div>
           </div>

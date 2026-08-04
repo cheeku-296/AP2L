@@ -76,7 +76,7 @@ export default function QAPage() {
         {renderWithTheme("qa_benefits", <QABenefits />)}
         {renderWithTheme("qa_metrics", <QAMetrics />)}
         {renderWithTheme("qa_industries", <QAIndustries />)}
-        {renderWithTheme("qa_technologies", <QATechnologies />)}
+        {/* {renderWithTheme("qa_technologies", <QATechnologies />)} */}
 
         {/* 6. Let's talk */}
         {/* {renderWithTheme("qa_faq", <QAFAQ />)} */}

@@ -43,7 +43,7 @@
   --font-sans: var(--font-sans);
   --font-urbanist: var(--font-urbanist);
   --font-manrope: var(--font-manrope);
-  --font-space-grotesk: 'Space Grotesk', sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-alata: var(--font-alata);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -125,7 +125,7 @@
 
 @layer utilities {
   .font-space-grotesk {
-    font-family: 'Space Grotesk', sans-serif !important;
+    font-family: "Space Grotesk", sans-serif !important;
   }
 }
 
@@ -149,7 +149,12 @@
     font-family: var(--font-manrope);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-urbanist);
   }
   * {
@@ -158,4 +163,23 @@
   html {
     @apply font-sans;
   }
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+  border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
 }

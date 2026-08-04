@@ -27,8 +27,7 @@ export default function KeyCapabilities() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
-                Privacy
-                <span className="text-[#6843B7]">by Design</span>
+                Privacy by Design
               </h2>
             </motion.div>
           </div>

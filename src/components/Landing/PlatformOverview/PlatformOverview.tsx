@@ -60,7 +60,7 @@ const products = [
     id: "finxplore",
     title: "FINXPLORE",
     logo: "/images/products/logos/finxplore-logo.png",
-    description: "Real-time AI-Powered Risk & Fraud Detection for financial institutions. Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings, enforce AML protocols, and ensure absolute regulatory compliance.",
+    description: "Real-time AI Risk & Fraud Detection. Instantly neutralize threats, uncover fraud rings, and enforce AML compliance without disrupting customer experiences.",
     href: "/products/finxplore",
     image: "/images/products/mockups/finxplore-mockup-light.png",
     icon: Search,
@@ -70,7 +70,7 @@ const products = [
     id: "swikruti",
     title: "SWIKRUTI",
     logo: "/images/products/logos/swikruti-logo.png",
-    description: "Consent Management & DPDPA Compliance platform for enterprise privacy. Keep your customer data compliant, secure, and fully auditable. Provide users with transparent control over their digital footprint while seamlessly mapping consent lifecycles across your data ecosystem to prevent unauthorized access.",
+    description: "Consent Management & DPDPA Compliance platform. Keep data secure and auditable while giving users transparent control over their digital footprint.",
     href: "/products/swikruti",
     image: "/images/products/mockups/swikruti-mockup-light.png",
     icon: FileCheck2,
@@ -109,7 +109,7 @@ export default function PlatformOverview() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
 
         {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}

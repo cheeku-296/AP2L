@@ -103,7 +103,7 @@ export default function Testimonials() {
       <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Header section */}
-        <div className="mb-12 md:mb-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}

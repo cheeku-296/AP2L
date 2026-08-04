@@ -113,7 +113,7 @@ export default function DevChallenges() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch ml-4 md:ml-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           <motion.div
             variants={cardLeftVariants}
             initial="hidden"

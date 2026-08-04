@@ -1,9 +1,9 @@
 export const finxploreHeroData = {
   backgroundImage: "/images/products/logos/finxplore-logo-alt.png",
-  titleLine1: "Real-Time AI-Powered",
+  titleLine1: "AI-Powered",
   titleHighlight: "Risk & Fraud Detection",
-  titleLine2: "for Financial Institutions",
-  description: "Neutralize threats instantaneously while maintaining frictionless customer experiences. Analyze millions of data points across payment networks to uncover sophisticated fraud rings and enforce AML protocols.",
+  titleLine2: "for Finance",
+  description: "Instantly neutralize threats, uncover fraud rings, and enforce AML compliance without disrupting customer experiences.",
   buttonText: "Explore Platform",
   buttonLink: "/contact",
 };

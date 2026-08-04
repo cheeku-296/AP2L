@@ -61,23 +61,23 @@ export default function Integrations() {
           {integrations.map((group, index) => (
             <motion.div
               key={group.category}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+              className="bg-white border border-slate-200/80 rounded-md p-6 shadow-sm"
             >
-              <h3 className="text-slate-800 font-semibold mb-2 text-lg">
+              <h3 className="text-slate-900 font-bold mb-2 text-[17px] tracking-tight">
                 {group.category}
               </h3>
-              <p className="text-slate-500 font-manrope text-sm leading-relaxed mb-4">
+              <p className="text-slate-500 font-manrope text-[14px] leading-relaxed mb-4">
                 {group.description}
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {group.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="px-3 py-1.5 bg-slate-100 border border-slate-200 rounded-full text-xs font-medium text-slate-700"
+                    className="px-3.5 py-1.5 bg-slate-50 border border-slate-200/60 rounded-md text-[13px] font-medium text-slate-600"
                   >
                     {tool}
                   </span>

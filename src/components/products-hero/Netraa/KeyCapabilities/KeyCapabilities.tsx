@@ -30,7 +30,7 @@ export default function KeyCapabilities() {
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-white mb-6">
                 Intelligence built into <br/>
-                <span className="text-[#9D7BEE]">every layer</span>
+                every layer
               </h2>
             </motion.div>
           </div>

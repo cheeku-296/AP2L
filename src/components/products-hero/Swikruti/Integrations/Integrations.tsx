@@ -21,7 +21,7 @@ export default function Integrations() {
               viewport={{ once: true }}
             >
               <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-900 mb-6">
-                Integrate <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6843B7] to-[#9e7be9]">with Confidence</span>
+                Integrate with Confidence
               </h2>
             </motion.div>
           </div>
@@ -32,8 +32,8 @@ export default function Integrations() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-600 leading-relaxed max-w-2xl">
-                Swikruti plugs into your existing infrastructure effortlessly.
+              <p className="font-manrope text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
+                Swikruti plugs into your existing infrastructure effortlessly. Connect with your identity providers, CRMs, and data stores to enforce privacy without disrupting workflows.
               </p>
             </motion.div>
           </div>
@@ -43,18 +43,18 @@ export default function Integrations() {
           {integrations.map((group, index) => (
             <motion.div
               key={group.category}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm"
+              className="bg-white border border-slate-200/80 rounded-md p-6 shadow-sm"
             >
-              <h3 className="text-[#6843B7] font-semibold mb-4 text-lg">{group.category}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="text-slate-900 font-bold mb-4 text-[17px] tracking-tight">{group.category}</h3>
+              <div className="flex flex-wrap gap-2.5">
                 {group.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="px-3 py-1.5 bg-slate-50 border border-slate-200 rounded-full text-xs font-medium text-slate-700"
+                    className="px-3.5 py-1.5 bg-slate-50 border border-slate-200/60 rounded-md text-[13px] font-medium text-slate-600"
                   >
                     {tool}
                   </span>

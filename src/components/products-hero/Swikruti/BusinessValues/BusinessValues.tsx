@@ -64,7 +64,7 @@ export default function BusinessValues() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-600 leading-relaxed max-w-2xl">
+              <p className="font-manrope text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl">
                 Build trust with your customers through transparent, compliant, and auditable data practices.
               </p>
             </motion.div>
