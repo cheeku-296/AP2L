@@ -150,11 +150,11 @@ export default function FAQClient() {
       />
       {/* Background Text */}
       <div className="absolute top-20 left-0 w-full text-center pointer-events-none select-none z-0 overflow-hidden">
-        <h1 className="text-[10vw] font-bold whitespace-nowrap text-gray-50 opacity-80 mt-0">Frequently Ask Question</h1>
+        <h1 className="text-[10vw] font-bold whitespace-nowrap text-gray-50 opacity-90 mt-0">Frequently Ask Question</h1>
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-left mb-16">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">Frequently Ask Question</h2>
           <p className="text-gray-500 text-sm">
             {/* <Link href="/contact" className="text-[#090A1F] cursor-pointer font-medium hover:underline">Contact us</Link> */}

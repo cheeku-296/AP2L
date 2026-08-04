@@ -15,7 +15,7 @@ export default function ITTechnologies() {
         {/* Header section */}
         <div className="mb-4 md:mb-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -24,9 +24,9 @@ export default function ITTechnologies() {
               Seamless IT Integration
             </motion.h2>
           </div>
-          
+
           <div className="md:pt-2">
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -47,14 +47,14 @@ export default function ITTechnologies() {
         >
           <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden">
             <Image
-              src="/images/solutions/ITsupport_light.png"
+              src="/images/solutions/IT/it.png"
               alt="IT support technologies compatible with AP2L"
               fill
               className="object-cover dark:hidden"
               priority
             />
             <Image
-              src="/images/solutions/ITsupport_light.png"
+              src="/images/solutions/IT/it.png"
               alt="IT support technologies compatible with AP2L"
               fill
               className="object-cover hidden dark:block"

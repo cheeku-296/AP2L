@@ -48,10 +48,10 @@ export default function DevTechnologies() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="relative w-full max-w-7xl mx-auto"
         >
-          <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-slate-900">
+          <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden">
             {/* Light mode image */}
             <Image
-              src="/images/solutions/devops/devops.png"
+              src="/images/solutions/devops/devops1.png"
               alt="DevOps technologies compatible with AP2L"
               fill
               className="object-cover dark:hidden"
