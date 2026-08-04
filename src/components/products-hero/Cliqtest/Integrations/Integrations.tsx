@@ -1,90 +1,113 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const integrations = [
-  { 
-    category: "Observability", 
-    description: "Gain deep insights into system performance and detect anomalies instantly. Monitor application health in real-time.", 
-    tools: ["Dynatrace", "Splunk", "Netraa"] 
+  {
+    category: "Observability",
+    description: "Gain deep insights into system performance and detect anomalies instantly. Monitor application health in real-time.",
+    tools: ["Dynatrace", "Splunk", "Netraa"],
   },
-  { 
-    category: "Collaboration", 
-    description: "Streamline communication across your QA and dev teams. Share test results and incident reports seamlessly.", 
-    tools: ["Teams", "Slack"] 
+  {
+    category: "Collaboration",
+    description: "Streamline communication across your QA and dev teams. Share test results and incident reports seamlessly.",
+    tools: ["Teams", "Slack"],
   },
-  { 
-    category: "Project Management", 
-    description: "Track bugs, link defects to test cases, and manage agile workflows. Keep your entire team aligned on delivery goals.", 
-    tools: ["Jira", "Azure DevOps", "ServiceNow"] 
+  {
+    category: "Project Management",
+    description: "Track bugs, link defects to test cases, and manage agile workflows. Keep your entire team aligned on delivery goals.",
+    tools: ["Jira", "Azure DevOps", "ServiceNow"],
   },
-  { 
-    category: "CI/CD", 
-    description: "Automate test execution within your deployment pipelines. Ensure confident, high-quality releases with every commit.", 
-    tools: ["Jenkins", "GitHub", "GitLab"] 
+  {
+    category: "CI/CD",
+    description: "Automate test execution within your deployment pipelines. Ensure confident, high-quality releases with every commit.",
+    tools: ["Jenkins", "GitHub", "GitLab"],
   },
 ];
 
 export default function Integrations() {
   return (
-    <section className="py-16 bg-slate-50 text-slate-900 border-t border-slate-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header section */}
-        <div className="mb-8 md:mb-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+      {/* Background Decorations */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[130px] translate-y-1/2 -translate-x-1/3" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
+        {/* Header Section: Heading on Left, Subheading on Right */}
+        <div className="mb-10 md:mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <div>
-            <motion.div
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-4 md:mb-0"
             >
-              <h2 className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-slate-800 mb-6">
-                Enterprise <span className="text-slate-800">Ecosystem Integration</span>
-              </h2>
-            </motion.div>
+              Enterprise Ecosystem Integration
+            </motion.h2>
           </div>
 
           <div className="md:pt-2">
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
+              className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
             >
-              <p className="font-manrope text-xl md:text-[22px] text-slate-700 dark:text-slate-600 leading-relaxed max-w-2xl">
-                Seamlessly connect cliQTest with your existing toolchain to unify testing workflows, eliminate manual bottlenecks, and accelerate your entire software delivery lifecycle.
-              </p>
-            </motion.div>
+              Seamlessly connect cliQTest with your existing toolchain to unify testing workflows, eliminate manual bottlenecks, and accelerate your entire software delivery lifecycle.
+            </motion.p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {integrations.map((group, index) => (
+        {/* Content Section: Cards on Left, Image on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column - Category Cards */}
+          <div className="lg:col-span-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {integrations.map((group, index) => (
+                <motion.div
+                  key={group.category}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-violet-300 dark:hover:border-violet-500/40 transition-all duration-300 shadow-sm hover:shadow-md"
+                >
+                  <h3 className="font-urbanist text-lg font-bold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                    {group.category}
+                  </h3>
+                  <p className="font-manrope text-[14px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {group.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Image Visual */}
+          <div className="lg:col-span-6 flex items-center justify-center">
             <motion.div
-              key={group.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-white border border-slate-200/80 rounded-md p-6 shadow-sm"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative w-full max-w-xl lg:max-w-none"
             >
-              <h3 className="text-slate-900 font-bold mb-2 text-[17px] tracking-tight">
-                {group.category}
-              </h3>
-              <p className="text-slate-500 font-manrope text-[14px] leading-relaxed mb-4">
-                {group.description}
-              </p>
-              <div className="flex flex-wrap gap-2.5">
-                {group.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="px-3.5 py-1.5 bg-slate-50 border border-slate-200/60 rounded-md text-[13px] font-medium text-slate-600"
-                  >
-                    {tool}
-                  </span>
-                ))}
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+                <Image
+                  src="/new/cliqtest.png"
+                  alt="cliQTest Ecosystem Integration"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain p-2"
+                  priority
+                />
               </div>
             </motion.div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
