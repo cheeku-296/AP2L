@@ -28,11 +28,11 @@ const integrations = [
 
 export default function Integrations() {
   return (
-    <section className="relative w-full py-12 md:py-16 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden">
+    <section className="relative w-full py-12 md:py-16 bg-white transition-colors duration-500 overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-fuchsia-500/5 dark:bg-fuchsia-500/10 rounded-full blur-[130px] translate-y-1/2 -translate-x-1/3" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-violet-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-fuchsia-500/5 rounded-full blur-[130px] translate-y-1/2 -translate-x-1/3" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 lg:px-8 z-10">
@@ -43,7 +43,7 @@ export default function Integrations() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black dark:text-white mb-4 md:mb-0"
+              className="font-urbanist text-4xl md:text-5xl lg:text-[56px] leading-tight font-medium tracking-tight text-black mb-4 md:mb-0"
             >
               Integrate with Confidence
             </motion.h2>
@@ -55,7 +55,7 @@ export default function Integrations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="font-manrope text-lg md:text-[20px] text-slate-700 dark:text-slate-300 leading-relaxed max-w-2xl"
+              className="font-manrope text-lg md:text-[20px] text-slate-700 leading-relaxed max-w-2xl"
             >
               Swikruti plugs into your existing infrastructure effortlessly. Connect with your identity providers, CRMs, and data stores to enforce privacy without disrupting workflows.
             </motion.p>
@@ -74,12 +74,12 @@ export default function Integrations() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-white dark:bg-slate-900/90 hover:border-violet-300 dark:hover:border-violet-500/40 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="group relative p-6 rounded-2xl border border-slate-200/80 bg-white hover:border-violet-300 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
-                  <h3 className="font-urbanist text-lg font-bold text-slate-900 dark:text-white mb-2 tracking-tight group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                  <h3 className="font-urbanist text-lg font-bold text-slate-900 mb-2 tracking-tight group-hover:text-violet-600 transition-colors">
                     {group.category}
                   </h3>
-                  <p className="font-manrope text-[14px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="font-manrope text-[14px] text-slate-600 leading-relaxed">
                     {group.description}
                   </p>
                 </motion.div>
@@ -96,7 +96,7 @@ export default function Integrations() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative w-full max-w-xl lg:max-w-none"
             >
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-white">
                 <Image
                   src="/new/swikruti.png"
                   alt="Swikruti Ecosystem Integration"
