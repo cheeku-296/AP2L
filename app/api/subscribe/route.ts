@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     if (!email || typeof email !== "string" || !email.trim()) {
       return NextResponse.json(
-        { error: "Business email is required." },
+        { error: "Email address is required." },
         { status: 400 }
       );
     }
@@ -18,30 +18,6 @@ export async function POST(req: Request) {
     if (!emailRegex.test(emailTrimmed)) {
       return NextResponse.json(
         { error: "Please enter a valid email address." },
-        { status: 400 }
-      );
-    }
-
-    const DISALLOWED_FREE_DOMAINS = [
-      "gmail.com",
-      "yahoo.com",
-      "hotmail.com",
-      "outlook.com",
-      "icloud.com",
-      "aol.com",
-      "live.com",
-      "mail.com",
-      "proton.me",
-      "protonmail.com",
-      "yandex.com",
-      "gmx.com",
-      "zoho.com",
-    ];
-
-    const domain = emailTrimmed.split("@")[1]?.toLowerCase();
-    if (domain && DISALLOWED_FREE_DOMAINS.includes(domain)) {
-      return NextResponse.json(
-        { error: "Please enter a valid business email (personal domains like Gmail/Yahoo are not allowed)." },
         { status: 400 }
       );
     }

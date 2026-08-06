@@ -12,43 +12,22 @@ export default function Newsletter() {
   const [isSubscribed, setIsSubscribed] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const DISALLOWED_FREE_DOMAINS = [
-    "gmail.com",
-    "yahoo.com",
-    "hotmail.com",
-    "outlook.com",
-    "icloud.com",
-    "aol.com",
-    "live.com",
-    "mail.com",
-    "proton.me",
-    "protonmail.com",
-    "yandex.com",
-    "gmx.com",
-    "zoho.com",
-  ];
-
-  const validateBusinessEmail = (val: string) => {
+  const validateEmail = (val: string) => {
     const trimmed = val.trim();
-    if (!trimmed) return "Business email is required.";
+    if (!trimmed) return "Email address is required.";
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(trimmed)) return "Please enter a valid email address.";
-
-    const domain = trimmed.split("@")[1]?.toLowerCase();
-    if (domain && DISALLOWED_FREE_DOMAINS.includes(domain)) {
-      return "Please enter a valid business email (personal domains like Gmail/Yahoo are not allowed).";
-    }
     return null;
   };
 
   const handleEmailChange = (val: string) => {
     setEmail(val);
-    const err = validateBusinessEmail(val);
+    const err = validateEmail(val);
     setError(err);
   };
 
   const handleEmailBlur = () => {
-    const err = validateBusinessEmail(email);
+    const err = validateEmail(email);
     setError(err);
   };
 
@@ -56,7 +35,7 @@ export default function Newsletter() {
     e.preventDefault();
     setError(null);
 
-    const emailErr = validateBusinessEmail(email);
+    const emailErr = validateEmail(email);
     if (emailErr) {
       setError(emailErr);
       return;
@@ -157,7 +136,7 @@ export default function Newsletter() {
                         <input
                           type="email"
                           aria-label="Email Address"
-                          placeholder="Enter your business email"
+                          placeholder="Enter your email address"
                           value={email}
                           onChange={(e) => handleEmailChange(e.target.value)}
                           onBlur={handleEmailBlur}
