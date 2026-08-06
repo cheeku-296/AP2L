@@ -23,6 +23,40 @@ export async function POST(req: Request) {
       );
     }
 
+    // Business email validation
+    const emailTrimmed = String(email).trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailTrimmed)) {
+      return NextResponse.json(
+        { error: "Please enter a valid email address." },
+        { status: 400 }
+      );
+    }
+
+    const DISALLOWED_FREE_DOMAINS = [
+      "gmail.com",
+      "yahoo.com",
+      "hotmail.com",
+      "outlook.com",
+      "icloud.com",
+      "aol.com",
+      "live.com",
+      "mail.com",
+      "proton.me",
+      "protonmail.com",
+      "yandex.com",
+      "gmx.com",
+      "zoho.com",
+    ];
+
+    const emailDomain = emailTrimmed.split("@")[1]?.toLowerCase();
+    if (emailDomain && DISALLOWED_FREE_DOMAINS.includes(emailDomain)) {
+      return NextResponse.json(
+        { error: "Please enter a valid business email (personal domains like Gmail/Yahoo are not allowed)." },
+        { status: 400 }
+      );
+    }
+
     // Phone number validation (7-15 digits allowed)
     const phoneDigits = phone.replace(/\D/g, "");
     if (!/^\+?[0-9\s\-\(\)]{7,20}$/.test(phone) || phoneDigits.length < 7 || phoneDigits.length > 15) {

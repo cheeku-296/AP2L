@@ -15,7 +15,7 @@ import ChevronDownIcon from "@/components/ui/chevron-down-icon";
 export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -93,6 +93,35 @@ export default function ContactSection() {
     },
   ];
 
+  const DISALLOWED_FREE_DOMAINS = [
+    "gmail.com",
+    "yahoo.com",
+    "hotmail.com",
+    "outlook.com",
+    "icloud.com",
+    "aol.com",
+    "live.com",
+    "mail.com",
+    "proton.me",
+    "protonmail.com",
+    "yandex.com",
+    "gmx.com",
+    "zoho.com",
+  ];
+
+  const validateBusinessEmail = (email: string) => {
+    const trimmed = email.trim();
+    if (!trimmed) return "Business email is required.";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(trimmed)) return "Please enter a valid email address.";
+
+    const domain = trimmed.split("@")[1]?.toLowerCase();
+    if (domain && DISALLOWED_FREE_DOMAINS.includes(domain)) {
+      return "Please enter a valid business email (personal domains like Gmail/Yahoo are not allowed).";
+    }
+    return null;
+  };
+
   const validatePhone = (phone: string) => {
     if (!phone.trim()) return "Phone number is required.";
     const digits = phone.replace(/\D/g, "");
@@ -102,15 +131,66 @@ export default function ContactSection() {
     return null;
   };
 
+  const validateSingleField = (name: string, value: unknown): string | null => {
+    switch (name) {
+      case "firstName":
+        return !String(value || "").trim() ? "First name is required." : null;
+      case "lastName":
+        return !String(value || "").trim() ? "Last name is required." : null;
+      case "company":
+        return !String(value || "").trim() ? "Company name is required." : null;
+      case "designation":
+        return !String(value || "").trim() ? "Designation is required." : null;
+      case "email":
+        return validateBusinessEmail(String(value || ""));
+      case "phone":
+        return validatePhone(String(value || ""));
+      case "product":
+        return !String(value || "").trim() ? "Please select an interested product." : null;
+      case "message":
+        return !String(value || "").trim() ? "Please describe your requirement." : null;
+      case "consent":
+        return !value ? "You must agree to the privacy policy." : null;
+      default:
+        return null;
+    }
+  };
+
+  const handleFieldChange = (name: string, value: unknown) => {
+    setFormData((prev) => {
+      const nextData = { ...prev, [name]: value };
+      return nextData;
+    });
+
+    const err = validateSingleField(name, value);
+    setFieldErrors((prev) => ({
+      ...prev,
+      [name]: err || "",
+    }));
+  };
+
+  const handleFieldBlur = (name: string) => {
+    const value = formData[name as keyof typeof formData];
+    const err = validateSingleField(name, value);
+    setFieldErrors((prev) => ({
+      ...prev,
+      [name]: err || "",
+    }));
+  };
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
-    setErrorMessage(null);
 
-    // Validate phone number
-    const pError = validatePhone(formData.phone);
-    if (pError) {
-      setErrorMessage(pError);
+    const errors: Record<string, string> = {};
+
+    Object.keys(formData).forEach((key) => {
+      const err = validateSingleField(key, formData[key as keyof typeof formData]);
+      if (err) errors[key] = err;
+    });
+
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
       setIsSubmitting(false);
       return;
     }
@@ -133,9 +213,9 @@ export default function ContactSection() {
       setIsSubmitted(true);
     } catch (err: unknown) {
       console.error("Form submission error:", err);
-      setErrorMessage(
-        err instanceof Error ? err.message : "Failed to send message. Please try again."
-      );
+      setFieldErrors({
+        form: err instanceof Error ? err.message : "Failed to send message. Please try again.",
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -153,7 +233,7 @@ export default function ContactSection() {
       message: "",
       consent: false,
     });
-    setErrorMessage(null);
+    setFieldErrors({});
     setIsSubmitted(false);
   }
 
@@ -415,17 +495,13 @@ export default function ContactSection() {
 
                   <motion.form
                     key="form"
+                    noValidate
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     onSubmit={handleSubmit}
                     className="mt-10 space-y-6"
                   >
-                    {errorMessage && (
-                      <div className="rounded-xl border border-red-200 bg-red-50 dark:border-red-900/50 dark:bg-red-950/40 p-4 text-sm text-red-600 dark:text-red-400 font-medium">
-                        {errorMessage}
-                      </div>
-                    )}
                     <div className="grid gap-6 md:grid-cols-2">
 
                       {/* First Name */}
@@ -436,21 +512,15 @@ export default function ContactSection() {
                         </label>
 
                         <input
-                          required
                           value={formData.firstName}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              firstName: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("firstName", e.target.value)}
+                          onBlur={() => handleFieldBlur("firstName")}
                           placeholder="First Name"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.firstName ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -463,11 +533,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.firstName && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.firstName}</p>
+                        )}
                       </div>
 
                       {/* Last Name */}
@@ -478,21 +550,15 @@ export default function ContactSection() {
                         </label>
 
                         <input
-                          required
                           value={formData.lastName}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              lastName: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("lastName", e.target.value)}
+                          onBlur={() => handleFieldBlur("lastName")}
                           placeholder="Last Name"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.lastName ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -505,11 +571,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.lastName && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.lastName}</p>
+                        )}
                       </div>
 
                     </div>
@@ -525,21 +593,15 @@ export default function ContactSection() {
                         </label>
 
                         <input
-                          required
                           value={formData.company}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              company: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("company", e.target.value)}
+                          onBlur={() => handleFieldBlur("company")}
                           placeholder="Your Company"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.company ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -552,11 +614,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.company && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.company}</p>
+                        )}
 
                       </div>
 
@@ -569,21 +633,15 @@ export default function ContactSection() {
                         </label>
 
                         <input
-                          required
                           value={formData.designation}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              designation: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("designation", e.target.value)}
+                          onBlur={() => handleFieldBlur("designation")}
                           placeholder="Designation"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.designation ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -596,11 +654,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.designation && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.designation}</p>
+                        )}
 
                       </div>
 
@@ -618,21 +678,15 @@ export default function ContactSection() {
 
                         <input
                           type="email"
-                          required
                           value={formData.email}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              email: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("email", e.target.value)}
+                          onBlur={() => handleFieldBlur("email")}
                           placeholder="sample@company.com"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.email ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -645,11 +699,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.email && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.email}</p>
+                        )}
 
                       </div>
 
@@ -663,21 +719,15 @@ export default function ContactSection() {
 
                         <input
                           type="tel"
-                          required
                           value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              phone: e.target.value,
-                            })
-                          }
+                          onChange={(e) => handleFieldChange("phone", e.target.value)}
+                          onBlur={() => handleFieldBlur("phone")}
                           placeholder="+91 98765 43210"
-                          className="
+                          className={`
                             w-full
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.phone ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -690,11 +740,13 @@ export default function ContactSection() {
                             duration-300
                             placeholder:text-slate-400
                             dark:placeholder:text-slate-500
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
-                          "
+                          `}
                         />
+                        {fieldErrors.phone && (
+                          <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.phone}</p>
+                        )}
 
                       </div>
 
@@ -709,41 +761,19 @@ export default function ContactSection() {
                       </label>
 
                       <div className="relative" ref={dropdownRef}>
-                        {/* Hidden native select for HTML5 form validation */}
-                        <select
-                          required
-                          value={formData.product}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              product: e.target.value,
-                            })
-                          }
-                          className="sr-only"
-                          tabIndex={-1}
-                          aria-hidden="true"
-                        >
-                          <option value="">Select a Product</option>
-                          {products.map((product) => (
-                            <option key={product} value={product}>
-                              {product}
-                            </option>
-                          ))}
-                        </select>
-
                         {/* Custom Dropdown Trigger */}
                         <button
                           type="button"
                           onClick={() => setIsDropdownOpen((prev) => !prev)}
-                          className="
+                          onBlur={() => handleFieldBlur("product")}
+                          className={`
                             w-full
                             flex
                             items-center
                             justify-between
                             rounded-2xl
                             border
-                            border-slate-900/10
-                            dark:border-slate-700
+                            ${fieldErrors.product ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                             bg-white
                             dark:bg-slate-800/80
                             px-5
@@ -753,11 +783,10 @@ export default function ContactSection() {
                             outline-none
                             transition-all
                             duration-300
-                            focus:border-violet-500
                             focus:ring-4
                             focus:ring-violet-500/10
                             cursor-pointer
-                          "
+                          `}
                         >
                           <span
                             className={
@@ -810,7 +839,7 @@ export default function ContactSection() {
                                     key={product}
                                     type="button"
                                     onClick={() => {
-                                      setFormData({ ...formData, product });
+                                      handleFieldChange("product", product);
                                       setIsDropdownOpen(false);
                                     }}
                                     className={`
@@ -843,6 +872,9 @@ export default function ContactSection() {
                           )}
                         </AnimatePresence>
                       </div>
+                      {fieldErrors.product && (
+                        <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.product}</p>
+                      )}
 
                     </div>
 
@@ -855,23 +887,17 @@ export default function ContactSection() {
                       </label>
 
                       <textarea
-                        required
                         rows={6}
                         value={formData.message}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            message: e.target.value,
-                          })
-                        }
+                        onChange={(e) => handleFieldChange("message", e.target.value)}
+                        onBlur={() => handleFieldBlur("message")}
                         placeholder="Describe your project or business requirement..."
-                        className="
+                        className={`
                           w-full
                           resize-none
                           rounded-3xl
                           border
-                          border-slate-900/10
-                          dark:border-slate-700
+                          ${fieldErrors.message ? "border-red-500 dark:border-red-500 focus:border-red-500" : "border-slate-900/10 dark:border-slate-700 focus:border-violet-500"}
                           bg-white
                           dark:bg-slate-800/80
                           px-5
@@ -884,45 +910,53 @@ export default function ContactSection() {
                           duration-300
                           placeholder:text-slate-400
                           dark:placeholder:text-slate-500
-                          focus:border-violet-500
                           focus:ring-4
                           focus:ring-violet-500/10
-                        "
+                        `}
                       />
+                      {fieldErrors.message && (
+                        <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.message}</p>
+                      )}
                     </div>
 
                     {/* Consent */}
 
-                    <label className="flex cursor-pointer items-start gap-3">
-                      <input
-                        type="checkbox"
-                        required
-                        checked={formData.consent}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            consent: e.target.checked,
-                          })
-                        }
-                        className="
-                          mt-0.5
-                          h-4
-                          w-4
-                          shrink-0
-                          rounded
-                          border-slate-300
-                          text-violet-600
-                          focus:ring-violet-500/40
-                          dark:border-slate-700
-                          dark:bg-slate-900
-                        "
-                      />
-                      <span className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                        I agree to be contacted by AP2L regarding my inquiry
-                        and consent to the processing of my data as per the
-                        privacy policy.
-                      </span>
-                    </label>
+                    <div>
+                      <label className="flex cursor-pointer items-start gap-3">
+                        <input
+                          type="checkbox"
+                          checked={formData.consent}
+                          onChange={(e) => handleFieldChange("consent", e.target.checked)}
+                          onBlur={() => handleFieldBlur("consent")}
+                          className="
+                            mt-0.5
+                            h-4
+                            w-4
+                            shrink-0
+                            rounded
+                            border-slate-300
+                            text-violet-600
+                            focus:ring-violet-500/40
+                            dark:border-slate-700
+                            dark:bg-slate-900
+                          "
+                        />
+                        <span className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                          I agree to be contacted by AP2L regarding my inquiry
+                          and consent to the processing of my data as per the
+                          privacy policy.
+                        </span>
+                      </label>
+                      {fieldErrors.consent && (
+                        <p className="mt-1.5 text-xs font-medium text-red-500">{fieldErrors.consent}</p>
+                      )}
+                    </div>
+
+                    {fieldErrors.form && (
+                      <div className="rounded-xl border border-red-200 bg-red-50 dark:border-red-900/50 dark:bg-red-950/40 p-4 text-sm text-red-600 dark:text-red-400 font-medium">
+                        {fieldErrors.form}
+                      </div>
+                    )}
 
                     {/* Submit */}
 
